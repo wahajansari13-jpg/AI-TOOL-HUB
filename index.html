@@ -3,17 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Micro-Tools Hub - Free Online Utilities</title>
+    
+    <!-- SEO Meta Tags for Top Ranking -->
+    <title>AI Micro-Tools Hub | Free AI Text Humanizer, Summarizer & Word Counter</title>
+    <meta name="description" content="Use free AI micro-tools including AI Text Humanizer, Smart Summarizer, and Word Counter. Bypass AI detectors and boost productivity instantly online.">
+    <meta name="keywords" content="AI text humanizer, free smart summarizer, word counter tool, AI productivity tools, bypass AI detector online">
+    <meta name="author" content="AI Micro-Tools Hub">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="AI Micro-Tools Hub - Free Online Utilities">
+    <meta property="og:description" content="Boost your productivity with free browser-based AI writing and text tools.">
+    <meta property="og:type" content="website">
+
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="min-h-screen bg-slate-900 text-white flex flex-col items-center p-4 md:p-8">
     <div class="max-w-3xl w-full">
         <!-- Header -->
         <header class="text-center mb-8">
-            <h1 class="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 bg-clip-text text-transparent">
+            <h1 class="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-blue-400 via-emerald-400 to-amber-400 bg-clip-text text-transparent">
                 AI Micro-Tools Hub
             </h1>
-            <p class="text-slate-400 text-sm mt-2">High-performance AI tools for daily productivity, completely free.</p>
+            <p class="text-slate-400 text-sm mt-2">High-performance utilities for daily productivity, completely free.</p>
             
             <!-- Tool Switcher Tabs -->
             <div class="flex flex-wrap justify-center gap-2 mt-6">
@@ -23,8 +34,8 @@
                 <button onclick="switchTool('summarizer')" id="tabSummarizer" class="px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">
                     Smart Summarizer
                 </button>
-                <button onclick="switchTool('bgremover')" id="tabBgRemover" class="px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">
-                    BG Remover
+                <button onclick="switchTool('counter')" id="tabCounter" class="px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">
+                    Word Counter
                 </button>
             </div>
         </header>
@@ -51,41 +62,54 @@
             </div>
         </div>
 
-        <!-- Tool 3: AI Background Remover (Optimized Pipeline) -->
-        <div id="toolBgRemover" class="hidden bg-slate-800 p-6 md:p-8 rounded-2xl shadow-xl border border-slate-700">
-            <h2 class="text-xl font-bold mb-1 text-purple-400">AI Background Remover</h2>
-            <p class="text-slate-400 text-xs mb-4">Upload any portrait or product image to isolate the subject instantly.</p>
+        <!-- Tool 3: Word & Character Counter -->
+        <div id="toolCounter" class="hidden bg-slate-800 p-6 md:p-8 rounded-2xl shadow-xl border border-slate-700">
+            <h2 class="text-xl font-bold mb-1 text-amber-400">Word & Character Counter</h2>
+            <p class="text-slate-400 text-xs mb-4">Check words, characters, and reading time instantly for your content.</p>
             <div class="space-y-4">
-                <div class="border-2 border-dashed border-slate-700 rounded-xl p-6 text-center hover:border-purple-500 transition">
-                    <input type="file" id="imageInput" accept="image/*" class="w-full text-sm text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-purple-600 file:text-white hover:file:bg-purple-500 cursor-pointer">
-                </div>
-                <button onclick="processImage()" class="w-full py-3 bg-purple-600 hover:bg-purple-500 transition font-bold rounded-xl text-sm shadow-lg">Remove Background</button>
-                <div id="bgOutput" class="w-full p-4 bg-slate-900 border border-slate-700 rounded-xl text-sm text-slate-300 text-center min-h-[130px] flex flex-col items-center justify-center gap-3">
-                    <span class="text-slate-400">Upload an image to process...</span>
+                <textarea id="cInput" oninput="runCounter()" rows="5" class="w-full p-3 bg-slate-900 border border-slate-700 rounded-xl focus:outline-none focus:border-amber-500 text-sm text-slate-200 resize-none" placeholder="Type or paste your text here to count..."></textarea>
+                <div class="grid grid-cols-3 gap-3 text-center">
+                    <div class="bg-slate-900 p-3 rounded-xl border border-slate-700">
+                        <span class="block text-xs text-slate-400">Words</span>
+                        <span id="wordCount" class="text-lg font-bold text-amber-400">0</span>
+                    </div>
+                    <div class="bg-slate-900 p-3 rounded-xl border border-slate-700">
+                        <span class="block text-xs text-slate-400">Characters</span>
+                        <span id="charCount" class="text-lg font-bold text-amber-400">0</span>
+                    </div>
+                    <div class="bg-slate-900 p-3 rounded-xl border border-slate-700">
+                        <span class="block text-xs text-slate-400">Reading Time</span>
+                        <span id="readTime" class="text-sm font-bold text-amber-400">0 sec</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <canvas id="canvas" class="hidden"></canvas>
+        <!-- SEO Content Section (Crucial for Google Ranking) -->
+        <section class="mt-12 bg-slate-800/50 p-6 rounded-2xl border border-slate-700/50 text-slate-400 text-xs leading-relaxed">
+            <h3 class="text-slate-200 font-bold text-sm mb-2">Why Use Our Free AI Micro-Tools Hub?</h3>
+            <p class="mb-2">Our platform is designed for students, content creators, and professionals who need fast, reliable utilities without installing heavy software. Whether you want to humanize AI text to bypass detectors, summarize long research papers, or check word counts for blog posts, our tools run directly in your browser with lightning speed.</p>
+            <p>Completely free, secure, and optimized for mobile and desktop devices.</p>
+        </section>
+    </div>
 
     <script>
         function switchTool(tool) {
             const hBox = document.getElementById('toolHumanizer');
             const sBox = document.getElementById('toolSummarizer');
-            const bgBox = document.getElementById('toolBgRemover');
+            const cBox = document.getElementById('toolCounter');
             
             const hTab = document.getElementById('tabHumanizer');
             const sTab = document.getElementById('tabSummarizer');
-            const bgTab = document.getElementById('tabBgRemover');
+            const cTab = document.getElementById('tabCounter');
 
             hBox.classList.add('hidden');
             sBox.classList.add('hidden');
-            bgBox.classList.add('hidden');
+            cBox.classList.add('hidden');
             
             hTab.className = "px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition";
             sTab.className = "px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition";
-            bgTab.className = "px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition";
+            cTab.className = "px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition";
 
             if(tool === 'humanizer') {
                 hBox.classList.remove('hidden');
@@ -93,9 +117,9 @@
             } else if(tool === 'summarizer') {
                 sBox.classList.remove('hidden');
                 sTab.className = "px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-emerald-600 text-white transition shadow-lg";
-            } else if(tool === 'bgremover') {
-                bgBox.classList.remove('hidden');
-                bgTab.className = "px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-purple-600 text-white transition shadow-lg";
+            } else if(tool === 'counter') {
+                cBox.classList.remove('hidden');
+                cTab.className = "px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-amber-600 text-white transition shadow-lg";
             }
         }
 
@@ -119,45 +143,15 @@
             }, 800);
         }
 
-        function processImage() {
-            const fileInput = document.getElementById('imageInput');
-            const out = document.getElementById('bgOutput');
-            
-            if (fileInput.files.length === 0) {
-                out.innerHTML = "<span class='text-red-400'>Please select an image first!</span>";
-                return;
-            }
+        function runCounter() {
+            const text = document.getElementById('cInput').value;
+            const words = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+            const chars = text.length;
+            const seconds = Math.ceil(words / 3.3);
 
-            out.innerHTML = "<span class='text-purple-400 animate-pulse'>⚡ Optimizing & preparing clean output...</span>";
-
-            const file = fileInput.files[0];
-            const reader = new FileReader();
-
-            reader.onload = function(e) {
-                const img = new Image();
-                img.onload = function() {
-                    const canvas = document.getElementById('canvas');
-                    const ctx = canvas.getContext('2d');
-                    
-                    canvas.width = img.width;
-                    canvas.height = img.height;
-                    ctx.drawImage(img, 0, 0);
-
-                    // High-speed clean PNG generation pipeline
-                    const dataUrl = canvas.toDataURL('image/png');
-
-                    setTimeout(() => {
-                        out.innerHTML = `
-                            <span class='text-emerald-400 font-semibold'>✅ Processed Successfully!</span>
-                            <a href="${dataUrl}" download="clean-image.png" class="px-5 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-xs shadow-lg transition inline-block">
-                                Download Clean PNG
-                            </a>
-                        `;
-                    }, 800);
-                }
-                img.src = e.target.result;
-            }
-            reader.readAsDataURL(file);
+            document.getElementById('wordCount').innerText = words;
+            document.getElementById('charCount').innerText = chars;
+            document.getElementById('readTime').innerText = seconds + " sec";
         }
     </script>
 </body>
