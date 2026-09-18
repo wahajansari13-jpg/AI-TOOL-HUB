@@ -10,18 +10,21 @@
     <div class="max-w-3xl w-full">
         <!-- Header -->
         <header class="text-center mb-8">
-            <h1 class="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+            <h1 class="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 bg-clip-text text-transparent">
                 AI Micro-Tools Hub
             </h1>
             <p class="text-slate-400 text-sm mt-2">High-performance AI tools for daily productivity, completely free.</p>
             
             <!-- Tool Switcher Tabs -->
-            <div class="flex justify-center gap-4 mt-6">
-                <button onclick="switchTool('humanizer')" id="tabHumanizer" class="px-5 py-2 rounded-xl text-sm font-semibold bg-blue-600 text-white transition shadow-lg">
-                    AI Text Humanizer
+            <div class="flex flex-wrap justify-center gap-2 mt-6">
+                <button onclick="switchTool('humanizer')" id="tabHumanizer" class="px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-blue-600 text-white transition shadow-lg">
+                    AI Humanizer
                 </button>
-                <button onclick="switchTool('summarizer')" id="tabSummarizer" class="px-5 py-2 rounded-xl text-sm font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">
+                <button onclick="switchTool('summarizer')" id="tabSummarizer" class="px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">
                     Smart Summarizer
+                </button>
+                <button onclick="switchTool('bgremover')" id="tabBgRemover" class="px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">
+                    BG Remover
                 </button>
             </div>
         </header>
@@ -37,7 +40,7 @@
             </div>
         </div>
 
-        <!-- Tool 2: Smart Summarizer (High-Value) -->
+        <!-- Tool 2: Smart Summarizer -->
         <div id="toolSummarizer" class="hidden bg-slate-800 p-6 md:p-8 rounded-2xl shadow-xl border border-slate-700">
             <h2 class="text-xl font-bold mb-1 text-emerald-400">Smart Text & Notes Summarizer</h2>
             <p class="text-slate-400 text-xs mb-4">Instantly extract key bullet points and summaries from long articles or notes.</p>
@@ -47,25 +50,50 @@
                 <div id="sOutput" class="w-full p-3 bg-slate-900 border border-slate-700 rounded-xl text-sm text-slate-300 min-h-[100px] max-h-[180px] overflow-y-auto">Summary will appear here...</div>
             </div>
         </div>
+
+        <!-- Tool 3: AI Background Remover (New High-Value Tool) -->
+        <div id="toolBgRemover" class="hidden bg-slate-800 p-6 md:p-8 rounded-2xl shadow-xl border border-slate-700">
+            <h2 class="text-xl font-bold mb-1 text-purple-400">AI Background Remover</h2>
+            <p class="text-slate-400 text-xs mb-4">Upload an image to instantly isolate the subject and clear background.</p>
+            <div class="space-y-4">
+                <div class="border-2 border-dashed border-slate-700 rounded-xl p-6 text-center hover:border-purple-500 transition cursor-pointer">
+                    <input type="file" id="imageInput" accept="image/*" class="w-full text-sm text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-purple-600 file:text-white hover:file:bg-purple-500 cursor-pointer">
+                </div>
+                <button onclick="runBgRemover()" class="w-full py-3 bg-purple-600 hover:bg-purple-500 transition font-bold rounded-xl text-sm shadow-lg">Remove Background</button>
+                <div id="bgOutput" class="w-full p-4 bg-slate-900 border border-slate-700 rounded-xl text-sm text-slate-300 text-center min-h-[100px] flex items-center justify-center">Processed image output will appear here...</div>
+            </div>
+        </div>
     </div>
 
     <script>
         function switchTool(tool) {
             const hBox = document.getElementById('toolHumanizer');
             const sBox = document.getElementById('toolSummarizer');
+            const bgBox = document.getElementById('toolBgRemover');
+            
             const hTab = document.getElementById('tabHumanizer');
             const sTab = document.getElementById('tabSummarizer');
+            const bgTab = document.getElementById('tabBgRemover');
+
+            // Hide all
+            hBox.classList.add('hidden');
+            sBox.classList.add('hidden');
+            bgBox.classList.add('hidden');
+            
+            // Reset tabs style
+            hTab.className = "px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition";
+            sTab.className = "px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition";
+            bgTab.className = "px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition";
 
             if(tool === 'humanizer') {
                 hBox.classList.remove('hidden');
-                sBox.classList.add('hidden');
-                hTab.className = "px-5 py-2 rounded-xl text-sm font-semibold bg-blue-600 text-white transition shadow-lg";
-                sTab.className = "px-5 py-2 rounded-xl text-sm font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition";
-            } else {
+                hTab.className = "px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-blue-600 text-white transition shadow-lg";
+            } else if(tool === 'summarizer') {
                 sBox.classList.remove('hidden');
-                hBox.classList.add('hidden');
-                sTab.className = "px-5 py-2 rounded-xl text-sm font-semibold bg-emerald-600 text-white transition shadow-lg";
-                hTab.className = "px-5 py-2 rounded-xl text-sm font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition";
+                sTab.className = "px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-emerald-600 text-white transition shadow-lg";
+            } else if(tool === 'bgremover') {
+                bgBox.classList.remove('hidden');
+                bgTab.className = "px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-purple-600 text-white transition shadow-lg";
             }
         }
 
@@ -87,6 +115,19 @@
             setTimeout(() => {
                 out.innerText = "📌 [Key Takeaways / Summary]:\n• Core Subject: " + val.slice(0, 60) + "...\n• Key Insight: Optimized for fast reading and automated content breakdown.";
             }, 800);
+        }
+
+        function runBgRemover() {
+            const fileInput = document.getElementById('imageInput');
+            const out = document.getElementById('bgOutput');
+            if(fileInput.files.length === 0) {
+                out.innerText = "Please upload an image first!";
+                return;
+            }
+            out.innerText = "Processing image background...";
+            setTimeout(() => {
+                out.innerHTML = "✅ <span class='text-purple-400 font-semibold'>Background Successfully Removed!</span><br><span class='text-xs text-slate-400'>(Simulated transparent PNG generated for demo.)</span>";
+            }, 1200);
         }
     </script>
 </body>
