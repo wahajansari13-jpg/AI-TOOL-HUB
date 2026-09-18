@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Micro-Tools Hub - Free Online Utilities</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Background Removal AI Script Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.4.5/dist/bundle.js"></script>
 </head>
 <body class="min-h-screen bg-slate-900 text-white flex flex-col items-center p-4 md:p-8">
     <div class="max-w-3xl w-full">
@@ -51,23 +53,21 @@
             </div>
         </div>
 
-        <!-- Tool 3: AI Background Remover (With Real Download) -->
+        <!-- Tool 3: AI Background Remover (Real AI Model) -->
         <div id="toolBgRemover" class="hidden bg-slate-800 p-6 md:p-8 rounded-2xl shadow-xl border border-slate-700">
             <h2 class="text-xl font-bold mb-1 text-purple-400">AI Background Remover</h2>
-            <p class="text-slate-400 text-xs mb-4">Upload an image, process it, and download the cleaned version instantly.</p>
+            <p class="text-slate-400 text-xs mb-4">Powered by client-side AI. Removes background instantly in your browser.</p>
             <div class="space-y-4">
                 <div class="border-2 border-dashed border-slate-700 rounded-xl p-6 text-center hover:border-purple-500 transition">
                     <input type="file" id="imageInput" accept="image/*" class="w-full text-sm text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-purple-600 file:text-white hover:file:bg-purple-500 cursor-pointer">
                 </div>
-                <button onclick="runBgRemover()" class="w-full py-3 bg-purple-600 hover:bg-purple-500 transition font-bold rounded-xl text-sm shadow-lg">Process & Enable Download</button>
+                <button onclick="removeBackgroundAI()" class="w-full py-3 bg-purple-600 hover:bg-purple-500 transition font-bold rounded-xl text-sm shadow-lg">Remove Background with AI</button>
                 <div id="bgOutput" class="w-full p-4 bg-slate-900 border border-slate-700 rounded-xl text-sm text-slate-300 text-center min-h-[120px] flex flex-col items-center justify-center gap-3">
-                    <span class="text-slate-400">Processed image output will appear here...</span>
+                    <span class="text-slate-400">Upload an image and click remove...</span>
                 </div>
             </div>
         </div>
     </div>
-
-    <canvas id="imageCanvas" class="hidden"></canvas>
 
     <script>
         function switchTool(tool) {
@@ -119,44 +119,34 @@
             }, 800);
         }
 
-        function runBgRemover() {
+        async function removeBackgroundAI() {
             const fileInput = document.getElementById('imageInput');
             const out = document.getElementById('bgOutput');
-            if(fileInput.files.length === 0) {
-                out.innerHTML = "<span class='text-red-400'>Please upload an image first!</span>";
+            
+            if (fileInput.files.length === 0) {
+                out.innerHTML = "<span class='text-red-400'>Please select an image file first!</span>";
                 return;
             }
 
-            out.innerHTML = "<span class='text-purple-400 animate-pulse'>Processing and formatting image...</span>";
-
             const file = fileInput.files[0];
-            const reader = new FileReader();
+            out.innerHTML = "<span class='text-purple-400 animate-pulse'>🤖 AI is processing image background... (Please wait a few seconds)</span>";
 
-            reader.onload = function(event) {
-                const img = new Image();
-                img.onload = function() {
-                    const canvas = document.getElementById('imageCanvas');
-                    const ctx = canvas.getContext('2d');
-                    
-                    canvas.width = img.width;
-                    canvas.height = img.height;
-                    ctx.drawImage(img, 0, 0);
+            try {
+                // Using open-source imgly background removal model in browser
+                const imageBlob = await imglyRemoveBackground(file);
+                const url = URL.createObjectURL(imageBlob);
 
-                    // Generate downloadable link from canvas
-                    const dataUrl = canvas.toDataURL('image/png');
-
-                    setTimeout(() => {
-                        out.innerHTML = `
-                            <span class='text-emerald-400 font-semibold'>✅ Image Ready for Download!</span>
-                            <a href="${dataUrl}" download="processed-image.png" class="px-6 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-xs shadow-lg transition inline-block">
-                                Download Cleaned Image (.PNG)
-                            </a>
-                        `;
-                    }, 1000);
-                }
-                img.src = event.target.result;
+                out.innerHTML = `
+                    <span class='text-emerald-400 font-semibold'>✅ Background Removed Successfully!</span>
+                    <img src="${url}" class="max-h-32 rounded-lg border border-slate-700 bg-[linear-gradient(45deg,#202020_25%,transparent_25%),linear-gradient(-45deg,#202020_25%,transparent_25%),linear-gradient(45deg,transparent_75%,#202020_75%),linear-gradient(-45deg,transparent_75%,#202020_75%)] bg-[size:16px_16px]" alt="Processed">
+                    <a href="${url}" download="removed-bg.png" class="px-6 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-xs shadow-lg transition inline-block">
+                        Download Transparent PNG
+                    </a>
+                `;
+            } catch (error) {
+                console.error(error);
+                out.innerHTML = "<span class='text-red-400'>Error processing image. Try a smaller image format (JPG/PNG).</span>";
             }
-            reader.readAsDataURL(file);
         }
     </script>
 </body>
