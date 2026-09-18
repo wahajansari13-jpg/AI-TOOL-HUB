@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word & Character Counter | Free Utility</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center p-4 md:p-8">
+    <div class="max-w-4xl w-full">
+        <div class="mb-6">
+            <a href="index.html" class="text-xs font-bold text-amber-400 hover:underline">&larr; Back to Home Dashboard</a>
+        </div>
+        <header class="text-center mb-8">
+            <h1 class="text-3xl md:text-5xl font-extrabold text-amber-400 pb-2">Word & Character Counter</h1>
+            <p class="text-slate-400 text-sm">Real-time metrics calculator for text.</p>
+        </header>
+        <div class="bg-slate-900 p-6 md:p-8 rounded-2xl border border-slate-800 space-y-4 shadow-xl">
+            <textarea id="cInput" oninput="runCounter()" rows="6" class="w-full p-4 bg-slate-950 border border-slate-800 rounded-xl focus:outline-none focus:border-amber-500 text-sm text-slate-200 resize-none" placeholder="Type or paste content here..."></textarea>
+            <div class="grid grid-cols-3 gap-3 text-center">
+                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
+                    <span class="block text-xs text-slate-400 font-semibold">Words</span>
+                    <span id="wordCount" class="text-xl font-extrabold text-amber-400 mt-1 block">0</span>
+                </div>
+                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
+                    <span class="block text-xs text-slate-400 font-semibold">Characters</span>
+                    <span id="charCount" class="text-xl font-extrabold text-amber-400 mt-1 block">0</span>
+                </div>
+                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
+                    <span class="block text-xs text-slate-400 font-semibold">Reading Time</span>
+                    <span id="readTime" class="text-sm font-bold text-amber-400 mt-1 block">0 sec</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function runCounter() {
+            const text = document.getElementById('cInput').value;
+            const words = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+            const chars = text.length;
+            const seconds = Math.ceil(words / 3.3);
+            document.getElementById('wordCount').innerText = words;
+            document.getElementById('charCount').innerText = chars;
+            document.getElementById('readTime').innerText = seconds + " sec";
+        }
+    </script>
+</body>
+</html>
