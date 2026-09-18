@@ -1,161 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Google Search Console Verification Tag -->
     <meta name="google-site-verification" content="aKozBsNsoijbW9ZIjh44LJBRWX0MeXj5mV0eeIm6bZc" />
-
-    <!-- SEO Meta Tags for Top Ranking -->
-    <title>AI Micro-Tools Hub | Free AI Text Humanizer, Summarizer & Word Counter</title>
-    <meta name="description" content="Use free AI micro-tools including AI Text Humanizer, Smart Summarizer, and Word Counter. Bypass AI detectors and boost productivity instantly online.">
-    <meta name="keywords" content="AI text humanizer, free smart summarizer, word counter tool, AI productivity tools, bypass AI detector online">
-    <meta name="author" content="AI Micro-Tools Hub">
-    
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="AI Micro-Tools Hub - Free Online Utilities">
-    <meta property="og:description" content="Boost your productivity with free browser-based AI writing and text tools.">
-    <meta property="og:type" content="website">
-
+    <title>AI Micro-Tools Hub | World's #1 Free AI Productivity Suite</title>
+    <meta name="description" content="Discover elite free AI micro-tools, text humanizers, smart summarizers, and word counters. High-performance browser utilities engineered for creators.">
+    <meta name="keywords" content="ai micro tools hub, free ai humanizer, smart summarizer, word counter, productivity suite, programmatic seo">
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(51, 65, 85, 0.5);
+        }
+        .glow-effect:hover {
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
+        }
+    </style>
 </head>
-<body class="min-h-screen bg-slate-900 text-white flex flex-col items-center p-4 md:p-8">
-    <div class="max-w-3xl w-full">
-        <!-- Header -->
-        <header class="text-center mb-8">
-            <h1 class="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-blue-400 via-emerald-400 to-amber-400 bg-clip-text text-transparent">
-                AI Micro-Tools Hub
-            </h1>
-            <p class="text-slate-400 text-sm mt-2">High-performance utilities for daily productivity, completely free.</p>
-            
-            <!-- Tool Switcher Tabs -->
-            <div class="flex flex-wrap justify-center gap-2 mt-6">
-                <button onclick="switchTool('humanizer')" id="tabHumanizer" class="px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-blue-600 text-white transition shadow-lg">
-                    AI Humanizer
-                </button>
-                <button onclick="switchTool('summarizer')" id="tabSummarizer" class="px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">
-                    Smart Summarizer
-                </button>
-                <button onclick="switchTool('counter')" id="tabCounter" class="px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">
-                    Word Counter
-                </button>
-            </div>
-        </header>
+<body class="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-blue-500 selection:text-white">
 
-        <!-- Tool 1: AI Text Humanizer -->
-        <div id="toolHumanizer" class="bg-slate-800 p-6 md:p-8 rounded-2xl shadow-xl border border-slate-700">
-            <h2 class="text-xl font-bold mb-1 text-blue-400">AI Text Humanizer</h2>
-            <p class="text-slate-400 text-xs mb-4">Bypass AI detectors by rewriting robotic text into natural human flow.</p>
-            <div class="space-y-4">
-                <textarea id="hInput" rows="5" class="w-full p-3 bg-slate-900 border border-slate-700 rounded-xl focus:outline-none focus:border-blue-500 text-sm text-slate-200 resize-none" placeholder="Paste your AI text here..."></textarea>
-                <button onclick="runHumanizer()" class="w-full py-3 bg-blue-600 hover:bg-blue-500 transition font-bold rounded-xl text-sm shadow-lg">Humanize Text</button>
-                <div id="hOutput" class="w-full p-3 bg-slate-900 border border-slate-700 rounded-xl text-sm text-slate-300 min-h-[100px] max-h-[180px] overflow-y-auto">Result will appear here...</div>
-            </div>
+    <!-- 🌐 VIP Header & Navigation -->
+    <header class="sticky top-0 z-50 glass-card border-b border-slate-800/80 px-4 md:px-12 py-4 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2">
+            <div class="h-9 w-9 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-500 to-emerald-400 flex items-center justify-center font-black text-white text-lg shadow-lg shadow-blue-500/30">AI</div>
+            <span class="text-lg md:text-xl font-extrabold tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">Micro-Tools Hub</span>
+        </a>
+        
+        <!-- Desktop Nav Links -->
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+            <a href="index.html" class="text-blue-400 font-semibold hover:text-white transition">Home</a>
+            <a href="humanizer.html" class="hover:text-blue-400 transition">AI Humanizer</a>
+            <a href="summarizer.html" class="hover:text-emerald-400 transition">Summarizer</a>
+            <a href="counter.html" class="hover:text-amber-400 transition">Word Counter</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+            <a href="humanizer.html" class="hidden sm:inline-block px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 hover:bg-blue-500 text-white transition shadow-lg shadow-blue-600/30">Launch App 🚀</a>
+        </div>
+    </header>
+
+    <!-- 🚀 Hero Section -->
+    <section class="relative px-4 pt-16 pb-12 md:pt-24 md:pb-20 text-center max-w-5xl mx-auto flex flex-col items-center">
+        <div class="absolute inset-0 -z-10 flex items-center justify-center opacity-20 blur-3xl pointer-events-none">
+            <div class="w-[500px] h-[500px] bg-gradient-to-tr from-blue-600 to-emerald-500 rounded-full"></div>
+        </div>
+        
+        <span class="px-4 py-1.5 rounded-full text-xs font-bold bg-blue-950/80 text-blue-400 border border-blue-800/60 mb-6 shadow-inner">⚡ Next-Gen Programmatic Utilities</span>
+        
+        <h1 class="text-4xl md:text-7xl font-extrabold tracking-tight max-w-4xl leading-tight">
+            Supercharge Your Workflow With <span class="bg-gradient-to-r from-blue-400 via-emerald-400 to-amber-400 bg-clip-text text-transparent">Elite AI Micro-Tools</span>
+        </h1>
+        
+        <p class="mt-6 text-slate-400 text-base md:text-lg max-w-2xl leading-relaxed">
+            Instant, zero-friction browser utilities designed for students, professional writers, and digital marketers seeking absolute peak performance.
+        </p>
+    </section>
+
+    <!-- 🛠️ Main Categories & Tools Grid -->
+    <main class="flex-grow px-4 md:px-12 max-w-6xl mx-auto w-full pb-20">
+        <div class="flex items-center justify-between mb-8 border-b border-slate-800/80 pb-4">
+            <h2 class="text-xl md:text-2xl font-bold tracking-tight text-slate-200">Featured Tool Categories</h2>
+            <span class="text-xs text-slate-400 bg-slate-900 px-3 py-1 rounded-lg border border-slate-800">3 Active Modules</span>
         </div>
 
-        <!-- Tool 2: Smart Summarizer -->
-        <div id="toolSummarizer" class="hidden bg-slate-800 p-6 md:p-8 rounded-2xl shadow-xl border border-slate-700">
-            <h2 class="text-xl font-bold mb-1 text-emerald-400">Smart Text & Notes Summarizer</h2>
-            <p class="text-slate-400 text-xs mb-4">Instantly extract key bullet points and summaries from long articles or notes.</p>
-            <div class="space-y-4">
-                <textarea id="sInput" rows="5" class="w-full p-3 bg-slate-900 border border-slate-700 rounded-xl focus:outline-none focus:border-emerald-500 text-sm text-slate-200 resize-none" placeholder="Paste long text, article, or notes here..."></textarea>
-                <button onclick="runSummarizer()" class="w-full py-3 bg-emerald-600 hover:bg-emerald-500 transition font-bold rounded-xl text-sm shadow-lg">Generate Summary</button>
-                <div id="sOutput" class="w-full p-3 bg-slate-900 border border-slate-700 rounded-xl text-sm text-slate-300 min-h-[100px] max-h-[180px] overflow-y-auto">Summary will appear here...</div>
+        <div class="grid md:grid-cols-3 gap-6">
+            <!-- Tool Card 1: AI Humanizer -->
+            <div class="glass-card rounded-2xl p-6 glow-effect transition duration-300 flex flex-col justify-between border-slate-800 group">
+                <div>
+                    <div class="h-12 w-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-xl mb-4 group-hover:scale-110 transition">✨</div>
+                    <span class="text-[10px] uppercase tracking-wider font-extrabold text-blue-400 bg-blue-950/50 px-2.5 py-1 rounded-md border border-blue-800/40">Writing Optimizer</span>
+                    <h3 class="text-xl font-bold text-white mt-3">AI Text Humanizer</h3>
+                    <p class="text-slate-400 text-xs mt-2 leading-relaxed">Transform robotic machine drafts into natural, human-like fluid writing instantly. Bypass AI detectors effortlessly.</p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                    <span class="text-[11px] text-slate-400 font-medium">100% Free • Fast</span>
+                    <a href="humanizer.html" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-xs font-bold text-white transition shadow-md shadow-blue-600/30">Open Tool &rarr;</a>
+                </div>
             </div>
-        </div>
 
-        <!-- Tool 3: Word & Character Counter -->
-        <div id="toolCounter" class="hidden bg-slate-800 p-6 md:p-8 rounded-2xl shadow-xl border border-slate-700">
-            <h2 class="text-xl font-bold mb-1 text-amber-400">Word & Character Counter</h2>
-            <p class="text-slate-400 text-xs mb-4">Check words, characters, and reading time instantly for your content.</p>
-            <div class="space-y-4">
-                <textarea id="cInput" oninput="runCounter()" rows="5" class="w-full p-3 bg-slate-900 border border-slate-700 rounded-xl focus:outline-none focus:border-amber-500 text-sm text-slate-200 resize-none" placeholder="Type or paste your text here to count..."></textarea>
-                <div class="grid grid-cols-3 gap-3 text-center">
-                    <div class="bg-slate-900 p-3 rounded-xl border border-slate-700">
-                        <span class="block text-xs text-slate-400">Words</span>
-                        <span id="wordCount" class="text-lg font-bold text-amber-400">0</span>
-                    </div>
-                    <div class="bg-slate-900 p-3 rounded-xl border border-slate-700">
-                        <span class="block text-xs text-slate-400">Characters</span>
-                        <span id="charCount" class="text-lg font-bold text-amber-400">0</span>
-                    </div>
-                    <div class="bg-slate-900 p-3 rounded-xl border border-slate-700">
-                        <span class="block text-xs text-slate-400">Reading Time</span>
-                        <span id="readTime" class="text-sm font-bold text-amber-400">0 sec</span>
-                    </div>
+            <!-- Tool Card 2: Smart Summarizer -->
+            <div class="glass-card rounded-2xl p-6 glow-effect transition duration-300 flex flex-col justify-between border-slate-800 group">
+                <div>
+                    <div class="h-12 w-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-xl mb-4 group-hover:scale-110 transition">📌</div>
+                    <span class="text-[10px] uppercase tracking-wider font-extrabold text-emerald-400 bg-emerald-950/50 px-2.5 py-1 rounded-md border border-emerald-800/40">Content Extraction</span>
+                    <h3 class="text-xl font-bold text-white mt-3">Smart Summarizer</h3>
+                    <p class="text-slate-400 text-xs mt-2 leading-relaxed">Condense massive research papers, meeting transcripts, and lengthy essays into core executive bullet points.</p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                    <span class="text-[11px] text-slate-400 font-medium">Instant Analysis</span>
+                    <a href="summarizer.html" class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-xs font-bold text-white transition shadow-md shadow-emerald-600/30">Open Tool &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Tool Card 3: Word Counter -->
+            <div class="glass-card rounded-2xl p-6 glow-effect transition duration-300 flex flex-col justify-between border-slate-800 group">
+                <div>
+                    <div class="h-12 w-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-xl mb-4 group-hover:scale-110 transition">📊</div>
+                    <span class="text-[10px] uppercase tracking-wider font-extrabold text-amber-400 bg-amber-950/50 px-2.5 py-1 rounded-md border border-amber-800/40">Metrics & SEO</span>
+                    <h3 class="text-xl font-bold text-white mt-3">Word & Char Counter</h3>
+                    <p class="text-slate-400 text-xs mt-2 leading-relaxed">Calculate exact word totals, character limits, sentence distribution, and reading speed estimators in real-time.</p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                    <span class="text-[11px] text-slate-400 font-medium">Real-Time Data</span>
+                    <a href="counter.html" class="px-4 py-2 rounded-xl bg-amber-600 hover:bg-amber-500 text-xs font-bold text-white transition shadow-md shadow-amber-600/30">Open Tool &rarr;</a>
                 </div>
             </div>
         </div>
+    </main>
 
-        <!-- SEO Content Section -->
-        <section class="mt-12 bg-slate-800/50 p-6 rounded-2xl border border-slate-700/50 text-slate-400 text-xs leading-relaxed">
-            <h3 class="text-slate-200 font-bold text-sm mb-2">Why Use Our Free AI Micro-Tools Hub?</h3>
-            <p class="mb-2">Our platform is designed for students, content creators, and professionals who need fast, reliable utilities without installing heavy software. Whether you want to humanize AI text to bypass detectors, summarize long research papers, or check word counts for blog posts, our tools run directly in your browser with lightning speed.</p>
-            <p>Completely free, secure, and optimized for mobile and desktop devices.</p>
-        </section>
-    </div>
+    <!-- 🛡️ VIP Footer with Terms, Privacy & Contact -->
+    <footer class="bg-slate-900/90 border-t border-slate-800 py-12 px-4 md:px-12 text-slate-400 text-xs">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div class="space-y-3">
+                <div class="flex items-center gap-2">
+                    <div class="h-6 w-6 rounded-lg bg-blue-600 flex items-center justify-center font-bold text-white text-xs">AI</div>
+                    <span class="text-white font-bold text-sm tracking-wide">AI Micro-Tools Hub</span>
+                </div>
+                <p class="text-slate-400 leading-relaxed text-xs">The premier destination for fast, secure, client-side web productivity tools built for creators worldwide.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-3 text-sm">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="hover:text-white transition">Home Dashboard</a></li>
+                    <li><a href="humanizer.html" class="hover:text-blue-400 transition">AI Text Humanizer</a></li>
+                    <li><a href="summarizer.html" class="hover:text-emerald-400 transition">Smart Summarizer</a></li>
+                    <li><a href="counter.html" class="hover:text-amber-400 transition">Word Counter</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-3 text-sm">Legal & Policies</h4>
+                <ul class="space-y-2">
+                    <li><a href="privacy.html" class="hover:text-white transition">Privacy Policy</a></li>
+                    <li><a href="terms.html" class="hover:text-white transition">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-3 text-sm">Support</h4>
+                <ul class="space-y-2">
+                    <li><a href="contact.html" class="hover:text-white transition">Contact Us</a></li>
+                    <li><span class="text-emerald-400 flex items-center gap-1.5 mt-2">● Systems Operational</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-6xl mx-auto pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-slate-400 text-xs">
+            <p>&copy; 2026 AI Micro-Tools Hub. All rights reserved.</p>
+            <p class="mt-2 sm:mt-0">Engineered for World-Class Programmatic SEO & Performance.</p>
+        </div>
+    </footer>
 
-    <script>
-        function switchTool(tool) {
-            const hBox = document.getElementById('toolHumanizer');
-            const sBox = document.getElementById('toolSummarizer');
-            const cBox = document.getElementById('toolCounter');
-            
-            const hTab = document.getElementById('tabHumanizer');
-            const sTab = document.getElementById('tabSummarizer');
-            const cTab = document.getElementById('tabCounter');
-
-            hBox.classList.add('hidden');
-            sBox.classList.add('hidden');
-            cBox.classList.add('hidden');
-            
-            hTab.className = "px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition";
-            sTab.className = "px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition";
-            cTab.className = "px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition";
-
-            if(tool === 'humanizer') {
-                hBox.classList.remove('hidden');
-                hTab.className = "px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-blue-600 text-white transition shadow-lg";
-            } else if(tool === 'summarizer') {
-                sBox.classList.remove('hidden');
-                sTab.className = "px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-emerald-600 text-white transition shadow-lg";
-            } else if(tool === 'counter') {
-                cBox.classList.remove('hidden');
-                cTab.className = "px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-amber-600 text-white transition shadow-lg";
-            }
-        }
-
-        function runHumanizer() {
-            const val = document.getElementById('hInput').value;
-            const out = document.getElementById('hOutput');
-            if(!val.trim()) { out.innerText = "Please enter text!"; return; }
-            out.innerText = "Processing...";
-            setTimeout(() => {
-                out.innerText = "✨ [Humanized Version]:\n" + val + "\n\n(Tone adjusted for maximum readability and natural phrasing.)";
-            }, 800);
-        }
-
-        function runSummarizer() {
-            const val = Code = document.getElementById('sInput').value;
-            const out = document.getElementById('sOutput');
-            if(!val.trim()) { out.innerText = "Please enter text to summarize!"; return; }
-            out.innerText = "Analyzing text...";
-            setTimeout(() => {
-                out.innerText = "📌 [Key Takeaways / Summary]:\n• Core Subject: " + val.slice(0, 60) + "...\n• Key Insight: Optimized for fast reading and automated content breakdown.";
-            }, 800);
-        }
-
-        function runCounter() {
-            const text = document.getElementById('cInput').value;
-            const words = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
-            const chars = text.length;
-            const seconds = Math.ceil(words / 3.3);
-
-            document.getElementById('wordCount').innerText = words;
-            document.getElementById('charCount').innerText = chars;
-            document.getElementById('readTime').innerText = seconds + " sec";
-        }
-    </script>
 </body>
 </html>
