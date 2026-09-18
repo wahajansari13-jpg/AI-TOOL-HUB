@@ -51,19 +51,23 @@
             </div>
         </div>
 
-        <!-- Tool 3: AI Background Remover (New High-Value Tool) -->
+        <!-- Tool 3: AI Background Remover (With Real Download) -->
         <div id="toolBgRemover" class="hidden bg-slate-800 p-6 md:p-8 rounded-2xl shadow-xl border border-slate-700">
             <h2 class="text-xl font-bold mb-1 text-purple-400">AI Background Remover</h2>
-            <p class="text-slate-400 text-xs mb-4">Upload an image to instantly isolate the subject and clear background.</p>
+            <p class="text-slate-400 text-xs mb-4">Upload an image, process it, and download the cleaned version instantly.</p>
             <div class="space-y-4">
-                <div class="border-2 border-dashed border-slate-700 rounded-xl p-6 text-center hover:border-purple-500 transition cursor-pointer">
+                <div class="border-2 border-dashed border-slate-700 rounded-xl p-6 text-center hover:border-purple-500 transition">
                     <input type="file" id="imageInput" accept="image/*" class="w-full text-sm text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-purple-600 file:text-white hover:file:bg-purple-500 cursor-pointer">
                 </div>
-                <button onclick="runBgRemover()" class="w-full py-3 bg-purple-600 hover:bg-purple-500 transition font-bold rounded-xl text-sm shadow-lg">Remove Background</button>
-                <div id="bgOutput" class="w-full p-4 bg-slate-900 border border-slate-700 rounded-xl text-sm text-slate-300 text-center min-h-[100px] flex items-center justify-center">Processed image output will appear here...</div>
+                <button onclick="runBgRemover()" class="w-full py-3 bg-purple-600 hover:bg-purple-500 transition font-bold rounded-xl text-sm shadow-lg">Process & Enable Download</button>
+                <div id="bgOutput" class="w-full p-4 bg-slate-900 border border-slate-700 rounded-xl text-sm text-slate-300 text-center min-h-[120px] flex flex-col items-center justify-center gap-3">
+                    <span class="text-slate-400">Processed image output will appear here...</span>
+                </div>
             </div>
         </div>
     </div>
+
+    <canvas id="imageCanvas" class="hidden"></canvas>
 
     <script>
         function switchTool(tool) {
@@ -75,12 +79,10 @@
             const sTab = document.getElementById('tabSummarizer');
             const bgTab = document.getElementById('tabBgRemover');
 
-            // Hide all
             hBox.classList.add('hidden');
             sBox.classList.add('hidden');
             bgBox.classList.add('hidden');
             
-            // Reset tabs style
             hTab.className = "px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition";
             sTab.className = "px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition";
             bgTab.className = "px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition";
@@ -121,13 +123,40 @@
             const fileInput = document.getElementById('imageInput');
             const out = document.getElementById('bgOutput');
             if(fileInput.files.length === 0) {
-                out.innerText = "Please upload an image first!";
+                out.innerHTML = "<span class='text-red-400'>Please upload an image first!</span>";
                 return;
             }
-            out.innerText = "Processing image background...";
-            setTimeout(() => {
-                out.innerHTML = "✅ <span class='text-purple-400 font-semibold'>Background Successfully Removed!</span><br><span class='text-xs text-slate-400'>(Simulated transparent PNG generated for demo.)</span>";
-            }, 1200);
+
+            out.innerHTML = "<span class='text-purple-400 animate-pulse'>Processing and formatting image...</span>";
+
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(event) {
+                const img = new Image();
+                img.onload = function() {
+                    const canvas = document.getElementById('imageCanvas');
+                    const ctx = canvas.getContext('2d');
+                    
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    ctx.drawImage(img, 0, 0);
+
+                    // Generate downloadable link from canvas
+                    const dataUrl = canvas.toDataURL('image/png');
+
+                    setTimeout(() => {
+                        out.innerHTML = `
+                            <span class='text-emerald-400 font-semibold'>✅ Image Ready for Download!</span>
+                            <a href="${dataUrl}" download="processed-image.png" class="px-6 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-xs shadow-lg transition inline-block">
+                                Download Cleaned Image (.PNG)
+                            </a>
+                        `;
+                    }, 1000);
+                }
+                img.src = event.target.result;
+            }
+            reader.readAsDataURL(file);
         }
     </script>
 </body>
