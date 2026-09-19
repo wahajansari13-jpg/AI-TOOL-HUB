@@ -1,190 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Google Search Console Verification Tag -->
-    <meta name="google-site-verification" content="aKozBsNsoijbW9ZIjh44LJBRWX0MeXj5mV0eeIm6bZc" />
-
-    <!-- Ultimate SEO Meta Tags & Top 100+ Keyword Integration -->
-    <title>AI Micro-Tools Hub | Free AI Text Humanizer, Smart Summarizer & Word Counter</title>
-    <meta name="description" content="Use free AI micro-tools including AI Text Humanizer to bypass GPTZero and Turnitin, Smart Summarizer for research notes, and Word Counter. 100% free online productivity suite.">
-    <meta name="keywords" content="ai text humanizer, free ai humanizer, bypass ai detector, gptzero bypasser, turnitin bypass tool, smart text summarizer, article summarizer, online word counter, character counter, reading time calculator, seo writing tools, free productivity utilities, content rewriter, ai essay humanizer, ai paragraph rewriter, text spinner, content optimization tools, fast web utilities, micro tools hub, automation web apps">
-    <meta name="author" content="AI Micro-Tools Hub">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph / Social Media Meta Tags for Viral Sharing -->
-    <meta property="og:title" content="AI Micro-Tools Hub - Free AI Humanizer & Summarizer Utilities">
-    <meta property="og:description" content="Boost your content workflow with free browser-based AI text humanizers, smart summarizers, and word counters. Fast, secure, and accurate.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ai-tool-hub-crn7-git-main-al-aaliyy.vercel.app/">
-
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center p-4 md:p-8 selection:bg-blue-500 selection:text-white">
-    <div class="max-w-4xl w-full">
-        <!-- Header -->
-        <header class="text-center mb-10">
-            <h1 class="text-3xl md:text-5xl font-extrabold bg-gradient-to-r from-blue-400 via-emerald-400 to-amber-400 bg-clip-text text-transparent pb-2">
-                AI Micro-Tools Hub
-            </h1>
-            <p class="text-slate-400 text-sm md:text-base mt-2 max-w-2xl mx-auto">High-performance browser utilities engineered for students, writers, and digital marketers seeking instant productivity.</p>
-            
-            <!-- Tool Switcher Tabs -->
-            <div class="flex flex-wrap justify-center gap-2 mt-6">
-                <button onclick="switchTool('humanizer')" id="tabHumanizer" class="px-5 py-2.5 rounded-xl text-xs md:text-sm font-bold bg-blue-600 text-white transition shadow-lg shadow-blue-900/30">
-                    ✨ AI Text Humanizer
-                </button>
-                <button onclick="switchTool('summarizer')" id="tabSummarizer" class="px-5 py-2.5 rounded-xl text-xs md:text-sm font-bold bg-slate-900 text-slate-300 hover:bg-slate-800 transition border border-slate-800">
-                    📌 Smart Summarizer
-                </button>
-                <button onclick="switchTool('counter')" id="tabCounter" class="px-5 py-2.5 rounded-xl text-xs md:text-sm font-bold bg-slate-900 text-slate-300 hover:bg-slate-800 transition border border-slate-800">
-                    📊 Word & Char Counter
-                </button>
-            </div>
-        </header>
-
-        <!-- Tool 1: AI Text Humanizer -->
-        <div id="toolHumanizer" class="bg-slate-900 p-6 md:p-8 rounded-2xl shadow-2xl border border-slate-800">
-            <div class="flex items-center justify-between mb-2">
-                <h2 class="text-xl font-bold text-blue-400">AI Text Humanizer & Rewriter</h2>
-                <span class="text-xs bg-blue-950 text-blue-300 px-2.5 py-1 rounded-full border border-blue-800/50">Bypass AI Detectors</span>
-            </div>
-            <p class="text-slate-400 text-xs mb-4">Transform rigid, robotic machine-generated drafts into natural, human-like fluid writing instantly.</p>
-            <div class="space-y-4">
-                <textarea id="hInput" rows="6" class="w-full p-4 bg-slate-950 border border-slate-800 rounded-xl focus:outline-none focus:border-blue-500 text-sm text-slate-200 resize-none placeholder-slate-600" placeholder="Paste your AI text, essay, or article here to humanize..."></textarea>
-                <button onclick="runHumanizer()" class="w-full py-3.5 bg-blue-600 hover:bg-blue-500 transition font-bold rounded-xl text-sm shadow-lg shadow-blue-600/20">Humanize Text Now</button>
-                <div id="hOutput" class="w-full p-4 bg-slate-950 border border-slate-800 rounded-xl text-sm text-slate-300 min-h-[120px] max-h-[200px] overflow-y-auto">Humanized output will appear here...</div>
-            </div>
-        </div>
-
-        <!-- Tool 2: Smart Summarizer -->
-        <div id="toolSummarizer" class="hidden bg-slate-900 p-6 md:p-8 rounded-2xl shadow-2xl border border-slate-800">
-            <div class="flex items-center justify-between mb-2">
-                <h2 class="text-xl font-bold text-emerald-400">Smart Text & Notes Summarizer</h2>
-                <span class="text-xs bg-emerald-950 text-emerald-300 px-2.5 py-1 rounded-full border border-emerald-800/50">Instant Extraction</span>
-            </div>
-            <p class="text-slate-400 text-xs mb-4">Condense lengthy research papers, articles, or meeting transcripts into high-impact core bullet points.</p>
-            <div class="space-y-4">
-                <textarea id="sInput" rows="6" class="w-full p-4 bg-slate-950 border border-slate-800 rounded-xl focus:outline-none focus:border-emerald-500 text-sm text-slate-200 resize-none placeholder-slate-600" placeholder="Paste long text, notes, or essays here to summarize..."></textarea>
-                <button onclick="runSummarizer()" class="w-full py-3.5 bg-emerald-600 hover:bg-emerald-500 transition font-bold rounded-xl text-sm shadow-lg shadow-emerald-600/20">Generate Smart Summary</button>
-                <div id="sOutput" class="w-full p-4 bg-slate-950 border border-slate-800 rounded-xl text-sm text-slate-300 min-h-[120px] max-h-[200px] overflow-y-auto">Summary breakdown will appear here...</div>
-            </div>
-        </div>
-
-        <!-- Tool 3: Word & Character Counter -->
-        <div id="toolCounter" class="hidden bg-slate-900 p-6 md:p-8 rounded-2xl shadow-2xl border border-slate-800">
-            <div class="flex items-center justify-between mb-2">
-                <h2 class="text-xl font-bold text-amber-400">Advanced Word & Character Counter</h2>
-                <span class="text-xs bg-amber-950 text-amber-300 px-2.5 py-1 rounded-full border border-amber-800/50">Live Metrics</span>
-            </div>
-            <p class="text-slate-400 text-xs mb-4">Calculate exact word counts, character limits, sentence totals, and estimated reading times in real-time.</p>
-            <div class="space-y-4">
-                <textarea id="cInput" oninput="runCounter()" rows="6" class="w-full p-4 bg-slate-950 border border-slate-800 rounded-xl focus:outline-none focus:border-amber-500 text-sm text-slate-200 resize-none placeholder-slate-600" placeholder="Type or paste your content here for instant metrics..."></textarea>
-                <div class="grid grid-cols-3 gap-3 text-center">
-                    <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
-                        <span class="block text-xs text-slate-400 uppercase tracking-wider font-semibold">Words</span>
-                        <span id="wordCount" class="text-xl font-extrabold text-amber-400 mt-1 block">0</span>
-                    </div>
-                    <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
-                        <span class="block text-xs text-slate-400 uppercase tracking-wider font-semibold">Characters</span>
-                        <span id="charCount" class="text-xl font-extrabold text-amber-400 mt-1 block">0</span>
-                    </div>
-                    <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
-                        <span class="block text-xs text-slate-400 uppercase tracking-wider font-semibold">Reading Time</span>
-                        <span id="readTime" class="text-sm font-bold text-amber-400 mt-1 block">0 sec</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- SEO Content & Keyword Rich Footer Section for Google Ranking -->
-        <section class="mt-14 bg-slate-900/60 p-6 md:p-8 rounded-2xl border border-slate-800 text-slate-400 text-xs md:text-sm leading-relaxed space-y-4">
-            <h3 class="text-slate-200 font-bold text-base border-b border-slate-800 pb-2">Comprehensive Guide to AI Micro-Tools Hub for Content Creators</h3>
-            <p>Welcome to <strong>AI Micro-Tools Hub</strong>, your ultimate destination for free, lightning-fast browser-based productivity utilities. In the era of digital content creation, automation, and AI-generated text, students, copywriters, and bloggers require specialized tools to polish and optimize their work.</p>
-            
-            <div class="grid md:grid-cols-3 gap-4 pt-2">
-                <div class="bg-slate-950/50 p-4 rounded-xl border border-slate-800/80">
-                    <h4 class="text-blue-400 font-semibold mb-1">Why Use AI Humanizer?</h4>
-                    <p class="text-xs text-slate-400">Our text humanizer algorithm refines sentence structures, removes repetitive patterns, and injects natural cadence to ensure your content reads naturally.</p>
-                </div>
-                <div class="bg-slate-950/50 p-4 rounded-xl border border-slate-800/80">
-                    <h4 class="text-emerald-400 font-semibold mb-1">Smart Summarization Power</h4>
-                    <p class="text-xs text-slate-400">Save hours of manual reading. Extract vital insights, key bullet points, and high-level abstracts from lengthy academic articles or reports instantly.</p>
-                </div>
-                <div class="bg-slate-950/50 p-4 rounded-xl border border-slate-800/80">
-                    <h4 class="text-amber-400 font-semibold mb-1">Precision Word Metrics</h4>
-                    <p class="text-xs text-slate-400">Meet strict academic guidelines or SEO meta description limits with real-time word counting, character tracking, and reading speed estimators.</p>
-                </div>
-            </div>
-
-            <p class="text-slate-500 text-xs pt-2">All tools run entirely client-side or via optimized lightweight handlers, ensuring maximum data privacy and zero registration requirements. Bookmark our platform for daily writing and content optimization needs.</p>
-        </section>
-    </div>
-
-    <!-- JavaScript Handlers -->
-    <script>
-        function switchTool(tool) {
-            const hBox = document.getElementById('toolHumanizer');
-            const sBox = document.getElementById('toolSummarizer');
-            const cBox = document.getElementById('toolCounter');
-            
-            const hTab = document.getElementById('tabHumanizer');
-            const sTab = document.getElementById('tabSummarizer');
-            const cTab = document.getElementById('tabCounter');
-
-            hBox.classList.add('hidden');
-            sBox.classList.add('hidden');
-            cBox.classList.add('hidden');
-            
-            hTab.className = "px-5 py-2.5 rounded-xl text-xs md:text-sm font-bold bg-slate-900 text-slate-300 hover:bg-slate-800 transition border border-slate-800";
-            sTab.className = "px-5 py-2.5 rounded-xl text-xs md:text-sm font-bold bg-slate-900 text-slate-300 hover:bg-slate-800 transition border border-slate-800";
-            cTab.className = "px-5 py-2.5 rounded-xl text-xs md:text-sm font-bold bg-slate-900 text-slate-300 hover:bg-slate-800 transition border border-slate-800";
-
-            if(tool === 'humanizer') {
-                hBox.classList.remove('hidden');
-                hTab.className = "px-5 py-2.5 rounded-xl text-xs md:text-sm font-bold bg-blue-600 text-white transition shadow-lg shadow-blue-900/30";
-            } else if(tool === 'summarizer') {
-                sBox.classList.remove('hidden');
-                sTab.className = "px-5 py-2.5 rounded-xl text-xs md:text-sm font-bold bg-emerald-600 text-white transition shadow-lg shadow-emerald-900/30";
-            } else if(tool === 'counter') {
-                cBox.classList.remove('hidden');
-                cTab.className = "px-5 py-2.5 rounded-xl text-xs md:text-sm font-bold bg-amber-600 text-white transition shadow-lg shadow-amber-900/30";
-            }
-        }
-
-        function runHumanizer() {
-            const val = document.getElementById('hInput').value;
-            const out = document.getElementById('hOutput');
-            if(!val.trim()) { out.innerText = "Please enter text to humanize!"; return; }
-            out.innerText = "Processing text structure...";
-            setTimeout(() => {
-                out.innerText = "✨ [Humanized & Optimized Output]:\n" + val + "\n\n(Tone successfully adjusted for maximum readability, varied sentence length, and natural human flow.)";
-            }, 700);
-        }
-
-        function runSummarizer() {
-            const val = document.getElementById('sInput').value;
-            const out = document.getElementById('sOutput');
-            if(!val.trim()) { out.innerText = "Please enter text to summarize!"; return; }
-            out.innerText = "Analyzing key concepts...";
-            setTimeout(() => {
-                out.innerText = "📌 [Extracted Key Takeaways]:\n• Primary Theme: " + val.slice(0, 75) + "...\n• Core Insight: Optimized for rapid comprehension, concise bullet formatting, and high-value takeaways.";
-            }, 700);
-        }
-
-        function runCounter() {
-            const text = document.getElementById('cInput').value;
-            const words = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
-            const chars = text.length;
-            const seconds = Math.ceil(words / 3.3);
-
-            document.getElementById('wordCount').innerText = words;
-            document.getElementById('charCount').innerText = chars;
-            document.getElementById('readTime').innerText = seconds + " sec";
-        }
-    </script>
-</body>
-</html>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://ai-tool-hub-crn7-git-main-al-aaliyy.vercel.app/</loc>
+        <lastmod>2026-09-19</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://ai-tool-hub-crn7-git-main-al-aaliyy.vercel.app/humanizer.html</loc>
+        <lastmod>2026-09-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://ai-tool-hub-crn7-git-main-al-aaliyy.vercel.app/summarizer.html</loc>
+        <lastmod>2026-09-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://ai-tool-hub-crn7-git-main-al-aaliyy.vercel.app/counter.html</loc>
+        <lastmod>2026-09-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://ai-tool-hub-crn7-git-main-al-aaliyy.vercel.app/qr-generator.html</loc>
+        <lastmod>2026-09-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+</urlset>
