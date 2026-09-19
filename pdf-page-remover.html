@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<title>Free PDF Page Remover Online | Delete Unwanted Pages from PDF</title>
+<meta name="description" content="Delete unwanted pages from PDF online for free. Select pages to keep or remove. 100% private, works in browser, no upload to server.">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<style>
+body{background:#0b0f1a}
+.glass{background:rgba(15,23,42,.75);backdrop-filter:blur(12px);border:1px solid rgba(148,163,184,.12)}
+.page-btn{min-width:42px;height:42px}
+.page-btn.selected{background:#3b82f6;border-color:#3b82f6;color:white}
+</style>
+</head>
+<body class="text-slate-200 min-h-screen font-sans antialiased">
+<nav class="sticky top-0 z-50 border-b border-slate-800/80 bg-slate-950/90 backdrop-blur-md">
+<div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+<a href="index.html" class="flex items-center gap-2 font-bold text-lg">
+<span class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white text-sm font-bold">AI</span>
+Micro-Tools Hub
+</a>
+<div class="hidden sm:flex gap-5 text-sm font-medium text-slate-400">
+<a href="index.html" class="hover:text-white transition">Home</a>
+<a href="pdf-page-remover.html" class="text-blue-400">PDF Page Remover</a>
+<a href="counter.html" class="hover:text-white transition">Counter</a>
+<a href="qr-generator.html" class="hover:text-white transition">QR Code</a>
+</div>
+</div>
+</nav>
+
+<main class="max-w-3xl mx-auto px-4 py-10">
+<div class="text-center mb-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-medium mb-4">📄 PDF Tool</div>
+<h1 class="text-3xl sm:text-4xl font-bold text-white mb-3">PDF Page Remover</h1>
+<p class="text-slate-400 text-sm">Delete unwanted pages from your PDF. 100% private — file never leaves your browser.</p>
+</div>
+
+<div class="glass rounded-2xl p-6 sm:p-8">
+<!-- Upload -->
+<div id="uploadArea" class="border-2 border-dashed border-slate-600 rounded-xl p-8 text-center cursor-pointer hover:border-blue-500 transition" onclick="document.getElementById('fileInput').click()">
+<input type="file" id="fileInput" accept=".pdf" class="hidden">
+<p class="text-slate-300 font-medium">Click to upload PDF</p>
+<p class="text-xs text-slate-500 mt-1">or drag & drop</p>
+</div>
+
+<div id="toolArea" class="hidden mt-6">
+<p class="text-sm text-slate-400 mb-3">File: <span id="fileName" class="text-white"></span> · <span id="pageCount"></span> pages</p>
+
+<p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Click pages you want to <span class="text-red-400">DELETE</span></p>
+<div id="pagesGrid" class="flex flex-wrap gap-2 mb-5"></div>
+
+<div class="flex flex-wrap gap-3">
+<button onclick="selectAll()" class="px-4 py-2 rounded-lg bg-slate-800 border border-slate-600 text-sm hover:bg-slate-700 transition">Select All</button>
+<button onclick="selectNone()" class="px-4 py-2 rounded-lg bg-slate-800 border border-slate-600 text-sm hover:bg-slate-700 transition">Select None</button>
+<button onclick="processPDF()" id="processBtn" class="flex-1 min-w-[160px] bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-semibold py-2.5 rounded-xl transition">Delete Selected Pages</button>
+</div>
+<p id="status" class="text-xs text-slate-500 mt-3"></p>
+</div>
+</div>
+
+<div class="mt-6 text-xs text-slate-500">
+<p>• File stays in your browser only (no upload)</p>
+<p>• Select the pages you want to remove, then click the button</p>
+</div>
+</main>
+
+<footer class="border-t border-slate-800 mt-12 py-8 text-center text-slate-500 text-sm">© 2026 AI Micro-Tools Hub</footer>
+
+<script>
+const { PDFDocument } = PDFLib;
+let pdfBytes = null;
+let totalPages = 0;
+let selected = new Set();
+
+const fileInput = document.getElementById('fileInput');
+const uploadArea = document.getElementById('uploadArea');
+
+uploadArea.addEventListener('dragover', e => { e.preventDefault(); uploadArea.classList.add('border-blue-500'); });
+uploadArea.addEventListener('dragleave', () => uploadArea.classList.remove('border-blue-500'));
+uploadArea.addEventListener('drop', e => {
+  e.preventDefault();
+  uploadArea.classList.remove('border-blue-500');
+  if(e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+});
+fileInput.addEventListener('change', e => { if(e.target.files[0]) handleFile(e.target.files[0]); });
+
+async function handleFile(file){
+  if(file.type !== 'application/pdf'){ alert('Please select a PDF file'); return; }
+  const buffer = await file.arrayBuffer();
+  pdfBytes = buffer;
+  const pdf = await PDFDocument.load(buffer);
+  totalPages = pdf.getPageCount();
+  selected.clear();
+
+  document.getElementById('fileName').textContent = file.name;
+  document.getElementById('pageCount').textContent = totalPages;
+  document.getElementById('uploadArea').classList.add('hidden');
+  document.getElementById('toolArea').classList.remove('hidden');
+
+  const grid = document.getElementById('pagesGrid');
+  grid.innerHTML = '';
+  for(let i=1; i<=totalPages; i++){
+    const btn = document.createElement('button');
+    btn.className = 'page-btn rounded-lg border border-slate-600 bg-slate-800 text-sm font-medium hover:border-blue-400 transition';
+    btn.textContent = i;
+    btn.onclick = () => togglePage(i, btn);
+    grid.appendChild(btn);
+  }
+  document.getElementById('status').textContent = '';
+}
+
+function togglePage(num, btn){
+  if(selected.has(num)){
+    selected.delete(num);
+    btn.classList.remove('selected');
+  } else {
+    selected.add(num);
+    btn.classList.add('selected');
+  }
+}
+
+function selectAll(){
+  selected.clear();
+  document.querySelectorAll('.page-btn').forEach((btn,i) => {
+    selected.add(i+1);
+    btn.classList.add('selected');
+  });
+}
+function selectNone(){
+  selected.clear();
+  document.querySelectorAll('.page-btn').forEach(btn => btn.classList.remove('selected'));
+}
+
+async function processPDF(){
+  if(!pdfBytes) return;
+  if(selected.size === 0){
+    document.getElementById('status').textContent = '⚠️ Select at least one page to delete';
+    return;
+  }
+  if(selected.size === totalPages){
+    document.getElementById('status').textContent = '⚠️ Cannot delete all pages';
+    return;
+  }
+
+  document.getElementById('status').textContent = '🔄 Processing...';
+  document.getElementById('processBtn').disabled = true;
+
+  try {
+    const original = await PDFDocument.load(pdfBytes);
+    const newPdf = await PDFDocument.create();
+    const keep = [];
+    for(let i=0; i<totalPages; i++){
+      if(!selected.has(i+1)) keep.push(i);
+    }
+    const pages = await newPdf.copyPages(original, keep);
+    pages.forEach(p => newPdf.addPage(p));
+
+    const bytes = await newPdf.save();
+    const blob = new Blob([bytes], { type: 'application/pdf' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'pages-removed.pdf';
+    a.click();
+    URL.revokeObjectURL(url);
+
+    document.getElementById('status').textContent = '✓ Done! Downloaded with ' + keep.length + ' pages';
+  } catch(err){
+    document.getElementById('status').textContent = '❌ Error: ' + err.message;
+  }
+  document.getElementById('processBtn').disabled = false;
+}
+</script>
+</body>
+</html>
