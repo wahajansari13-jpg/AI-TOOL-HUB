@@ -1,48 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Word & Character Counter | Free Utility</title>
+    <title>Free Online Word & Character Counter | Reading Time Calculator</title>
+    <meta name="description" content="Calculate word counts, character limits, sentence totals, and estimated reading time instantly with our free online text metrics tool.">
+    <meta name="keywords" content="word counter, character counter, text statistics, reading time calculator, sentence count tool, online word checker, micro tools hub">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Word & Character Counter Utility",
+      "operatingSystem": "All",
+      "applicationCategory": "TextAnalysisApplication",
+      "offers": { "@type": "Offer", "price": "0.00", "priceCurrency": "USD" },
+      "description": "Real-time word, character, paragraph, and reading time metrics analyzer for writers and editors."
+    }
+    </script>
 </head>
-<body class="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center p-4 md:p-8">
-    <div class="max-w-4xl w-full">
-        <div class="mb-6">
-            <a href="index.html" class="text-xs font-bold text-amber-400 hover:underline">&larr; Back to Home Dashboard</a>
-        </div>
+<body class="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-amber-500 selection:text-white">
+
+    <header class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800 px-4 md:px-12 py-4 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2">
+            <div class="h-9 w-9 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-500 to-emerald-400 flex items-center justify-center font-black text-white text-lg shadow-lg">AI</div>
+            <span class="text-lg md:text-xl font-extrabold tracking-tight text-white">Micro-Tools Hub</span>
+        </a>
+        <nav class="flex items-center gap-4 text-sm font-medium text-slate-300">
+            <a href="index.html" class="hover:text-blue-400 transition">Home</a>
+            <a href="humanizer.html" class="hover:text-blue-400 transition">Humanizer</a>
+            <a href="summarizer.html" class="hover:text-emerald-400 transition">Summarizer</a>
+            <a href="counter.html" class="text-amber-400 font-semibold">Counter</a>
+            <a href="qr-generator.html" class="hover:text-purple-400 transition">QR Generator</a>
+        </nav>
+    </header>
+
+    <main class="max-w-4xl w-full mx-auto px-4 pt-10 pb-16 flex-grow">
         <header class="text-center mb-8">
-            <h1 class="text-3xl md:text-5xl font-extrabold text-amber-400 pb-2">Word & Character Counter</h1>
-            <p class="text-slate-400 text-sm">Real-time metrics calculator for text.</p>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-950 text-amber-400 border border-amber-800/60 mb-3 inline-block">📊 Real-Time Metrics & Analytics</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white pb-2">Word & Character Counter</h1>
+            <p class="text-slate-400 text-sm max-w-2xl mx-auto">Track exact word counts, character limits, sentence density, and estimated reading speeds instantaneously.</p>
         </header>
-        <div class="bg-slate-900 p-6 md:p-8 rounded-2xl border border-slate-800 space-y-4 shadow-xl">
-            <textarea id="cInput" oninput="runCounter()" rows="6" class="w-full p-4 bg-slate-950 border border-slate-800 rounded-xl focus:outline-none focus:border-amber-500 text-sm text-slate-200 resize-none" placeholder="Type or paste content here..."></textarea>
-            <div class="grid grid-cols-3 gap-3 text-center">
-                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
-                    <span class="block text-xs text-slate-400 font-semibold">Words</span>
-                    <span id="wordCount" class="text-xl font-extrabold text-amber-400 mt-1 block">0</span>
+
+        <div class="bg-slate-900 p-6 md:p-8 rounded-2xl border border-slate-800 space-y-6 shadow-2xl">
+            <textarea id="cInput" rows="8" class="w-full p-4 bg-slate-950 border border-slate-800 rounded-xl focus:outline-none focus:border-amber-500 text-sm text-slate-200 resize-none placeholder-slate-600" placeholder="Type or paste your text here to analyze metrics..."></textarea>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-center">
+                    <span class="block text-2xl md:text-3xl font-black text-amber-400" id="wordCount">0</span>
+                    <span class="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Words</span>
                 </div>
-                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
-                    <span class="block text-xs text-slate-400 font-semibold">Characters</span>
-                    <span id="charCount" class="text-xl font-extrabold text-amber-400 mt-1 block">0</span>
+                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-center">
+                    <span class="block text-2xl md:text-3xl font-black text-amber-400" id="charCount">0</span>
+                    <span class="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Characters</span>
                 </div>
-                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
-                    <span class="block text-xs text-slate-400 font-semibold">Reading Time</span>
-                    <span id="readTime" class="text-sm font-bold text-amber-400 mt-1 block">0 sec</span>
+                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-center">
+                    <span class="block text-2xl md:text-3xl font-black text-amber-400" id="sentenceCount">0</span>
+                    <span class="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Sentences</span>
+                </div>
+                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-center">
+                    <span class="block text-2xl md:text-3xl font-black text-amber-400" id="readTime">0s</span>
+                    <span class="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Read Time</span>
                 </div>
             </div>
         </div>
-    </div>
+
+        <article class="mt-16 space-y-8 text-slate-300 text-sm leading-relaxed border-t border-slate-800 pt-10">
+            <section>
+                <h2 class="text-2xl font-bold text-white mb-3">Why Precise Text Metrics Matter for SEO and Writing</h2>
+                <p>Whether you are crafting meta descriptions constrained to 160 characters, writing blog posts optimized for 1,500+ words, or submitting academic papers with strict word ceilings, accuracy is paramount. Our **Word & Character Counter** provides instant, lightning-fast analytics directly within your browser window without page reloads.</p>
+            </section>
+        </article>
+    </main>
+
+    <footer class="bg-slate-900 border-t border-slate-800 py-8 px-4 text-center text-slate-500 text-xs">
+        <p>&copy; 2026 AI Micro-Tools Hub. All rights reserved. World-Class Programmatic SEO & Metrics Platform.</p>
+    </footer>
+
     <script>
-        function runCounter() {
-            const text = document.getElementById('cInput').value;
-            const words = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
-            const chars = text.length;
-            const seconds = Math.ceil(words / 3.3);
+        const cInput = document.getElementById('cInput');
+        cInput.addEventListener('input', function() {
+            let val = cInput.value;
+            let words = val.trim() === '' ? 0 : val.trim().split(/\s+/).length;
+            let chars = val.length;
+            let sentences = val.trim() === '' ? 0 : val.split(/[.!?]+/).filter(Boolean).length;
+            let readSeconds = Math.ceil(words / 200 * 60);
+
             document.getElementById('wordCount').innerText = words;
             document.getElementById('charCount').innerText = chars;
-            document.getElementById('readTime').innerText = seconds + " sec";
-        }
+            document.getElementById('sentenceCount').innerText = sentences;
+            document.getElementById('readTime').innerText = readSeconds < 60 ? readSeconds + 's' : Math.ceil(readSeconds/60) + 'm';
+        });
     </script>
 </body>
 </html>
