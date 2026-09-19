@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<title>Free Case Converter Online | UPPER, lower, Title Case Tool</title>
+<meta name="description" content="Free online case converter. Convert text to UPPERCASE, lowercase, Title Case, Sentence case instantly. No signup required.">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+body{background:#0b0f1a}
+.glass{background:rgba(15,23,42,.75);backdrop-filter:blur(12px);border:1px solid rgba(148,163,184,.12)}
+textarea::-webkit-scrollbar{width:6px}
+textarea::-webkit-scrollbar-thumb{background:#334155;border-radius:3px}
+</style>
+</head>
+<body class="text-slate-200 min-h-screen font-sans antialiased">
+<nav class="sticky top-0 z-50 border-b border-slate-800/80 bg-slate-950/90 backdrop-blur-md">
+<div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+<a href="index.html" class="flex items-center gap-2 font-bold text-lg">
+<span class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white text-sm font-bold">AI</span>
+Micro-Tools Hub
+</a>
+<div class="hidden sm:flex gap-5 text-sm font-medium text-slate-400">
+<a href="index.html" class="hover:text-white transition">Home</a>
+<a href="case-converter.html" class="text-blue-400">Case Converter</a>
+<a href="password-generator.html" class="hover:text-white transition">Password</a>
+<a href="counter.html" class="hover:text-white transition">Counter</a>
+<a href="qr-generator.html" class="hover:text-white transition">QR Code</a>
+</div>
+</div>
+</nav>
+
+<main class="max-w-4xl mx-auto px-4 py-10">
+<div class="text-center mb-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-medium mb-4">Aa Text Case Tool</div>
+<h1 class="text-3xl sm:text-4xl font-bold text-white mb-3">Case Converter</h1>
+<p class="text-slate-400 text-sm">Convert text to UPPERCASE, lowercase, Title Case, Sentence case instantly.</p>
+</div>
+
+<div class="glass rounded-2xl p-6 sm:p-8">
+<label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Enter Your Text</label>
+<textarea id="input" rows="6" placeholder="Type or paste your text here..." class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-3 text-slate-200 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 resize-y text-sm"></textarea>
+
+<div class="flex flex-wrap gap-2 mt-4">
+<button onclick="convert('upper')" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-blue-600 border border-slate-600 text-sm font-medium transition">UPPERCASE</button>
+<button onclick="convert('lower')" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-blue-600 border border-slate-600 text-sm font-medium transition">lowercase</button>
+<button onclick="convert('title')" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-blue-600 border border-slate-600 text-sm font-medium transition">Title Case</button>
+<button onclick="convert('sentence')" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-blue-600 border border-slate-600 text-sm font-medium transition">Sentence case</button>
+<button onclick="convert('toggle')" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-blue-600 border border-slate-600 text-sm font-medium transition">tOGGLE cASE</button>
+<button onclick="convert('clear')" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-red-600/80 border border-slate-600 text-sm font-medium transition">Clear</button>
+</div>
+
+<label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mt-6 mb-2">Result</label>
+<textarea id="output" rows="6" readonly class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-3 text-slate-300 text-sm resize-y"></textarea>
+
+<div class="flex gap-3 mt-3">
+<button onclick="copyResult()" class="px-5 py-2.5 rounded-xl border border-slate-600 text-slate-300 hover:bg-slate-800 transition text-sm font-medium">Copy Result</button>
+</div>
+<p id="status" class="text-xs text-slate-500 mt-2"></p>
+</div>
+</main>
+
+<footer class="border-t border-slate-800 mt-12 py-8 text-center text-slate-500 text-sm">© 2026 AI Micro-Tools Hub</footer>
+
+<script>
+function convert(type){
+  const input = document.getElementById('input').value;
+  let result = '';
+  if(type === 'upper') result = input.toUpperCase();
+  else if(type === 'lower') result = input.toLowerCase();
+  else if(type === 'title') result = input.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+  else if(type === 'sentence') result = input.toLowerCase().replace(/(^\s*\w|[.!?]\s*\w)/g, c => c.toUpperCase());
+  else if(type === 'toggle') result = input.split('').map(c => c === c.toUpperCase() ? c.toLowerCase() : c.toUpperCase()).join('');
+  else if(type === 'clear'){ document.getElementById('input').value=''; document.getElementById('output').value=''; document.getElementById('status').textContent=''; return; }
+  document.getElementById('output').value = result;
+  document.getElementById('status').textContent = '✓ Converted';
+}
+function copyResult(){
+  const t = document.getElementById('output').value;
+  if(!t) return;
+  navigator.clipboard.writeText(t).then(()=> document.getElementById('status').textContent = '✓ Copied!');
+}
+</script>
+</body>
+</html>
