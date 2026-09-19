@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="aKozBsNsoijbW9ZIjh44LJBRWX0MeXj5mV0eeIm6bZc" />
     <title>AI Micro-Tools Hub | World's #1 Free AI Productivity Suite</title>
-    <meta name="description" content="Discover elite free AI micro-tools, text humanizers, smart summarizers, and word counters. High-performance browser utilities engineered for creators.">
-    <meta name="keywords" content="ai micro tools hub, free ai humanizer, smart summarizer, word counter, productivity suite, programmatic seo">
+    <meta name="description" content="Discover elite free AI micro-tools, text humanizers, smart summarizers, word counters, and QR code generators.">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .glass-card {
@@ -21,133 +20,93 @@
 </head>
 <body class="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-blue-500 selection:text-white">
 
-    <!-- 🌐 VIP Header & Navigation -->
+    <!-- Header -->
     <header class="sticky top-0 z-50 glass-card border-b border-slate-800/80 px-4 md:px-12 py-4 flex items-center justify-between">
         <a href="index.html" class="flex items-center gap-2">
-            <div class="h-9 w-9 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-500 to-emerald-400 flex items-center justify-center font-black text-white text-lg shadow-lg shadow-blue-500/30">AI</div>
-            <span class="text-lg md:text-xl font-extrabold tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">Micro-Tools Hub</span>
+            <div class="h-9 w-9 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-500 to-emerald-400 flex items-center justify-center font-black text-white text-lg shadow-lg">AI</div>
+            <span class="text-lg md:text-xl font-extrabold tracking-tight text-white">Micro-Tools Hub</span>
         </a>
-        
-        <!-- Desktop Nav Links -->
         <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
-            <a href="index.html" class="text-blue-400 font-semibold hover:text-white transition">Home</a>
+            <a href="index.html" class="text-blue-400 font-semibold">Home</a>
             <a href="humanizer.html" class="hover:text-blue-400 transition">AI Humanizer</a>
             <a href="summarizer.html" class="hover:text-emerald-400 transition">Summarizer</a>
             <a href="counter.html" class="hover:text-amber-400 transition">Word Counter</a>
+            <a href="qr-generator.html" class="hover:text-purple-400 transition">QR Generator</a>
         </nav>
-
-        <div class="flex items-center gap-3">
-            <a href="humanizer.html" class="hidden sm:inline-block px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 hover:bg-blue-500 text-white transition shadow-lg shadow-blue-600/30">Launch App 🚀</a>
-        </div>
     </header>
 
-    <!-- 🚀 Hero Section -->
-    <section class="relative px-4 pt-16 pb-12 md:pt-24 md:pb-20 text-center max-w-5xl mx-auto flex flex-col items-center">
-        <div class="absolute inset-0 -z-10 flex items-center justify-center opacity-20 blur-3xl pointer-events-none">
-            <div class="w-[500px] h-[500px] bg-gradient-to-tr from-blue-600 to-emerald-500 rounded-full"></div>
-        </div>
-        
-        <span class="px-4 py-1.5 rounded-full text-xs font-bold bg-blue-950/80 text-blue-400 border border-blue-800/60 mb-6 shadow-inner">⚡ Next-Gen Programmatic Utilities</span>
-        
+    <!-- Hero Section -->
+    <section class="px-4 pt-16 pb-12 text-center max-w-5xl mx-auto flex flex-col items-center">
+        <span class="px-4 py-1.5 rounded-full text-xs font-bold bg-blue-950/80 text-blue-400 border border-blue-800/60 mb-6">⚡ Next-Gen Programmatic Utilities</span>
         <h1 class="text-4xl md:text-7xl font-extrabold tracking-tight max-w-4xl leading-tight">
-            Supercharge Your Workflow With <span class="bg-gradient-to-r from-blue-400 via-emerald-400 to-amber-400 bg-clip-text text-transparent">Elite AI Micro-Tools</span>
+            Supercharge Your Workflow With <span class="bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 bg-clip-text text-transparent">Elite Micro-Tools</span>
         </h1>
-        
-        <p class="mt-6 text-slate-400 text-base md:text-lg max-w-2xl leading-relaxed">
-            Instant, zero-friction browser utilities designed for students, professional writers, and digital marketers seeking absolute peak performance.
-        </p>
     </section>
 
-    <!-- 🛠️ Main Categories & Tools Grid -->
+    <!-- Tools Grid -->
     <main class="flex-grow px-4 md:px-12 max-w-6xl mx-auto w-full pb-20">
-        <div class="flex items-center justify-between mb-8 border-b border-slate-800/80 pb-4">
-            <h2 class="text-xl md:text-2xl font-bold tracking-tight text-slate-200">Featured Tool Categories</h2>
-            <span class="text-xs text-slate-400 bg-slate-900 px-3 py-1 rounded-lg border border-slate-800">3 Active Modules</span>
+        <div class="flex items-center justify-between mb-8 border-b border-slate-800 pb-4">
+            <h2 class="text-xl md:text-2xl font-bold text-slate-200">Active Modules (4 Tools)</h2>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-6">
-            <!-- Tool Card 1: AI Humanizer -->
-            <div class="glass-card rounded-2xl p-6 glow-effect transition duration-300 flex flex-col justify-between border-slate-800 group">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Tool 1 -->
+            <div class="glass-card rounded-2xl p-6 glow-effect transition flex flex-col justify-between">
                 <div>
-                    <div class="h-12 w-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-xl mb-4 group-hover:scale-110 transition">✨</div>
-                    <span class="text-[10px] uppercase tracking-wider font-extrabold text-blue-400 bg-blue-950/50 px-2.5 py-1 rounded-md border border-blue-800/40">Writing Optimizer</span>
-                    <h3 class="text-xl font-bold text-white mt-3">AI Text Humanizer</h3>
-                    <p class="text-slate-400 text-xs mt-2 leading-relaxed">Transform robotic machine drafts into natural, human-like fluid writing instantly. Bypass AI detectors effortlessly.</p>
+                    <div class="h-10 w-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-lg mb-4">✨</div>
+                    <h3 class="text-lg font-bold text-white">AI Text Humanizer</h3>
+                    <p class="text-slate-400 text-xs mt-2">Bypass AI detectors and convert robotic drafts into natural prose.</p>
                 </div>
-                <div class="mt-8 pt-4 border-t border-slate-800/80 flex items-center justify-between">
-                    <span class="text-[11px] text-slate-400 font-medium">100% Free • Fast</span>
-                    <a href="humanizer.html" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-xs font-bold text-white transition shadow-md shadow-blue-600/30">Open Tool &rarr;</a>
+                <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
+                    <span class="text-[10px] text-blue-400 font-bold">Writing Tool</span>
+                    <a href="humanizer.html" class="px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-xs font-bold text-white">Open &rarr;</a>
                 </div>
             </div>
 
-            <!-- Tool Card 2: Smart Summarizer -->
-            <div class="glass-card rounded-2xl p-6 glow-effect transition duration-300 flex flex-col justify-between border-slate-800 group">
+            <!-- Tool 2 -->
+            <div class="glass-card rounded-2xl p-6 glow-effect transition flex flex-col justify-between">
                 <div>
-                    <div class="h-12 w-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-xl mb-4 group-hover:scale-110 transition">📌</div>
-                    <span class="text-[10px] uppercase tracking-wider font-extrabold text-emerald-400 bg-emerald-950/50 px-2.5 py-1 rounded-md border border-emerald-800/40">Content Extraction</span>
-                    <h3 class="text-xl font-bold text-white mt-3">Smart Summarizer</h3>
-                    <p class="text-slate-400 text-xs mt-2 leading-relaxed">Condense massive research papers, meeting transcripts, and lengthy essays into core executive bullet points.</p>
+                    <div class="h-10 w-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-lg mb-4">📌</div>
+                    <h3 class="text-lg font-bold text-white">Smart Summarizer</h3>
+                    <p class="text-slate-400 text-xs mt-2">Condense heavy essays and articles into core bullet points.</p>
                 </div>
-                <div class="mt-8 pt-4 border-t border-slate-800/80 flex items-center justify-between">
-                    <span class="text-[11px] text-slate-400 font-medium">Instant Analysis</span>
-                    <a href="summarizer.html" class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-xs font-bold text-white transition shadow-md shadow-emerald-600/30">Open Tool &rarr;</a>
+                <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
+                    <span class="text-[10px] text-emerald-400 font-bold">Extraction</span>
+                    <a href="summarizer.html" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-xs font-bold text-white">Open &rarr;</a>
                 </div>
             </div>
 
-            <!-- Tool Card 3: Word Counter -->
-            <div class="glass-card rounded-2xl p-6 glow-effect transition duration-300 flex flex-col justify-between border-slate-800 group">
+            <!-- Tool 3 -->
+            <div class="glass-card rounded-2xl p-6 glow-effect transition flex flex-col justify-between">
                 <div>
-                    <div class="h-12 w-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-xl mb-4 group-hover:scale-110 transition">📊</div>
-                    <span class="text-[10px] uppercase tracking-wider font-extrabold text-amber-400 bg-amber-950/50 px-2.5 py-1 rounded-md border border-amber-800/40">Metrics & SEO</span>
-                    <h3 class="text-xl font-bold text-white mt-3">Word & Char Counter</h3>
-                    <p class="text-slate-400 text-xs mt-2 leading-relaxed">Calculate exact word totals, character limits, sentence distribution, and reading speed estimators in real-time.</p>
+                    <div class="h-10 w-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-lg mb-4">📊</div>
+                    <h3 class="text-lg font-bold text-white">Word & Char Counter</h3>
+                    <p class="text-slate-400 text-xs mt-2">Calculate exact word totals, character limits, and reading times.</p>
                 </div>
-                <div class="mt-8 pt-4 border-t border-slate-800/80 flex items-center justify-between">
-                    <span class="text-[11px] text-slate-400 font-medium">Real-Time Data</span>
-                    <a href="counter.html" class="px-4 py-2 rounded-xl bg-amber-600 hover:bg-amber-500 text-xs font-bold text-white transition shadow-md shadow-amber-600/30">Open Tool &rarr;</a>
+                <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
+                    <span class="text-[10px] text-amber-400 font-bold">Metrics</span>
+                    <a href="counter.html" class="px-3 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-xs font-bold text-white">Open &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Tool 4 (New QR Generator) -->
+            <div class="glass-card rounded-2xl p-6 glow-effect transition flex flex-col justify-between">
+                <div>
+                    <div class="h-10 w-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-lg mb-4">📷</div>
+                    <h3 class="text-lg font-bold text-white">QR Code Generator</h3>
+                    <p class="text-slate-400 text-xs mt-2">Generate clean, custom scannable QR codes for any link or text.</p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
+                    <span class="text-[10px] text-purple-400 font-bold">Utility</span>
+                    <a href="qr-generator.html" class="px-3 py-1.5 rounded-lg bg-purple-600 hover:bg-purple-500 text-xs font-bold text-white">Open &rarr;</a>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- 🛡️ VIP Footer with Terms, Privacy & Contact -->
-    <footer class="bg-slate-900/90 border-t border-slate-800 py-12 px-4 md:px-12 text-slate-400 text-xs">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-            <div class="space-y-3">
-                <div class="flex items-center gap-2">
-                    <div class="h-6 w-6 rounded-lg bg-blue-600 flex items-center justify-center font-bold text-white text-xs">AI</div>
-                    <span class="text-white font-bold text-sm tracking-wide">AI Micro-Tools Hub</span>
-                </div>
-                <p class="text-slate-400 leading-relaxed text-xs">The premier destination for fast, secure, client-side web productivity tools built for creators worldwide.</p>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-3 text-sm">Quick Links</h4>
-                <ul class="space-y-2">
-                    <li><a href="index.html" class="hover:text-white transition">Home Dashboard</a></li>
-                    <li><a href="humanizer.html" class="hover:text-blue-400 transition">AI Text Humanizer</a></li>
-                    <li><a href="summarizer.html" class="hover:text-emerald-400 transition">Smart Summarizer</a></li>
-                    <li><a href="counter.html" class="hover:text-amber-400 transition">Word Counter</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-3 text-sm">Legal & Policies</h4>
-                <ul class="space-y-2">
-                    <li><a href="privacy.html" class="hover:text-white transition">Privacy Policy</a></li>
-                    <li><a href="terms.html" class="hover:text-white transition">Terms & Conditions</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-3 text-sm">Support</h4>
-                <ul class="space-y-2">
-                    <li><a href="contact.html" class="hover:text-white transition">Contact Us</a></li>
-                    <li><span class="text-emerald-400 flex items-center gap-1.5 mt-2">● Systems Operational</span></li>
-                </ul>
-            </div>
-        </div>
-        <div class="max-w-6xl mx-auto pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-slate-400 text-xs">
-            <p>&copy; 2026 AI Micro-Tools Hub. All rights reserved.</p>
-            <p class="mt-2 sm:mt-0">Engineered for World-Class Programmatic SEO & Performance.</p>
-        </div>
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 py-8 px-4 text-center text-slate-500 text-xs">
+        <p>&copy; 2026 AI Micro-Tools Hub. All rights reserved. World-Class Programmatic SEO Platform.</p>
     </footer>
 
 </body>
