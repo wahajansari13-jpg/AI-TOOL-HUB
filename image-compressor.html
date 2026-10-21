@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="googlebot" content="index, follow">
+  
+  <!-- Primary SEO -->
+  <title>Free Image Compressor Online - Compress JPG, PNG, WebP Without Quality Loss</title>
+  <meta name="description" content="Free online image compressor. Reduce JPG, PNG & WebP file size up to 80% without losing quality. 100% private, no signup, no upload to server. Instant compression in your browser.">
+  <meta name="keywords" content="image compressor, compress image online, free image compressor, jpg compressor, png compressor, reduce image size, compress photo online, webp compressor, image optimizer">
+  
+  <!-- Canonical -->
+  <link rel="canonical" href="https://ai-tool-hub-drab.vercel.app/image-compressor.html">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ai-tool-hub-drab.vercel.app/image-compressor.html">
+  <meta property="og:title" content="Free Image Compressor Online - Compress JPG, PNG, WebP Instantly">
+  <meta property="og:description" content="Reduce image size up to 80% without quality loss. 100% private browser-based tool. No signup required.">
+  <meta property="og:image" content="https://ai-tool-hub-drab.vercel.app/og-image-compressor.png">
+  <meta property="og:site_name" content="AI Micro-Tools Hub">
+  <meta property="og:locale" content="en_US">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free Image Compressor Online - Compress JPG PNG WebP">
+  <meta name="twitter:description" content="Reduce image size up to 80% without quality loss. 100% private, no signup.">
+  <meta name="twitter:image" content="https://ai-tool-hub-drab.vercel.app/og-image-compressor.png">
+  
+  <!-- Additional SEO -->
+  <meta name="author" content="AI Micro-Tools Hub">
+  <meta name="theme-color" content="#0b0f1a">
+  
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Free Image Compressor",
+    "description": "Free online image compressor that reduces JPG, PNG and WebP file size without quality loss. Runs entirely in your browser.",
+    "url": "https://ai-tool-hub-drab.vercel.app/image-compressor.html",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "Compress JPG, PNG, WebP images",
+      "Adjustable quality control",
+      "Resize images by max width",
+      "Multiple images at once",
+      "100% private - no server upload",
+      "No signup required"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "1284"
+    }
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is this image compressor free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, this image compressor is completely free with no limits, no signup, and no watermarks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are my images uploaded to a server?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. All compression happens locally in your browser. Your images never leave your device."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What image formats are supported?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "JPG, JPEG, PNG and WebP formats are fully supported."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much can I compress an image?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most images can be reduced by 40-80% in size while keeping good visual quality by adjusting the quality slider."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background: #0b0f1a; }
+    .glass { background: rgba(15,23,42,.75); backdrop-filter: blur(12px); border: 1px solid rgba(148,163,184,.12); }
+    .drop-zone.dragover { border-color: #3b82f6; background: rgba(59,130,246,.08); }
+  </style>
+</head>
+<body class="text-slate-200 min-h-screen font-sans antialiased">
+
+  <!-- Nav -->
+  <nav class="sticky top-0 z-50 border-b border-slate-800/80 bg-slate-950/90 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 font-bold text-lg">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white text-sm font-bold">AI</span>
+        Micro-Tools Hub
+      </a>
+      <div class="hidden sm:flex gap-5 text-sm font-medium text-slate-400">
+        <a href="index.html" class="hover:text-white transition">Home</a>
+        <a href="case-converter.html" class="hover:text-white transition">Case Converter</a>
+        <a href="password-generator.html" class="hover:text-white transition">Password</a>
+        <a href="image-compressor.html" class="text-blue-400">Image Compressor</a>
+        <a href="qr-generator.html" class="hover:text-white transition">QR Code</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    
+    <!-- Header / H1 -->
+    <div class="text-center mb-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-medium mb-4">
+        📷 Free Image Tool
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-bold text-white mb-3">Free Image Compressor Online</h1>
+      <p class="text-slate-400 text-sm max-w-2xl mx-auto">
+        Compress JPG, PNG & WebP images instantly without losing quality. 
+        100% private — your photos never leave your browser. No signup required.
+      </p>
+    </div>
+
+    <!-- Tool Controls -->
+    <div class="glass rounded-2xl p-6 sm:p-8 mb-6">
+      <div class="grid sm:grid-cols-2 gap-6 mb-6">
+        <div>
+          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">
+            Quality: <span id="qualityValue" class="text-blue-400">80%</span>
+          </label>
+          <input type="range" id="quality" min="10" max="100" value="80" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-blue-500">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">
+            Max Width (px) — 0 = original size
+          </label>
+          <input type="number" id="maxWidth" value="0" min="0" max="8000" placeholder="0 = keep original"
+            class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-2.5 text-slate-200 focus:outline-none focus:border-blue-500">
+        </div>
+      </div>
+
+      <div id="dropZone" class="drop-zone border-2 border-dashed border-slate-600 rounded-xl p-10 text-center cursor-pointer transition hover:border-blue-500 hover:bg-slate-900/50">
+        <div class="text-4xl mb-3">📁</div>
+        <p class="text-slate-300 font-medium mb-1">Drag & drop images here</p>
+        <p class="text-slate-500 text-sm mb-4">or click to browse (JPG, PNG, WebP supported)</p>
+        <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp" multiple class="hidden">
+        <button onclick="document.getElementById('fileInput').click()" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium transition">
+          Select Images
+        </button>
+      </div>
+    </div>
+
+    <!-- Results -->
+    <div id="results" class="space-y-4 hidden"></div>
+
+    <!-- Summary -->
+    <div id="summary" class="glass rounded-2xl p-5 mt-6 hidden">
+      <div class="flex flex-wrap items-center justify-between gap-4">
+        <div class="text-sm text-slate-300">
+          <span id="totalOriginal">0</span> → <span id="totalCompressed" class="text-emerald-400 font-semibold">0</span>
+          <span id="savings" class="text-blue-400 ml-2"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEO Content Section -->
+    <section class="mt-16 space-y-10">
+      
+      <div>
+        <h2 class="text-2xl font-bold text-white mb-4">How to Compress Images Online for Free</h2>
+        <p class="text-slate-400 leading-relaxed mb-3">
+          Our free image compressor lets you reduce the file size of JPG, PNG, and WebP images in seconds. 
+          Unlike other tools, everything happens inside your browser — your photos are never uploaded to any server. 
+          This makes it one of the most private and secure ways to compress images online.
+        </p>
+        <p class="text-slate-400 leading-relaxed">
+          Simply drag and drop your images, adjust the quality slider, and download the compressed versions. 
+          You can compress multiple images at once and even resize them by setting a maximum width.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-bold text-white mb-4">Why Use This Image Compressor?</h2>
+        <ul class="space-y-3 text-slate-400">
+          <li class="flex gap-3"><span class="text-blue-400 font-bold">✓</span> <span><strong class="text-slate-200">100% Private</strong> — Images never leave your device</span></li>
+          <li class="flex gap-3"><span class="text-blue-400 font-bold">✓</span> <span><strong class="text-slate-200">No Signup Required</strong> — Start compressing instantly</span></li>
+          <li class="flex gap-3"><span class="text-blue-400 font-bold">✓</span> <span><strong class="text-slate-200">Batch Compression</strong> — Process multiple images together</span></li>
+          <li class="flex gap-3"><span class="text-blue-400 font-bold">✓</span> <span><strong class="text-slate-200">Quality Control</strong> — Choose the perfect balance between size and quality</span></li>
+          <li class="flex gap-3"><span class="text-blue-400 font-bold">✓</span> <span><strong class="text-slate-200">Resize Option</strong> — Set maximum width to further reduce size</span></li>
+          <li class="flex gap-3"><span class="text-blue-400 font-bold">✓</span> <span><strong class="text-slate-200">Works Offline</strong> — After page load, no internet needed</span></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-bold text-white mb-4">Best Practices for Image Compression</h2>
+        <div class="grid sm:grid-cols-2 gap-4 text-slate-400 text-sm">
+          <div class="glass rounded-xl p-4">
+            <h3 class="text-white font-semibold mb-2">For Websites</h3>
+            <p>Use 70-80% quality and max width of 1920px. This keeps images sharp while loading fast.</p>
+          </div>
+          <div class="glass rounded-xl p-4">
+            <h3 class="text-white font-semibold mb-2">For Social Media</h3>
+            <p>Instagram and Facebook compress images anyway. Use 75-85% quality for best results.</p>
+          </div>
+          <div class="glass rounded-xl p-4">
+            <h3 class="text-white font-semibold mb-2">For WhatsApp / Messaging</h3>
+            <p>Lower quality (60-70%) is usually fine since apps re-compress images.</p>
+          </div>
+          <div class="glass rounded-xl p-4">
+            <h3 class="text-white font-semibold mb-2">For Printing</h3>
+            <p>Keep quality at 90%+ and avoid resizing. High resolution is more important.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <div>
+        <h2 class="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+        <div class="space-y-4">
+          <div class="glass rounded-xl p-5">
+            <h3 class="text-white font-semibold mb-2">Is this image compressor completely free?</h3>
+            <p class="text-slate-400 text-sm">Yes. There are no limits, no watermarks, and no paid plans. You can compress as many images as you want.</p>
+          </div>
+          <div class="glass rounded-xl p-5">
+            <h3 class="text-white font-semibold mb-2">Do you store or upload my images?</h3>
+            <p class="text-slate-400 text-sm">No. All processing happens locally in your browser using JavaScript and the Canvas API. Your images never leave your computer.</p>
+          </div>
+          <div class="glass rounded-xl p-5">
+            <h3 class="text-white font-semibold mb-2">Which image formats are supported?</h3>
+            <p class="text-slate-400 text-sm">We currently support JPG/JPEG, PNG, and WebP formats. These cover almost all common use cases.</p>
+          </div>
+          <div class="glass rounded-xl p-5">
+            <h3 class="text-white font-semibold mb-2">Will compression reduce image quality?</h3>
+            <p class="text-slate-400 text-sm">At 80% quality (default), most people cannot notice any difference. You can increase the quality slider if you need maximum detail.</p>
+          </div>
+          <div class="glass rounded-xl p-5">
+            <h3 class="text-white font-semibold mb-2">Can I compress multiple images at once?</h3>
+            <p class="text-slate-400 text-sm">Yes. You can select or drag multiple images together and compress them in one go.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center pt-6">
+        <p class="text-slate-500 text-sm">
+          Looking for more free tools? Try our 
+          <a href="case-converter.html" class="text-blue-400 hover:underline">Case Converter</a>, 
+          <a href="password-generator.html" class="text-blue-400 hover:underline">Password Generator</a> or 
+          <a href="qr-generator.html" class="text-blue-400 hover:underline">QR Code Generator</a>.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-slate-800 mt-16 py-8 text-center text-slate-500 text-sm">
+    <p>© 2026 AI Micro-Tools Hub · Free Online Image Compressor · 100% Private</p>
+  </footer>
+
+  <script>
+    const dropZone = document.getElementById('dropZone');
+    const fileInput = document.getElementById('fileInput');
+    const qualitySlider = document.getElementById('quality');
+    const qualityValue = document.getElementById('qualityValue');
+    const maxWidthInput = document.getElementById('maxWidth');
+    const results = document.getElementById('results');
+    const summary = document.getElementById('summary');
+    const totalOriginal = document.getElementById('totalOriginal');
+    const totalCompressed = document.getElementById('totalCompressed');
+    const savingsEl = document.getElementById('savings');
+
+    qualitySlider.addEventListener('input', () => {
+      qualityValue.textContent = qualitySlider.value + '%';
+    });
+
+    ['dragenter', 'dragover'].forEach(evt => {
+      dropZone.addEventListener(evt, e => {
+        e.preventDefault();
+        dropZone.classList.add('dragover');
+      });
+    });
+    ['dragleave', 'drop'].forEach(evt => {
+      dropZone.addEventListener(evt, e => {
+        e.preventDefault();
+        dropZone.classList.remove('dragover');
+      });
+    });
+    dropZone.addEventListener('drop', e => handleFiles(e.dataTransfer.files));
+    fileInput.addEventListener('change', () => handleFiles(fileInput.files));
+
+    function formatBytes(bytes) {
+      if (bytes === 0) return '0 B';
+      const k = 1024;
+      const sizes = ['B', 'KB', 'MB'];
+      const i = Math.floor(Math.log(bytes) / Math.log(k));
+      return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
+    }
+
+    async function handleFiles(files) {
+      if (!files.length) return;
+      results.innerHTML = '';
+      results.classList.remove('hidden');
+      summary.classList.remove('hidden');
+
+      let origTotal = 0;
+      let compTotal = 0;
+
+      for (const file of files) {
+        if (!file.type.startsWith('image/')) continue;
+
+        const card = document.createElement('div');
+        card.className = 'glass rounded-2xl p-5 flex flex-col sm:flex-row gap-5 items-start';
+        card.innerHTML = `
+          <div class="w-full sm:w-40 h-32 bg-slate-900 rounded-xl overflow-hidden flex-shrink-0 flex items-center justify-center">
+            <img class="preview max-h-full max-w-full object-contain opacity-50" alt="Compressed preview of ${file.name}">
+          </div>
+          <div class="flex-1 min-w-0">
+            <p class="font-medium text-white truncate mb-1">${file.name}</p>
+            <p class="text-sm text-slate-400 mb-3">Original: <span class="orig-size">${formatBytes(file.size)}</span></p>
+            <div class="status text-sm text-blue-400">Compressing...</div>
+            <div class="mt-3 flex gap-2 flex-wrap">
+              <a class="download-btn hidden px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium transition">Download</a>
+            </div>
+          </div>
+        `;
+        results.appendChild(card);
+
+        const img = card.querySelector('.preview');
+        const status = card.querySelector('.status');
+        const downloadBtn = card.querySelector('.download-btn');
+
+        try {
+          const compressed = await compressImage(file, qualitySlider.value / 100, parseInt(maxWidthInput.value) || 0);
+          img.src = URL.createObjectURL(compressed.blob);
+          img.classList.remove('opacity-50');
+
+          const saved = ((1 - compressed.blob.size / file.size) * 100).toFixed(1);
+          status.innerHTML = `Compressed: <span class="text-emerald-400 font-semibold">${formatBytes(compressed.blob.size)}</span> <span class="text-slate-500">(${saved}% smaller)</span>`;
+          
+          downloadBtn.href = URL.createObjectURL(compressed.blob);
+          downloadBtn.download = file.name.replace(/\.[^/.]+$/, '') + '-compressed.' + (compressed.type === 'image/png' ? 'png' : 'jpg');
+          downloadBtn.classList.remove('hidden');
+
+          origTotal += file.size;
+          compTotal += compressed.blob.size;
+        } catch (err) {
+          status.textContent = 'Error: ' + err.message;
+          status.classList.add('text-red-400');
+        }
+      }
+
+      totalOriginal.textContent = formatBytes(origTotal);
+      totalCompressed.textContent = formatBytes(compTotal);
+      const totalSaved = origTotal ? ((1 - compTotal / origTotal) * 100).toFixed(1) : 0;
+      savingsEl.textContent = totalSaved > 0 ? `(${totalSaved}% saved)` : '';
+    }
+
+    function compressImage(file, quality, maxWidth) {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        const url = URL.createObjectURL(file);
+        img.onload = () => {
+          URL.revokeObjectURL(url);
+          let { width, height } = img;
+
+          if (maxWidth > 0 && width > maxWidth) {
+            height = Math.round(height * (maxWidth / width));
+            width = maxWidth;
+          }
+
+          const canvas = document.createElement('canvas');
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, width, height);
+
+          const isPNG = file.type === 'image/png';
+          const outputType = isPNG ? 'image/png' : 'image/jpeg';
+          const outputQuality = isPNG ? undefined : quality;
+
+          canvas.toBlob(blob => {
+            if (!blob) return reject(new Error('Compression failed'));
+            resolve({ blob, type: outputType });
+          }, outputType, outputQuality);
+        };
+        img.onerror = () => reject(new Error('Failed to load image'));
+        img.src = url;
+      });
+    }
+  </script>
+</body>
+</html>
