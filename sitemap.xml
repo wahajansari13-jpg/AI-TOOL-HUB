@@ -2,29 +2,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Homepage -->
   <url>
     <loc>https://browsertools.site/</loc>
   </url>
 
-  <!-- Working tools -->
   <url>
     <loc>https://browsertools.site/image-compressor.html</loc>
   </url>
+
   <url>
     <loc>https://browsertools.site/case-converter.html</loc>
   </url>
+
   <url>
     <loc>https://browsertools.site/password-generator.html</loc>
   </url>
 
-  <!-- Important website pages -->
   <url>
     <loc>https://browsertools.site/about.html</loc>
   </url>
+
   <url>
     <loc>https://browsertools.site/privacy.html</loc>
   </url>
+
   <url>
     <loc>https://browsertools.site/terms.html</loc>
   </url>
