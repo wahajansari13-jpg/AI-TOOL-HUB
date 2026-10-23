@@ -9,35 +9,11 @@
   <!-- Favicon (BT Logo) -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%2306b6d4'/><stop offset='100%' stop-color='%232563eb'/></linearGradient></defs><rect width='100' height='100' rx='25' fill='url(%23grad)'/><text x='50' y='55' font-family='Arial, sans-serif' font-size='45' font-weight='bold' fill='white' dominant-baseline='middle' text-anchor='middle'>BT</text></svg>">
 
-  <!-- Primary SEO -->
-  <title>Free Image Compressor Online - Compress JPG, PNG, WebP Without Quality Loss</title>
-  <meta name="description" content="Free online image compressor. Reduce JPG, PNG & WebP file size up to 80% without losing quality. 100% private, no signup, no upload to server. Instant compression in your browser.">
-  <meta name="keywords" content="image compressor, compress image online, free image compressor, jpg compressor, png compressor, reduce image size, compress photo online, webp compressor, image optimizer">
-  
-  <!-- Canonical -->
+  <title>Free Image Compressor Online - Compress JPG, PNG, WebP</title>
+  <meta name="description" content="Free online image compressor. Reduce JPG, PNG & WebP file size up to 80% without losing quality. 100% private, no signup, no upload to server.">
+  <meta name="keywords" content="image compressor, compress image online, free image compressor, jpg compressor, png compressor, reduce image size">
   <link rel="canonical" href="https://browsertools.site/image-compressor.html">
   
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://browsertools.site/image-compressor.html">
-  <meta property="og:title" content="Free Image Compressor Online - Compress JPG, PNG, WebP Instantly">
-  <meta property="og:description" content="Reduce image size up to 80% without quality loss. 100% private browser-based tool. No signup required.">
-  <meta property="og:site_name" content="Browser Tools Hub">
-  
-  <!-- Schema.org Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Free Image Compressor",
-    "description": "Free online image compressor that reduces JPG, PNG and WebP file size without quality loss. Runs entirely in your browser.",
-    "url": "https://browsertools.site/image-compressor.html",
-    "applicationCategory": "MultimediaApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
-  }
-  </script>
-
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html { scroll-behavior: smooth; }
@@ -45,42 +21,36 @@
     ::-webkit-scrollbar-track { background: #020617; }
     ::-webkit-scrollbar-thumb { background: #06b6d4; border-radius: 5px; }
     ::-webkit-scrollbar-thumb:hover { background: #0891b2; }
-    
     body { background: #020617; }
     .glass { background: rgba(15,23,42,.75); backdrop-filter: blur(12px); border: 1px solid rgba(148,163,184,.12); }
     .drop-zone.dragover { border-color: #06b6d4; background: rgba(6,182,212,.08); }
+    
+    /* Custom Range Slider Styling */
+    input[type=range] { -webkit-appearance: none; width: 100%; background: transparent; }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none; height: 20px; width: 20px; border-radius: 50%;
+      background: #06b6d4; cursor: pointer; margin-top: -8px;
+      box-shadow: 0 0 10px rgba(6,182,212,0.5);
+    }
+    input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 6px; cursor: pointer; background: #334155; border-radius: 3px; }
   </style>
 </head>
 <body class="text-slate-200 min-h-screen font-sans antialiased">
 
-  <!-- ========== NAVIGATION (Same as Home Page) ========== -->
+  <!-- NAVIGATION -->
   <nav class="bg-slate-950/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-        
-        <!-- Logo -->
         <a href="/" class="flex items-center gap-2.5 group">
-          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-cyan-500/20">
-            BT
-          </div>
-          <span class="text-white font-semibold text-lg tracking-tight group-hover:text-cyan-400 transition">
-            Browser Tools Hub
-          </span>
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-cyan-500/20">BT</div>
+          <span class="text-white font-semibold text-lg tracking-tight group-hover:text-cyan-400 transition">Browser Tools Hub</span>
         </a>
-
-        <!-- Desktop Menu -->
         <div class="hidden md:flex items-center gap-1">
           <a href="/" class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition">Home</a>
-
-          <!-- Tools Dropdown -->
           <div class="relative group">
             <button class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition flex items-center gap-1.5">
-              All Tools
-              <svg class="w-4 h-4 transition duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-              </svg>
+              All Tools <svg class="w-4 h-4 transition duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
-
             <div class="absolute left-0 mt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
               <div class="bg-slate-900 border border-slate-700/80 rounded-xl shadow-2xl py-2 overflow-hidden">
                 <a href="/image-compressor.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-cyan-400 hover:bg-slate-800 transition font-medium">🖼️ Image Compressor</a>
@@ -89,20 +59,13 @@
                 <a href="/counter.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">🔢 Word Counter</a>
                 <a href="/qr-generator.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">📱 QR Code Generator</a>
                 <a href="/pdf-page-remover.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">📄 PDF Page Remover</a>
-                <div class="border-t border-slate-700 my-1.5"></div>
-                <a href="/" class="flex items-center gap-3 px-4 py-2.5 text-sm text-cyan-400 hover:bg-slate-800 transition font-medium">View All Tools →</a>
               </div>
             </div>
           </div>
         </div>
-
-        <!-- Mobile button -->
-        <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-300 hover:text-white">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-300 hover:text-white"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
       </div>
     </div>
-
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-slate-950">
       <div class="px-4 py-3 space-y-1">
@@ -119,30 +82,43 @@
 
   <main class="max-w-4xl mx-auto px-4 py-10">
     
-    <!-- Header / H1 -->
     <div class="text-center mb-8">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-medium mb-4">
         📷 Free Image Tool
       </div>
       <h1 class="text-3xl sm:text-4xl font-bold text-white mb-3">Free Image Compressor Online</h1>
-      <p class="text-slate-400 text-sm max-w-2xl mx-auto">
-        Compress JPG, PNG & WebP images instantly without losing quality. 
-        100% private — your photos never leave your browser. No signup required.
-      </p>
+      <p class="text-slate-400 text-sm max-w-2xl mx-auto">Compress JPG, PNG & WebP images instantly. Select your compression level below and save space.</p>
     </div>
 
-    <!-- Tool Controls -->
+    <!-- TOOL CONTROLS -->
     <div class="glass rounded-2xl p-6 sm:p-8 mb-6">
-      <div class="grid sm:grid-cols-2 gap-6 mb-6">
+      
+      <!-- NEW: Compression Levels -->
+      <div class="mb-8">
+        <label class="block text-sm font-semibold text-white mb-3">Choose Compression Level</label>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <button onclick="setQuality(90)" id="btn-high" class="level-btn px-4 py-3 rounded-xl border border-slate-700 bg-slate-800/50 text-slate-300 hover:border-cyan-500 transition text-sm font-medium">
+            High Quality<br><span class="text-xs text-slate-500 font-normal">Best for printing</span>
+          </button>
+          <button onclick="setQuality(70)" id="btn-med" class="level-btn px-4 py-3 rounded-xl border border-cyan-500 bg-cyan-500/10 text-cyan-400 transition text-sm font-medium shadow-[0_0_15px_rgba(6,182,212,0.15)]">
+            Recommended<br><span class="text-xs text-cyan-500/70 font-normal">Best for websites</span>
+          </button>
+          <button onclick="setQuality(30)" id="btn-low" class="level-btn px-4 py-3 rounded-xl border border-slate-700 bg-slate-800/50 text-slate-300 hover:border-cyan-500 transition text-sm font-medium">
+            Extreme Compression<br><span class="text-xs text-slate-500 font-normal">Smallest file size</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-6 mb-6 border-t border-slate-800 pt-6">
         <div>
           <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">
-            Quality: <span id="qualityValue" class="text-cyan-400">80%</span>
+            Fine-tune Quality: <span id="qualityValue" class="text-cyan-400 font-bold">70%</span>
           </label>
-          <input type="range" id="quality" min="10" max="100" value="80" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-cyan-500">
+          <input type="range" id="quality" min="10" max="100" value="70">
         </div>
         <div>
           <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">
-            Max Width (px) — 0 = original size
+            Max Width (px) — 0 = original
           </label>
           <input type="number" id="maxWidth" value="0" min="0" max="8000" placeholder="0 = keep original"
             class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-2.5 text-slate-200 focus:outline-none focus:border-cyan-500">
@@ -167,22 +143,21 @@
     <div id="summary" class="glass rounded-2xl p-5 mt-6 hidden">
       <div class="flex flex-wrap items-center justify-between gap-4">
         <div class="text-sm text-slate-300">
-          <span id="totalOriginal">0</span> → <span id="totalCompressed" class="text-emerald-400 font-semibold">0</span>
-          <span id="savings" class="text-cyan-400 ml-2"></span>
+          Total Saved: <span id="totalOriginal">0</span> → <span id="totalCompressed" class="text-emerald-400 font-semibold">0</span>
+          <span id="savings" class="text-cyan-400 ml-2 font-bold"></span>
         </div>
       </div>
     </div>
 
-    <!-- ========== 1500+ WORD SEO ARTICLE ========== -->
+    <!-- SEO ARTICLE -->
     <article class="mt-16 space-y-10 reveal">
-      
       <div>
         <h2 class="text-3xl font-bold text-white mb-6">The Ultimate Guide to Image Compression: Why It Matters and How to Do It Right</h2>
         <p class="text-slate-400 leading-relaxed mb-4">
-          In today's digital landscape, images are the backbone of the internet. Whether you are running an e-commerce store, managing a personal blog, building a portfolio, or simply sharing memories on social media, high-quality visuals are essential. However, there is a hidden cost to high-quality images: file size. Large images can slow down websites, consume massive amounts of data, and lead to a frustrating user experience. This is where an <strong>Image Compressor</strong> becomes not just a luxury, but a necessity.
+          In today's digital landscape, images are the backbone of the internet. Whether you are running an e-commerce store, managing a personal blog, building a portfolio, or simply sharing memories on social media, high-quality visuals are essential. However, there is a hidden cost to high-quality images: file size. Large images can slow down websites, consume massive amounts of data, and lead to a frustrating user experience. This is where an Image Compressor becomes not just a luxury, but a necessity.
         </p>
         <p class="text-slate-400 leading-relaxed mb-4">
-          At Browser Tools Hub, we have developed a free, lightning-fast, and 100% private image compression tool that runs entirely within your web browser. In this comprehensive guide, we will explore the science behind image compression, the differences between image formats, why it is crucial for SEO (Search Engine Optimization), and how you can use our tool to optimize your images without sacrificing visual quality.
+          At Browser Tools Hub, we have developed a free, lightning-fast, and 100% private image compression tool that runs entirely within your web browser. In this comprehensive guide, we will explore the science behind image compression, the differences between image formats, why it is crucial for SEO, and how you can use our tool to optimize your images without sacrificing visual quality.
         </p>
       </div>
 
@@ -195,113 +170,58 @@
           There are two primary types of image compression:
         </p>
         <ul class="list-disc list-inside text-slate-400 space-y-2 mb-4 ml-4">
-          <li><strong class="text-white">Lossless Compression:</strong> This method reduces file size without any loss of quality. The original image can be perfectly reconstructed from the compressed data. It is ideal for images where precision is critical, such as logos or medical imagery.</li>
-          <li><strong class="text-white">Lossy Compression:</strong> This method permanently removes some visual information that the human eye is unlikely to notice. It is highly effective at drastically reducing file sizes and is the standard for web images. Our tool uses advanced lossy compression to give you the best balance of size and quality.</li>
+          <li><strong class="text-white">Lossless Compression:</strong> This method reduces file size without any loss of quality. The original image can be perfectly reconstructed from the compressed data.</li>
+          <li><strong class="text-white">Lossy Compression:</strong> This method permanently removes some visual information that the human eye is unlikely to notice. It is highly effective at drastically reducing file sizes and is the standard for web images.</li>
         </ul>
       </div>
 
       <div>
         <h2 class="text-2xl font-bold text-white mb-4">Why is Image Compression Crucial for SEO?</h2>
         <p class="text-slate-400 leading-relaxed mb-4">
-          Google’s algorithms prioritize user experience. If your website takes too long to load, users will leave (bounce rate increases), and Google will penalize your rankings. Since images are often the largest files on a webpage, optimizing them is one of the easiest ways to improve your site's Core Web Vitals—specifically the Largest Contentful Paint (LCP) metric. A fast-loading site ranks higher, gets more traffic, and offers a smoother experience for the visitor.
+          Google’s algorithms prioritize user experience. If your website takes too long to load, users will leave (bounce rate increases), and Google will penalize your rankings. Since images are often the largest files on a webpage, optimizing them is one of the easiest ways to improve your site's Core Web Vitals. A fast-loading site ranks higher, gets more traffic, and offers a smoother experience.
         </p>
-      </div>
-
-      <div>
-        <h2 class="text-2xl font-bold text-white mb-4">Understanding Image Formats: JPG, PNG, and WebP</h2>
-        <p class="text-slate-400 leading-relaxed mb-4">
-          Before you compress your images, it is important to use the right format for the right purpose. Our tool supports the three most common formats:
-        </p>
-        <div class="grid sm:grid-cols-3 gap-4 mb-6">
-          <div class="glass rounded-xl p-5">
-            <h3 class="text-white font-semibold mb-2">JPG / JPEG</h3>
-            <p class="text-slate-400 text-sm">Best for photographs and complex images with gradients. It supports millions of colors and offers excellent lossy compression.</p>
-          </div>
-          <div class="glass rounded-xl p-5">
-            <h3 class="text-white font-semibold mb-2">PNG</h3>
-            <p class="text-slate-400 text-sm">Best for graphics with text, transparency, or sharp edges (like logos). It uses lossless compression, meaning files are larger.</p>
-          </div>
-          <div class="glass rounded-xl p-5">
-            <h3 class="text-white font-semibold mb-2">WebP</h3>
-            <p class="text-slate-400 text-sm">Developed by Google, this modern format offers superior lossy and lossless compression, making files much smaller than JPG or PNG.</p>
-          </div>
-        </div>
       </div>
 
       <div>
         <h2 class="text-2xl font-bold text-white mb-4">How to Use Our Free Image Compressor</h2>
-        <p class="text-slate-400 leading-relaxed mb-4">
-          Using our tool is incredibly simple and requires no technical skills:
-        </p>
         <ol class="list-decimal list-inside text-slate-400 space-y-2 mb-4 ml-4">
-          <li><strong>Upload Images:</strong> Drag and drop your images into the box above, or click "Select Images" to browse your device.</li>
-          <li><strong>Adjust Quality:</strong> Use the quality slider. For web use, we recommend a setting between 70% and 80%. It drastically reduces file size with barely noticeable changes.</li>
-          <li><strong>Resize (Optional):</strong> Enter a max width (e.g., 1920px for desktop). This is perfect for ensuring mobile devices don't download massive 4K images.</li>
-          <li><strong>Download:</strong> Click the download button for each image to save the compressed version to your device.</li>
+          <li><strong>Choose a Level:</strong> Select High Quality, Recommended, or Extreme Compression based on your needs.</li>
+          <li><strong>Upload Images:</strong> Drag and drop your images into the box above.</li>
+          <li><strong>Adjust Manually (Optional):</strong> Use the slider to fine-tune the exact quality percentage.</li>
+          <li><strong>Download:</strong> Click the download button to save the new, smaller file.</li>
         </ol>
         <p class="text-slate-400 leading-relaxed mb-4">
-          The best part? <strong>Your privacy is completely protected.</strong> Unlike other tools, we don't upload your images to our servers. The entire compression process happens locally on your device using HTML5 Canvas and JavaScript.
+          The best part? <strong>Your privacy is completely protected.</strong> The entire compression process happens locally on your device using HTML5 Canvas and JavaScript.
         </p>
       </div>
 
-      <div>
-        <h2 class="text-2xl font-bold text-white mb-4">Best Practices for Webmasters and Designers</h2>
-        <p class="text-slate-400 leading-relaxed mb-4">
-          To get the most out of image compression, consider these expert tips:
-        </p>
-        <ul class="list-disc list-inside text-slate-400 space-y-2 mb-4 ml-4">
-          <li><strong>Don't compress too much:</strong> While 20% quality will make the file tiny, it will look blurry. Find the sweet spot (usually 75%).</li>
-          <li><strong>Use WebP when possible:</strong> If your website platform supports it, WebP images are significantly smaller than JPGs at the same quality level.</li>
-          <li><strong>Serve responsive images:</strong> Don't load a 3000px wide image if the user is on a 400px wide mobile phone. Use the resize option.</li>
-          <li><strong>Lazy Load:</strong> Combine image compression with lazy loading so images only load when the user scrolls down.</li>
-        </ul>
-      </div>
-
-      <!-- FAQ Section -->
       <div>
         <h2 class="text-2xl font-bold text-white mb-6">Frequently Asked Questions (FAQs)</h2>
         <div class="space-y-4">
           <div class="glass rounded-xl p-5">
             <h3 class="text-white font-semibold mb-2">Is this image compressor really free?</h3>
-            <p class="text-slate-400 text-sm">Yes, absolutely. There are no hidden fees, no watermarks, and no limits on how many images you can compress. It is a free service provided by Browser Tools Hub.</p>
+            <p class="text-slate-400 text-sm">Yes, absolutely. There are no hidden fees, no watermarks, and no limits on how many images you can compress.</p>
           </div>
           <div class="glass rounded-xl p-5">
             <h3 class="text-white font-semibold mb-2">Are my images uploaded to a server?</h3>
-            <p class="text-slate-400 text-sm">No. Our tool uses Client-Side processing. Your images are processed directly in your browser memory and are never sent over the internet. This makes it 100% secure for private photos.</p>
+            <p class="text-slate-400 text-sm">No. Our tool uses Client-Side processing. Your images are processed directly in your browser memory and are never sent over the internet.</p>
           </div>
           <div class="glass rounded-xl p-5">
-            <h3 class="text-white font-semibold mb-2">How much can I reduce my image size?</h3>
-            <p class="text-slate-400 text-sm">Depending on the original image and the quality setting you choose, you can typically reduce file sizes by 50% to 80% without seeing a noticeable drop in quality.</p>
+            <h3 class="text-white font-semibold mb-2">Why did my image only compress a little bit?</h3>
+            <p class="text-slate-400 text-sm">If your image was already compressed (e.g., downloaded from WhatsApp or Facebook), it already lacks extra data. For best results, use original, uncompressed images.</p>
           </div>
-          <div class="glass rounded-xl p-5">
-            <h3 class="text-white font-semibold mb-2">Does compressing an image ruin its quality?</h3>
-            <p class="text-slate-400 text-sm">At a quality setting of 70-80%, the human eye cannot tell the difference. However, if you set it too low (e.g., 10%), you will notice pixelation and blurring.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="text-center pt-8 border-t border-slate-800">
-        <p class="text-slate-400 mb-4">Explore more of our free, privacy-focused tools:</p>
-        <div class="flex flex-wrap justify-center gap-4 text-sm">
-          <a href="/case-converter.html" class="px-4 py-2 bg-slate-800 rounded-lg text-cyan-400 hover:bg-slate-700 transition">Case Converter</a>
-          <a href="/password-generator.html" class="px-4 py-2 bg-slate-800 rounded-lg text-cyan-400 hover:bg-slate-700 transition">Password Generator</a>
-          <a href="/qr-generator.html" class="px-4 py-2 bg-slate-800 rounded-lg text-cyan-400 hover:bg-slate-700 transition">QR Code Generator</a>
         </div>
       </div>
     </article>
-
   </main>
 
-  <!-- ========== FOOTER (Same as Home Page) ========== -->
+  <!-- FOOTER -->
   <footer class="border-t border-slate-800 py-10 mt-10">
     <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-2">
-        <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white text-xs font-bold">
-          BT
-        </div>
+        <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white text-xs font-bold">BT</div>
         <span class="text-slate-400 text-sm">© 2026 Browser Tools Hub. All rights reserved.</span>
       </div>
-       <!-- Footer Links -->
         <div class="flex gap-4 text-sm font-medium text-slate-300">
             <a href="about.html" class="hover:text-cyan-400 transition-colors">About</a>
             <a href="privacy.html" class="hover:text-cyan-400 transition-colors">Privacy Policy</a>
@@ -311,18 +231,13 @@
     </div>
   </footer>
 
-  <!-- ========== SCRIPTS ========== -->
+  <!-- JAVASCRIPT -->
   <script>
-    // Mobile Menu Toggle
+    // Mobile menu
     const btn = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');
-    if (btn && menu) {
-      btn.addEventListener('click', () => {
-        menu.classList.toggle('hidden');
-      });
-    }
+    if (btn && menu) { btn.addEventListener('click', () => { menu.classList.toggle('hidden'); }); }
 
-    // Image Compressor Logic
     const dropZone = document.getElementById('dropZone');
     const fileInput = document.getElementById('fileInput');
     const qualitySlider = document.getElementById('quality');
@@ -334,21 +249,42 @@
     const totalCompressed = document.getElementById('totalCompressed');
     const savingsEl = document.getElementById('savings');
 
+    // NEW: Preset Buttons Logic
+    const btnHigh = document.getElementById('btn-high');
+    const btnMed = document.getElementById('btn-med');
+    const btnLow = document.getElementById('btn-low');
+    const allBtns = [btnHigh, btnMed, btnLow];
+
+    function setQuality(val) {
+      qualitySlider.value = val;
+      qualityValue.textContent = val + '%';
+      
+      // Reset all buttons
+      allBtns.forEach(b => {
+        b.classList.remove('border-cyan-500', 'bg-cyan-500/10', 'text-cyan-400', 'shadow-[0_0_15px_rgba(6,182,212,0.15)]');
+        b.classList.add('border-slate-700', 'bg-slate-800/50', 'text-slate-300');
+      });
+
+      // Highlight active button
+      let activeBtn = val == 90 ? btnHigh : (val == 70 ? btnMed : btnLow);
+      activeBtn.classList.remove('border-slate-700', 'bg-slate-800/50', 'text-slate-300');
+      activeBtn.classList.add('border-cyan-500', 'bg-cyan-500/10', 'text-cyan-400', 'shadow-[0_0_15px_rgba(6,182,212,0.15)]');
+    }
+
+    // Sync slider with buttons
     qualitySlider.addEventListener('input', () => {
       qualityValue.textContent = qualitySlider.value + '%';
+      allBtns.forEach(b => {
+        b.classList.remove('border-cyan-500', 'bg-cyan-500/10', 'text-cyan-400', 'shadow-[0_0_15px_rgba(6,182,212,0.15)]');
+        b.classList.add('border-slate-700', 'bg-slate-800/50', 'text-slate-300');
+      });
     });
 
     ['dragenter', 'dragover'].forEach(evt => {
-      dropZone.addEventListener(evt, e => {
-        e.preventDefault();
-        dropZone.classList.add('dragover');
-      });
+      dropZone.addEventListener(evt, e => { e.preventDefault(); dropZone.classList.add('dragover'); });
     });
     ['dragleave', 'drop'].forEach(evt => {
-      dropZone.addEventListener(evt, e => {
-        e.preventDefault();
-        dropZone.classList.remove('dragover');
-      });
+      dropZone.addEventListener(evt, e => { e.preventDefault(); dropZone.classList.remove('dragover'); });
     });
     dropZone.addEventListener('drop', e => handleFiles(e.dataTransfer.files));
     fileInput.addEventListener('change', () => handleFiles(fileInput.files));
@@ -377,7 +313,7 @@
         card.className = 'glass rounded-2xl p-5 flex flex-col sm:flex-row gap-5 items-start';
         card.innerHTML = `
           <div class="w-full sm:w-40 h-32 bg-slate-900 rounded-xl overflow-hidden flex-shrink-0 flex items-center justify-center">
-            <img class="preview max-h-full max-w-full object-contain opacity-50" alt="Compressed preview of ${file.name}">
+            <img class="preview max-h-full max-w-full object-contain opacity-50" alt="Preview">
           </div>
           <div class="flex-1 min-w-0">
             <p class="font-medium text-white truncate mb-1">${file.name}</p>
