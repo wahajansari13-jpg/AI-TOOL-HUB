@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Favicon -->
+  
+  <!-- Favicon (BT Logo) -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%2306b6d4'/><stop offset='100%' stop-color='%232563eb'/></linearGradient></defs><rect width='100' height='100' rx='25' fill='url(%23grad)'/><text x='50' y='55' font-family='Arial, sans-serif' font-size='45' font-weight='bold' fill='white' dominant-baseline='middle' text-anchor='middle'>BT</text></svg>">
+
   <!-- Primary SEO -->
   <title>Browser Tools Hub | Free Online Micro Tools - No Signup</title>
   <meta name="description" content="Free browser-based micro tools: Image Compressor, Case Converter, Password Generator, Word Counter, QR Code Generator, PDF tools & more. 100% private, no signup required." />
@@ -26,10 +28,6 @@
   <meta name="twitter:title" content="Browser Tools Hub | Free Online Micro Tools" />
   <meta name="twitter:description" content="Fast, private & completely free tools that run in your browser. No signup required." />
 
-  <!-- Favicon -->
-  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -50,27 +48,22 @@
   </script>
 
   <style>
-    /* NAYA ADD KIYA GAYA: Smooth Scrolling */
     html {
       scroll-behavior: smooth;
     }
-
-    /* NAYA ADD KIYA GAYA: Custom Dark Scrollbar */
     ::-webkit-scrollbar {
       width: 10px;
     }
     ::-webkit-scrollbar-track {
-      background: #020617; /* Slate-950 background */
+      background: #020617; 
     }
     ::-webkit-scrollbar-thumb {
-      background: #06b6d4; /* Cyan color */
+      background: #06b6d4; 
       border-radius: 5px;
     }
     ::-webkit-scrollbar-thumb:hover {
       background: #0891b2;
     }
-
-    /* NAYA ADD KIYA GAYA: Scroll Reveal Animation */
     .reveal {
       opacity: 0;
       transform: translateY(40px);
@@ -80,13 +73,11 @@
       opacity: 1;
       transform: translateY(0);
     }
-
-    /* Purana Code */
     .glass-card {
       background: rgba(15, 23, 42, 0.7);
       backdrop-filter: blur(12px);
       border: 1px solid rgba(148, 163, 184, 0.1);
-      transition: all 0.3s ease; /* Smooth hover ke liye add kiya */
+      transition: all 0.3s ease;
     }
     .glass-card:hover {
       border-color: rgba(34, 211, 238, 0.4);
@@ -181,7 +172,6 @@
   </nav>
 
   <!-- ========== HERO ========== -->
-  <!-- Yahan reveal class add ki hai -->
   <section class="relative pt-20 pb-16 px-4 overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-b from-cyan-500/5 via-transparent to-transparent pointer-events-none"></div>
     
@@ -211,7 +201,6 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
       <!-- Image Compressor -->
-      <!-- Yahan reveal class aur hover animations add ki hain -->
       <a href="/image-compressor.html" class="glass-card rounded-2xl p-6 group reveal">
         <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center text-2xl mb-4">
           🖼️
@@ -268,7 +257,7 @@
     </div>
   </section>
 
-  <!-- SEO Content Section (Ab yeh Footer ke bahar aur theek jagah par hai) -->
+  <!-- SEO Content Section -->
   <section class="max-w-4xl mx-auto px-4 py-16 text-slate-300 reveal">
       <h2 class="text-3xl font-bold text-white mb-4">Why Choose Our Free Online Micro-Tools?</h2>
       <p class="mb-6 text-lg">At <strong class="text-white">BrowserTools.site</strong>, our mission is simple: to supercharge your daily workflow with fast, reliable, and completely free online utilities. Whether you are a student, a developer, a blogger, or a digital marketer, our collection of browser-based tools is designed to save you time and boost your productivity.</p>
@@ -314,7 +303,6 @@
 
   <!-- Scripts -->
   <script>
-    // Mobile menu toggle
     const btn = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');
     if (btn && menu) {
@@ -323,7 +311,6 @@
       });
     }
 
-    // NAYA ADD KIYA GAYA: Scroll Animation Script
     function reveal() {
       var reveals = document.querySelectorAll(".reveal");
       for (var i = 0; i < reveals.length; i++) {
@@ -336,7 +323,7 @@
       }
     }
     window.addEventListener("scroll", reveal);
-    reveal(); // Page load hote hi trigger karein
+    reveal(); 
   </script>
 </body>
 </html>
