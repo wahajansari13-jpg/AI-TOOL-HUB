@@ -121,6 +121,7 @@
 
             <div class="absolute left-0 mt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
               <div class="bg-slate-900 border border-slate-700/80 rounded-xl shadow-2xl py-2 overflow-hidden">
+                <!-- Links Updated with File Names -->
                 <a href="/image-compressor.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">
                   <span>🖼️</span> Image Compressor
                 </a>
@@ -130,18 +131,24 @@
                 <a href="/password-generator.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">
                   <span>🔒</span> Password Generator
                 </a>
-                <a href="/word-counter.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">
+                <a href="/counter.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">
                   <span>🔢</span> Word Counter
                 </a>
-                <a href="/qr-code.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">
+                <a href="/qr-generator.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">
                   <span>📱</span> QR Code Generator
                 </a>
-                <a href="/pdf-remover.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">
+                <a href="/pdf-page-remover.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">
                   <span>📄</span> PDF Page Remover
                 </a>
-                <div class="border-t border-slate-700 my-1.5"></div>
-                <a href="/" class="flex items-center gap-3 px-4 py-2.5 text-sm text-cyan-400 hover:bg-slate-800 transition font-medium">
-                  View All Tools →
+                <!-- Extra tools in your folder -->
+                <a href="/json-formatter.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">
+                  <span>⚙️</span> JSON Formatter
+                </a>
+                <a href="/lorem-ipsum.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">
+                  <span>📝</span> Lorem Ipsum
+                </a>
+                <a href="/summarizer.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">
+                  <span>📚</span> Summarizer
                 </a>
               </div>
             </div>
@@ -164,9 +171,12 @@
         <a href="/image-compressor.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Image Compressor</a>
         <a href="/case-converter.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Case Converter</a>
         <a href="/password-generator.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Password Generator</a>
-        <a href="/word-counter.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Word Counter</a>
-        <a href="/qr-code.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">QR Code Generator</a>
-        <a href="/pdf-remover.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">PDF Page Remover</a>
+        <a href="/counter.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Word Counter</a>
+        <a href="/qr-generator.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">QR Code Generator</a>
+        <a href="/pdf-page-remover.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">PDF Page Remover</a>
+        <a href="/json-formatter.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">JSON Formatter</a>
+        <a href="/lorem-ipsum.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Lorem Ipsum</a>
+        <a href="/summarizer.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Summarizer</a>
       </div>
     </div>
   </nav>
@@ -202,56 +212,65 @@
 
       <!-- Image Compressor -->
       <a href="/image-compressor.html" class="glass-card rounded-2xl p-6 group reveal">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center text-2xl mb-4">
-          🖼️
-        </div>
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center text-2xl mb-4">🖼️</div>
         <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition">Image Compressor</h3>
         <p class="text-sm text-slate-400">Compress JPG, PNG & WebP images instantly in your browser. No upload needed.</p>
       </a>
 
       <!-- Case Converter -->
       <a href="/case-converter.html" class="glass-card rounded-2xl p-6 group reveal">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-xl font-bold text-white mb-4">
-          Aa
-        </div>
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-xl font-bold text-white mb-4">Aa</div>
         <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition">Case Converter</h3>
         <p class="text-sm text-slate-400">Convert text to UPPERCASE, lowercase, Title Case or Sentence case instantly.</p>
       </a>
 
       <!-- Password Generator -->
       <a href="/password-generator.html" class="glass-card rounded-2xl p-6 group reveal">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-2xl mb-4">
-          🔒
-        </div>
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-2xl mb-4">🔒</div>
         <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition">Password Generator</h3>
         <p class="text-sm text-slate-400">Create strong, secure, random passwords with custom length and options.</p>
       </a>
 
       <!-- Word Counter -->
-      <a href="/word-counter.html" class="glass-card rounded-2xl p-6 group reveal">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-2xl mb-4">
-          🔢
-        </div>
+      <a href="/counter.html" class="glass-card rounded-2xl p-6 group reveal">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-2xl mb-4">🔢</div>
         <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition">Word Counter</h3>
         <p class="text-sm text-slate-400">Count words, characters, sentences and paragraphs in real-time.</p>
       </a>
 
       <!-- QR Code -->
-      <a href="/qr-code.html" class="glass-card rounded-2xl p-6 group reveal">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center text-2xl mb-4">
-          📱
-        </div>
+      <a href="/qr-generator.html" class="glass-card rounded-2xl p-6 group reveal">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center text-2xl mb-4">📱</div>
         <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition">QR Code Generator</h3>
         <p class="text-sm text-slate-400">Generate custom QR codes for links, text, WiFi and more. Download instantly.</p>
       </a>
 
       <!-- PDF Remover -->
-      <a href="/pdf-remover.html" class="glass-card rounded-2xl p-6 group reveal">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500 to-rose-600 flex items-center justify-center text-2xl mb-4">
-          📄
-        </div>
+      <a href="/pdf-page-remover.html" class="glass-card rounded-2xl p-6 group reveal">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500 to-rose-600 flex items-center justify-center text-2xl mb-4">📄</div>
         <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition">PDF Page Remover</h3>
         <p class="text-sm text-slate-400">Remove unwanted pages from PDF files directly in your browser.</p>
+      </a>
+      
+      <!-- JSON Formatter (Aapki folder mein mojood hai) -->
+      <a href="/json-formatter.html" class="glass-card rounded-2xl p-6 group reveal">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-500 to-blue-600 flex items-center justify-center text-2xl mb-4">⚙️</div>
+        <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition">JSON Formatter</h3>
+        <p class="text-sm text-slate-400">Format, validate, and beautify your JSON data instantly.</p>
+      </a>
+
+      <!-- Lorem Ipsum (Aapki folder mein mojood hai) -->
+      <a href="/lorem-ipsum.html" class="glass-card rounded-2xl p-6 group reveal">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-slate-500 to-slate-700 flex items-center justify-center text-2xl mb-4">📝</div>
+        <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition">Lorem Ipsum</h3>
+        <p class="text-sm text-slate-400">Generate dummy text for your designs and mockups.</p>
+      </a>
+
+      <!-- Summarizer (Aapki folder mein mojood hai) -->
+      <a href="/summarizer.html" class="glass-card rounded-2xl p-6 group reveal">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-fuchsia-500 to-pink-600 flex items-center justify-center text-2xl mb-4">📚</div>
+        <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition">Text Summarizer</h3>
+        <p class="text-sm text-slate-400">Summarize long articles and texts into short, readable paragraphs.</p>
       </a>
 
     </div>
@@ -263,7 +282,7 @@
       <p class="mb-6 text-lg">At <strong class="text-white">BrowserTools.site</strong>, our mission is simple: to supercharge your daily workflow with fast, reliable, and completely free online utilities. Whether you are a student, a developer, a blogger, or a digital marketer, our collection of browser-based tools is designed to save you time and boost your productivity.</p>
 
       <h3 class="text-2xl font-semibold text-white mt-8 mb-4">How Our Tools Work (100% Client-Side Processing)</h3>
-      <p class="mb-6 text-lg">Unlike many other platforms that require you to upload files to their servers, most of our tools run entirely in your browser using modern JavaScript. This means when you use our <a href="image-compressor.html" class="text-cyan-400 hover:underline">Image Compressor</a> or <a href="password-generator.html" class="text-cyan-400 hover:underline">Password Generator</a>, the data never leaves your device. This client-side processing ensures maximum privacy and lightning-fast results without any server lag.</p>
+      <p class="mb-6 text-lg">Unlike many other platforms that require you to upload files to their servers, most of our tools run entirely in your browser using modern JavaScript. This means when you use our <a href="/image-compressor.html" class="text-cyan-400 hover:underline">Image Compressor</a> or <a href="/password-generator.html" class="text-cyan-400 hover:underline">Password Generator</a>, the data never leaves your device. This client-side processing ensures maximum privacy and lightning-fast results without any server lag.</p>
 
       <h3 class="text-2xl font-semibold text-white mt-8 mb-4">The Benefits of Using BrowserTools.site</h3>
       <ul class="list-disc list-inside mb-6 text-lg space-y-2">
@@ -286,16 +305,14 @@
   <footer class="border-t border-slate-800 py-10">
     <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-2">
-        <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white text-xs font-bold">
-          BT
-        </div>
+        <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white text-xs font-bold">BT</div>
         <span class="text-slate-400 text-sm">© 2026 Browser Tools Hub. All rights reserved.</span>
       </div>
        <!-- Footer Links -->
         <div class="flex gap-4 text-sm font-medium text-slate-300">
-            <a href="about.html" class="hover:text-cyan-400 transition-colors">About</a>
-            <a href="privacy.html" class="hover:text-cyan-400 transition-colors">Privacy Policy</a>
-            <a href="terms.html" class="hover:text-cyan-400 transition-colors">Terms & Conditions</a>
+            <a href="/about.html" class="hover:text-cyan-400 transition-colors">About</a>
+            <a href="/privacy.html" class="hover:text-cyan-400 transition-colors">Privacy Policy</a>
+            <a href="/terms.html" class="hover:text-cyan-400 transition-colors">Terms & Conditions</a>
         </div>
       <p class="text-slate-500 text-sm">100% Free • No Signup • Fast Runs in Browser</p>
     </div>
