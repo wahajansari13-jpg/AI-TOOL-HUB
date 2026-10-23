@@ -49,14 +49,47 @@
   </script>
 
   <style>
+    /* NAYA ADD KIYA GAYA: Smooth Scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* NAYA ADD KIYA GAYA: Custom Dark Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #020617; /* Slate-950 background */
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #06b6d4; /* Cyan color */
+      border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #0891b2;
+    }
+
+    /* NAYA ADD KIYA GAYA: Scroll Reveal Animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Purana Code */
     .glass-card {
       background: rgba(15, 23, 42, 0.7);
       backdrop-filter: blur(12px);
       border: 1px solid rgba(148, 163, 184, 0.1);
+      transition: all 0.3s ease; /* Smooth hover ke liye add kiya */
     }
     .glass-card:hover {
       border-color: rgba(34, 211, 238, 0.4);
-      transform: translateY(-4px);
+      transform: translateY(-6px);
       box-shadow: 0 20px 40px -10px rgba(34, 211, 238, 0.15);
     }
   </style>
@@ -147,10 +180,11 @@
   </nav>
 
   <!-- ========== HERO ========== -->
+  <!-- Yahan reveal class add ki hai -->
   <section class="relative pt-20 pb-16 px-4 overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-b from-cyan-500/5 via-transparent to-transparent pointer-events-none"></div>
     
-    <div class="max-w-4xl mx-auto text-center relative z-10">
+    <div class="max-w-4xl mx-auto text-center relative z-10 reveal">
       <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-800/80 border border-slate-700 text-sm text-cyan-400 mb-8">
         <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
         Free Online Micro-Tools
@@ -169,14 +203,15 @@
 
   <!-- ========== TOOLS GRID ========== -->
   <section class="max-w-7xl mx-auto px-4 pb-24">
-    <div class="text-center mb-12">
+    <div class="text-center mb-12 reveal">
       <h2 class="text-sm font-semibold tracking-widest text-slate-500 uppercase">Active Modules</h2>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
       <!-- Image Compressor -->
-      <a href="/image-compressor.html" class="glass-card rounded-2xl p-6 transition duration-300 group">
+      <!-- Yahan reveal class aur hover animations add ki hain -->
+      <a href="/image-compressor.html" class="glass-card rounded-2xl p-6 group reveal">
         <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center text-2xl mb-4">
           🖼️
         </div>
@@ -185,7 +220,7 @@
       </a>
 
       <!-- Case Converter -->
-      <a href="/case-converter.html" class="glass-card rounded-2xl p-6 transition duration-300 group">
+      <a href="/case-converter.html" class="glass-card rounded-2xl p-6 group reveal">
         <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-xl font-bold text-white mb-4">
           Aa
         </div>
@@ -194,7 +229,7 @@
       </a>
 
       <!-- Password Generator -->
-      <a href="/password-generator.html" class="glass-card rounded-2xl p-6 transition duration-300 group">
+      <a href="/password-generator.html" class="glass-card rounded-2xl p-6 group reveal">
         <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-2xl mb-4">
           🔒
         </div>
@@ -203,7 +238,7 @@
       </a>
 
       <!-- Word Counter -->
-      <a href="/word-counter.html" class="glass-card rounded-2xl p-6 transition duration-300 group">
+      <a href="/word-counter.html" class="glass-card rounded-2xl p-6 group reveal">
         <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-2xl mb-4">
           🔢
         </div>
@@ -212,7 +247,7 @@
       </a>
 
       <!-- QR Code -->
-      <a href="/qr-code.html" class="glass-card rounded-2xl p-6 transition duration-300 group">
+      <a href="/qr-code.html" class="glass-card rounded-2xl p-6 group reveal">
         <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center text-2xl mb-4">
           📱
         </div>
@@ -221,7 +256,7 @@
       </a>
 
       <!-- PDF Remover -->
-      <a href="/pdf-remover.html" class="glass-card rounded-2xl p-6 transition duration-300 group">
+      <a href="/pdf-remover.html" class="glass-card rounded-2xl p-6 group reveal">
         <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500 to-rose-600 flex items-center justify-center text-2xl mb-4">
           📄
         </div>
@@ -232,31 +267,8 @@
     </div>
   </section>
 
-  <!-- ========== FOOTER ========== -->
-  <footer class="border-t border-slate-800 py-10">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-2">
-        <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white text-xs font-bold">
-          BT
-        </div>
-        <span class="text-slate-400 text-sm">© 2026 Browser Tools Hub. All rights reserved.</span>
-      </div>
-       <!-- YEH NAYA CODE YAHAN ADD KAREIN -->
-        <div class="flex gap-4 text-sm font-medium text-slate-300">
-            <a href="about.html" class="hover:text-white transition-colors">About</a>
-            <a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="terms.html" class="hover:text-white transition-colors">Terms & Conditions</a>
-        </div>
-      <p class="text-slate-500 text-sm">100% Free • No Signup • Fast Runs in Browser</p>
-    </div>
-<footer class="border-t border-slate-800 py-10">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-2">
-    </div>
-  </footer>
-
-  <!-- SEO Content Section (Sahi jagah aur sahi rangon ke sath) -->
-  <section class="max-w-4xl mx-auto px-4 py-16 text-slate-300">
+  <!-- SEO Content Section (Ab yeh Footer ke bahar aur theek jagah par hai) -->
+  <section class="max-w-4xl mx-auto px-4 py-16 text-slate-300 reveal">
       <h2 class="text-3xl font-bold text-white mb-4">Why Choose Our Free Online Micro-Tools?</h2>
       <p class="mb-6 text-lg">At <strong class="text-white">BrowserTools.site</strong>, our mission is simple: to supercharge your daily workflow with fast, reliable, and completely free online utilities. Whether you are a student, a developer, a blogger, or a digital marketer, our collection of browser-based tools is designed to save you time and boost your productivity.</p>
 
@@ -280,7 +292,26 @@
       <p class="text-lg">Whether you need to format text, compress media, or secure your accounts, our suite of micro-tools has you covered. Bookmark our site and make it your daily go-to hub for quick tasks!</p>
   </section>
 
-  <!-- Scripts (Sirf JavaScript code yahan aayega) -->
+  <!-- ========== FOOTER ========== -->
+  <footer class="border-t border-slate-800 py-10">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white text-xs font-bold">
+          BT
+        </div>
+        <span class="text-slate-400 text-sm">© 2026 Browser Tools Hub. All rights reserved.</span>
+      </div>
+       <!-- Footer Links -->
+        <div class="flex gap-4 text-sm font-medium text-slate-300">
+            <a href="about.html" class="hover:text-cyan-400 transition-colors">About</a>
+            <a href="privacy.html" class="hover:text-cyan-400 transition-colors">Privacy Policy</a>
+            <a href="terms.html" class="hover:text-cyan-400 transition-colors">Terms & Conditions</a>
+        </div>
+      <p class="text-slate-500 text-sm">100% Free • No Signup • Fast Runs in Browser</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
   <script>
     // Mobile menu toggle
     const btn = document.getElementById('mobile-menu-btn');
@@ -290,6 +321,21 @@
         menu.classList.toggle('hidden');
       });
     }
+
+    // NAYA ADD KIYA GAYA: Scroll Animation Script
+    function reveal() {
+      var reveals = document.querySelectorAll(".reveal");
+      for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 100;
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add("active");
+        }
+      }
+    }
+    window.addEventListener("scroll", reveal);
+    reveal(); // Page load hote hi trigger karein
   </script>
 </body>
 </html>
