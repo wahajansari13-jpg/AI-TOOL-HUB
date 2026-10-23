@@ -1,33 +1,32 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>https://ai-tool-hub-crn7-git-main-al-aaliyy.vercel.app/</loc>
-        <lastmod>2026-09-19</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://ai-tool-hub-crn7-git-main-al-aaliyy.vercel.app/humanizer.html</loc>
-        <lastmod>2026-09-19</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://ai-tool-hub-crn7-git-main-al-aaliyy.vercel.app/summarizer.html</loc>
-        <lastmod>2026-09-19</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://ai-tool-hub-crn7-git-main-al-aaliyy.vercel.app/counter.html</loc>
-        <lastmod>2026-09-19</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://ai-tool-hub-crn7-git-main-al-aaliyy.vercel.app/qr-generator.html</loc>
-        <lastmod>2026-09-19</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://browsertools.site/</loc>
+  </url>
+
+  <!-- Working tools -->
+  <url>
+    <loc>https://browsertools.site/image-compressor.html</loc>
+  </url>
+  <url>
+    <loc>https://browsertools.site/case-converter.html</loc>
+  </url>
+  <url>
+    <loc>https://browsertools.site/password-generator.html</loc>
+  </url>
+
+  <!-- Important website pages -->
+  <url>
+    <loc>https://browsertools.site/about.html</loc>
+  </url>
+  <url>
+    <loc>https://browsertools.site/privacy.html</loc>
+  </url>
+  <url>
+    <loc>https://browsertools.site/terms.html</loc>
+  </url>
+
 </urlset>
