@@ -1,59 +1,192 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us | Browser Tools Hub</title>
-  <meta name="description" content="Learn about Browser Tools Hub – free, private, browser-based micro tools. No signup, no data collection. Built for speed and privacy." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://browsertools.site/about.html" />
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-slate-950 text-slate-100 min-h-screen">
+  
+  <!-- Favicon (BT Logo) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%2306b6d4'/><stop offset='100%' stop-color='%232563eb'/></linearGradient></defs><rect width='100' height='100' rx='25' fill='url(%23grad)'/><text x='50' y='55' font-family='Arial, sans-serif' font-size='45' font-weight='bold' fill='white' dominant-baseline='middle' text-anchor='middle'>BT</text></svg>">
 
-  <!-- Same Navigation (copy from index) -->
+  <!-- Primary SEO -->
+  <title>About Us | Browser Tools Hub - Free Privacy-Focused Web Utilities</title>
+  <meta name="description" content="Learn about Browser Tools Hub. We provide 100% free, secure, client-side browser micro tools for developers, designers, and writers. No signup, zero data tracking." />
+  <meta name="keywords" content="about browser tools hub, free online utilities platform, client side web tools, private document converter, image compressor online, developer micro tools" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="Browser Tools Hub" />
+  <link rel="canonical" href="https://browsertools.site/about.html" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Structured Data Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Browser Tools Hub",
+    "url": "https://browsertools.site/about.html",
+    "description": "Learn about Browser Tools Hub's mission to deliver secure, private, client-side browser micro utilities.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Browser Tools Hub",
+      "url": "https://browsertools.site/"
+    }
+  }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: #020617; }
+    ::-webkit-scrollbar-thumb { background: #06b6d4; border-radius: 5px; }
+    ::-webkit-scrollbar-thumb:hover { background: #0891b2; }
+    .glass { background: rgba(15,23,42,.75); backdrop-filter: blur(12px); border: 1px solid rgba(148,163,184,.12); }
+  </style>
+</head>
+
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased flex flex-col">
+
+  <!-- NAVIGATION -->
   <nav class="bg-slate-950/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
-      <a href="/" class="flex items-center gap-2.5">
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm">BT</div>
-        <span class="text-white font-semibold text-lg">Browser Tools Hub</span>
-      </a>
-      <div class="hidden md:flex items-center gap-1">
-        <a href="/" class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg">Home</a>
-        <a href="/about.html" class="px-4 py-2 text-sm text-cyan-400 bg-slate-800 rounded-lg">About</a>
-        <a href="/privacy.html" class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg">Privacy</a>
-        <a href="/terms.html" class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg">Terms</a>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center gap-2.5 group">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-cyan-500/25">BT</div>
+          <span class="text-white font-semibold text-lg tracking-tight group-hover:text-cyan-400 transition">Browser Tools Hub</span>
+        </a>
+        <div class="hidden md:flex items-center gap-1">
+          <a href="/" class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition">Home</a>
+          <a href="/about.html" class="px-4 py-2 text-sm text-cyan-400 font-medium bg-slate-800/80 rounded-lg">About</a>
+          <a href="/privacy.html" class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition">Privacy Policy</a>
+          <a href="/terms.html" class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition">Terms</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-300 hover:text-white"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      </div>
+    </div>
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-slate-950">
+      <div class="px-4 py-3 space-y-1">
+        <a href="/" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Home</a>
+        <a href="/about.html" class="block px-3 py-2.5 rounded-lg text-cyan-400 font-medium bg-slate-800">About Us</a>
+        <a href="/privacy.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Privacy Policy</a>
+        <a href="/terms.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Terms & Conditions</a>
       </div>
     </div>
   </nav>
 
-  <main class="max-w-3xl mx-auto px-4 py-16">
-    <h1 class="text-4xl font-bold mb-6">About Browser Tools Hub</h1>
+  <!-- MAIN CONTENT -->
+  <main class="max-w-4xl mx-auto px-4 py-16 flex-grow space-y-12">
     
-    <div class="space-y-6 text-slate-300 leading-relaxed">
-      <p>Browser Tools Hub is a free collection of simple, fast, and private micro-tools that run entirely in your browser.</p>
-      
-      <p>We built this site because most online tools force you to create an account, upload your files to their servers, or show aggressive ads. We believe useful tools should be instant, private, and free.</p>
-
-      <h2 class="text-2xl font-semibold text-white mt-10 mb-4">Our Mission</h2>
-      <p>To provide high-quality browser-based utilities that respect your privacy. Every tool processes data locally on your device — nothing is uploaded to our servers.</p>
-
-      <h2 class="text-2xl font-semibold text-white mt-10 mb-4">What Makes Us Different</h2>
-      <ul class="list-disc pl-6 space-y-2">
-        <li>100% client-side processing (your data never leaves your device)</li>
-        <li>No account or signup required</li>
-        <li>No tracking of personal files</li>
-        <li>Clean, fast, and mobile-friendly interface</li>
-        <li>Completely free to use</li>
-      </ul>
-
-      <h2 class="text-2xl font-semibold text-white mt-10 mb-4">Contact</h2>
-      <p>For feedback, suggestions or issues, you can reach us at: <strong>support@browsertools.site</strong></p>
+    <!-- Header -->
+    <div class="text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-medium mb-4">
+        🛡️ About Our Platform
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4">About Browser Tools Hub</h1>
+      <p class="text-slate-400 text-base max-w-2xl mx-auto">Empowering digital professionals, developers, writers, and students with lightning-fast, 100% private browser-based micro utilities.</p>
     </div>
+
+    <!-- Section 1 -->
+    <div class="glass rounded-2xl p-6 sm:p-8 space-y-4">
+      <h2 class="text-2xl font-bold text-white">Our Story & Vision</h2>
+      <p class="text-slate-300 leading-relaxed">
+        At <strong>Browser Tools Hub</strong> (<a href="/" class="text-cyan-400 hover:underline">browsertools.site</a>), we founded this platform out of a common frustration: trying to complete a simple digital task—such as compressing a banner image, converting a Word file to PDF, or formatting a JSON payload—only to be blocked by aggressive subscription paywalls, forced user accounts, intrusive advertisements, or risky cloud-server uploads.
+      </p>
+      <p class="text-slate-300 leading-relaxed">
+        We believe that everyday digital utilities should be universally accessible, instantaneous, and strictly private. That is why we engineered a centralized hub of high-performance micro-tools built entirely on modern browser technologies.
+      </p>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="glass rounded-2xl p-6 sm:p-8 space-y-4">
+      <h2 class="text-2xl font-bold text-white">Our Core Commitment: Absolute Privacy</h2>
+      <p class="text-slate-300 leading-relaxed">
+        In an era where data harvesting and unauthorized third-party tracking have become standard across many online tools, Browser Tools Hub takes a radically different approach. We utilize an advanced <strong>Client-Side Processing Architecture</strong>. 
+      </p>
+      <p class="text-slate-300 leading-relaxed">
+        When you use our tools—whether converting an office document via our <a href="/doc-converter.html" class="text-cyan-400 hover:underline">Document Converter</a>, editing PDFs through our <a href="/pdf-page-remover.html" class="text-cyan-400 hover:underline">PDF Page Remover</a>, or compressing images using our <a href="/image-compressor.html" class="text-cyan-400 hover:underline">Image Compressor</a>—your files and data never leave your computer. All calculations run locally using your device's browser memory (RAM and CPU). We do not store, log, or transmit your data to any remote cloud databases.
+      </p>
+    </div>
+
+    <!-- Section 3: What We Offer -->
+    <div class="glass rounded-2xl p-6 sm:p-8 space-y-4">
+      <h2 class="text-2xl font-bold text-white">Our Complete Suite of Web Utilities</h2>
+      <p class="text-slate-300 leading-relaxed">
+        Our platform features 10 essential, high-traffic micro-tools tailored for diverse professional workflows:
+      </p>
+      <ul class="list-disc list-inside text-slate-300 space-y-2 ml-2">
+        <li><strong class="text-white">Document Converter:</strong> Seamlessly convert Word (.docx), Excel (.xlsx), and Text (.txt) files straight to professional PDFs.</li>
+        <li><strong class="text-white">Image Compressor:</strong> Reduce JPG, PNG, and WebP image sizes up to 80% without visible loss in quality.</li>
+        <li><strong class="text-white">Case Converter:</strong> Transform text instantly between UPPERCASE, lowercase, Title Case, camelCase, and slugs.</li>
+        <li><strong class="text-white">Password Generator:</strong> Build cryptographic, high-entropy passwords using secure browser APIs.</li>
+        <li><strong class="text-white">Word Counter:</strong> Track real-time word counts, character limits, sentence totals, and reading metrics.</li>
+        <li><strong class="text-white">QR Code Generator:</strong> Generate custom vector QR codes for websites, contact data, and WiFi networks.</li>
+        <li><strong class="text-white">PDF Page Remover:</strong> Delete unwanted or sensitive pages from PDF files visually.</li>
+        <li><strong class="text-white">JSON Formatter:</strong> Validate, beautify, and minify complex JSON payloads with syntax error detection.</li>
+        <li><strong class="text-white">Lorem Ipsum Generator:</strong> Create custom placeholder dummy text blocks for UI layouts and mockups.</li>
+        <li><strong class="text-white">AI Text Summarizer:</strong> Condense long research papers and articles into concise key takeaways.</li>
+      </ul>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="glass rounded-2xl p-6 sm:p-8 space-y-4">
+      <h2 class="text-2xl font-bold text-white">Why Choose Browser Tools Hub?</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+          <h3 class="text-cyan-400 font-semibold mb-1">⚡ Instantaneous Execution</h3>
+          <p class="text-slate-400 text-sm">Zero network lag or server queues because everything runs locally on your machine.</p>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+          <h3 class="text-cyan-400 font-semibold mb-1">🔒 100% Secure & Private</h3>
+          <p class="text-slate-400 text-sm">Zero server uploads mean your sensitive personal and corporate data remains strictly confidential.</p>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+          <h3 class="text-cyan-400 font-semibold mb-1">🚫 No Signup Required</h3>
+          <p class="text-slate-400 text-sm">No accounts, no email logins, no subscription fees, and no paywalls ever.</p>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+          <h3 class="text-cyan-400 font-semibold mb-1">📱 Cross-Platform Ready</h3>
+          <p class="text-slate-400 text-sm">Optimized responsive design that works smoothly across desktops, tablets, and smartphones.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="glass rounded-2xl p-6 sm:p-8 space-y-4">
+      <h2 class="text-2xl font-bold text-white">Get in Touch with Us</h2>
+      <p class="text-slate-300 leading-relaxed">
+        We love hearing feedback from our users! If you have suggestions for new micro-tools, encounter any bugs, or have partnership inquiries, please feel free to reach out to our team at:
+      </p>
+      <p class="text-cyan-400 font-semibold text-lg">
+        📧 support@browsertools.site
+      </p>
+    </div>
+
   </main>
 
-  <footer class="border-t border-slate-800 py-8 text-center text-slate-500 text-sm">
-    © 2026 Browser Tools Hub. All rights reserved.
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800 py-10 mt-12">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white text-xs font-bold">BT</div>
+        <span class="text-slate-400 text-sm">© 2026 Browser Tools Hub. All rights reserved.</span>
+      </div>
+      <div class="flex gap-4 text-sm font-medium text-slate-300">
+        <a href="/about.html" class="text-cyan-400 transition-colors">About</a>
+        <a href="/privacy.html" class="hover:text-cyan-400 transition-colors">Privacy Policy</a>
+        <a href="/terms.html" class="hover:text-cyan-400 transition-colors">Terms & Conditions</a>
+      </div>
+      <p class="text-slate-500 text-sm">100% Free • No Signup • Fast Runs in Browser</p>
+    </div>
   </footer>
+
+  <!-- Scripts -->
+  <script>
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    if (btn && menu) {
+      btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
+    }
+  </script>
 </body>
 </html>
