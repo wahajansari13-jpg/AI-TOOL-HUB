@@ -1,100 +1,232 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="index, follow">
-<title>Free Lorem Ipsum Generator Online | Placeholder Text</title>
-<meta name="description" content="Generate Lorem Ipsum placeholder text for free. Choose paragraphs, words or sentences. Perfect for designers and developers.">
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
-body{background:#0b0f1a}
-.glass{background:rgba(15,23,42,.75);backdrop-filter:blur(12px);border:1px solid rgba(148,163,184,.12)}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="googlebot" content="index, follow">
+  
+  <!-- Favicon (BT Logo) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%2306b6d4'/><stop offset='100%' stop-color='%232563eb'/></linearGradient></defs><rect width='100' height='100' rx='25' fill='url(%23grad)'/><text x='50' y='55' font-family='Arial, sans-serif' font-size='45' font-weight='bold' fill='white' dominant-baseline='middle' text-anchor='middle'>BT</text></svg>">
+
+  <title>Free Online Lorem Ipsum Generator | Placeholder Text</title>
+  <meta name="description" content="Generate Lorem Ipsum placeholder text for free. Choose paragraphs, words, or sentences. Perfect for web designers, developers, and UI mockups. 100% private client-side utility.">
+  <meta name="keywords" content="lorem ipsum generator, placeholder text generator, dummy text generator, web design text tool, random text maker, micro tools hub">
+  <link rel="canonical" href="https://browsertools.site/lorem-ipsum.html">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: #020617; }
+    ::-webkit-scrollbar-thumb { background: #06b6d4; border-radius: 5px; }
+    ::-webkit-scrollbar-thumb:hover { background: #0891b2; }
+    body { background: #020617; }
+    .glass { background: rgba(15,23,42,.75); backdrop-filter: blur(12px); border: 1px solid rgba(148,163,184,.12); }
+  </style>
 </head>
-<body class="text-slate-200 min-h-screen font-sans antialiased">
-<nav class="sticky top-0 z-50 border-b border-slate-800/80 bg-slate-950/90 backdrop-blur-md">
-<div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-<a href="index.html" class="flex items-center gap-2 font-bold text-lg">
-<span class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white text-sm font-bold">AI</span>
-Micro-Tools Hub
-</a>
-<div class="hidden sm:flex gap-5 text-sm font-medium text-slate-400">
-<a href="index.html" class="hover:text-white transition">Home</a>
-<a href="case-converter.html" class="hover:text-white transition">Case Converter</a>
-<a href="password-generator.html" class="hover:text-white transition">Password</a>
-<a href="lorem-ipsum.html" class="text-blue-400">Lorem Ipsum</a>
-<a href="counter.html" class="hover:text-white transition">Counter</a>
-</div>
-</div>
-</nav>
+<body class="text-slate-200 min-h-screen font-sans antialiased flex flex-col">
 
-<main class="max-w-3xl mx-auto px-4 py-10">
-<div class="text-center mb-8">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-medium mb-4">📝 Placeholder Text</div>
-<h1 class="text-3xl sm:text-4xl font-bold text-white mb-3">Lorem Ipsum Generator</h1>
-<p class="text-slate-400 text-sm">Generate dummy text for designs, mockups and prototypes.</p>
-</div>
+  <!-- NAVIGATION -->
+  <nav class="bg-slate-950/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center gap-2.5 group">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-cyan-500/20">BT</div>
+          <span class="text-white font-semibold text-lg tracking-tight group-hover:text-cyan-400 transition">Browser Tools Hub</span>
+        </a>
+        <div class="hidden md:flex items-center gap-1">
+          <a href="/" class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition">Home</a>
+          <div class="relative group">
+            <button class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition flex items-center gap-1.5">
+              All Tools <svg class="w-4 h-4 transition duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="absolute left-0 mt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <div class="bg-slate-900 border border-slate-700/80 rounded-xl shadow-2xl py-2 overflow-hidden">
+                <a href="/image-compressor.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">🖼️ Image Compressor</a>
+                <a href="/case-converter.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">Aa Case Converter</a>
+                <a href="/password-generator.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">🔒 Password Generator</a>
+                <a href="/counter.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">🔢 Word Counter</a>
+                <a href="/qr-generator.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">📱 QR Code Generator</a>
+                <a href="/lorem-ipsum.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition font-medium">📝 Lorem Ipsum Generator</a>
+                <a href="/pdf-page-remover.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">📄 PDF Page Remover</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-300 hover:text-white"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-slate-950">
+      <div class="px-4 py-3 space-y-1">
+        <a href="/" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Home</a>
+        <a href="/image-compressor.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Image Compressor</a>
+        <a href="/case-converter.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Case Converter</a>
+        <a href="/password-generator.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Password Generator</a>
+        <a href="/counter.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Word Counter</a>
+        <a href="/qr-generator.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">QR Code Generator</a>
+        <a href="/lorem-ipsum.html" class="block px-3 py-2.5 rounded-lg text-cyan-400 hover:bg-slate-800 hover:text-white font-medium">Lorem Ipsum Generator</a>
+        <a href="/pdf-page-remover.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">PDF Page Remover</a>
+      </div>
+    </div>
+  </nav>
 
-<div class="glass rounded-2xl p-6 sm:p-8">
-<div class="flex flex-wrap gap-4 mb-5">
-<div>
-<label class="block text-xs font-semibold text-slate-400 mb-1">Type</label>
-<select id="type" class="bg-slate-800 border border-slate-600 rounded-lg px-3 py-2 text-sm">
-<option value="paragraphs">Paragraphs</option>
-<option value="sentences">Sentences</option>
-<option value="words">Words</option>
-</select>
-</div>
-<div>
-<label class="block text-xs font-semibold text-slate-400 mb-1">Amount</label>
-<input type="number" id="amount" value="3" min="1" max="50" class="w-20 bg-slate-800 border border-slate-600 rounded-lg px-3 py-2 text-sm">
-</div>
-<button onclick="generate()" class="self-end bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold px-6 py-2 rounded-xl transition">Generate</button>
-</div>
+  <main class="max-w-4xl w-full mx-auto px-4 py-10 flex-grow">
+    <div class="text-center mb-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-medium mb-4">
+        📝 Placeholder Text Utility
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-bold text-white mb-3">Free Online Lorem Ipsum Generator</h1>
+      <p class="text-slate-400 text-sm max-w-2xl mx-auto">Generate placeholder dummy text for web designs, UI mockups, prototypes, and typography layouts instantly.</p>
+    </div>
 
-<textarea id="output" rows="10" readonly class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-3 text-slate-300 text-sm leading-relaxed"></textarea>
+    <!-- TOOL CONTROLS -->
+    <div class="glass rounded-2xl p-6 sm:p-8 mb-6">
+      <div class="flex flex-wrap items-center gap-4 mb-5">
+        <div>
+          <label for="type" class="block text-xs font-semibold text-slate-400 mb-1 uppercase tracking-wider">Type</label>
+          <select id="type" class="bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-cyan-500">
+            <option value="paragraphs">Paragraphs</option>
+            <option value="sentences">Sentences</option>
+            <option value="words">Words</option>
+          </select>
+        </div>
+        <div>
+          <label for="amount" class="block text-xs font-semibold text-slate-400 mb-1 uppercase tracking-wider">Amount</label>
+          <input type="number" id="amount" value="3" min="1" max="50" class="w-24 bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-cyan-500">
+        </div>
+        <button onclick="generate()" class="self-end bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-semibold px-6 py-2.5 rounded-xl transition shadow-lg shadow-cyan-500/20 text-sm cursor-pointer">Generate</button>
+      </div>
 
-<div class="flex gap-3 mt-3">
-<button onclick="copyText()" class="px-5 py-2.5 rounded-xl border border-slate-600 text-slate-300 hover:bg-slate-800 transition text-sm font-medium">Copy Text</button>
-</div>
-<p id="status" class="text-xs text-slate-500 mt-2"></p>
-</div>
-</main>
+      <div class="mb-3">
+        <label for="output" class="block text-xs font-semibold text-slate-400 mb-2 uppercase tracking-wider">Generated Output</label>
+        <textarea id="output" rows="10" readonly class="w-full bg-slate-900/90 border border-slate-700 rounded-xl px-4 py-3 text-cyan-300 font-mono text-sm leading-relaxed resize-y"></textarea>
+      </div>
 
-<footer class="border-t border-slate-800 mt-12 py-8 text-center text-slate-500 text-sm">© 2026 AI Micro-Tools Hub</footer>
+      <div class="flex items-center justify-between">
+        <button onclick="copyText()" class="px-5 py-2.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white text-sm font-medium transition flex items-center gap-2 cursor-pointer">
+          📋 Copy Text
+        </button>
+        <p id="status" class="text-xs text-cyan-400 font-medium"></p>
+      </div>
+    </div>
 
-<script>
-const words = ["lorem","ipsum","dolor","sit","amet","consectetur","adipiscing","elit","sed","do","eiusmod","tempor","incididunt","ut","labore","et","dolore","magna","aliqua","enim","ad","minim","veniam","quis","nostrud","exercitation","ullamco","laboris","nisi","aliquip","ex","ea","commodo","consequat","duis","aute","irure","in","reprehenderit","voluptate","velit","esse","cillum","fugiat","nulla","pariatur","excepteur","sint","occaecat","cupidatat","non","proident","sunt","culpa","qui","officia","deserunt","mollit","anim","id","est","laborum"];
-function randomWord(){ return words[Math.floor(Math.random()*words.length)]; }
-function sentence(){
-  let len = 8 + Math.floor(Math.random()*10);
-  let s = randomWord().charAt(0).toUpperCase() + randomWord().slice(1);
-  for(let i=1;i<len;i++) s += " " + randomWord();
-  return s + ".";
-}
-function paragraph(){
-  let n = 3 + Math.floor(Math.random()*4);
-  let p = [];
-  for(let i=0;i<n;i++) p.push(sentence());
-  return p.join(" ");
-}
-function generate(){
-  const type = document.getElementById('type').value;
-  const amount = Math.min(50, Math.max(1, +document.getElementById('amount').value || 1));
-  let result = [];
-  if(type === 'paragraphs') for(let i=0;i<amount;i++) result.push(paragraph());
-  else if(type === 'sentences') for(let i=0;i<amount;i++) result.push(sentence());
-  else for(let i=0;i<amount;i++) result.push(randomWord());
-  document.getElementById('output').value = type === 'words' ? result.join(" ") : result.join("\n\n");
-  document.getElementById('status').textContent = '✓ Generated ' + amount + ' ' + type;
-}
-function copyText(){
-  const t = document.getElementById('output').value;
-  if(!t) return;
-  navigator.clipboard.writeText(t).then(()=> document.getElementById('status').textContent = '✓ Copied!');
-}
-generate();
-</script>
+    <!-- SEO ARTICLE -->
+    <article class="mt-16 space-y-10">
+      <div>
+        <h2 class="text-3xl font-bold text-white mb-6">The Complete Guide to Lorem Ipsum: History, Purpose, and Importance in Modern Design</h2>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          In the realms of web design, graphic layout, user interface (UI) prototyping, and typography testing, filler text is an essential component. Before finalized copy or marketing content is written, designers need a reliable way to visualize how text blocks will appear on a webpage or mobile application. This is where <strong>Lorem Ipsum</strong> placeholder text plays a vital role.
+        </p>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          At Browser Tools Hub, our free online <strong>Lorem Ipsum Generator</strong> allows you to instantly produce customized blocks of dummy text. Whether you need precise paragraphs, structured sentences, or individual words, our tool generates clean, natural-looking placeholder layouts with a single click—fully private and executed locally in your browser.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-bold text-white mb-4">Where Does Lorem Ipsum Come From?</h2>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          Contrary to popular belief, Lorem Ipsum is not random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2,000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and cited the sources in classical literature to discover its origin.
+        </p>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-bold text-white mb-4">Why Do Designers and Developers Use Placeholder Text?</h2>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          Using dummy text allows designers to focus entirely on visual elements—such as typography hierarchy, whitespace distribution, line spacing, and color contrast—without being distracted by readable content. When clients review rough wireframes or design prototypes, viewing readable copy often leads them to critique wording rather than layout structures. Placeholder text prevents premature editorial discussions.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-bold text-white mb-6">Frequently Asked Questions (FAQs)</h2>
+        <div class="space-y-4">
+          <div class="glass rounded-xl p-5 border border-slate-800">
+            <h3 class="text-white font-semibold mb-2">What does Lorem Ipsum mean in English?</h3>
+            <p class="text-slate-400 text-sm">Strictly translated, it holds no coherent grammatical meaning. It is a distorted version of classical Latin text derived from Cicero's philosophical writings.</p>
+          </div>
+          <div class="glass rounded-xl p-5 border border-slate-800">
+            <h3 class="text-white font-semibold mb-2">Can I generate custom amounts of words or paragraphs?</h3>
+            <p class="text-slate-400 text-sm">Yes! You can select between paragraphs, sentences, or words and specify any amount up to 50 units instantly.</p>
+          </div>
+          <div class="glass rounded-xl p-5 border border-slate-800">
+            <h3 class="text-white font-semibold mb-2">Is this tool free for commercial design projects?</h3>
+            <p class="text-slate-400 text-sm">Yes, completely free with no restrictions, hidden fees, or copyright concerns for both personal and client commercial projects.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800 py-10 mt-10">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white text-xs font-bold">BT</div>
+        <span class="text-slate-400 text-sm">© 2026 Browser Tools Hub. All rights reserved.</span>
+      </div>
+      <div class="flex gap-4 text-sm font-medium text-slate-300">
+        <a href="about.html" class="hover:text-cyan-400 transition-colors">About</a>
+        <a href="privacy.html" class="hover:text-cyan-400 transition-colors">Privacy Policy</a>
+        <a href="terms.html" class="hover:text-cyan-400 transition-colors">Terms & Conditions</a>
+      </div>
+      <p class="text-slate-500 text-sm">100% Free • No Signup • Fast Runs in Browser</p>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // Mobile Menu Toggle
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    if (btn && menu) { btn.addEventListener('click', () => { menu.classList.toggle('hidden'); }); }
+
+    const words = ["lorem","ipsum","dolor","sit","amet","consectetur","adipiscing","elit","sed","do","eiusmod","tempor","incididunt","ut","labore","et","dolore","magna","aliqua","enim","ad","minim","veniam","quis","nostrud","exercitation","ullamco","laboris","nisi","aliquip","ex","ea","commodo","consequat","duis","aute","irure","in","reprehenderit","voluptate","velit","esse","cillum","fugiat","nulla","pariatur","excepteur","sint","occaecat","cupidatat","non","proident","sunt","culpa","qui","officia","deserunt","mollit","anim","id","est","laborum"];
+    
+    function randomWord(){ return words[Math.floor(Math.random()*words.length)]; }
+    
+    function sentence(){
+      let len = 8 + Math.floor(Math.random()*10);
+      let s = randomWord().charAt(0).toUpperCase() + randomWord().slice(1);
+      for(let i=1; i<len; i++) s += " " + randomWord();
+      return s + ".";
+    }
+    
+    function paragraph(){
+      let n = 3 + Math.floor(Math.random()*4);
+      let p = [];
+      for(let i=0; i<n; i++) p.push(sentence());
+      return p.join(" ");
+    }
+    
+    function generate(){
+      const type = document.getElementById('type').value;
+      const amount = Math.min(50, Math.max(1, +document.getElementById('amount').value || 1));
+      let result = [];
+      
+      if(type === 'paragraphs') for(let i=0; i<amount; i++) result.push(paragraph());
+      else if(type === 'sentences') for(let i=0; i<amount; i++) result.push(sentence());
+      else for(let i=0; i<amount; i++) result.push(randomWord());
+      
+      document.getElementById('output').value = type === 'words' ? result.join(" ") : result.join("\n\n");
+      const statusEl = document.getElementById('status');
+      statusEl.textContent = '✓ Generated ' + amount + ' ' + type;
+    }
+
+    function copyText(){
+      const t = document.getElementById('output').value;
+      const statusEl = document.getElementById('status');
+      if(!t) return;
+      navigator.clipboard.writeText(t).then(() => {
+        statusEl.textContent = '📋 Copied to clipboard!';
+      });
+    }
+
+    // Auto generate on page load
+    generate();
+  </script>
 </body>
 </html>
