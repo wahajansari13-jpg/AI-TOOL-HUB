@@ -1,63 +1,220 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terms of Service | Browser Tools Hub</title>
-  <meta name="description" content="Terms of Service for Browser Tools Hub. Free browser-based tools provided as-is. Read our terms before using the website." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://browsertools.site/terms.html" />
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-slate-950 text-slate-100 min-h-screen">
+  
+  <!-- Favicon (BT Logo) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%2306b6d4'/><stop offset='100%' stop-color='%232563eb'/></linearGradient></defs><rect width='100' height='100' rx='25' fill='url(%23grad)'/><text x='50' y='55' font-family='Arial, sans-serif' font-size='45' font-weight='bold' fill='white' dominant-baseline='middle' text-anchor='middle'>BT</text></svg>">
 
+  <!-- Primary SEO -->
+  <title>Terms of Service | Browser Tools Hub - Terms & Conditions</title>
+  <meta name="description" content="Terms of Service and Conditions of Use for Browser Tools Hub. Read our legal agreement regarding client-side browser utilities, user responsibilities, and service warranties." />
+  <meta name="keywords" content="terms of service, browser tools hub terms, terms and conditions, legal agreement, website terms of use, free web tools agreement" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="Browser Tools Hub" />
+  <link rel="canonical" href="https://browsertools.site/terms.html" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Structured Data Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Terms of Service - Browser Tools Hub",
+    "url": "https://browsertools.site/terms.html",
+    "description": "Terms of Service and legal agreement governing the usage of Browser Tools Hub web utilities.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Browser Tools Hub",
+      "url": "https://browsertools.site/"
+    }
+  }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: #020617; }
+    ::-webkit-scrollbar-thumb { background: #06b6d4; border-radius: 5px; }
+    ::-webkit-scrollbar-thumb:hover { background: #0891b2; }
+    .glass { background: rgba(15,23,42,.75); backdrop-filter: blur(12px); border: 1px solid rgba(148,163,184,.12); }
+  </style>
+</head>
+
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased flex flex-col">
+
+  <!-- NAVIGATION -->
   <nav class="bg-slate-950/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
-      <a href="/" class="flex items-center gap-2.5">
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm">BT</div>
-        <span class="text-white font-semibold text-lg">Browser Tools Hub</span>
-      </a>
-      <div class="hidden md:flex items-center gap-1">
-        <a href="/" class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg">Home</a>
-        <a href="/about.html" class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg">About</a>
-        <a href="/privacy.html" class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg">Privacy</a>
-        <a href="/terms.html" class="px-4 py-2 text-sm text-cyan-400 bg-slate-800 rounded-lg">Terms</a>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center gap-2.5 group">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-cyan-500/25">BT</div>
+          <span class="text-white font-semibold text-lg tracking-tight group-hover:text-cyan-400 transition">Browser Tools Hub</span>
+        </a>
+        <div class="hidden md:flex items-center gap-1">
+          <a href="/" class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition">Home</a>
+          <a href="/about.html" class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition">About</a>
+          <a href="/privacy.html" class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition">Privacy Policy</a>
+          <a href="/terms.html" class="px-4 py-2 text-sm text-cyan-400 font-medium bg-slate-800/80 rounded-lg">Terms</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-300 hover:text-white"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      </div>
+    </div>
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-slate-950">
+      <div class="px-4 py-3 space-y-1">
+        <a href="/" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Home</a>
+        <a href="/about.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">About Us</a>
+        <a href="/privacy.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Privacy Policy</a>
+        <a href="/terms.html" class="block px-3 py-2.5 rounded-lg text-cyan-400 font-medium bg-slate-800">Terms & Conditions</a>
       </div>
     </div>
   </nav>
 
-  <main class="max-w-3xl mx-auto px-4 py-16">
-    <h1 class="text-4xl font-bold mb-2">Terms of Service</h1>
-    <p class="text-slate-500 mb-10">Last updated: October 23, 2026</p>
-
-    <div class="space-y-6 text-slate-300 leading-relaxed">
-      <p>By accessing or using Browser Tools Hub, you agree to be bound by these Terms of Service.</p>
-
-      <h2 class="text-2xl font-semibold text-white mt-10">1. Use of Service</h2>
-      <p>Browser Tools Hub provides free browser-based tools for personal and commercial use. You may use the tools as long as you do not misuse the service or attempt to harm the website.</p>
-
-      <h2 class="text-2xl font-semibold text-white mt-10">2. No Warranty</h2>
-      <p>All tools are provided "as is" without any warranty. We do not guarantee that the tools will be error-free or meet your specific requirements.</p>
-
-      <h2 class="text-2xl font-semibold text-white mt-10">3. Limitation of Liability</h2>
-      <p>Browser Tools Hub shall not be liable for any damages arising from the use or inability to use our tools, including data loss or any other issues.</p>
-
-      <h2 class="text-2xl font-semibold text-white mt-10">4. Intellectual Property</h2>
-      <p>The design, code, and content of this website are owned by Browser Tools Hub. You may not copy or redistribute the website itself without permission.</p>
-
-      <h2 class="text-2xl font-semibold text-white mt-10">5. Third-Party Links & Ads</h2>
-      <p>Our website may contain advertisements or links to third-party sites. We are not responsible for the content or practices of those external sites.</p>
-
-      <h2 class="text-2xl font-semibold text-white mt-10">6. Changes to Terms</h2>
-      <p>We reserve the right to update these Terms at any time. Continued use of the site after changes means you accept the new Terms.</p>
-
-      <h2 class="text-2xl font-semibold text-white mt-10">7. Contact</h2>
-      <p>For any questions regarding these Terms, contact us at: <strong>support@browsertools.site</strong></p>
+  <!-- MAIN CONTENT -->
+  <main class="max-w-4xl mx-auto px-4 py-16 flex-grow space-y-10">
+    
+    <!-- Header -->
+    <div class="text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-medium mb-4">
+        ⚖️ Legal Agreement & Terms
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-3">Terms of Service</h1>
+      <p class="text-slate-500 text-sm">Last Updated & Effective Date: October 23, 2026</p>
     </div>
+
+    <!-- Intro Card -->
+    <div class="glass rounded-2xl p-6 sm:p-8 border border-cyan-500/30">
+      <h2 class="text-xl font-bold text-cyan-400 mb-3">Agreement Overview</h2>
+      <p class="text-slate-300 leading-relaxed text-sm">
+        Welcome to <strong>Browser Tools Hub</strong> (accessible at <a href="https://browsertools.site/" class="text-cyan-400 hover:underline">browsertools.site</a>). By accessing, browsing, or utilizing any of the web tools available on this platform, you agree to comply with and be bound by the following Terms of Service ("Terms"). Please read this agreement carefully. If you do not agree with any part of these terms, you should immediately discontinue the use of our services.
+      </p>
+    </div>
+
+    <!-- Section 1 -->
+    <div class="glass rounded-2xl p-6 sm:p-8 space-y-4">
+      <h2 class="text-2xl font-bold text-white">1. Description of Service & Permitted Use</h2>
+      <p class="text-slate-300 leading-relaxed text-sm">
+        Browser Tools Hub provides free, browser-native digital micro-utilities—including document converters, image compressors, text formatting tools, password generators, QR code tools, and PDF editors.
+      </p>
+      <p class="text-slate-300 leading-relaxed text-sm">
+        Our services are provided for both personal and commercial use without account registration or subscription fees. You agree to use the website solely for lawful purposes and in a manner that does not infringe upon the rights of, restrict, or inhibit anyone else's use and enjoyment of the platform.
+      </p>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="glass rounded-2xl p-6 sm:p-8 space-y-4">
+      <h2 class="text-2xl font-bold text-white">2. Local Browser Execution & User Data Ownership</h2>
+      <p class="text-slate-300 leading-relaxed text-sm">
+        Our web tools execute calculations, file conversions, and text processing client-side inside your local browser memory (RAM/CPU). We do not claim ownership of any files, documents, text, images, or assets processed through our tools.
+      </p>
+      <ul class="list-disc list-inside text-slate-300 space-y-2 ml-2 text-sm">
+        <li><strong class="text-white">Content Responsibility:</strong> You retain sole ownership and legal responsibility for all files, text, and media you process using our platform.</li>
+        <li><strong class="text-white">No Server Storage:</strong> Because files are never uploaded to remote cloud storage, you are responsible for keeping local backup copies of your converted files.</li>
+      </ul>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="glass rounded-2xl p-6 sm:p-8 space-y-4">
+      <h2 class="text-2xl font-bold text-white">3. Prohibited Activities</h2>
+      <p class="text-slate-300 leading-relaxed text-sm">
+        When using Browser Tools Hub, you agree not to engage in any of the following restricted activities:
+      </p>
+      <ul class="list-disc list-inside text-slate-300 space-y-2 ml-2 text-sm">
+        <li>Attempting to reverse-engineer, decompile, or tamper with the underlying JavaScript libraries for malicious redistribution.</li>
+        <li>Deploying automated bot routines, scraping scripts, or DDoS attacks designed to degrade platform accessibility or server availability.</li>
+        <li>Utilizing our generated assets (such as passwords, QR codes, or converted documents) for unlawful, fraudulent, or malicious purposes.</li>
+        <li>Attempting to bypass security headers, inject malicious scripts, or alter network requests.</li>
+      </ul>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="glass rounded-2xl p-6 sm:p-8 space-y-4">
+      <h2 class="text-2xl font-bold text-white">4. Disclaimer of Warranties ("As-Is" Basis)</h2>
+      <p class="text-slate-300 leading-relaxed text-sm">
+        ALL SERVICES AND TOOLS PROVIDED ON BROWSER TOOLS HUB ARE DELIVERED ON AN "AS IS" AND "AS AVAILABLE" BASIS WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED.
+      </p>
+      <p class="text-slate-300 leading-relaxed text-sm">
+        While we strive for high precision, uptime, and accurate conversion routines, we do not guarantee that:
+      </p>
+      <ul class="list-disc list-inside text-slate-300 space-y-1 ml-2 text-sm">
+        <li>The tools will meet your specific technical or commercial requirements without error.</li>
+        <li>The services will be uninterrupted, bug-free, or compatible with every legacy browser version.</li>
+        <li>Document conversions (e.g., Word to PDF) will preserve 100% of complex proprietary typography or custom layout margins.</li>
+      </ul>
+    </div>
+
+    <!-- Section 5 -->
+    <div class="glass rounded-2xl p-6 sm:p-8 space-y-4">
+      <h2 class="text-2xl font-bold text-white">5. Limitation of Liability</h2>
+      <p class="text-slate-300 leading-relaxed text-sm">
+        In no event shall Browser Tools Hub, its founders, developers, or affiliates be held liable for any direct, indirect, incidental, consequential, special, or exemplary damages—including but not limited to loss of business profits, data corruption, file loss, system downtime, or commercial interruption—arising out of your use or inability to use our website or web tools.
+      </p>
+    </div>
+
+    <!-- Section 6 -->
+    <div class="glass rounded-2xl p-6 sm:p-8 space-y-4">
+      <h2 class="text-2xl font-bold text-white">6. Intellectual Property Rights</h2>
+      <p class="text-slate-300 leading-relaxed text-sm">
+        The branding, logo marks ("BT"), custom layout CSS styling, source code structure, and original articles published on Browser Tools Hub are protected by applicable intellectual property laws. You may not duplicate, copy, mirror, or redistribute the website's brand identity or proprietary code without prior written consent.
+      </p>
+    </div>
+
+    <!-- Section 7 -->
+    <div class="glass rounded-2xl p-6 sm:p-8 space-y-4">
+      <h2 class="text-2xl font-bold text-white">7. Third-Party Links & Advertisements</h2>
+      <p class="text-slate-300 leading-relaxed text-sm">
+        Our website may feature third-party advertisements (such as Google AdSense) or hyperlinked references to external sites. We do not endorse, guarantee, or assume legal liability for the content, privacy practices, or product offerings found on third-party domains.
+      </p>
+    </div>
+
+    <!-- Section 8 -->
+    <div class="glass rounded-2xl p-6 sm:p-8 space-y-4">
+      <h2 class="text-2xl font-bold text-white">8. Modifications to Terms</h2>
+      <p class="text-slate-300 leading-relaxed text-sm">
+        We reserve the right to revise or modify these Terms of Service at any time. Any changes will be published directly on this page alongside an updated effective date. Your continued usage of Browser Tools Hub following posted updates constitutes your binding acceptance of the revised Terms.
+      </p>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="glass rounded-2xl p-6 sm:p-8 space-y-4">
+      <h2 class="text-2xl font-bold text-white">9. Contact & Inquiries</h2>
+      <p class="text-slate-300 leading-relaxed text-sm">
+        If you have questions, feedback, or legal inquiries regarding these Terms of Service, please reach out to our legal and administrative team at:
+      </p>
+      <p class="text-cyan-400 font-semibold text-lg">
+        📧 support@browsertools.site
+      </p>
+    </div>
+
   </main>
 
-  <footer class="border-t border-slate-800 py-8 text-center text-slate-500 text-sm">
-    © 2026 Browser Tools Hub. All rights reserved.
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800 py-10 mt-12">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white text-xs font-bold">BT</div>
+        <span class="text-slate-400 text-sm">© 2026 Browser Tools Hub. All rights reserved.</span>
+      </div>
+      <div class="flex gap-4 text-sm font-medium text-slate-300">
+        <a href="/about.html" class="hover:text-cyan-400 transition-colors">About</a>
+        <a href="/privacy.html" class="hover:text-cyan-400 transition-colors">Privacy Policy</a>
+        <a href="/terms.html" class="text-cyan-400 transition-colors">Terms & Conditions</a>
+      </div>
+      <p class="text-slate-500 text-sm">100% Free • No Signup • Fast Runs in Browser</p>
+    </div>
   </footer>
+
+  <!-- Scripts -->
+  <script>
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    if (btn && menu) {
+      btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
+    }
+  </script>
 </body>
 </html>
