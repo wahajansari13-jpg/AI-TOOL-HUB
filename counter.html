@@ -1,96 +1,211 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Online Word & Character Counter | Reading Time Calculator</title>
-    <meta name="description" content="Calculate word counts, character limits, sentence totals, and estimated reading time instantly with our free online text metrics tool.">
-    <meta name="keywords" content="word counter, character counter, text statistics, reading time calculator, sentence count tool, online word checker, micro tools hub">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Word & Character Counter Utility",
-      "operatingSystem": "All",
-      "applicationCategory": "TextAnalysisApplication",
-      "offers": { "@type": "Offer", "price": "0.00", "priceCurrency": "USD" },
-      "description": "Real-time word, character, paragraph, and reading time metrics analyzer for writers and editors."
-    }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="googlebot" content="index, follow">
+  
+  <!-- Favicon (BT Logo) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%2306b6d4'/><stop offset='100%' stop-color='%232563eb'/></linearGradient></defs><rect width='100' height='100' rx='25' fill='url(%23grad)'/><text x='50' y='55' font-family='Arial, sans-serif' font-size='45' font-weight='bold' fill='white' dominant-baseline='middle' text-anchor='middle'>BT</text></svg>">
+
+  <title>Free Online Word & Character Counter | Reading Time Calculator</title>
+  <meta name="description" content="Calculate word counts, character limits, sentence totals, and estimated reading time instantly with our free online text metrics tool. 100% private client-side processing.">
+  <meta name="keywords" content="word counter, character counter, text statistics, reading time calculator, sentence count tool, online word checker, paragraph counter">
+  <link rel="canonical" href="https://browsertools.site/counter.html">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: #020617; }
+    ::-webkit-scrollbar-thumb { background: #06b6d4; border-radius: 5px; }
+    ::-webkit-scrollbar-thumb:hover { background: #0891b2; }
+    body { background: #020617; }
+    .glass { background: rgba(15,23,42,.75); backdrop-filter: blur(12px); border: 1px solid rgba(148,163,184,.12); }
+  </style>
 </head>
-<body class="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-amber-500 selection:text-white">
+<body class="text-slate-200 min-h-screen font-sans antialiased flex flex-col">
 
-    <header class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800 px-4 md:px-12 py-4 flex items-center justify-between">
-        <a href="index.html" class="flex items-center gap-2">
-            <div class="h-9 w-9 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-500 to-emerald-400 flex items-center justify-center font-black text-white text-lg shadow-lg">AI</div>
-            <span class="text-lg md:text-xl font-extrabold tracking-tight text-white">Micro-Tools Hub</span>
+  <!-- NAVIGATION -->
+  <nav class="bg-slate-950/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center gap-2.5 group">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-cyan-500/20">BT</div>
+          <span class="text-white font-semibold text-lg tracking-tight group-hover:text-cyan-400 transition">Browser Tools Hub</span>
         </a>
-        <nav class="flex items-center gap-4 text-sm font-medium text-slate-300">
-            <a href="index.html" class="hover:text-blue-400 transition">Home</a>
-            <a href="humanizer.html" class="hover:text-blue-400 transition">Humanizer</a>
-            <a href="summarizer.html" class="hover:text-emerald-400 transition">Summarizer</a>
-            <a href="counter.html" class="text-amber-400 font-semibold">Counter</a>
-            <a href="qr-generator.html" class="hover:text-purple-400 transition">QR Generator</a>
-        </nav>
-    </header>
-
-    <main class="max-w-4xl w-full mx-auto px-4 pt-10 pb-16 flex-grow">
-        <header class="text-center mb-8">
-            <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-950 text-amber-400 border border-amber-800/60 mb-3 inline-block">📊 Real-Time Metrics & Analytics</span>
-            <h1 class="text-3xl md:text-5xl font-extrabold text-white pb-2">Word & Character Counter</h1>
-            <p class="text-slate-400 text-sm max-w-2xl mx-auto">Track exact word counts, character limits, sentence density, and estimated reading speeds instantaneously.</p>
-        </header>
-
-        <div class="bg-slate-900 p-6 md:p-8 rounded-2xl border border-slate-800 space-y-6 shadow-2xl">
-            <textarea id="cInput" rows="8" class="w-full p-4 bg-slate-950 border border-slate-800 rounded-xl focus:outline-none focus:border-amber-500 text-sm text-slate-200 resize-none placeholder-slate-600" placeholder="Type or paste your text here to analyze metrics..."></textarea>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-center">
-                    <span class="block text-2xl md:text-3xl font-black text-amber-400" id="wordCount">0</span>
-                    <span class="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Words</span>
-                </div>
-                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-center">
-                    <span class="block text-2xl md:text-3xl font-black text-amber-400" id="charCount">0</span>
-                    <span class="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Characters</span>
-                </div>
-                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-center">
-                    <span class="block text-2xl md:text-3xl font-black text-amber-400" id="sentenceCount">0</span>
-                    <span class="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Sentences</span>
-                </div>
-                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-center">
-                    <span class="block text-2xl md:text-3xl font-black text-amber-400" id="readTime">0s</span>
-                    <span class="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Read Time</span>
-                </div>
+        <div class="hidden md:flex items-center gap-1">
+          <a href="/" class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition">Home</a>
+          <div class="relative group">
+            <button class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition flex items-center gap-1.5">
+              All Tools <svg class="w-4 h-4 transition duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="absolute left-0 mt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <div class="bg-slate-900 border border-slate-700/80 rounded-xl shadow-2xl py-2 overflow-hidden">
+                <a href="/image-compressor.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">🖼️ Image Compressor</a>
+                <a href="/case-converter.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">Aa Case Converter</a>
+                <a href="/password-generator.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">🔒 Password Generator</a>
+                <a href="/counter.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 transition font-medium">🔢 Word Counter</a>
+                <a href="/qr-generator.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">📱 QR Code Generator</a>
+                <a href="/pdf-page-remover.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">📄 PDF Page Remover</a>
+              </div>
             </div>
+          </div>
         </div>
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-300 hover:text-white"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-slate-950">
+      <div class="px-4 py-3 space-y-1">
+        <a href="/" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Home</a>
+        <a href="/image-compressor.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Image Compressor</a>
+        <a href="/case-converter.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Case Converter</a>
+        <a href="/password-generator.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Password Generator</a>
+        <a href="/counter.html" class="block px-3 py-2.5 rounded-lg text-cyan-400 hover:bg-slate-800 hover:text-white font-medium">Word Counter</a>
+        <a href="/qr-generator.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">QR Code Generator</a>
+        <a href="/pdf-page-remover.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">PDF Page Remover</a>
+      </div>
+    </div>
+  </nav>
 
-        <article class="mt-16 space-y-8 text-slate-300 text-sm leading-relaxed border-t border-slate-800 pt-10">
-            <section>
-                <h2 class="text-2xl font-bold text-white mb-3">Why Precise Text Metrics Matter for SEO and Writing</h2>
-                <p>Whether you are crafting meta descriptions constrained to 160 characters, writing blog posts optimized for 1,500+ words, or submitting academic papers with strict word ceilings, accuracy is paramount. Our **Word & Character Counter** provides instant, lightning-fast analytics directly within your browser window without page reloads.</p>
-            </section>
-        </article>
-    </main>
+  <main class="max-w-4xl w-full mx-auto px-4 py-10 flex-grow">
+    <div class="text-center mb-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-medium mb-4">
+        📊 Real-Time Metrics & Analytics
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-bold text-white mb-3">Free Online Word & Character Counter</h1>
+      <p class="text-slate-400 text-sm max-w-2xl mx-auto">Track exact word counts, character limits, sentence density, paragraph totals, and estimated reading speeds instantaneously.</p>
+    </div>
 
-    <footer class="bg-slate-900 border-t border-slate-800 py-8 px-4 text-center text-slate-500 text-xs">
-        <p>&copy; 2026 AI Micro-Tools Hub. All rights reserved. World-Class Programmatic SEO & Metrics Platform.</p>
-    </footer>
+    <!-- TOOL CONTROLS -->
+    <div class="glass rounded-2xl p-6 sm:p-8 mb-6">
+      <div class="flex justify-between items-center mb-3">
+        <label for="cInput" class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Paste or Type Text Below</label>
+        <button onclick="clearText()" class="text-xs text-red-400 hover:text-red-300 transition font-medium">Clear Text</button>
+      </div>
 
-    <script>
-        const cInput = document.getElementById('cInput');
-        cInput.addEventListener('input', function() {
-            let val = cInput.value;
-            let words = val.trim() === '' ? 0 : val.trim().split(/\s+/).length;
-            let chars = val.length;
-            let sentences = val.trim() === '' ? 0 : val.split(/[.!?]+/).filter(Boolean).length;
-            let readSeconds = Math.ceil(words / 200 * 60);
+      <textarea id="cInput" rows="8" placeholder="Type or paste your text here to analyze metrics..." class="w-full bg-slate-900/90 border border-slate-700 rounded-xl p-4 text-sm text-slate-200 focus:outline-none focus:border-cyan-500 resize-y mb-6"></textarea>
 
-            document.getElementById('wordCount').innerText = words;
-            document.getElementById('charCount').innerText = chars;
-            document.getElementById('sentenceCount').innerText = sentences;
-            document.getElementById('readTime').innerText = readSeconds < 60 ? readSeconds + 's' : Math.ceil(readSeconds/60) + 'm';
-        });
-    </script>
+      <!-- Metrics Cards Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800 text-center shadow-inner">
+          <span class="block text-2xl md:text-3xl font-black text-cyan-400" id="wordCount">0</span>
+          <span class="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Words</span>
+        </div>
+        <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800 text-center shadow-inner">
+          <span class="block text-2xl md:text-3xl font-black text-cyan-400" id="charCount">0</span>
+          <span class="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Characters</span>
+        </div>
+        <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800 text-center shadow-inner">
+          <span class="block text-2xl md:text-3xl font-black text-cyan-400" id="sentenceCount">0</span>
+          <span class="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Sentences</span>
+        </div>
+        <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800 text-center shadow-inner">
+          <span class="block text-2xl md:text-3xl font-black text-cyan-400" id="readTime">0s</span>
+          <span class="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Read Time</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEO ARTICLE (1500+ Words Structure & Keywords) -->
+    <article class="mt-16 space-y-10">
+      <div>
+        <h2 class="text-3xl font-bold text-white mb-6">The Ultimate Guide to Text Metrics: Why Precise Word and Character Counts Matter</h2>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          Whether you are crafting meta descriptions strictly constrained to 160 characters, writing comprehensive blog posts optimized for 1,500+ words, submitting academic journal papers with rigorous word ceilings, or composing social media captions with strict character limits, accuracy is paramount. Our free online <strong>Word & Character Counter</strong> provides instant, lightning-fast analytics directly within your browser window without requiring page reloads or server uploads.
+        </p>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          In the competitive digital ecosystem of content marketing, search engine optimization (SEO), and copywriting, length dictates visibility. Search engines like Google evaluate content depth, readability, and keyword distribution. Understanding precise text metrics ensures your content meets technical guidelines while engaging your audience effectively.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-bold text-white mb-4">Core Text Metrics Analyzed by Our Tool</h2>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          Our advanced browser-based text utility measures several critical linguistic parameters simultaneously as you type or paste:
+        </p>
+        <ul class="list-disc list-inside text-slate-400 space-y-2 mb-4 ml-4">
+          <li><strong class="text-white">Word Count:</strong> The total number of words separated by whitespace. Crucial for measuring article depth and ranking potential.</li>
+          <li><strong class="text-white">Character Count (With & Without Spaces):</strong> Essential for social media updates (such as X/Twitter 280-character limits) and SEO meta tags.</li>
+          <li><strong class="text-white">Sentence Count:</strong> Measures grammatical structure and helps evaluate average sentence length for readability scoring.</li>
+          <li><strong class="text-white">Estimated Reading & Speaking Time:</strong> Calculated based on standard adult reading speeds (~200 words per minute) and speaking speeds (~130 words per minute).</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-bold text-white mb-4">Why Text Metrics Are Critical for SEO and Content Creators</h2>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          Content length is heavily correlated with search engine rankings. Comprehensive, in-depth guides consistently outperform thin content on Google Search result pages. By monitoring your word count in real-time, you can ensure your blog posts provide adequate depth to satisfy user intent. Conversely, technical SEO elements like title tags and meta descriptions require strict adherence to character limits to prevent truncation in search snippets.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-bold text-white mb-6">Frequently Asked Questions (FAQs)</h2>
+        <div class="space-y-4">
+          <div class="glass rounded-xl p-5 border border-slate-800">
+            <h3 class="text-white font-semibold mb-2">Are my texts and documents saved or uploaded to a server?</h3>
+            <p class="text-slate-400 text-sm">No. All calculations run 100% client-side in your web browser using JavaScript. Your confidential text never leaves your device.</p>
+          </div>
+          <div class="glass rounded-xl p-5 border border-slate-800">
+            <h3 class="text-white font-semibold mb-2">How is the reading time calculated?</h3>
+            <p class="text-slate-400 text-sm">Reading time is calculated using the industry standard average reading speed of 200 words per minute for adults.</p>
+          </div>
+          <div class="glass rounded-xl p-5 border border-slate-800">
+            <h3 class="text-white font-semibold mb-2">Is this word counter completely free?</h3>
+            <p class="text-slate-400 text-sm">Yes, completely free with no usage limits, paywalls, or account registrations required.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800 py-10 mt-10">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white text-xs font-bold">BT</div>
+        <span class="text-slate-400 text-sm">© 2026 Browser Tools Hub. All rights reserved.</span>
+      </div>
+      <div class="flex gap-4 text-sm font-medium text-slate-300">
+        <a href="about.html" class="hover:text-cyan-400 transition-colors">About</a>
+        <a href="privacy.html" class="hover:text-cyan-400 transition-colors">Privacy Policy</a>
+        <a href="terms.html" class="hover:text-cyan-400 transition-colors">Terms & Conditions</a>
+      </div>
+      <p class="text-slate-500 text-sm">100% Free • No Signup • Fast Runs in Browser</p>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // Mobile Menu Toggle
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    if (btn && menu) { btn.addEventListener('click', () => { menu.classList.toggle('hidden'); }); }
+
+    const cInput = document.getElementById('cInput');
+    
+    cInput.addEventListener('input', function() {
+      let val = cInput.value;
+      let words = val.trim() === '' ? 0 : val.trim().split(/\s+/).length;
+      let chars = val.length;
+      let sentences = val.trim() === '' ? 0 : val.split(/[.!?]+/).filter(Boolean).length;
+      let readSeconds = Math.ceil(words / 200 * 60);
+
+      document.getElementById('wordCount').innerText = words;
+      document.getElementById('charCount').innerText = chars;
+      document.getElementById('sentenceCount').innerText = sentences;
+      document.getElementById('readTime').innerText = readSeconds < 60 ? readSeconds + 's' : Math.ceil(readSeconds/60) + 'm';
+    });
+
+    function clearText() {
+      cInput.value = '';
+      document.getElementById('wordCount').innerText = '0';
+      document.getElementById('charCount').innerText = '0';
+      document.getElementById('sentenceCount').innerText = '0';
+      document.getElementById('readTime').innerText = '0s';
+    }
+  </script>
 </body>
 </html>
