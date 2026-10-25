@@ -1,63 +1,210 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy | Browser Tools Hub</title>
-  <meta name="description" content="Privacy Policy of Browser Tools Hub. We do not collect, store or share your personal data or files. All tools run locally in your browser." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://browsertools.site/privacy.html" />
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-slate-950 text-slate-100 min-h-screen">
+  
+  <!-- Favicon (BT Logo) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%2306b6d4'/><stop offset='100%' stop-color='%232563eb'/></linearGradient></defs><rect width='100' height='100' rx='25' fill='url(%23grad)'/><text x='50' y='55' font-family='Arial, sans-serif' font-size='45' font-weight='bold' fill='white' dominant-baseline='middle' text-anchor='middle'>BT</text></svg>">
 
+  <!-- Primary SEO -->
+  <title>Privacy Policy | Browser Tools Hub - Secure & Private Web Utilities</title>
+  <meta name="description" content="Privacy Policy for Browser Tools Hub. Learn how we protect your privacy with 100% client-side web tools. Zero server uploads, no data collection, full GDPR compliance." />
+  <meta name="keywords" content="privacy policy, browser tools hub privacy, secure client side tools, gdpr compliant web tools, private document converter, no logs privacy policy" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="Browser Tools Hub" />
+  <link rel="canonical" href="https://browsertools.site/privacy.html" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Structured Data Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Privacy Policy - Browser Tools Hub",
+    "url": "https://browsertools.site/privacy.html",
+    "description": "Privacy Policy explaining the zero-server data collection practices at Browser Tools Hub.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Browser Tools Hub",
+      "url": "https://browsertools.site/"
+    }
+  }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: #020617; }
+    ::-webkit-scrollbar-thumb { background: #06b6d4; border-radius: 5px; }
+    ::-webkit-scrollbar-thumb:hover { background: #0891b2; }
+    .glass { background: rgba(15,23,42,.75); backdrop-filter: blur(12px); border: 1px solid rgba(148,163,184,.12); }
+  </style>
+</head>
+
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased flex flex-col">
+
+  <!-- NAVIGATION -->
   <nav class="bg-slate-950/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
-      <a href="/" class="flex items-center gap-2.5">
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm">BT</div>
-        <span class="text-white font-semibold text-lg">Browser Tools Hub</span>
-      </a>
-      <div class="hidden md:flex items-center gap-1">
-        <a href="/" class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg">Home</a>
-        <a href="/about.html" class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg">About</a>
-        <a href="/privacy.html" class="px-4 py-2 text-sm text-cyan-400 bg-slate-800 rounded-lg">Privacy</a>
-        <a href="/terms.html" class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg">Terms</a>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center gap-2.5 group">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-cyan-500/25">BT</div>
+          <span class="text-white font-semibold text-lg tracking-tight group-hover:text-cyan-400 transition">Browser Tools Hub</span>
+        </a>
+        <div class="hidden md:flex items-center gap-1">
+          <a href="/" class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition">Home</a>
+          <a href="/about.html" class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition">About</a>
+          <a href="/privacy.html" class="px-4 py-2 text-sm text-cyan-400 font-medium bg-slate-800/80 rounded-lg">Privacy Policy</a>
+          <a href="/terms.html" class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition">Terms</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-300 hover:text-white"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      </div>
+    </div>
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-slate-950">
+      <div class="px-4 py-3 space-y-1">
+        <a href="/" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Home</a>
+        <a href="/about.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">About Us</a>
+        <a href="/privacy.html" class="block px-3 py-2.5 rounded-lg text-cyan-400 font-medium bg-slate-800">Privacy Policy</a>
+        <a href="/terms.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Terms & Conditions</a>
       </div>
     </div>
   </nav>
 
-  <main class="max-w-3xl mx-auto px-4 py-16">
-    <h1 class="text-4xl font-bold mb-2">Privacy Policy</h1>
-    <p class="text-slate-500 mb-10">Last updated: October 23, 2026</p>
-
-    <div class="space-y-6 text-slate-300 leading-relaxed">
-      <p>Browser Tools Hub ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we handle information when you use our website.</p>
-
-      <h2 class="text-2xl font-semibold text-white mt-10">1. Information We Collect</h2>
-      <p>We do <strong>not</strong> collect any personal information or files you process using our tools. All tools run entirely in your browser (client-side). Your text, images, PDFs, and passwords never leave your device.</p>
-
-      <h2 class="text-2xl font-semibold text-white mt-10">2. Cookies & Analytics</h2>
-      <p>We may use basic analytics (such as Google Analytics or similar) to understand general traffic patterns. These tools collect anonymous data like pages visited and device type. No personally identifiable information is stored.</p>
-
-      <h2 class="text-2xl font-semibold text-white mt-10">3. Third-Party Services</h2>
-      <p>We may display advertisements through Google AdSense or similar partners in the future. These services may use cookies to show relevant ads. You can manage ad preferences through your browser or Google’s ad settings.</p>
-
-      <h2 class="text-2xl font-semibold text-white mt-10">4. Data Security</h2>
-      <p>Since we do not store your files or personal data on our servers, the risk of data breach related to your content is minimized.</p>
-
-      <h2 class="text-2xl font-semibold text-white mt-10">5. Children's Privacy</h2>
-      <p>Our services are not directed to children under 13. We do not knowingly collect information from children.</p>
-
-      <h2 class="text-2xl font-semibold text-white mt-10">6. Changes to This Policy</h2>
-      <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated date.</p>
-
-      <h2 class="text-2xl font-semibold text-white mt-10">7. Contact Us</h2>
-      <p>If you have questions about this Privacy Policy, contact us at: <strong>support@browsertools.site</strong></p>
+  <!-- MAIN CONTENT -->
+  <main class="max-w-4xl mx-auto px-4 py-16 flex-grow space-y-10">
+    
+    <!-- Header -->
+    <div class="text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-medium mb-4">
+        🔒 Official Policy Documentation
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-3">Privacy Policy</h1>
+      <p class="text-slate-500 text-sm">Last Updated & Effective Date: October 23, 2026</p>
     </div>
+
+    <!-- Privacy Overview Box -->
+    <div class="glass rounded-2xl p-6 sm:p-8 border border-cyan-500/30">
+      <h2 class="text-xl font-bold text-cyan-400 mb-3">Executive Summary: Our Zero-Server Upload Guarantee</h2>
+      <p class="text-slate-300 leading-relaxed text-sm">
+        At <strong>Browser Tools Hub</strong> (accessible from <a href="https://browsertools.site/" class="text-cyan-400 hover:underline">browsertools.site</a>), user privacy is our absolute priority. Unlike conventional web utility platforms that upload your files to external remote cloud servers, our tools operate under a <strong>100% Client-Side Architecture</strong>. All file conversions, text formatting, image compressions, and encryption calculations take place directly in your web browser memory. Your sensitive data never leaves your physical device.
+      </p>
+    </div>
+
+    <!-- Section 1 -->
+    <div class="glass rounded-2xl p-6 sm:p-8 space-y-4">
+      <h2 class="text-2xl font-bold text-white">1. Information We Do NOT Collect</h2>
+      <p class="text-slate-300 leading-relaxed">
+        Because our web utilities run locally on your device, we do not collect, intercept, inspect, or store any of the following user assets:
+      </p>
+      <ul class="list-disc list-inside text-slate-300 space-y-2 ml-2 text-sm">
+        <li><strong class="text-white">User Documents & Files:</strong> Word (.docx), Excel (.xlsx), PDF documents, or plain text uploaded to our <a href="/doc-converter.html" class="text-cyan-400 hover:underline">Document Converter</a> or <a href="/pdf-page-remover.html" class="text-cyan-400 hover:underline">PDF Page Remover</a> are processed strictly in RAM.</li>
+        <li><strong class="text-white">Media Files:</strong> JPG, PNG, or WebP images compressed using our <a href="/image-compressor.html" class="text-cyan-400 hover:underline">Image Compressor</a> are never uploaded to remote servers.</li>
+        <li><strong class="text-white">Sensitive Strings & Inputs:</strong> Code payloads formatted in the <a href="/json-formatter.html" class="text-cyan-400 hover:underline">JSON Formatter</a> or generated keys in the <a href="/password-generator.html" class="text-cyan-400 hover:underline">Password Generator</a> remain inside your browser instance.</li>
+      </ul>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="glass rounded-2xl p-6 sm:p-8 space-y-4">
+      <h2 class="text-2xl font-bold text-white">2. Passive Information Collection & Web Analytics</h2>
+      <p class="text-slate-300 leading-relaxed">
+        To maintain operational stability, analyze site speed performance, and optimize user experience, we may collect non-personally identifiable technical information through standard web analytics integrations (such as Google Analytics).
+      </p>
+      <p class="text-slate-300 leading-relaxed text-sm">
+        This automated technical log data includes:
+      </p>
+      <ul class="list-disc list-inside text-slate-300 space-y-1 ml-2 text-sm">
+        <li>Anonymized Internet Protocol (IP) addresses</li>
+        <li>Browser type and operating system environment</li>
+        <li>Referring site URLs and page dwell durations</li>
+        <li>Device viewport resolution and language preferences</li>
+      </ul>
+      <p class="text-slate-300 leading-relaxed text-sm">
+        This data is aggregated statistically and cannot be linked back to individual identity profiles.
+      </p>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="glass rounded-2xl p-6 sm:p-8 space-y-4">
+      <h2 class="text-2xl font-bold text-white">3. Third-Party Advertising & Cookies Policy</h2>
+      <p class="text-slate-300 leading-relaxed">
+        Browser Tools Hub may display third-party advertisements provided by networks such as <strong>Google AdSense</strong> to fund platform hosting costs. 
+      </p>
+      <p class="text-slate-300 leading-relaxed text-sm">
+        Ad networks may use web cookies, web beacons, or tracking technologies to serve relevant ads based on prior website visits. Google's use of advertising cookies (such as the DoubleClick DART cookie) enables it and its partners to serve targeted ads based on your visit to our site and other sites on the Internet.
+      </p>
+      <p class="text-slate-300 leading-relaxed text-sm">
+        You may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:underline">Google Ad Settings</a> or by adjusting your web browser cookie preferences.
+      </p>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="glass rounded-2xl p-6 sm:p-8 space-y-4">
+      <h2 class="text-2xl font-bold text-white">4. GDPR & CCPA Privacy Compliance Rights</h2>
+      <p class="text-slate-300 leading-relaxed">
+        We respect international data privacy laws, including the General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA).
+      </p>
+      <div class="space-y-3 text-sm text-slate-300">
+        <p><strong class="text-white">The Right to Access & Erasure:</strong> Because we do not harvest or store personal identity databases or user file payloads, we do not hold personal profile records to disclose or delete.</p>
+        <p><strong class="text-white">Do Not Sell My Personal Information:</strong> Browser Tools Hub does not sell, rent, or trade user data or usage records to third-party data brokers.</p>
+      </div>
+    </div>
+
+    <!-- Section 5 -->
+    <div class="glass rounded-2xl p-6 sm:p-8 space-y-4">
+      <h2 class="text-2xl font-bold text-white">5. External Web Links</h2>
+      <p class="text-slate-300 leading-relaxed text-sm">
+        Our website may contain hyperlinked references to external sites. We do not control and are not responsible for the privacy practices or content of third-party domains. We advise users to review the privacy documentation of any external platform they visit.
+      </p>
+    </div>
+
+    <!-- Section 6 -->
+    <div class="glass rounded-2xl p-6 sm:p-8 space-y-4">
+      <h2 class="text-2xl font-bold text-white">6. Updates to This Privacy Policy</h2>
+      <p class="text-slate-300 leading-relaxed text-sm">
+        We reserve the right to modify or update this Privacy Policy periodically. Any modifications will be posted directly on this page alongside a revised "Last Updated" timestamp. Continual use of our services after policy updates indicates acceptance of revised terms.
+      </p>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="glass rounded-2xl p-6 sm:p-8 space-y-4">
+      <h2 class="text-2xl font-bold text-white">7. Contact Our Privacy Team</h2>
+      <p class="text-slate-300 leading-relaxed text-sm">
+        If you have questions, feedback, or compliance inquiries regarding this Privacy Policy, please contact our administrative team at:
+      </p>
+      <p class="text-cyan-400 font-semibold text-lg">
+        📧 support@browsertools.site
+      </p>
+    </div>
+
   </main>
 
-  <footer class="border-t border-slate-800 py-8 text-center text-slate-500 text-sm">
-    © 2026 Browser Tools Hub. All rights reserved.
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800 py-10 mt-12">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white text-xs font-bold">BT</div>
+        <span class="text-slate-400 text-sm">© 2026 Browser Tools Hub. All rights reserved.</span>
+      </div>
+      <div class="flex gap-4 text-sm font-medium text-slate-300">
+        <a href="/about.html" class="hover:text-cyan-400 transition-colors">About</a>
+        <a href="/privacy.html" class="text-cyan-400 transition-colors">Privacy Policy</a>
+        <a href="/terms.html" class="hover:text-cyan-400 transition-colors">Terms & Conditions</a>
+      </div>
+      <p class="text-slate-500 text-sm">100% Free • No Signup • Fast Runs in Browser</p>
+    </div>
   </footer>
+
+  <!-- Scripts -->
+  <script>
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    if (btn && menu) {
+      btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
+    }
+  </script>
 </body>
 </html>
