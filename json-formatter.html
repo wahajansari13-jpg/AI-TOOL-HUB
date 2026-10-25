@@ -5,74 +5,146 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- SEO Meta Tags -->
-  <title>Best Online JSON Formatter & Validator | Fast JSON Beautifier</title>
-  <meta name="description" content="Free online JSON formatter, validator, and beautifier. Format, repair, minify, and view JSON data instantly in browser. 100% private client-side processing.">
-  <meta name="keywords" content="online json formatter, json validator online, json beautifier, json viewer, format json code online">
+  <title>Online JSON Formatter & Validator | Browser Tools Hub</title>
+  <meta name="description" content="Free online JSON formatter, validator, and beautifier. Format, repair, minify, and view JSON data instantly in browser with 100% privacy.">
   
   <!-- Favicon / Logo Configuration -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <!-- Agar aapka logo kisi direct image file me hai, to ye use karein: -->
-  <!-- <link rel="icon" type="image/png" href="/images/logo.png"> -->
+  <link rel="icon" type="image/png" href="/favicon.png"> <!-- Agar aapka favicon PNG hai -->
 
   <style>
+    :root {
+      --bg-primary: #0b0f19;
+      --bg-card: #111827;
+      --border-color: #1f2937;
+      --accent-cyan: #00d2ff;
+      --accent-blue: #0ea5e9;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
     body {
       font-family: system-ui, -apple-system, sans-serif;
-      background-color: #f1f5f9;
-      color: #1e293b;
+      background-color: var(--bg-primary);
+      color: var(--text-main);
       margin: 0;
-      padding: 20px;
+      padding: 0;
       line-height: 1.6;
     }
+
+    /* Navbar Styling matching your site */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      border-bottom: 1px solid var(--border-color);
+      background: var(--bg-primary);
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 700;
+      font-size: 18px;
+    }
+    .logo-badge {
+      background: linear-gradient(135deg, #00d2ff, #005bea);
+      color: white;
+      padding: 6px 10px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 15px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: var(--accent-cyan);
+    }
+
     .main-wrapper {
       max-width: 1100px;
-      margin: 0 auto;
+      margin: 40px auto;
+      padding: 0 20px;
     }
+
+    /* Badge Tag */
+    .badge-tag {
+      display: inline-block;
+      background: rgba(14, 165, 233, 0.1);
+      color: var(--accent-cyan);
+      border: 1px solid rgba(14, 165, 233, 0.3);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    /* Tool Box Card */
     .tool-box {
-      background: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      padding: 25px;
-      margin-bottom: 40px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      padding: 30px;
+      margin-bottom: 50px;
     }
+
     h1 {
+      font-size: 32px;
+      color: var(--text-main);
+      margin-bottom: 10px;
       text-align: center;
-      color: #1e293b;
-      margin-bottom: 25px;
     }
+    .subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 25px;
+      font-size: 14px;
+    }
+
     .toolbar {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
     .btn {
       border: none;
       padding: 10px 18px;
-      border-radius: 6px;
+      border-radius: 8px;
       cursor: pointer;
       font-weight: 600;
       color: white;
-      transition: opacity 0.2s;
+      transition: all 0.2s;
     }
-    .btn:hover { opacity: 0.9; }
-    .btn-format { background: #2563eb; }
-    .btn-minify { background: #475569; }
-    .btn-copy { background: #16a34a; }
-    .btn-clear { background: #dc2626; }
-    
+    .btn-format { background: linear-gradient(135deg, #00d2ff, #0ea5e9); }
+    .btn-format:hover { opacity: 0.9; box-shadow: 0 0 15px rgba(0,210,255,0.4); }
+    .btn-minify { background: #1e293b; border: 1px solid #334155; }
+    .btn-minify:hover { background: #334155; }
+    .btn-copy { background: #10b981; }
+    .btn-clear { background: #ef4444; }
+
     #status-message {
       display: none;
       padding: 12px;
-      border-radius: 6px;
-      margin-bottom: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
       font-weight: 500;
+      font-size: 14px;
     }
+
     .editors-grid {
       display: flex;
-      gap: 15px;
+      gap: 20px;
       flex-wrap: wrap;
     }
     .editor-column {
@@ -82,46 +154,59 @@
     label {
       display: block;
       font-weight: 600;
-      margin-bottom: 5px;
-      color: #475569;
+      margin-bottom: 8px;
+      color: var(--text-muted);
+      font-size: 14px;
     }
     textarea {
       width: 100%;
       height: 380px;
-      padding: 12px;
-      border: 1px solid #cbd5e1;
-      border-radius: 8px;
+      padding: 15px;
+      background: #090d16;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      color: #38bdf8;
       font-family: monospace;
       font-size: 14px;
       box-sizing: border-box;
       resize: vertical;
     }
-    #json-output {
-      background: #f8fafc;
+    textarea:focus {
+      outline: none;
+      border-color: var(--accent-cyan);
     }
-    
-    /* SEO Article Styling */
+    #json-output {
+      color: #34d399;
+    }
+
+    /* SEO Article Styling (Dark Theme) */
     .seo-content-section {
-      background: #ffffff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 40px;
+      border-radius: 16px;
     }
     .seo-content-section h2 {
-      color: #0f172a;
-      margin-top: 30px;
-      border-bottom: 2px solid #e2e8f0;
-      padding-bottom: 8px;
+      color: var(--text-main);
+      margin-top: 35px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 10px;
+      font-size: 22px;
     }
     .seo-content-section h3 {
-      color: #334155;
-      margin-top: 20px;
+      color: var(--accent-cyan);
+      margin-top: 25px;
+      font-size: 18px;
+    }
+    .seo-content-section p, .seo-content-section li {
+      color: var(--text-muted);
     }
     pre {
-      background: #0f172a;
-      color: #e2e8f0;
+      background: #060911;
+      border: 1px solid var(--border-color);
+      color: #38bdf8;
       padding: 15px;
-      border-radius: 6px;
+      border-radius: 8px;
       overflow-x: auto;
     }
     code {
@@ -131,14 +216,28 @@
 </head>
 <body>
 
+  <!-- Navigation Bar -->
+  <header>
+    <a href="/" class="logo-container">
+      <div class="logo-badge">BT</div>
+      <span>Browser Tools Hub</span>
+    </a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/all-tools">All Tools</a>
+    </nav>
+  </header>
+
   <div class="main-wrapper">
 
     <!-- JSON Tool UI Section -->
-    <div class="tool-box">
+    <div class="tool-box" style="text-align: center;">
+      <div class="badge-tag">🛠️ Free Developer Tool</div>
       <h1>Online JSON Formatter & Validator</h1>
+      <p class="subtitle">Format, validate, and beautify your raw JSON data instantly in your browser. 100% private & secure.</p>
 
       <!-- Action Buttons Toolbar -->
-      <div class="toolbar">
+      <div class="toolbar" style="justify-content: center;">
         <button class="btn btn-format" onclick="formatJSON()">✨ Format / Beautify</button>
         <button class="btn btn-minify" onclick="minifyJSON()">⚡ Minify JSON</button>
         <button class="btn btn-copy" onclick="copyOutput()">📋 Copy Output</button>
@@ -149,7 +248,7 @@
       <div id="status-message"></div>
 
       <!-- Input & Output Textareas -->
-      <div class="editors-grid">
+      <div class="editors-grid" style="text-align: left;">
         <div class="editor-column">
           <label for="json-input">Paste Raw JSON Here:</label>
           <textarea id="json-input" placeholder='{"name":"John", "age":30, "city":"New York"}'></textarea>
@@ -165,99 +264,57 @@
     <!-- SEO Optimized Article Section (1500+ Words Content Coverage) -->
     <article class="seo-content-section">
       <h2>1. What is an Online JSON Formatter & Validator?</h2>
-      <p>An <strong>online JSON formatter</strong> is a web-based developer tool designed to convert unstructured, minified, or raw JavaScript Object Notation (JSON) strings into a clean, human-readable format. JSON is the primary data-interchange format used across modern web development, APIs, microservices, and web applications.</p>
-      <p>While machine-generated JSON data is often compressed into a single line to minimize payload size and save network bandwidth, reading or debugging such unformatted strings is frustrating for software engineers. Using a reliable <strong>JSON beautifier</strong> allows developers to automatically apply proper indentation, tab spaces, and syntax highlighting, instantly rendering complex datasets clear and readable.</p>
-      <p>Additionally, an integrated <strong>JSON validator</strong> parses code line-by-line to verify whether the syntax complies strictly with the RFC 8259 specification. If any error exists—such as trailing commas, missing quotes, or unclosed brackets—our <strong>JSON viewer</strong> highlights the exact line number and provides clear error diagnostics to resolve syntax bugs in seconds.</p>
-
-      <hr>
+      <p>An <strong>online JSON formatter</strong> is a powerful web utility built to transform messy, unformatted, or minified JavaScript Object Notation (JSON) strings into clean, structured, and human-readable layouts. JSON serves as the core data backbone for modern APIs, microservices, and web applications.</p>
+      <p>When engineering web applications, servers often compress JSON payloads into a single dense line to minimize bandwidth usage. However, troubleshooting compressed lines is tedious. A reliable <strong>JSON beautifier</strong> applies smart syntax indentation and color coding, making complex data hierarchies instantly clear.</p>
+      <p>Furthermore, an integrated <strong>JSON validator</strong> evaluates your syntax against standard RFC specifications. If any bracket, quote, or comma is misplaced, the system pinpoints the exact error instantly[cite: 1].</p>
 
       <h2>2. Key Features of Our Free Online JSON Beautifier</h2>
-      <p>Our JSON tool built for <code>browsertools.site</code> provides enterprise-grade performance directly inside your web browser. Here are the core capabilities engineered for developers:</p>
       <ul>
-        <li><strong>Instant JSON Formatting & Tree View:</strong> Convert messy API responses into beautifully indented structures with customizable 2-space or 4-space tab indentation.</li>
-        <li><strong>Real-Time Syntax Validation:</strong> Detect syntax errors on-the-fly. Our intelligent parser immediately points out mismatched braces, invalid key syntax, or misplaced quotes.</li>
-        <li><strong>One-Click JSON Minifier:</strong> Strip all unnecessary whitespace, newline characters, and spaces to condense your JSON payload before sending it over network requests.</li>
-        <li><strong>100% Privacy & Client-Side Execution:</strong> Security is our highest priority. All JSON parsing, beautifying, and validating occurs locally within your browser using JavaScript. Your sensitive data and API keys never leave your device.</li>
-        <li><strong>Export & Copy Utility:</strong> Instantly copy formatted JSON to your clipboard with a single click.</li>
+        <li><strong>Instant Formatting & Indentation:</strong> Clean up tangled API responses with structured tab spacing.</li>
+        <li><strong>Real-Time Syntax Error Checking:</strong> Detect mismatched brackets and trailing commas immediately.</li>
+        <li><strong>One-Click Minifier:</strong> Condense spaces to prepare production-ready compact JSON payloads.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All operations execute securely inside your browser; no data leaves your device[cite: 1].</li>
       </ul>
 
-      <hr>
+      <h2>3. Common JSON Syntax Errors to Avoid</h2>
+      <h3>A. Trailing Commas</h3>
+      <p>Leaving a comma after the final element in an array or object causes parsing failures:</p>
+      <pre><code>// Invalid:
+{ "tool": "JSON Formatter", }
 
-      <h2>3. Why JSON Formatting and Syntax Validation Matter</h2>
-      <p>In modern web engineering, web applications communicate via RESTful APIs and GraphQL endpoints using JSON objects. Clean data structure directly impacts code readability, developer speed, and system stability.</p>
+// Valid:
+{ "tool": "JSON Formatter" }</code></pre>
 
-      <h3>A. Speed Up API Debugging</h3>
-      <p>When working with complex backend responses, pinpointing missing key-value pairs in a single-line string is inefficient. A <strong>JSON code formatter</strong> expands nested structures, enabling frontend and mobile app developers to inspect API payloads quickly and accurately.</p>
+      <h3>B. Unquoted Property Names</h3>
+      <p>Unlike standard JavaScript objects, JSON keys must always be enclosed inside double quotes (`"`).</p>
 
-      <h3>B. Prevent Runtime Application Crashes</h3>
-      <p>A single missing quote or misplaced comma in a web configuration file (like <code>package.json</code> or <code>appsettings.json</code>) can break deployment pipelines or crash production systems. Running your code through an online <strong>JSON validator</strong> before deployment ensures absolute syntax compliance.</p>
-
-      <hr>
-
-      <h2>4. Common JSON Syntax Errors and How to Fix Them</h2>
-      <p>Even seasoned software engineers encounter common JSON formatting mistakes. Here are the most frequent syntax issues caught by our <strong>JSON syntax checker</strong>:</p>
-
-      <h3>1. Trailing Commas in Objects or Arrays</h3>
-      <p>In standard JSON, the last item in an object or array must not end with a trailing comma.</p>
-      <pre><code>// Invalid JSON:
-{
-  "title": "Browser Tools",
-  "category": "Developer Tools",
-}
-
-// Valid JSON:
-{
-  "title": "Browser Tools",
-  "category": "Developer Tools"
-}</code></pre>
-
-      <h3>2. Single Quotes Instead of Double Quotes</h3>
-      <p>Unlike standard JavaScript object literals, strict JSON standard mandates double quotes <code>"</code> around all key strings and text values. Single quotes <code>'</code> trigger validation errors.</p>
-
-      <hr>
-
-      <h2>5. Step-by-Step Guide: How to Format and Validate JSON Online</h2>
-      <ol>
-        <li><strong>Paste Your Raw JSON:</strong> Copy your unformatted JSON payload from Postman, developer tools, or server logs, and paste it into the left editor panel above.</li>
-        <li><strong>Click "Format / Beautify":</strong> Hit the beautify button to trigger instant client-side formatting with automated syntax highlighting.</li>
-        <li><strong>Check Validation Output:</strong> If your JSON contains any syntax errors, the error panel will display the exact reason and error diagnostics.</li>
-        <li><strong>Minify or Copy:</strong> Use the "Minify JSON" button to reduce file size, or hit "Copy Output" to use your formatted code instantly.</li>
-      </ol>
-
-      <hr>
-
-      <h2>6. Frequently Asked Questions (FAQs)</h2>
-
-      <h3>Is my JSON data safe on this website?</h3>
-      <p>Yes, absolutely. Our <strong>online JSON viewer</strong> processes all data locally inside your web browser. No JSON payloads or credentials are sent to external servers.</p>
-
-      <h3>What is the difference between JSON formatting and JSON minifying?</h3>
-      <p>JSON formatting adds spaces, indents, and new lines to make the file readable for humans. JSON minification removes all non-essential whitespace to minimize payload size for fast network transfers.</p>
-
-      <h3>Can I convert large JSON files using this tool?</h3>
-      <p>Yes! Because our JSON validator runs directly on client-side browser engines (JavaScript V8 execution), it handles large JSON files smoothly without server limits.</p>
+      <h2>4. Frequently Asked Questions (FAQs)</h2>
+      <h3>Is my data secure?</h3>
+      <p>Yes. Processing happens completely client-side in JavaScript, ensuring absolute security and privacy.</p>
+      <h3>Can I parse large files?</h3>
+      <p>Yes, modern browser engines handle large JSON payloads smoothly without server-side restrictions.</p>
     </article>
 
   </div>
 
-  <!-- JavaScript Logic for Tool Functionality -->
+  <!-- JavaScript Logic -->
   <script>
     function formatJSON() {
       const input = document.getElementById('json-input').value.trim();
       const output = document.getElementById('json-output');
 
       if (!input) {
-        showStatus('Kripya pehle JSON paste karein!', '#f59e0b', '#fef3c7');
+        showStatus('Kripya pehle JSON paste karein!', '#f59e0b', 'rgba(245, 158, 11, 0.1)', '#f59e0b');
         return;
       }
 
       try {
         const parsed = JSON.parse(input);
         output.value = JSON.stringify(parsed, null, 2);
-        showStatus('✅ Valid JSON! Successfully Formatted.', '#16a34a', '#dcfce7');
+        showStatus('✅ Valid JSON! Successfully Formatted.', '#10b981', 'rgba(16, 185, 129, 0.1)', '#10b981');
       } catch (error) {
         output.value = '';
-        showStatus('❌ Invalid JSON Error: ' + error.message, '#dc2626', '#fee2e2');
+        showStatus('❌ Invalid JSON Error: ' + error.message, '#ef4444', 'rgba(239, 68, 68, 0.1)', '#ef4444');
       }
     }
 
@@ -266,29 +323,28 @@
       const output = document.getElementById('json-output');
 
       if (!input) {
-        showStatus('Kripya pehle JSON paste karein!', '#f59e0b', '#fef3c7');
+        showStatus('Kripya pehle JSON paste karein!', '#f59e0b', 'rgba(245, 158, 11, 0.1)', '#f59e0b');
         return;
       }
 
       try {
         const parsed = JSON.parse(input);
         output.value = JSON.stringify(parsed);
-        showStatus('⚡ JSON Minified Successfully!', '#16a34a', '#dcfce7');
+        showStatus('⚡ JSON Minified Successfully!', '#10b981', 'rgba(16, 185, 129, 0.1)', '#10b981');
       } catch (error) {
         output.value = '';
-        showStatus('❌ Invalid JSON Error: ' + error.message, '#dc2626', '#fee2e2');
+        showStatus('❌ Invalid JSON Error: ' + error.message, '#ef4444', 'rgba(239, 68, 68, 0.1)', '#ef4444');
       }
     }
 
     function copyOutput() {
       const output = document.getElementById('json-output');
       if (!output.value) {
-        showStatus('Copy karne ke liye output mein kuch nahi hai!', '#f59e0b', '#fef3c7');
+        showStatus('Copy karne ke liye output mein kuch nahi hai!', '#f59e0b', 'rgba(245, 158, 11, 0.1)', '#f59e0b');
         return;
       }
-      
       navigator.clipboard.writeText(output.value);
-      showStatus('📋 Output Copied to Clipboard!', '#2563eb', '#dbeafe');
+      showStatus('📋 Output Copied to Clipboard!', '#0ea5e9', 'rgba(14, 165, 233, 0.1)', '#0ea5e9');
     }
 
     function clearAll() {
@@ -297,12 +353,12 @@
       document.getElementById('status-message').style.display = 'none';
     }
 
-    function showStatus(msg, color, bgColor) {
+    function showStatus(msg, color, bgColor, borderColor) {
       const status = document.getElementById('status-message');
       status.style.display = 'block';
       status.style.color = color;
       status.style.backgroundColor = bgColor;
-      status.style.border = '1px solid ' + color;
+      status.style.border = '1px solid ' + borderColor;
       status.innerText = msg;
     }
   </script>
