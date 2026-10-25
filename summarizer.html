@@ -1,91 +1,126 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Smart AI Text Summarizer | Condense Essays & Articles Instantly</title>
-    <meta name="description" content="Condense long essays, research papers, and articles into clear, structured bullet points instantly with our free AI text summarizer tool.">
-    <meta name="keywords" content="ai text summarizer, online article condenser, summary generator, essay summarizer, text reduction tool, NLP summarization, micro tools hub">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Smart AI Text Summarizer",
-      "operatingSystem": "All",
-      "applicationCategory": "TextProcessingApplication",
-      "offers": { "@type": "Offer", "price": "0.00", "priceCurrency": "USD" },
-      "description": "Instantaneous AI-powered text condensation utility for research papers, long articles, and professional reports."
-    }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="googlebot" content="index, follow">
+  
+  <!-- Favicon (BT Logo) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%2306b6d4'/><stop offset='100%' stop-color='%232563eb'/></linearGradient></defs><rect width='100' height='100' rx='25' fill='url(%23grad)'/><text x='50' y='55' font-family='Arial, sans-serif' font-size='45' font-weight='bold' fill='white' dominant-baseline='middle' text-anchor='middle'>BT</text></svg>">
+
+  <title>Free Smart AI Text Summarizer | Condense Essays & Articles Instantly</title>
+  <meta name="description" content="Condense long essays, research papers, and articles into clear, structured bullet points instantly with our free AI text summarizer tool. 100% private client-side utility.">
+  <meta name="keywords" content="ai text summarizer, online article condenser, summary generator, essay summarizer, text reduction tool, NLP summarization, micro tools hub">
+  <link rel="canonical" href="https://browsertools.site/summarizer.html">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: #020617; }
+    ::-webkit-scrollbar-thumb { background: #06b6d4; border-radius: 5px; }
+    ::-webkit-scrollbar-thumb:hover { background: #0891b2; }
+    body { background: #020617; }
+    .glass { background: rgba(15,23,42,.75); backdrop-filter: blur(12px); border: 1px solid rgba(148,163,184,.12); }
+  </style>
 </head>
-<body class="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-emerald-500 selection:text-white">
+<body class="text-slate-200 min-h-screen font-sans antialiased flex flex-col">
 
-    <header class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800 px-4 md:px-12 py-4 flex items-center justify-between">
-        <a href="index.html" class="flex items-center gap-2">
-            <div class="h-9 w-9 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-500 to-emerald-400 flex items-center justify-center font-black text-white text-lg shadow-lg">AI</div>
-            <span class="text-lg md:text-xl font-extrabold tracking-tight text-white">Micro-Tools Hub</span>
+  <!-- NAVIGATION -->
+  <nav class="bg-slate-950/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center gap-2.5 group">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-cyan-500/20">BT</div>
+          <span class="text-white font-semibold text-lg tracking-tight group-hover:text-cyan-400 transition">Browser Tools Hub</span>
         </a>
-        <nav class="flex items-center gap-4 text-sm font-medium text-slate-300">
-            <a href="index.html" class="hover:text-blue-400 transition">Home</a>
-            <a href="humanizer.html" class="hover:text-blue-400 transition">Humanizer</a>
-            <a href="summarizer.html" class="text-emerald-400 font-semibold">Summarizer</a>
-            <a href="counter.html" class="hover:text-amber-400 transition">Counter</a>
-            <a href="qr-generator.html" class="hover:text-purple-400 transition">QR Generator</a>
-        </nav>
-    </header>
-
-    <main class="max-w-4xl w-full mx-auto px-4 pt-10 pb-16 flex-grow">
-        <header class="text-center mb-8">
-            <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-950 text-emerald-400 border border-emerald-800/60 mb-3 inline-block">📌 Natural Language Processing & Extraction</span>
-            <h1 class="text-3xl md:text-5xl font-extrabold text-white pb-2">Smart AI Text Summarizer</h1>
-            <p class="text-slate-400 text-sm max-w-2xl mx-auto">Extract core concepts, key takeaways, and concise bullet points from lengthy documents within seconds.</p>
-        </header>
-
-        <div class="bg-slate-900 p-6 md:p-8 rounded-2xl border border-slate-800 space-y-4 shadow-2xl">
-            <div>
-                <label class="block text-xs font-semibold text-slate-400 mb-2 uppercase tracking-wider">Paste Long Article or Essay</label>
-                <textarea id="sInput" rows="6" class="w-full p-4 bg-slate-950 border border-slate-800 rounded-xl focus:outline-none focus:border-emerald-500 text-sm text-slate-200 resize-none placeholder-slate-600" placeholder="Paste your lengthy text here..."></textarea>
+        <div class="hidden md:flex items-center gap-1">
+          <a href="/" class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition">Home</a>
+          <div class="relative group">
+            <button class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition flex items-center gap-1.5">
+              All Tools <svg class="w-4 h-4 transition duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="absolute left-0 mt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <div class="bg-slate-900 border border-slate-700/80 rounded-xl shadow-2xl py-2 overflow-hidden">
+                <a href="/image-compressor.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">🖼️ Image Compressor</a>
+                <a href="/case-converter.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">Aa Case Converter</a>
+                <a href="/password-generator.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">🔒 Password Generator</a>
+                <a href="/counter.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">🔢 Word Counter</a>
+                <a href="/qr-generator.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">📱 QR Code Generator</a>
+                <a href="/summarizer.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-cyan-400 hover:bg-slate-800 transition font-medium">📌 AI Text Summarizer</a>
+                <a href="/lorem-ipsum.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">📝 Lorem Ipsum Generator</a>
+                <a href="/pdf-page-remover.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">📄 PDF Page Remover</a>
+              </div>
             </div>
-
-            <button id="summarizeBtn" class="w-full py-4 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 transition font-bold rounded-xl text-sm shadow-lg shadow-emerald-600/30 cursor-pointer">✨ Generate Smart Summary</button>
-
-            <div>
-                <label class="block text-xs font-semibold text-slate-400 mb-2 uppercase tracking-wider">Key Takeaways & Summary</label>
-                <div id="sOutput" class="w-full p-4 bg-slate-950 border border-slate-800 rounded-xl text-sm text-slate-300 min-h-[140px] whitespace-pre-wrap leading-relaxed">Summary output will appear here...</div>
-            </div>
+          </div>
         </div>
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-300 hover:text-white"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-slate-950">
+      <div class="px-4 py-3 space-y-1">
+        <a href="/" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Home</a>
+        <a href="/image-compressor.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Image Compressor</a>
+        <a href="/case-converter.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Case Converter</a>
+        <a href="/password-generator.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Password Generator</a>
+        <a href="/counter.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Word Counter</a>
+        <a href="/qr-generator.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">QR Code Generator</a>
+        <a href="/summarizer.html" class="block px-3 py-2.5 rounded-lg text-cyan-400 hover:bg-slate-800 hover:text-white font-medium">AI Text Summarizer</a>
+        <a href="/lorem-ipsum.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Lorem Ipsum Generator</a>
+        <a href="/pdf-page-remover.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">PDF Page Remover</a>
+      </div>
+    </div>
+  </nav>
 
-        <article class="mt-16 space-y-8 text-slate-300 text-sm leading-relaxed border-t border-slate-800 pt-10">
-            <section>
-                <h2 class="text-2xl font-bold text-white mb-3">Mastering Information Overload with Advanced AI Summarization</h2>
-                <p>In today's fast-paced digital era, professionals, researchers, and students face an overwhelming deluge of written content daily. From dense academic journals and extensive market reports to exhaustive news articles and legal contracts, extracting essential information quickly is critical for productivity. Our **Smart AI Text Summarizer** leverages cutting-edge NLP heuristics and extractive summarization algorithms to distill thousands of words into punchy, high-impact bullet points without sacrificing core context or factual accuracy.</p>
-                <p>Rather than manually reading through redundant fluff and filler phrases, users can input any length of text and instantly obtain a structured breakdown. This optimizes time management and accelerates decision-making across corporate and academic environments.</p>
-            </section>
-            <section>
-                <h3 class="text-xl font-bold text-white mb-2">How Extractive & Abstractive Summarization Works</h3>
-                <p>Modern text reduction relies on two primary methodologies: extractive summarization (identifying and pulling key sentences directly from the source) and abstractive summarization (rephrasing core thoughts into fresh wording). Our client-side utility evaluates sentence weight, frequency distribution, and structural relevance to highlight critical insights instantly while keeping your data 100% secure.</p>
-            </section>
-        </article>
-    </main>
+  <main class="max-w-4xl w-full mx-auto px-4 py-10 flex-grow">
+    <div class="text-center mb-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-medium mb-4">
+        📌 Natural Language Processing Utility
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-bold text-white mb-3">Smart AI Text Summarizer</h1>
+      <p class="text-slate-400 text-sm max-w-2xl mx-auto">Extract core concepts, key takeaways, and concise bullet points from lengthy documents within seconds.</p>
+    </div>
 
-    <footer class="bg-slate-900 border-t border-slate-800 py-8 px-4 text-center text-slate-500 text-xs">
-        <p>&copy; 2026 AI Micro-Tools Hub. All rights reserved. World-Class Programmatic SEO & Text Intelligence Platform.</p>
-    </footer>
+    <!-- TOOL CONTROLS -->
+    <div class="glass rounded-2xl p-6 sm:p-8 mb-6 space-y-5">
+      <div>
+        <label for="sInput" class="block text-xs font-semibold text-slate-400 mb-2 uppercase tracking-wider">Paste Long Article, Essay, or Document</label>
+        <textarea id="sInput" rows="7" class="w-full p-4 bg-slate-900/90 border border-slate-700 rounded-xl focus:outline-none focus:border-cyan-500 text-sm text-slate-200 resize-y placeholder-slate-500" placeholder="Paste your lengthy text here..."></textarea>
+      </div>
 
-    <script>
-        document.getElementById('summarizeBtn').addEventListener('click', function() {
-            let text = document.getElementById('sInput').value;
-            let out = document.getElementById('sOutput');
-            if(!text || !text.trim()) { out.innerText = "⚠️ Please enter some text to summarize!"; return; }
-            out.innerText = "🔄 Processing text and extracting core insights...";
-            setTimeout(() => {
-                let sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0);
-                let summary = sentences.slice(0, 3).map(s => "• " + s.trim() + ".").join("\n");
-                if(!summary) summary = "• " + text.substring(0, 150) + "...";
-                out.innerText = "✨ [Key Extracted Takeaways]:\n\n" + summary + "\n\n[✓ Document successfully condensed for rapid review.]";
-            }, 600);
-        });
-    </script>
-</body>
-</html>
+      <button id="summarizeBtn" class="w-full py-3.5 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 transition font-bold rounded-xl text-sm shadow-lg shadow-cyan-500/20 cursor-pointer text-white">✨ Generate Smart Summary</button>
+
+      <div>
+        <div class="flex items-center justify-between mb-2">
+          <label for="sOutput" class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Key Takeaways & Summary</label>
+          <button onclick="copySummary()" class="text-xs text-cyan-400 hover:text-cyan-300 transition font-medium">📋 Copy Summary</button>
+        </div>
+        <div id="sOutput" class="w-full p-4 bg-slate-900/90 border border-slate-700 rounded-xl text-sm text-cyan-300 min-h-[140px] whitespace-pre-wrap leading-relaxed font-mono">Summary output will appear here...</div>
+      </div>
+      <p id="status" class="text-xs text-slate-400 font-medium"></p>
+    </div>
+
+    <!-- SEO ARTICLE -->
+    <article class="mt-16 space-y-10">
+      <div>
+        <h2 class="text-3xl font-bold text-white mb-6">Mastering Information Overload with Advanced AI Text Summarization</h2>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          In today's fast-paced digital era, professionals, researchers, students, and content creators face an overwhelming deluge of written content daily. From dense academic journal articles and extensive market research reports to exhaustive news pieces and long-form blogs, extracting essential information quickly is critical for productivity.
+        </p>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          At Browser Tools Hub, our free <strong>Smart AI Text Summarizer</strong> leverages cutting-edge extractive natural language processing (NLP) heuristics. It distills thousands of words into punchy, high-impact bullet points without sacrificing core context or key factual insights—all processed 100% locally inside your web browser.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-bold text-white mb-4">How Extractive & Abstractive Summarization Works</h2>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          Modern text reduction technology relies on two main approaches:
+        </p>
+        <ul class="list-disc list-inside text-slate-400 space-y-2 mb-4 ml-4">
+          <li><strong class="text-white">Extractive Summarization:</strong> Evaluates sentence weights, keyword densities, and positional hierarchy to extract the most significant sentences directly from the document.</li>
+          <li><strong class="text-white">Abstractive Summarization:</strong> Synthesizes core concepts and rephrases them into fresh, human-readable prose.</li>
+        </ul>
+        <p class="text-slate-400 leading-relaxed mb-4
