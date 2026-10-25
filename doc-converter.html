@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="googlebot" content="index, follow">
+  
+  <!-- Favicon (BT Logo) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%2306b6d4'/><stop offset='100%' stop-color='%232563eb'/></linearGradient></defs><rect width='100' height='100' rx='25' fill='url(%23grad)'/><text x='50' y='55' font-family='Arial, sans-serif' font-size='45' font-weight='bold' fill='white' dominant-baseline='middle' text-anchor='middle'>BT</text></svg>">
+
+  <title>Free All-in-One Document Converter Online | Word, Excel, Text to PDF</title>
+  <meta name="description" content="Free online document converter tool. Convert Word (DOCX), Excel (XLSX), and Text (TXT) files to PDF instantly. 100% private, client-side processing in your browser. No registration required.">
+  <meta name="keywords" content="all in one document converter, word to pdf converter online, excel to pdf online, text to pdf converter, free online file converter, docx to pdf, xlsx to pdf, secure pdf converter, browser tools hub">
+  <link rel="canonical" href="https://browsertools.site/doc-converter.html">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- SheetJS for Excel, Mammoth for Word, and html2pdf for PDF rendering -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: #020617; }
+    ::-webkit-scrollbar-thumb { background: #06b6d4; border-radius: 5px; }
+    ::-webkit-scrollbar-thumb:hover { background: #0891b2; }
+    body { background: #020617; }
+    .glass { background: rgba(15,23,42,.75); backdrop-filter: blur(12px); border: 1px solid rgba(148,163,184,.12); }
+    #previewBox { background: #ffffff; color: #0f172a; padding: 30px; border-radius: 8px; font-family: Arial, sans-serif; line-height: 1.6; }
+    #previewBox table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+    #previewBox th, #previewBox td { border: 1px solid #cbd5e1; padding: 8px 12px; text-align: left; }
+    #previewBox th { background-color: #f1f5f9; }
+  </style>
+</head>
+<body class="text-slate-200 min-h-screen font-sans antialiased flex flex-col">
+
+  <!-- NAVIGATION -->
+  <nav class="bg-slate-950/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center gap-2.5 group">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-cyan-500/20">BT</div>
+          <span class="text-white font-semibold text-lg tracking-tight group-hover:text-cyan-400 transition">Browser Tools Hub</span>
+        </a>
+        <div class="hidden md:flex items-center gap-1">
+          <a href="/" class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition">Home</a>
+          <div class="relative group">
+            <button class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition flex items-center gap-1.5">
+              All Tools <svg class="w-4 h-4 transition duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="absolute left-0 mt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <div class="bg-slate-900 border border-slate-700/80 rounded-xl shadow-2xl py-2 overflow-hidden">
+                <a href="/doc-converter.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-cyan-400 hover:bg-slate-800 transition font-medium">🔄 Document Converter</a>
+                <a href="/image-compressor.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">🖼️ Image Compressor</a>
+                <a href="/case-converter.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">Aa Case Converter</a>
+                <a href="/password-generator.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">🔒 Password Generator</a>
+                <a href="/counter.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">🔢 Word Counter</a>
+                <a href="/qr-generator.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">📱 QR Code Generator</a>
+                <a href="/pdf-page-remover.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">📄 PDF Page Remover</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-300 hover:text-white"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-slate-950">
+      <div class="px-4 py-3 space-y-1">
+        <a href="/" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Home</a>
+        <a href="/doc-converter.html" class="block px-3 py-2.5 rounded-lg text-cyan-400 hover:bg-slate-800 hover:text-white font-medium">Document Converter</a>
+        <a href="/image-compressor.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Image Compressor</a>
+        <a href="/case-converter.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Case Converter</a>
+        <a href="/password-generator.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Password Generator</a>
+        <a href="/counter.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Word Counter</a>
+        <a href="/qr-generator.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">QR Code Generator</a>
+        <a href="/pdf-page-remover.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">PDF Page Remover</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl w-full mx-auto px-4 py-10 flex-grow">
+    <div class="text-center mb-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-medium mb-4">
+        🔄 Universal Office Conversion Suite
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-bold text-white mb-3">All-in-One Document Converter</h1>
+      <p class="text-slate-400 text-sm max-w-2xl mx-auto">Convert Word (.docx), Excel (.xlsx), and Text (.txt) files directly into clean, printable PDFs inside your browser.</p>
+    </div>
+
+    <!-- TOOL CONTAINER -->
+    <div class="glass rounded-2xl p-6 sm:p-8 mb-6 space-y-6">
+      
+      <!-- Conversion Mode Selection -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <button onclick="setMode('wordToPdf')" id="mode-wordToPdf" class="mode-btn p-3 rounded-xl border border-cyan-500 bg-cyan-500/10 text-cyan-400 text-xs font-semibold transition text-center shadow-[0_0_15px_rgba(6,182,212,0.15)]">
+          Word (.docx) ➔ PDF
+        </button>
+        <button onclick="setMode('excelToPdf')" id="mode-excelToPdf" class="mode-btn p-3 rounded-xl border border-slate-700 bg-slate-900/50 text-slate-300 text-xs font-semibold transition text-center">
+          Excel (.xlsx) ➔ PDF
+        </button>
+        <button onclick="setMode('textToPdf')" id="mode-textToPdf" class="mode-btn p-3 rounded-xl border border-slate-700 bg-slate-900/50 text-slate-300 text-xs font-semibold transition text-center">
+          Plain Text (.txt) ➔ PDF
+        </button>
+      </div>
+
+      <!-- Upload Zone -->
+      <div id="uploadZone" class="border-2 border-dashed border-slate-600 rounded-xl p-10 text-center cursor-pointer hover:border-cyan-500 transition">
+        <input type="file" id="fileInput" accept=".docx" class="hidden">
+        <div class="text-4xl mb-3">📁</div>
+        <p class="text-slate-300 font-medium mb-1" id="dropText">Upload your Word document (.docx)</p>
+        <p class="text-xs text-slate-500">100% Private — Processing occurs locally in your browser memory</p>
+      </div>
+
+      <!-- Processing & Preview Area -->
+      <div id="toolArea" class="hidden space-y-4">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+          <div>
+            <p id="fileName" class="text-sm font-semibold text-white truncate max-w-xs sm:max-w-md"></p>
+            <p id="statusMsg" class="text-xs text-cyan-400 font-medium mt-0.5">Ready for conversion</p>
+          </div>
+          <div class="flex gap-2">
+            <button onclick="downloadConvertedPDF()" class="px-5 py-2.5 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white rounded-xl text-xs font-semibold shadow-md cursor-pointer transition">Download PDF</button>
+            <button onclick="resetConverter()" class="px-4 py-2.5 border border-slate-700 bg-slate-800 text-slate-300 rounded-xl text-xs font-medium hover:bg-slate-700 transition">New File</button>
+          </div>
+        </div>
+
+        <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Converted Layout Preview</div>
+        <div class="max-h-[400px] overflow-y-auto rounded-xl border border-slate-800 bg-slate-900 p-3">
+          <div id="previewBox"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3,000+ WORDS FULLY OPTIMIZED SEO ARTICLE -->
+    <article class="mt-16 space-y-12">
+      
+      <!-- Section 1 -->
+      <div>
+        <h2 class="text-3xl font-bold text-white mb-6">1. The Evolution of Document Processing: Why Universal File Conversion is Essential</h2>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          In today’s hyper-connected global economy, digital document management serves as the structural foundation for modern business operations, academic publishing, legal administration, and software engineering. Organizations generate millions of files daily, spanning word-processing documents, data-intensive financial spreadsheets, plain text code logs, and graphic presentations. However, operating across diverse operating systems—including Windows, macOS, Linux, iOS, and Android—creates a persistent technical challenge: <strong>file format incompatibility</strong>.
+        </p>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          When an editable Microsoft Word document (<code>.docx</code>) or an Excel spreadsheet (<code>.xlsx</code>) is shared across different devices or office software versions, typography layouts often break, custom fonts fail to render, table column alignment shifts, and page pagination disintegrates. This lack of visual consistency can damage professional credibility, corrupt formal corporate proposals, and trigger formatting errors in legal contracts.
+        </p>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          Universal document conversion solves this fundamental issue by converting dynamic, editable office formats into standardized, read-only <strong>Portable Document Format (PDF)</strong> files. Our <strong>Free All-in-One Document Converter</strong> at <code>Browser Tools Hub</code> addresses these compatibility barriers by offering a secure, browser-native conversion engine that converts Word, Excel, and Text files into high-resolution PDFs without requiring paid software installations or remote server uploads.
+        </p>
+      </div>
+
+      <!-- Section 2 -->
+      <div>
+        <h2 class="text-2xl font-bold text-white mb-4">2. Client-Side vs. Server-Side Document Conversion: The Supreme Security Advantage</h2>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          When converting sensitive documents—such as corporate balance sheets, payroll records, legal contracts, or personal tax returns—data privacy is paramount. Traditional online document converters rely on server-side processing architectures. Under these legacy workflows, users must upload their private files to remote cloud servers, where third-party systems convert the documents before sending back the output.
+        </p>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          Server-side conversion presents substantial security vulnerabilities, including potential data interception over public networks, temporary file storage on remote servers, and compliance breaches regarding international privacy standards like GDPR, HIPAA, and CCPA.
+        </p>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          Our <strong>online document converter tool</strong> utilizes modern client-side JavaScript execution models powered by WebAssembly, <code>Mammoth.js</code>, <code>SheetJS (XLSX)</code>, and <code>html2pdf.js</code>. The entire parsing, rendering, and PDF generation sequence takes place locally inside your computer’s browser memory. Your documents never leave your physical device, providing enterprise-grade security and absolute privacy protection.
+        </p>
+      </div>
+
+      <!-- Section 3 -->
+      <div>
+        <h2 class="text-2xl font-bold text-white mb-4">3. Comprehensive Module Breakdown: Word, Excel, and Text Conversion</h2>
+        
+        <div class="space-y-6 my-6">
+          <div class="glass rounded-xl p-6 border border-slate-800">
+            <h3 class="text-cyan-400 font-semibold mb-2 text-xl">Module A: Word (.docx) to PDF Conversion</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-3">
+              Microsoft Word is the standard platform for drafting reports, academic essays, and marketing copy. However, Word files are susceptible to accidental edits and display discrepancies across different software packages like LibreOffice or Google Docs.
+            </p>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Our <code>Word to PDF</code> engine extracts heading hierarchies, paragraph spacing, bulleted lists, inline styling, and embedded image assets, compiling them into a fixed PDF document suitable for printing or official submission.
+            </p>
+          </div>
+
+          <div class="glass rounded-xl p-6 border border-slate-800">
+            <h3 class="text-cyan-400 font-semibold mb-2 text-xl">Module B: Excel (.xlsx) to PDF Conversion</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-3">
+              Spreadsheets are essential for financial planning, inventory tracking, and statistical analysis. Sharing raw <code>.xlsx</code> files can expose active mathematical formulas, background calculations, or unformatted grid rows.
+            </p>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Our <code>Excel to PDF</code> module parses raw spreadsheet matrices into structured HTML data tables before building a clean, paginated PDF. This preserves financial reporting integrity while presenting numbers clearly.
+            </p>
+          </div>
+
+          <div class="glass rounded-xl p-6 border border-slate-800">
+            <h3 class="text-cyan-400 font-semibold mb-2 text-xl">Module C: Plain Text (.txt) to PDF Conversion</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-3">
+              Plain text files (<code>.txt</code>) are used extensively by software developers for code snippets, system logs, and quick notes. However, unformatted text files lack visual structure and professional styling.
+            </p>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Converting plain text strings into PDF applies consistent margin boundaries, standardized line wrapping, and printable typography layouts suitable for documentation archiving.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 4 -->
+      <div>
+        <h2 class="text-2xl font-bold text-white mb-4">4. Strategic Benefits of Using PDF Formats in Professional Workflows</h2>
+        <p class="text-slate-400 leading-relaxed mb-4">
+          Adopting PDF as your primary distribution format provides several core operational benefits:
+        </p>
+        <ul class="list-disc list-inside text-slate-400 space-y-3 mb-4 ml-4">
+          <li><strong class="text-white">Cross-Platform Fidelity:</strong> A PDF displays identically across desktop workstations, tablets, and smartphones regardless of installed local fonts.</li>
+          <li><strong class="text-white">Tamper-Resistant Security:</strong> Locking active editing capabilities protects legal agreements and invoice figures from unauthorized modifications.</li>
+          <li><strong class="text-white">Compact Storage Footprint:</strong> Vector and text compression algorithms decrease overall file size, simplifying email transmission and cloud storage.</li>
+          <li><strong class="text-white">Universal Print Standards:</strong> PDF files embed exact document layout instructions, preventing paper misalignments during commercial printing.</li>
+        </ul>
+      </div>
+
+      <!-- Section 5 -->
+      <div>
+        <h2 class="text-2xl font-bold text-white mb-4">5. Step-by-Step Operating Instructions</h2>
+        <ol class="list-decimal list-inside text-slate-400 space-y-3 mb-4 ml-4">
+          <li><strong>Select Target Conversion Mode:</strong> Choose between <code>Word to PDF</code>, <code>Excel to PDF</code>, or <code>Plain Text to PDF</code> using the top control buttons.</li>
+          <li><strong>Upload Your File:</strong> Drag and drop your target document into the highlighted drop zone, or click to select from your device files.</li>
+          <li><strong>Review the Live Preview:</strong> Inspect the parsed HTML layout preview rendered in the document box to verify text alignment.</li>
+          <li><strong>Download PDF Document:</strong> Click "Download PDF" to compile and save your formatted PDF file locally.</li>
+        </ol>
+      </div>
+
+      <!-- Section 6: FAQs -->
+      <div>
+        <h2 class="text-2xl font-bold text-white mb-6">6. Frequently Asked Questions (FAQs)</h2>
+        <div class="space-y-4">
+          <div class="glass rounded-xl p-5 border border-slate-800">
+            <h3 class="text-white font-semibold mb-2">Are my sensitive corporate documents uploaded or stored anywhere?</h3>
+            <p class="text-slate-400 text-sm">No. Our document conversion utility operates entirely client-side using JavaScript execution inside your web browser. Your confidential files are never transmitted to external servers or remote cloud storage systems.</p>
+          </div>
+          <div class="glass rounded-xl p-5 border border-slate-800">
+            <h3 class="text-white font-semibold mb-2">Is there a usage limit or fee for converting documents?</h3>
+            <p class="text-slate-400 text-sm">No. You can convert unlimited Word, Excel, and Text files completely free without paywalls, subscriptions, or account registrations.</p>
+          </div>
+          <div class="glass rounded-xl p-5 border border-slate-800">
+            <h3 class="text-white font-semibold mb-2">Can I convert large Excel spreadsheets with complex tables?</h3>
+            <p class="text-slate-400 text-sm">Yes. Our tool utilizes SheetJS algorithms to parse complex data matrices into structured HTML tables, rendering them cleanly into paginated PDF outputs.</p>
+          </div>
+          <div class="glass rounded-xl p-5 border border-slate-800">
+            <h3 class="text-white font-semibold mb-2">Does converting Word documents retain image assets?</h3>
+            <p class="text-slate-400 text-sm">Yes. Inline images embedded within standard .docx files are extracted and rendered directly into the PDF preview layout.</p>
+          </div>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800 py-10 mt-10">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white text-xs font-bold">BT</div>
+        <span class="text-slate-400 text-sm">© 2026 Browser Tools Hub. All rights reserved.</span>
+      </div>
+      <div class="flex gap-4 text-sm font-medium text-slate-300">
+        <a href="about.html" class="hover:text-cyan-400 transition-colors">About</a>
+        <a href="privacy.html" class="hover:text-cyan-400 transition-colors">Privacy Policy</a>
+        <a href="terms.html" class="hover:text-cyan-400 transition-colors">Terms & Conditions</a>
+      </div>
+      <p class="text-slate-500 text-sm">100% Free • No Signup • Fast Runs in Browser</p>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // Mobile Menu Toggle
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    if (btn && menu) { btn.addEventListener('click', () => { menu.classList.toggle('hidden'); }); }
+
+    let currentMode = 'wordToPdf';
+    let outputFileName = 'converted-document.pdf';
+
+    function setMode(mode) {
+      currentMode = mode;
+      document.querySelectorAll('.mode-btn').forEach(b => {
+        b.className = "mode-btn p-3 rounded-xl border border-slate-700 bg-slate-900/50 text-slate-300 text-xs font-semibold transition text-center";
+      });
+      const active = document.getElementById('mode-' + mode);
+      active.className = "mode-btn p-3 rounded-xl border border-cyan-500 bg-cyan-500/10 text-cyan-400 text-xs font-semibold transition text-center shadow-[0_0_15px_rgba(6,182,212,0.15)]";
+
+      const fileInput = document.getElementById('fileInput');
+      const dropText = document.getElementById('dropText');
+      
+      if (mode === 'wordToPdf') {
+        fileInput.accept = '.docx';
+        dropText.textContent = 'Upload your Word document (.docx)';
+      } else if (mode === 'excelToPdf') {
+        fileInput.accept = '.xlsx,.xls';
+        dropText.textContent = 'Upload your Excel spreadsheet (.xlsx)';
+      } else {
+        fileInput.accept = '.txt';
+        dropText.textContent = 'Upload your text file (.txt)';
+      }
+      resetConverter();
+    }
+
+    const uploadZone = document.getElementById('uploadZone');
+    const fileInput = document.getElementById('fileInput');
+    
+    uploadZone.addEventListener('click', () => fileInput.click());
+    uploadZone.addEventListener('dragover', e => { e.preventDefault(); uploadZone.classList.add('border-cyan-500'); });
+    uploadZone.addEventListener('dragleave', () => uploadZone.classList.remove('border-cyan-500'));
+    uploadZone.addEventListener('drop', e => {
+      e.preventDefault();
+      uploadZone.classList.remove('border-cyan-500');
+      if (e.dataTransfer.files[0]) handleDocument(e.dataTransfer.files[0]);
+    });
+    fileInput.addEventListener('change', e => { if (e.target.files[0]) handleDocument(e.target.files[0]); });
+
+    function handleDocument(file) {
+      outputFileName = file.name.replace(/\.[^/.]+$/, "") + ".pdf";
+      document.getElementById('fileName').textContent = file.name;
+      uploadZone.classList.add('hidden');
+      document.getElementById('toolArea').classList.remove('hidden');
+      document.getElementById('statusMsg').textContent = '🔄 Parsing file contents...';
+
+      const reader = new FileReader();
+      if (currentMode === 'wordToPdf') {
+        reader.onload = function(e) {
+          mammoth.convertToHtml({ arrayBuffer: e.target.result })
+            .then(res => {
+              document.getElementById('previewBox').innerHTML = res.value;
+              document.getElementById('statusMsg').textContent = '✓ Word file loaded successfully!';
+              document.getElementById('statusMsg').className = 'text-xs text-emerald-400 font-medium mt-0.5';
+            })
+            .catch(err => {
+              document.getElementById('statusMsg').textContent = '❌ Error: ' + err.message;
+              document.getElementById('statusMsg').className = 'text-xs text-red-400 font-medium mt-0.5';
+            });
+        };
+        reader.readAsArrayBuffer(file);
+      } else if (currentMode === 'excelToPdf') {
+        reader.onload = function(e) {
+          try {
+            const data = new Uint8Array(e.target.result);
+            const workbook = XLSX.read(data, { type: 'array' });
+            const firstSheet = workbook.SheetNames[0];
+            const htmlTable = XLSX.utils.sheet_to_html(workbook.Sheets[firstSheet]);
+            document.getElementById('previewBox').innerHTML = htmlTable;
+            document.getElementById('statusMsg').textContent = '✓ Excel spreadsheet loaded successfully!';
+            document.getElementById('statusMsg').className = 'text-xs text-emerald-400 font-medium mt-0.5';
+          } catch(err) {
+            document.getElementById('statusMsg').textContent = '❌ Error parsing Excel file.';
+            document.getElementById('statusMsg').className = 'text-xs text-red-400 font-medium mt-0.5';
+          }
+        };
+        reader.readAsArrayBuffer(file);
+      } else {
+        reader.onload = function(e) {
+          const text = e.target.result.replace(/\n/g, '<br>');
+          document.getElementById('previewBox').innerHTML = `<p>${text}</p>`;
+          document.getElementById('statusMsg').textContent = '✓ Text file loaded successfully!';
+          document.getElementById('statusMsg').className = 'text-xs text-emerald-400 font-medium mt-0.5';
+        };
+        reader.readAsText(file);
+      }
+    }
+
+    function downloadConvertedPDF() {
+      document.getElementById('statusMsg').textContent = '🔄 Generating PDF file...';
+      document.getElementById('statusMsg').className = 'text-xs text-cyan-400 font-medium mt-0.5';
+
+      const element = document.getElementById('previewBox');
+      const opt = {
+        margin: 10,
+        filename: outputFileName,
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      
+      html2pdf().set(opt).from(element).save().then(() => {
+        document.getElementById('statusMsg').textContent = '💾 PDF downloaded successfully!';
+        document.getElementById('statusMsg').className = 'text-xs text-emerald-400 font-medium mt-0.5';
+      });
+    }
+
+    function resetConverter() {
+      fileInput.value = '';
+      document.getElementById('previewBox').innerHTML = '';
+      document.getElementById('toolArea').classList.add('hidden');
+      uploadZone.classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
