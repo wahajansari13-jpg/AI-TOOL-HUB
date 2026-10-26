@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="googlebot" content="index, follow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: 'unsafe-inline' 'unsafe-eval'; img-src 'self' data: https:;">
   
   <!-- Favicon (BT Logo) -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%2306b6d4'/><stop offset='100%' stop-color='%232563eb'/></linearGradient></defs><rect width='100' height='100' rx='25' fill='url(%23grad)'/><text x='50' y='55' font-family='Arial, sans-serif' font-size='45' font-weight='bold' fill='white' dominant-baseline='middle' text-anchor='middle'>BT</text></svg>">
@@ -145,25 +146,21 @@
           <div class="glass rounded-xl p-5 border border-slate-800">
             <h3 class="text-cyan-400 font-semibold mb-1 text-lg">1. Sentence case</h3>
             <p class="text-slate-400 text-sm mb-2">In sentence case, only the first letter of the first word in each sentence is capitalized, along with proper nouns (like names, places, and brands). This is the standard writing format for blogs, novels, news articles, and casual emails.</p>
-
           </div>
 
           <div class="glass rounded-xl p-5 border border-slate-800">
             <h3 class="text-cyan-400 font-semibold mb-1 text-lg">2. UPPERCASE (ALL CAPS)</h3>
             <p class="text-slate-400 text-sm mb-2">Uppercase capitalizes every letter in your text string. It is widely used for acronyms (e.g., NASA, HTML, UNESCO), warning labels, legal disclaimers, architectural blueprints, and high-impact banner headlines.</p>
-
           </div>
 
           <div class="glass rounded-xl p-5 border border-slate-800">
             <h3 class="text-cyan-400 font-semibold mb-1 text-lg">3. lowercase</h3>
             <p class="text-slate-400 text-sm mb-2">Lowercase converts every character into small letters. It is frequently used in web URLs, email addresses, computer programming syntax, and Unix file systems where case sensitivity matters.</p>
-
           </div>
 
           <div class="glass rounded-xl p-5 border border-slate-800">
             <h3 class="text-cyan-400 font-semibold mb-1 text-lg">4. Title Case & Capitalized Case</h3>
             <p class="text-slate-400 text-sm mb-2">Title Case capitalizes the first letter of major words while keeping minor conjunctions and prepositions lowercase (following APA, MLA, or Chicago style guides). Capitalized Case forces the first character of every single word to uppercase.</p>
-
           </div>
 
           <div class="glass rounded-xl p-5 border border-slate-800">
@@ -202,29 +199,44 @@
         </ol>
       </div>
 
+      <!-- HOW TO / HOW-WO WALE 5 QUESTIONS -->
       <div>
-        <h2 class="text-2xl font-bold text-white mb-6">Frequently Asked Questions (FAQs)</h2>
+        <h2 class="text-2xl font-bold text-white mb-6">How-To & Practical Guides (FAQs)</h2>
         <div class="space-y-4">
           <div class="glass rounded-xl p-5 border border-slate-800">
-            <h3 class="text-white font-semibold mb-2">Is my text private and secure?</h3>
-            <p class="text-slate-400 text-sm">Yes, absolutely. Our Case Converter runs 100% client-side in your web browser using JavaScript. Your text is never transmitted, recorded, or saved on any external remote server.</p>
+            <h3 class="text-white font-semibold mb-2">How do I convert text to UPPERCASE or lowercase using this tool?</h3>
+            <p class="text-slate-400 text-sm">Simply paste your text into the input box and click the "UPPERCASE" or "lowercase" conversion button. The formatted text will instantly appear in the result box below, ready to be copied.</p>
           </div>
           <div class="glass rounded-xl p-5 border border-slate-800">
-            <h3 class="text-white font-semibold mb-2">Is there a character or word limit on this tool?</h3>
-            <p class="text-slate-400 text-sm">No. You can paste short phrases or full multi-page articles. Since processing is executed on your local computer's browser engine, it handles tens of thousands of words in milliseconds.</p>
+            <h3 class="text-white font-semibold mb-2">How can I generate SEO-friendly URL slugs from my blog titles?</h3>
+            <p class="text-slate-400 text-sm">Type or paste your article heading into the input field and click the "slug-case" button. The tool automatically removes special symbols, replaces spaces with hyphens, and converts letters to lowercase.</p>
           </div>
           <div class="glass rounded-xl p-5 border border-slate-800">
-            <h3 class="text-white font-semibold mb-2">What is the difference between Title Case and Capitalized Case?</h3>
-            <p class="text-slate-400 text-sm">Title Case keeps minor prepositions and conjunctions (like "and", "or", "in", "of") in lowercase according to style guidelines, whereas Capitalized Case capitalizes every single word indiscriminately.</p>
+            <h3 class="text-white font-semibold mb-2">How do I change text into camelCase or snake_case for programming?</h3>
+            <p class="text-slate-400 text-sm">Input your multi-word variable names or titles and click either "camelCase" or "snake_case". The utility will instantly format your terms according to standard coding conventions.</p>
           </div>
           <div class="glass rounded-xl p-5 border border-slate-800">
-            <h3 class="text-white font-semibold mb-2">Can I convert code variables like camelCase to snake_case?</h3>
-            <p class="text-slate-400 text-sm">Yes! Paste your code variables or titles and select snake_case, camelCase, or PascalCase to format them according to your programming language rules.</p>
+            <h3 class="text-white font-semibold mb-2">How can I download my converted text as a file?</h3>
+            <p class="text-slate-400 text-sm">After converting your text to the desired format, click the "Download .txt File" button located right below the result box to save the text directly to your computer or phone.</p>
+          </div>
+          <div class="glass rounded-xl p-5 border border-slate-800">
+            <h3 class="text-white font-semibold mb-2">How does this tool protect my private text and data?</h3>
+            <p class="text-slate-400 text-sm">All processing happens locally inside your browser memory using client-side JavaScript. Your text is never uploaded, tracked, or stored on any external server.</p>
           </div>
         </div>
       </div>
     </article>
   </main>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-slate-900/95 backdrop-blur-md border-t border-slate-800 p-4 z-50 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-2xl">
+    <p class="text-xs sm:text-sm text-slate-300 text-center sm:text-left">
+      We use cookies to analyze traffic and ensure secure tool performance. By using our site, you agree to our <a href="/privacy.html" class="text-cyan-400 underline">Privacy Policy</a>.
+    </p>
+    <button onclick="acceptCookies()" class="px-5 py-2 bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-semibold rounded-xl transition cursor-pointer whitespace-nowrap">
+      Accept & Close
+    </button>
+  </div>
 
   <!-- FOOTER -->
   <footer class="border-t border-slate-800 py-10 mt-10">
@@ -244,6 +256,15 @@
 
   <!-- JAVASCRIPT -->
   <script>
+    // Cookie Consent Logic
+    function acceptCookies() {
+      document.getElementById('cookie-banner').style.display = 'none';
+      localStorage.setItem('cookiesAccepted', 'true');
+    }
+    if (localStorage.getItem('cookiesAccepted')) {
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+
     // Mobile Menu Toggle
     const btn = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');
@@ -313,8 +334,8 @@
           result = input.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
           break;
         case 'pascal':
-          const camel = input.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
-          result = camel.charAt(0).toUpperCase() + camel.slice(1);
+          result = input.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
+          result = result.charAt(0).toUpperCase() + result.slice(1);
           break;
         case 'clear':
           inputArea.value = '';
