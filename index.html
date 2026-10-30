@@ -1,3 +1,29 @@
+Skip to main content
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+index.html
+
+
+
+Files
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -11,7 +37,7 @@
     style-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com;
     img-src 'self' data: https: blob:;
     font-src 'self' data:;
-    connect-src 'self' https://pagead2.googlesyndication.com;
+    connect-src 'self' https://pagead2.googlesyndication.com https://speed.cloudflare.com https://www.cloudflare.com https://api.guerrillamail.com;
     frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com;
     object-src 'none';
     base-uri 'self';
@@ -22,9 +48,9 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%2306b6d4'/><stop offset='100%' stop-color='%232563eb'/></linearGradient></defs><rect width='100' height='100' rx='25' fill='url(%23grad)'/><text x='50' y='55' font-family='Arial, sans-serif' font-size='45' font-weight='bold' fill='white' dominant-baseline='middle' text-anchor='middle'>BT</text></svg>">
   
   <!-- Primary SEO -->
-  <title>Browser Tools Hub | Free Online Micro Tools Suite - 100% Private</title>
-  <meta name="description" content="Free online browser-based micro tools: Email Generator, Document Converter, Image Compressor, Case Converter, Password Generator, Word Counter, QR Code Generator, PDF Page Remover, JSON Formatter, Lorem Ipsum, and Text Summarizer. 100% private, client-side processing, no signup required." />
-  <meta name="keywords" content="free online micro tools, browser tools hub, email generator, document converter, word to pdf, excel to pdf, image compressor, online case converter, strong password generator, real time word counter, qr code generator, pdf page remover, json formatter validator, lorem ipsum generator, ai text summarizer, privacy focused web tools" />
+  <title>Browser Tools Hub | Free Online Tools - Speed Test, SEO Audit, Email Generator & More</title>
+  <meta name="description" content="Free online tools that run in your browser: Internet Speed Test, SEO Site Audit, AdSense Approval Checker, Temporary Email Generator, Document Converter, Image Compressor, Password Generator & more. 100% private, no signup, no data uploads." />
+  <meta name="keywords" content="free online micro tools, browser tools hub, email generator, internet speed test, seo site audit, adsense approval checker, document converter, word to pdf, excel to pdf, image compressor, online case converter, strong password generator, real time word counter, qr code generator, pdf page remover, json formatter validator, lorem ipsum generator, ai text summarizer, privacy focused web tools" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="author" content="Browser Tools Hub" />
   <link rel="canonical" href="https://browsertools.site/" />
@@ -33,14 +59,14 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://browsertools.site/" />
   <meta property="og:title" content="Browser Tools Hub | Free Online Micro Tools Suite" />
-  <meta property="og:description" content="Fast, private & completely free web tools that run in your browser. No signup required. Your data never leaves your device." />
+  <meta property="og:description" content="Free browser tools: Speed Test, SEO Audit, AdSense Checker, Email Generator, Document Converter, Image Compressor & more. 100% private, client-side, no signup." />
   <meta property="og:image" content="https://browsertools.site/og-image.png" />
   <meta property="og:site_name" content="Browser Tools Hub" />
   
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Browser Tools Hub | Free Online Micro Tools Suite" />
-  <meta name="twitter:description" content="Fast, private & completely free web tools that run in your browser. No signup required." />
+  <meta name="twitter:description" content="Free browser tools: Speed Test, SEO Audit, AdSense Checker, Email Generator & more. 100% private, no signup required." />
   
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -62,31 +88,13 @@
   </script>
   
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #020617; 
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #06b6d4; 
-      border-radius: 5px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #0891b2;
-    }
-    .reveal {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-    }
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    html { scroll-behavior: smooth; }
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: #020617; }
+    ::-webkit-scrollbar-thumb { background: #06b6d4; border-radius: 5px; }
+    ::-webkit-scrollbar-thumb:hover { background: #0891b2; }
+    .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+    .reveal.active { opacity: 1; transform: translateY(0); }
     .glass-card {
       background: rgba(15, 23, 42, 0.7);
       backdrop-filter: blur(12px);
@@ -98,27 +106,16 @@
       transform: translateY(-6px);
       box-shadow: 0 20px 40px -10px rgba(34, 211, 238, 0.15);
     }
-    
-    /* Cookie Consent Banner */
     #cookie-banner {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 9999;
-      background: rgba(15, 23, 42, 0.97);
-      backdrop-filter: blur(12px);
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
+      background: rgba(15, 23, 42, 0.97); backdrop-filter: blur(12px);
       border-top: 1px solid rgba(148, 163, 184, 0.2);
-      padding: 1rem 1.25rem;
-      display: none;
+      padding: 1rem 1.25rem; display: none;
     }
-    #cookie-banner.show {
-      display: block;
-    }
+    #cookie-banner.show { display: block; }
   </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased">
-
   <!-- ========== COOKIE CONSENT BANNER ========== -->
   <div id="cookie-banner">
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
@@ -129,12 +126,8 @@
         <a href="/terms.html" class="text-cyan-400 hover:underline">Terms of Service</a>
       </p>
       <div class="flex gap-3 shrink-0">
-        <button id="cookie-reject" class="px-4 py-2 text-sm rounded-lg border border-slate-600 text-slate-300 hover:bg-slate-800 transition">
-          Reject Non-Essential
-        </button>
-        <button id="cookie-accept" class="px-4 py-2 text-sm rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white font-medium transition">
-          Accept All
-        </button>
+        <button id="cookie-reject" class="px-4 py-2 text-sm rounded-lg border border-slate-600 text-slate-300 hover:bg-slate-800 transition">Reject Non-Essential</button>
+        <button id="cookie-accept" class="px-4 py-2 text-sm rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white font-medium transition">Accept All</button>
       </div>
     </div>
   </div>
@@ -143,85 +136,53 @@
   <nav class="bg-slate-950/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-        
-        <!-- Logo -->
         <a href="/" class="flex items-center gap-2.5 group">
-          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-cyan-500/20">
-            BT
-          </div>
-          <span class="text-white font-semibold text-lg tracking-tight group-hover:text-cyan-400 transition">
-            Browser Tools Hub
-          </span>
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-cyan-500/20">BT</div>
+          <span class="text-white font-semibold text-lg tracking-tight group-hover:text-cyan-400 transition">Browser Tools Hub</span>
         </a>
         
-        <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center gap-1">
-          <a href="/" class="px-4 py-2 text-sm text-cyan-400 font-medium bg-slate-800/80 rounded-lg transition">
-            Home
-          </a>
+          <a href="/" class="px-4 py-2 text-sm text-cyan-400 font-medium bg-slate-800/80 rounded-lg transition">Home</a>
           
-          <!-- Dropdown -->
           <div class="relative group">
             <button class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition flex items-center gap-1.5">
               All Tools
-              <svg class="w-4 h-4 transition duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-              </svg>
+              <svg class="w-4 h-4 transition duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
             <div class="absolute left-0 mt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-              <div class="bg-slate-900 border border-slate-700/80 rounded-xl shadow-2xl py-2 overflow-hidden">
-                <a href="/email-generator.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-cyan-400 hover:bg-slate-800 transition font-medium">
-                  <span>✉️</span> Email Generator
-                </a>
-                <a href="/doc-converter.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">
-                  <span>🔄</span> Document Converter
-                </a>
-                <a href="/image-compressor.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">
-                  <span>🖼️</span> Image Compressor
-                </a>
-                <a href="/case-converter.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">
-                  <span>Aa</span> Case Converter
-                </a>
-                <a href="/password-generator.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">
-                  <span>🔒</span> Password Generator
-                </a>
-                <a href="/counter.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">
-                  <span>🔢</span> Word Counter
-                </a>
-                <a href="/qr-generator.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">
-                  <span>📱</span> QR Code Generator
-                </a>
-                <a href="/pdf-page-remover.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">
-                  <span>📄</span> PDF Page Remover
-                </a>
-                <a href="/json-formatter.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">
-                  <span>⚙️</span> JSON Formatter
-                </a>
-                <a href="/lorem-ipsum.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">
-                  <span>📝</span> Lorem Ipsum
-                </a>
-                <a href="/summarizer.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">
-                  <span>📚</span> Text Summarizer
-                </a>
+              <div class="bg-slate-900 border border-slate-700/80 rounded-xl shadow-2xl py-2 overflow-hidden max-h-[70vh] overflow-y-auto">
+                <a href="/email-generator.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-cyan-400 hover:bg-slate-800 transition font-medium"><span>✉️</span> Email Generator</a>
+                <a href="/speed-test.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition"><span>⚡</span> Speed Test</a>
+                <a href="/seo-audit.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition"><span>🔍</span> SEO Audit</a>
+                <a href="/adsense-checker.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition"><span>💰</span> AdSense Checker</a>
+                <a href="/doc-converter.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition"><span>🔄</span> Document Converter</a>
+                <a href="/image-compressor.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition"><span>🖼️</span> Image Compressor</a>
+                <a href="/case-converter.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition"><span>Aa</span> Case Converter</a>
+                <a href="/password-generator.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition"><span>🔒</span> Password Generator</a>
+                <a href="/counter.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition"><span>🔢</span> Word Counter</a>
+                <a href="/qr-generator.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition"><span>📱</span> QR Code Generator</a>
+                <a href="/pdf-page-remover.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition"><span>📄</span> PDF Page Remover</a>
+                <a href="/json-formatter.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition"><span>⚙️</span> JSON Formatter</a>
+                <a href="/lorem-ipsum.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition"><span>📝</span> Lorem Ipsum</a>
+                <a href="/summarizer.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition"><span>📚</span> Text Summarizer</a>
               </div>
             </div>
           </div>
         </div>
         
-        <!-- Mobile Menu Trigger -->
         <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-300 hover:text-white">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
     </div>
     
-    <!-- Mobile Drawer -->
     <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-slate-950">
       <div class="px-4 py-3 space-y-1">
         <a href="/" class="block px-3 py-2.5 rounded-lg text-cyan-400 hover:bg-slate-800 font-medium">Home</a>
         <a href="/email-generator.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Email Generator</a>
+        <a href="/speed-test.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Speed Test</a>
+        <a href="/seo-audit.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">SEO Audit</a>
+        <a href="/adsense-checker.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">AdSense Checker</a>
         <a href="/doc-converter.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Document Converter</a>
         <a href="/image-compressor.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Image Compressor</a>
         <a href="/case-converter.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Case Converter</a>
@@ -239,7 +200,6 @@
   <!-- ========== HERO SECTION ========== -->
   <section class="relative pt-20 pb-16 px-4 overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-b from-cyan-500/5 via-transparent to-transparent pointer-events-none"></div>
-    
     <div class="max-w-4xl mx-auto text-center relative z-10 reveal">
       <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-800/80 border border-slate-700 text-sm text-cyan-400 mb-8">
         <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
@@ -258,16 +218,8 @@
   <!-- ========== AD SLOT (Top) ========== -->
   <div class="max-w-7xl mx-auto px-4 mb-8">
     <div class="bg-slate-900/50 border border-slate-800 rounded-xl p-4 text-center text-slate-500 text-sm">
-      <!-- Replace with your AdSense code -->
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-           data-ad-slot="XXXXXXXXXX"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
       <span class="text-xs">Advertisement</span>
     </div>
   </div>
@@ -279,77 +231,84 @@
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       
-      <!-- Email Generator (New) -->
       <a href="/email-generator.html" class="glass-card rounded-2xl p-6 group reveal border-cyan-500/30">
         <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-2xl mb-4">✉️</div>
         <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition">Email Generator</h3>
         <p class="text-sm text-slate-400">Generate temporary disposable email addresses instantly for testing and privacy protection.</p>
       </a>
       
-      <!-- Document Converter -->
+      <a href="/speed-test.html" class="glass-card rounded-2xl p-6 group reveal border-cyan-500/30">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-2xl mb-4">⚡</div>
+        <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition">Internet Speed Test</h3>
+        <p class="text-sm text-slate-400">Check real download, upload speed and ping with a live speedometer dial. Free WiFi speed test.</p>
+      </a>
+      
+      <a href="/seo-audit.html" class="glass-card rounded-2xl p-6 group reveal border-cyan-500/30">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-2xl mb-4">🔍</div>
+        <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition">SEO Site Audit</h3>
+        <p class="text-sm text-slate-400">Get your website SEO Health Score. Find technical errors, on-page issues and priority fixes.</p>
+      </a>
+      
+      <a href="/adsense-checker.html" class="glass-card rounded-2xl p-6 group reveal border-cyan-500/30">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center text-2xl mb-4">💰</div>
+        <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition">AdSense Checker</h3>
+        <p class="text-sm text-slate-400">Check Google AdSense approval chance. Analyze eligibility and get exact fixes before applying.</p>
+      </a>
+      
       <a href="/doc-converter.html" class="glass-card rounded-2xl p-6 group reveal">
         <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-2xl mb-4">🔄</div>
         <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition">Document Converter</h3>
         <p class="text-sm text-slate-400">Convert Word (.docx), Excel (.xlsx), and Text (.txt) files directly into clean, formatted PDFs.</p>
       </a>
       
-      <!-- Image Compressor -->
       <a href="/image-compressor.html" class="glass-card rounded-2xl p-6 group reveal">
         <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center text-2xl mb-4">🖼️</div>
         <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition">Image Compressor</h3>
         <p class="text-sm text-slate-400">Reduce JPG, PNG & WebP image file sizes up to 80% locally without loss of quality.</p>
       </a>
       
-      <!-- Case Converter -->
       <a href="/case-converter.html" class="glass-card rounded-2xl p-6 group reveal">
         <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-xl font-bold text-white mb-4">Aa</div>
         <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition">Case Converter</h3>
         <p class="text-sm text-slate-400">Transform text into UPPERCASE, lowercase, Title Case, camelCase, and URL slugs instantly.</p>
       </a>
       
-      <!-- Password Generator -->
       <a href="/password-generator.html" class="glass-card rounded-2xl p-6 group reveal">
         <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-2xl mb-4">🔒</div>
         <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition">Password Generator</h3>
         <p class="text-sm text-slate-400">Generate high-entropy, random, cryptographic passwords with custom character rules.</p>
       </a>
       
-      <!-- Word Counter -->
       <a href="/counter.html" class="glass-card rounded-2xl p-6 group reveal">
         <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-2xl mb-4">🔢</div>
         <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition">Word Counter</h3>
         <p class="text-sm text-slate-400">Calculate exact word counts, character limits, sentence totals, and reading speeds live.</p>
       </a>
       
-      <!-- QR Code Generator -->
       <a href="/qr-generator.html" class="glass-card rounded-2xl p-6 group reveal">
         <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center text-2xl mb-4">📱</div>
         <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition">QR Code Generator</h3>
         <p class="text-sm text-slate-400">Generate custom high-resolution scannable QR codes for websites, WiFi, and contact data.</p>
       </a>
       
-      <!-- PDF Page Remover -->
       <a href="/pdf-page-remover.html" class="glass-card rounded-2xl p-6 group reveal">
         <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500 to-rose-600 flex items-center justify-center text-2xl mb-4">📄</div>
         <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition">PDF Page Remover</h3>
         <p class="text-sm text-slate-400">Delete unwanted or sensitive pages from PDF files visually with page thumbnail previews.</p>
       </a>
       
-      <!-- JSON Formatter -->
       <a href="/json-formatter.html" class="glass-card rounded-2xl p-6 group reveal">
         <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-500 to-blue-600 flex items-center justify-center text-2xl mb-4">⚙️</div>
         <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition">JSON Formatter</h3>
         <p class="text-sm text-slate-400">Validate, beautify, repair, and minify complex JSON strings with syntax error checks.</p>
       </a>
       
-      <!-- Lorem Ipsum Generator -->
       <a href="/lorem-ipsum.html" class="glass-card rounded-2xl p-6 group reveal">
         <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-slate-500 to-slate-700 flex items-center justify-center text-2xl mb-4">📝</div>
         <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition">Lorem Ipsum Generator</h3>
         <p class="text-sm text-slate-400">Generate dummy placeholder text in paragraphs, sentences, or words for UI mockups.</p>
       </a>
       
-      <!-- Text Summarizer -->
       <a href="/summarizer.html" class="glass-card rounded-2xl p-6 group reveal">
         <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-fuchsia-500 to-pink-600 flex items-center justify-center text-2xl mb-4">📚</div>
         <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition">AI Text Summarizer</h3>
@@ -361,23 +320,15 @@
   <!-- ========== AD SLOT (Middle) ========== -->
   <div class="max-w-4xl mx-auto px-4 mb-12">
     <div class="bg-slate-900/50 border border-slate-800 rounded-xl p-4 text-center text-slate-500 text-sm">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-           data-ad-slot="XXXXXXXXXX"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
       <span class="text-xs">Advertisement</span>
     </div>
   </div>
 
-  <!-- ========== 3,000+ WORDS COMPREHENSIVE SEO ARTICLE SECTION ========== -->
+  <!-- ========== SEO ARTICLE ========== -->
   <section class="max-w-4xl mx-auto px-4 py-16 text-slate-300 reveal space-y-12">
       
-      <!-- Chapter 1 -->
       <div>
         <h2 class="text-3xl font-bold text-white mb-6">1. The Digital Productivity Paradigm: Why Modern Browser Micro-Tools Are Changing the Web</h2>
         <p class="mb-4 text-slate-400 leading-relaxed">
@@ -387,19 +338,16 @@
           Historically, completing these simple utility tasks required downloading resource-heavy desktop software packages or uploading sensitive personal files to third-party web servers. Desktop suites consume massive disk space, mandate frequent updates, and often restrict features behind paywalls. Conversely, traditional cloud-based web tools compromise user privacy by transferring unencrypted documents across public networks.
         </p>
         <p class="mb-4 text-slate-400 leading-relaxed">
-          At <strong class="text-white">Browser Tools Hub</strong> (<code>browsertools.site</code>), we have engineered a modern browser-native alternative. By deploying client-side execution frameworks powered by WebAssembly, HTML5 APIs, and modern JavaScript, our suite of 11 micro-tools performs all data calculations directly within your device's browser memory. This eliminates software installation barriers, prevents server upload latencies, and guarantees complete data privacy.
+          At <strong class="text-white">Browser Tools Hub</strong> (<code>browsertools.site</code>), we have engineered a modern browser-native alternative. By deploying client-side execution frameworks powered by WebAssembly, HTML5 APIs, and modern JavaScript, our suite of micro-tools performs all data calculations directly within your device's browser memory. This eliminates software installation barriers, prevents server upload latencies, and guarantees complete data privacy.
         </p>
       </div>
       
-      <!-- Chapter 2 -->
       <div>
         <h2 class="text-2xl font-bold text-white mb-4">2. The Technical Science Behind Client-Side Processing and Data Privacy</h2>
         <p class="mb-4 text-slate-400 leading-relaxed">
           Understanding the difference between <strong>client-side processing</strong> and <strong>server-side execution</strong> is critical for evaluating online data security. When using standard online converters, your raw files—whether financial spreadsheets, corporate contracts, or high-resolution photos—are transmitted via HTTP requests to external remote servers. These remote systems process the file, store temporary cache files, and return the output back to your device.
         </p>
-        <p class="mb-4 text-slate-400 leading-relaxed">
-          This legacy server-side workflow introduces significant technical risks:
-        </p>
+        <p class="mb-4 text-slate-400 leading-relaxed">This legacy server-side workflow introduces significant technical risks:</p>
         <ul class="list-disc list-inside mb-4 text-slate-400 space-y-2 ml-4">
           <li><strong class="text-white">Data Interception:</strong> Files in transit can be targeted by man-in-the-middle network attacks if security protocols fail.</li>
           <li><strong class="text-white">Uncontrolled Cloud Storage:</strong> Users cannot verify whether third-party servers permanently purge uploaded documents or retain residual logs.</li>
@@ -410,214 +358,148 @@
         </p>
       </div>
       
-      <!-- Chapter 3: Deep Dive into All Tools -->
       <div>
-        <h2 class="text-2xl font-bold text-white mb-6">3. Detailed Technical Guide to Our 11 High-Traffic Web Utilities</h2>
+        <h2 class="text-2xl font-bold text-white mb-6">3. Detailed Technical Guide to Our High-Traffic Web Utilities</h2>
         
         <div class="space-y-8">
           
-          <!-- Tool 1 - Email Generator -->
           <div class="glass-card rounded-xl p-6 border border-slate-800">
             <h3 class="text-cyan-400 font-semibold mb-2 text-xl">1. Temporary Email Generator</h3>
-            <p class="text-slate-400 text-sm leading-relaxed mb-3">
-              Creating accounts on websites often requires an email address, which can lead to spam and privacy concerns. A disposable email generator solves this by providing temporary inboxes that expire after use.
-            </p>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              Our <a href="/email-generator.html" class="text-cyan-400 hover:underline">Email Generator</a> creates temporary disposable email addresses instantly. All processing happens locally in your browser for maximum privacy.
-            </p>
+            <p class="text-slate-400 text-sm leading-relaxed mb-3">Creating accounts on websites often requires an email address, which can lead to spam and privacy concerns. A disposable email generator solves this by providing temporary inboxes that expire after use.</p>
+            <p class="text-slate-400 text-sm leading-relaxed">Our <a href="/email-generator.html" class="text-cyan-400 hover:underline">Email Generator</a> creates temporary disposable email addresses instantly and receives OTP codes in real time.</p>
           </div>
           
-          <!-- Tool 2 -->
           <div class="glass-card rounded-xl p-6 border border-slate-800">
-            <h3 class="text-cyan-400 font-semibold mb-2 text-xl">2. All-in-One Document Converter (.docx, .xlsx, .txt ➔ PDF)</h3>
-            <p class="text-slate-400 text-sm leading-relaxed mb-3">
-              Document layout fragmentation is a persistent challenge when sharing files across different office software packages. A Word document created on Windows may display broken alignment or missing custom fonts when opened on a Mac or mobile device.
-            </p>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              Our <a href="/doc-converter.html" class="text-cyan-400 hover:underline">Document Converter</a> utilizes <code>Mammoth.js</code> for parsing Word text structures and <code>SheetJS</code> for compiling Excel spreadsheets, combined with <code>html2pdf.js</code> to generate fixed, high-resolution PDF documents locally within seconds.
-            </p>
+            <h3 class="text-cyan-400 font-semibold mb-2 text-xl">2. Internet Speed Test</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-3">Knowing your real download, upload and ping values helps diagnose slow WiFi, verify ISP plans and optimize gaming or video calls.</p>
+            <p class="text-slate-400 text-sm leading-relaxed">Our <a href="/speed-test.html" class="text-cyan-400 hover:underline">Speed Test</a> uses a live speedometer dial to measure download, upload and latency instantly — no signup required.</p>
           </div>
           
-          <!-- Tool 3 -->
           <div class="glass-card rounded-xl p-6 border border-slate-800">
-            <h3 class="text-cyan-400 font-semibold mb-2 text-xl">3. Free Online Image Compressor (JPG, PNG, WebP)</h3>
-            <p class="text-slate-400 text-sm leading-relaxed mb-3">
-              Unoptimized image assets are the primary cause of slow website load times, high bounce rates, and degraded Search Engine Optimization (SEO) rankings on search engines like Google.
-            </p>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              Our <a href="/image-compressor.html" class="text-cyan-400 hover:underline">Image Compressor</a> executes HTML5 Canvas pixel manipulation algorithms locally, letting you adjust quality levels or max-width dimensions to decrease file weights by up to 80% without sacrificing visual clarity.
-            </p>
+            <h3 class="text-cyan-400 font-semibold mb-2 text-xl">3. SEO Site Audit Tool</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-3">Technical and on-page SEO issues can silently limit search visibility. Regular audits surface missing titles, thin content, mobile problems and more.</p>
+            <p class="text-slate-400 text-sm leading-relaxed">Our <a href="/seo-audit.html" class="text-cyan-400 hover:underline">SEO Audit</a> returns an overall Health Score, lists Errors and Warnings, and gives prioritized fixes.</p>
           </div>
           
-          <!-- Tool 4 -->
           <div class="glass-card rounded-xl p-6 border border-slate-800">
-            <h3 class="text-cyan-400 font-semibold mb-2 text-xl">4. Online Case Converter (UPPERCASE, Title Case, camelCase, Slugs)</h3>
-            <p class="text-slate-400 text-sm leading-relaxed mb-3">
-              Manual re-typing of poorly capitalized text or correcting accidental Caps Lock entries wastes valuable editing time for writers and programmers.
-            </p>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              Our <a href="/case-converter.html" class="text-cyan-400 hover:underline">Case Converter</a> offers 11 conversion modes—including standard Sentence case, UPPERCASE, lowercase, Title Case, Capitalized Case, <code>camelCase</code>, <code>PascalCase</code>, <code>snake_case</code>, and SEO-friendly <code>slug-case</code>.
-            </p>
+            <h3 class="text-cyan-400 font-semibold mb-2 text-xl">4. AdSense Approval Checker</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-3">Many publishers apply for Google AdSense too early and get rejected. Checking eligibility first saves time and frustration.</p>
+            <p class="text-slate-400 text-sm leading-relaxed">Our <a href="/adsense-checker.html" class="text-cyan-400 hover:underline">AdSense Checker</a> analyzes your domain for HTTPS, required pages, content signals and more, then shows an approval chance percentage with exact recommendations.</p>
           </div>
           
-          <!-- Tool 5 -->
           <div class="glass-card rounded-xl p-6 border border-slate-800">
-            <h3 class="text-cyan-400 font-semibold mb-2 text-xl">5. Cryptographic Password Generator (Web Crypto API)</h3>
-            <p class="text-slate-400 text-sm leading-relaxed mb-3">
-              Automated credential-stuffing attacks and brute-force cracking tools easily compromise predictable passwords containing pet names or sequential numbers.
-            </p>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              Our <a href="/password-generator.html" class="text-cyan-400 hover:underline">Password Generator</a> relies on the browser-native <code>crypto.getRandomValues()</code> API to deliver true hardware-level entropy, generating custom random keys up to 64 characters in length.
-            </p>
+            <h3 class="text-cyan-400 font-semibold mb-2 text-xl">5. All-in-One Document Converter (.docx, .xlsx, .txt ➔ PDF)</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-3">Document layout fragmentation is a persistent challenge when sharing files across different office software packages.</p>
+            <p class="text-slate-400 text-sm leading-relaxed">Our <a href="/doc-converter.html" class="text-cyan-400 hover:underline">Document Converter</a> utilizes Mammoth.js and SheetJS with html2pdf.js to generate fixed, high-resolution PDF documents locally within seconds.</p>
           </div>
           
-          <!-- Tool 6 -->
           <div class="glass-card rounded-xl p-6 border border-slate-800">
-            <h3 class="text-cyan-400 font-semibold mb-2 text-xl">6. Real-Time Word & Character Counter</h3>
-            <p class="text-slate-400 text-sm leading-relaxed mb-3">
-              Adhering to strict text length constraints—such as Twitter/X 280-character limits, 160-character SEO meta descriptions, or academic paper ceilings—demands exact metrics tracking.
-            </p>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              Our <a href="/counter.html" class="text-cyan-400 hover:underline">Word Counter</a> measures live total words, character limits (with and without spaces), sentence totals, paragraph density, and estimated reading speeds in real-time as you type.
-            </p>
+            <h3 class="text-cyan-400 font-semibold mb-2 text-xl">6. Free Online Image Compressor (JPG, PNG, WebP)</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-3">Unoptimized image assets are the primary cause of slow website load times and degraded SEO rankings.</p>
+            <p class="text-slate-400 text-sm leading-relaxed">Our <a href="/image-compressor.html" class="text-cyan-400 hover:underline">Image Compressor</a> executes HTML5 Canvas pixel manipulation locally, decreasing file weights by up to 80% without sacrificing visual clarity.</p>
           </div>
           
-          <!-- Tool 7 -->
           <div class="glass-card rounded-xl p-6 border border-slate-800">
-            <h3 class="text-cyan-400 font-semibold mb-2 text-xl">7. High-Resolution QR Code Generator</h3>
-            <p class="text-slate-400 text-sm leading-relaxed mb-3">
-              Quick Response (QR) codes connect physical marketing media—such as business cards, restaurant menus, and product packaging—directly with online digital resources.
-            </p>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              Our <a href="/qr-generator.html" class="text-cyan-400 hover:underline">QR Code Generator</a> builds vector-rendered scannable barcodes with Level H error correction for website URLs, plain text strings, and contact details.
-            </p>
+            <h3 class="text-cyan-400 font-semibold mb-2 text-xl">7. Online Case Converter</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-3">Manual re-typing of poorly capitalized text wastes valuable editing time.</p>
+            <p class="text-slate-400 text-sm leading-relaxed">Our <a href="/case-converter.html" class="text-cyan-400 hover:underline">Case Converter</a> offers multiple modes including UPPERCASE, Title Case, camelCase, snake_case and SEO-friendly slug-case.</p>
           </div>
           
-          <!-- Tool 8 -->
           <div class="glass-card rounded-xl p-6 border border-slate-800">
-            <h3 class="text-cyan-400 font-semibold mb-2 text-xl">8. Visual PDF Page Remover</h3>
-            <p class="text-slate-400 text-sm leading-relaxed mb-3">
-              Eliminating redundant cover pages, blank sheets, or confidential annexes from multi-page PDF documents usually requires expensive PDF editing software subscriptions.
-            </p>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              Our <a href="/pdf-page-remover.html" class="text-cyan-400 hover:underline">PDF Page Remover</a> utilizes <code>PDF.js</code> thumbnail rendering and <code>PDF-Lib</code> stream manipulation to let you select and delete unwanted pages visually.
-            </p>
+            <h3 class="text-cyan-400 font-semibold mb-2 text-xl">8. Cryptographic Password Generator</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-3">Predictable passwords are easily compromised by credential-stuffing attacks.</p>
+            <p class="text-slate-400 text-sm leading-relaxed">Our <a href="/password-generator.html" class="text-cyan-400 hover:underline">Password Generator</a> relies on the browser-native crypto.getRandomValues() API for true hardware-level entropy.</p>
           </div>
           
-          <!-- Tool 9 -->
           <div class="glass-card rounded-xl p-6 border border-slate-800">
-            <h3 class="text-cyan-400 font-semibold mb-2 text-xl">9. JSON Formatter, Validator & Minifier</h3>
-            <p class="text-slate-400 text-sm leading-relaxed mb-3">
-              Debugging minified or compressed API responses without proper indentation and color-coded syntax formatting leads to developer frustration and lost productivity.
-            </p>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              Our <a href="/json-formatter.html" class="text-cyan-400 hover:underline">JSON Formatter</a> evaluates syntax against RFC guidelines, highlights misplaced brackets or trailing commas, and provides 1-click beautification or minification.
-            </p>
+            <h3 class="text-cyan-400 font-semibold mb-2 text-xl">9. Real-Time Word & Character Counter</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-3">Adhering to strict text length constraints demands exact metrics tracking.</p>
+            <p class="text-slate-400 text-sm leading-relaxed">Our <a href="/counter.html" class="text-cyan-400 hover:underline">Word Counter</a> measures live total words, characters, sentences and estimated reading speeds in real time.</p>
           </div>
           
-          <!-- Tool 10 -->
           <div class="glass-card rounded-xl p-6 border border-slate-800">
-            <h3 class="text-cyan-400 font-semibold mb-2 text-xl">10. Lorem Ipsum Placeholder Text Generator</h3>
-            <p class="text-slate-400 text-sm leading-relaxed mb-3">
-              UI/UX designers need natural filler text to evaluate web page typography hierarchy, line spacing, and grid layouts without distracting stakeholders with readable copy.
-            </p>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              Our <a href="/lorem-ipsum.html" class="text-cyan-400 hover:underline">Lorem Ipsum Generator</a> produces customized dummy text blocks across paragraphs, sentences, or word counts in seconds.
-            </p>
+            <h3 class="text-cyan-400 font-semibold mb-2 text-xl">10. High-Resolution QR Code Generator</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-3">QR codes connect physical media directly with online digital resources.</p>
+            <p class="text-slate-400 text-sm leading-relaxed">Our <a href="/qr-generator.html" class="text-cyan-400 hover:underline">QR Code Generator</a> builds vector-rendered scannable barcodes with high error correction.</p>
           </div>
           
-          <!-- Tool 11 -->
           <div class="glass-card rounded-xl p-6 border border-slate-800">
-            <h3 class="text-cyan-400 font-semibold mb-2 text-xl">11. Smart AI Text Summarizer</h3>
-            <p class="text-slate-400 text-sm leading-relaxed mb-3">
-              Extracting core insights from lengthy research documents, news reports, and detailed essays requires reading through thousands of non-essential filler words.
-            </p>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              Our <a href="/summarizer.html" class="text-cyan-400 hover:underline">Text Summarizer</a> uses algorithmic sentence weighting and NLP heuristics to condense dense articles into structured key takeaways instantly.
-            </p>
+            <h3 class="text-cyan-400 font-semibold mb-2 text-xl">11. Visual PDF Page Remover</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-3">Eliminating unwanted pages from multi-page PDFs usually requires expensive software.</p>
+            <p class="text-slate-400 text-sm leading-relaxed">Our <a href="/pdf-page-remover.html" class="text-cyan-400 hover:underline">PDF Page Remover</a> lets you select and delete pages visually with thumbnail previews.</p>
+          </div>
+          
+          <div class="glass-card rounded-xl p-6 border border-slate-800">
+            <h3 class="text-cyan-400 font-semibold mb-2 text-xl">12. JSON Formatter, Validator & Minifier</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-3">Debugging minified API responses without proper formatting leads to frustration.</p>
+            <p class="text-slate-400 text-sm leading-relaxed">Our <a href="/json-formatter.html" class="text-cyan-400 hover:underline">JSON Formatter</a> evaluates syntax, highlights errors and provides one-click beautification or minification.</p>
+          </div>
+          
+          <div class="glass-card rounded-xl p-6 border border-slate-800">
+            <h3 class="text-cyan-400 font-semibold mb-2 text-xl">13. Lorem Ipsum Placeholder Text Generator</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-3">UI/UX designers need natural filler text to evaluate typography and layouts.</p>
+            <p class="text-slate-400 text-sm leading-relaxed">Our <a href="/lorem-ipsum.html" class="text-cyan-400 hover:underline">Lorem Ipsum Generator</a> produces customized dummy text blocks in seconds.</p>
+          </div>
+          
+          <div class="glass-card rounded-xl p-6 border border-slate-800">
+            <h3 class="text-cyan-400 font-semibold mb-2 text-xl">14. Smart AI Text Summarizer</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-3">Extracting core insights from lengthy documents requires reading thousands of non-essential words.</p>
+            <p class="text-slate-400 text-sm leading-relaxed">Our <a href="/summarizer.html" class="text-cyan-400 hover:underline">Text Summarizer</a> uses algorithmic sentence weighting to condense dense articles into structured key takeaways.</p>
           </div>
         </div>
       </div>
       
-      <!-- Chapter 4 -->
       <div>
         <h2 class="text-2xl font-bold text-white mb-4">4. Strategic Productivity Best Practices for Digital Professionals</h2>
-        <p class="mb-4 text-slate-400 leading-relaxed">
-          Integrating browser-native micro-tools into your daily workflow enhances efficiency while protecting digital assets. Follow these best practices:
-        </p>
+        <p class="mb-4 text-slate-400 leading-relaxed">Integrating browser-native micro-tools into your daily workflow enhances efficiency while protecting digital assets. Follow these best practices:</p>
         <ul class="list-disc list-inside mb-4 text-slate-400 space-y-2 ml-4">
-          <li><strong class="text-white">Bookmark Utility Tool Hubs:</strong> Save direct browser bookmarks to frequently used tools like <a href="/image-compressor.html" class="text-cyan-400 hover:underline">Image Compressor</a> or <a href="/counter.html" class="text-cyan-400 hover:underline">Word Counter</a> to skip search engine redirect steps.</li>
-          <li><strong class="text-white">Optimize Images Before Web Uploads:</strong> Always run website banner images through our local compressor before publishing to lower page load times and improve Core Web Vitals performance.</li>
-          <li><strong class="text-white">Audit Password Security:</strong> Generate unique, 16+ character cryptographic keys using our <a href="/password-generator.html" class="text-cyan-400 hover:underline">Password Generator</a> rather than reusing master passwords across platforms.</li>
-          <li><strong class="text-white">Lock Document Layouts:</strong> Convert editable Word documents and Excel sheets to locked PDF formats via our <a href="/doc-converter.html" class="text-cyan-400 hover:underline">Document Converter</a> prior to sending corporate contracts or client proposals.</li>
+          <li><strong class="text-white">Bookmark Utility Tool Hubs:</strong> Save direct browser bookmarks to frequently used tools to skip search engine redirect steps.</li>
+          <li><strong class="text-white">Optimize Images Before Web Uploads:</strong> Always run website banner images through our local compressor before publishing.</li>
+          <li><strong class="text-white">Audit Password Security:</strong> Generate unique, 16+ character cryptographic keys rather than reusing master passwords.</li>
+          <li><strong class="text-white">Lock Document Layouts:</strong> Convert editable Word and Excel files to locked PDF formats prior to sending contracts.</li>
+          <li><strong class="text-white">Check Speed Regularly:</strong> Use the Speed Test to verify your connection after network changes.</li>
+          <li><strong class="text-white">Run SEO Audits:</strong> Periodically audit important pages to catch missing titles, thin content and mobile issues early.</li>
         </ul>
       </div>
       
-      <!-- Chapter 5: FAQ -->
       <div>
         <h2 class="text-2xl font-bold text-white mb-6">5. Frequently Asked Questions (FAQs)</h2>
         <div class="space-y-4">
-          
           <div class="glass-card rounded-xl p-5 border border-slate-800">
             <h3 class="text-cyan-400 font-semibold mb-2">Is Browser Tools Hub completely free to use?</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              Yes. Every tool on browsertools.site is 100% free with no hidden charges, premium tiers, usage limits, or forced sign-ups. We believe essential productivity utilities should remain accessible to everyone.
-            </p>
+            <p class="text-slate-400 text-sm leading-relaxed">Yes. Every tool on browsertools.site is 100% free with no hidden charges, premium tiers, usage limits, or forced sign-ups.</p>
           </div>
-          
           <div class="glass-card rounded-xl p-5 border border-slate-800">
             <h3 class="text-cyan-400 font-semibold mb-2">Do my files get uploaded to any server?</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              No. All processing happens entirely inside your browser using client-side JavaScript and WebAssembly. Your documents, images, and text never leave your device. This Zero-Server-Upload architecture ensures maximum privacy.
-            </p>
+            <p class="text-slate-400 text-sm leading-relaxed">No. All processing happens entirely inside your browser using client-side JavaScript and WebAssembly. Your documents, images, and text never leave your device.</p>
           </div>
-          
           <div class="glass-card rounded-xl p-5 border border-slate-800">
             <h3 class="text-cyan-400 font-semibold mb-2">Which file formats does the Document Converter support?</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              Currently the Document Converter supports Microsoft Word (.docx), Excel spreadsheets (.xlsx), and plain text (.txt) files, converting them into clean, properly formatted PDF documents.
-            </p>
+            <p class="text-slate-400 text-sm leading-relaxed">Currently the Document Converter supports Microsoft Word (.docx), Excel spreadsheets (.xlsx), and plain text (.txt) files, converting them into clean, properly formatted PDF documents.</p>
           </div>
-          
           <div class="glass-card rounded-xl p-5 border border-slate-800">
             <h3 class="text-cyan-400 font-semibold mb-2">Is the Password Generator truly secure?</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              Yes. It uses the browser’s native <code>crypto.getRandomValues()</code> Web Crypto API, which provides cryptographically strong random values. Passwords are generated locally and are never transmitted or stored.
-            </p>
+            <p class="text-slate-400 text-sm leading-relaxed">Yes. It uses the browser’s native crypto.getRandomValues() Web Crypto API, which provides cryptographically strong random values. Passwords are generated locally and are never transmitted or stored.</p>
           </div>
-          
           <div class="glass-card rounded-xl p-5 border border-slate-800">
             <h3 class="text-cyan-400 font-semibold mb-2">Can I use these tools on mobile devices?</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              Absolutely. The entire suite is fully responsive and works smoothly on smartphones and tablets. All processing still occurs on-device for privacy and speed.
-            </p>
+            <p class="text-slate-400 text-sm leading-relaxed">Absolutely. The entire suite is fully responsive and works smoothly on smartphones and tablets. All processing still occurs on-device for privacy and speed.</p>
           </div>
-          
           <div class="glass-card rounded-xl p-5 border border-slate-800">
             <h3 class="text-cyan-400 font-semibold mb-2">Do I need to create an account?</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              No account, registration, or email is required. Simply open any tool and start using it instantly.
-            </p>
+            <p class="text-slate-400 text-sm leading-relaxed">No account, registration, or email is required. Simply open any tool and start using it instantly.</p>
           </div>
-          
           <div class="glass-card rounded-xl p-5 border border-slate-800">
             <h3 class="text-cyan-400 font-semibold mb-2">Will more tools be added in the future?</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              Yes. We continuously expand the suite based on user feedback. Popular upcoming tools include an Image Resizer, Color Picker, Markdown Editor, and Base64 Encoder/Decoder.
-            </p>
+            <p class="text-slate-400 text-sm leading-relaxed">Yes. We continuously expand the suite based on user feedback. Recent additions include Speed Test, SEO Audit and AdSense Checker. More tools are planned.</p>
           </div>
         </div>
       </div>
-
-      <!-- Final CTA -->
+      
       <div class="text-center pt-8">
         <h2 class="text-2xl font-bold text-white mb-4">Start Using Privacy-First Tools Today</h2>
-        <p class="text-slate-400 mb-8 max-w-2xl mx-auto">
-          Stop uploading sensitive files to unknown servers. Experience the speed and security of true client-side browser utilities.
-        </p>
-        <a href="#tools" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-medium rounded-xl transition shadow-lg shadow-cyan-500/20">
-          Explore All Tools
-        </a>
+        <p class="text-slate-400 mb-8 max-w-2xl mx-auto">Stop uploading sensitive files to unknown servers. Experience the speed and security of true client-side browser utilities.</p>
+        <a href="#tools" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-medium rounded-xl transition shadow-lg shadow-cyan-500/20">Explore All Tools</a>
       </div>
   </section>
 
@@ -625,33 +507,26 @@
   <footer class="border-t border-slate-800 bg-slate-950/80 mt-16">
     <div class="max-w-7xl mx-auto px-4 py-12">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
-        
-        <!-- Brand -->
         <div>
           <div class="flex items-center gap-2.5 mb-4">
-            <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm">
-              BT
-            </div>
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm">BT</div>
             <span class="text-white font-semibold text-lg">Browser Tools Hub</span>
           </div>
-          <p class="text-slate-400 text-sm leading-relaxed">
-            A free collection of privacy-focused micro tools that run entirely in your browser. No uploads. No tracking. No limits.
-          </p>
+          <p class="text-slate-400 text-sm leading-relaxed">A free collection of privacy-focused micro tools that run entirely in your browser. No uploads. No tracking. No limits.</p>
         </div>
         
-        <!-- Quick Links -->
         <div>
           <h4 class="text-white font-semibold mb-4">Popular Tools</h4>
           <ul class="space-y-2 text-sm">
             <li><a href="/email-generator.html" class="text-slate-400 hover:text-cyan-400 transition">Email Generator</a></li>
+            <li><a href="/speed-test.html" class="text-slate-400 hover:text-cyan-400 transition">Speed Test</a></li>
+            <li><a href="/seo-audit.html" class="text-slate-400 hover:text-cyan-400 transition">SEO Audit</a></li>
+            <li><a href="/adsense-checker.html" class="text-slate-400 hover:text-cyan-400 transition">AdSense Checker</a></li>
             <li><a href="/doc-converter.html" class="text-slate-400 hover:text-cyan-400 transition">Document Converter</a></li>
             <li><a href="/image-compressor.html" class="text-slate-400 hover:text-cyan-400 transition">Image Compressor</a></li>
-            <li><a href="/password-generator.html" class="text-slate-400 hover:text-cyan-400 transition">Password Generator</a></li>
-            <li><a href="/qr-generator.html" class="text-slate-400 hover:text-cyan-400 transition">QR Code Generator</a></li>
           </ul>
         </div>
         
-        <!-- Legal / Info -->
         <div>
           <h4 class="text-white font-semibold mb-4">Information</h4>
           <ul class="space-y-2 text-sm">
@@ -663,7 +538,6 @@
           </ul>
         </div>
         
-        <!-- Extra column for balance -->
         <div>
           <h4 class="text-white font-semibold mb-4">Support</h4>
           <ul class="space-y-2 text-sm">
@@ -676,65 +550,43 @@
       </div>
       
       <div class="border-t border-slate-800 mt-10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <p class="text-slate-500 text-sm">
-          © 2026 Browser Tools Hub. All rights reserved.
-        </p>
-        <p class="text-slate-500 text-sm">
-          Built with privacy in mind.
-        </p>
+        <p class="text-slate-500 text-sm">© 2026 Browser Tools Hub. All rights reserved.</p>
+        <p class="text-slate-500 text-sm">Built with privacy in mind.</p>
       </div>
     </div>
   </footer>
 
-  <!-- Mobile Menu + Cookie + Reveal Scripts -->
   <script>
-    // Mobile menu
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    
-    mobileBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
+    mobileBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
 
-    // Reveal on scroll animation
     const reveals = document.querySelectorAll('.reveal');
-    
     const revealOnScroll = () => {
       const windowHeight = window.innerHeight;
       reveals.forEach(el => {
-        const elementTop = el.getBoundingClientRect().top;
-        if (elementTop < windowHeight - 80) {
-          el.classList.add('active');
-        }
+        if (el.getBoundingClientRect().top < windowHeight - 80) el.classList.add('active');
       });
     };
     window.addEventListener('scroll', revealOnScroll);
     window.addEventListener('load', revealOnScroll);
 
-    // Cookie Consent
     const cookieBanner = document.getElementById('cookie-banner');
     const acceptBtn = document.getElementById('cookie-accept');
     const rejectBtn = document.getElementById('cookie-reject');
-
-    // Show banner only if user hasn't chosen yet
     if (!localStorage.getItem('cookieConsent')) {
-      setTimeout(() => {
-        cookieBanner.classList.add('show');
-      }, 800);
+      setTimeout(() => cookieBanner.classList.add('show'), 800);
     }
-
     acceptBtn.addEventListener('click', () => {
       localStorage.setItem('cookieConsent', 'accepted');
       cookieBanner.classList.remove('show');
-      // Here you can load non-essential scripts (analytics / ads) if needed
     });
-
     rejectBtn.addEventListener('click', () => {
       localStorage.setItem('cookieConsent', 'rejected');
       cookieBanner.classList.remove('show');
-      // Do not load non-essential cookies / ads
     });
   </script>
-
 </body>
 </html>
+Grok finished responding
+Free Temporary Email Generator with OTP - Grok
