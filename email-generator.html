@@ -241,15 +241,16 @@
     const API = 'https://api.guerrillamail.com/ajax.php';
 
     const otpPatterns = [
+      // High priority: keyword + code
+      /(?:verification|verify|otp|one[-\s]?time|security|login|auth(?:entication)?)\s*(?:code|password|pin|number)?\s*(?:is|=|:)?\s*(\d{4,8})/i,
+      /(?:code|otp|pin)\s*(?:is|=|:)?\s*(\d{4,8})/i,
+      /your\s+(?:code|otp|password|pin)\s*(?:is|=|:)?\s*(\d{4,8})/i,
+      /(?:code|otp)[:\s-]+(\d{4,8})/i,
+      // Prefer 6-digit (most common OTP)
       /\b(\d{6})\b/,
-      /\b(\d{4})\b/,
       /\b(\d{5})\b/,
       /\b(\d{8})\b/,
-      /code[:\s-]*(\d{4,8})/i,
-      /otp[:\s-]*(\d{4,8})/i,
-      /verification[:\s-]*(?:code|otp)?[:\s-]*(\d{4,8})/i,
-      /your (?:code|otp|password) is[:\s-]*(\d{4,8})/i,
-      /(\d{3}[-\s]?\d{3})/
+      /\b(\d{4})\b/
     ];
 
     async function createNewEmail(confirmChange = false) {
@@ -376,12 +377,13 @@
           if (!fullRes.ok) continue;
           const detail = await fullRes.json();
 
-          const body = detail.mail_body || mail.mail_body || mail.mail_excerpt || '';
+          const rawBody = detail.mail_body || mail.mail_body || mail.mail_excerpt || '';
           const subject = detail.mail_subject || mail.mail_subject || '(No Subject)';
           const from = detail.mail_from || mail.mail_from || 'Unknown';
           const dateStr = detail.mail_date || mail.mail_date || '';
 
-          const fullText = [subject, body].join(' ');
+          const cleanBody = stripHtml(rawBody);
+          const fullText = [subject, cleanBody, rawBody].join(' ');
           const otp = extractOTP(fullText);
 
           html += `
@@ -392,7 +394,7 @@
               </div>
               <h4 class="text-sm font-semibold text-cyan-400 mb-2">${escapeHtml(subject)}</h4>
               <div class="text-xs text-slate-300 mb-3 bg-slate-950 p-3 rounded-lg border border-slate-800 max-h-36 overflow-y-auto whitespace-pre-wrap">
-                ${body ? escapeHtml(body.substring(0, 1500)) : '<span class="text-slate-500">No content</span>'}
+                ${cleanBody ? escapeHtml(cleanBody.substring(0, 1500)) : '<span class="text-slate-500">No content</span>'}
               </div>
               ${otp ? `
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3 rounded-lg bg-cyan-950/50 border border-cyan-700/50 otp-box">
@@ -411,13 +413,35 @@
       if (html) container.innerHTML = html;
     }
 
+    function stripHtml(html) {
+      if (!html) return '';
+      // Remove style/script tags completely
+      let t = html.replace(/<style[^>]*>[\s\S]*?<\/style>/gi, ' ')
+                  .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, ' ')
+                  .replace(/<[^>]+>/g, ' ')
+                  .replace(/&nbsp;/gi, ' ')
+                  .replace(/&amp;/gi, '&')
+                  .replace(/&lt;/gi, '<')
+                  .replace(/&gt;/gi, '>')
+                  .replace(/&quot;/gi, '"')
+                  .replace(/&#\d+;/g, ' ')
+                  .replace(/\s+/g, ' ')
+                  .trim();
+      return t;
+    }
+
     function extractOTP(text) {
       if (!text) return null;
+      const clean = stripHtml(text);
+      // Skip common false positives (years, dates, etc.)
+      const skip = new Set(['2023','2024','2025','2026','2027','2028','123456','000000','111111','999999']);
       for (const p of otpPatterns) {
-        const m = text.match(p);
+        const m = clean.match(p);
         if (m && m[1]) {
           const code = m[1];
-          if (code.length >= 4 && code.length <= 8 && !['2023','2024','2025','2026','2027'].includes(code)) return code;
+          if (code.length >= 4 && code.length <= 8 && !skip.has(code)) {
+            return code;
+          }
         }
       }
       return null;
