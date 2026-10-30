@@ -4,78 +4,93 @@
   <!-- Homepage -->
   <url>
     <loc>https://browsertools.site/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Core Tools -->
+  <!-- High Priority Tools -->
+  <url>
+    <loc>https://browsertools.site/email-generator.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://browsertools.site/speed-test.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://browsertools.site/seo-audit.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://browsertools.site/adsense-checker.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
     <loc>https://browsertools.site/doc-converter.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://browsertools.site/image-compressor.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://browsertools.site/case-converter.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://browsertools.site/password-generator.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://browsertools.site/counter.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://browsertools.site/qr-generator.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://browsertools.site/pdf-page-remover.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://browsertools.site/json-formatter.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://browsertools.site/lorem-ipsum.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://browsertools.site/summarizer.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -83,21 +98,19 @@
   <!-- Essential Pages -->
   <url>
     <loc>https://browsertools.site/about.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
-
   <url>
     <loc>https://browsertools.site/privacy.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
-
   <url>
     <loc>https://browsertools.site/terms.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
