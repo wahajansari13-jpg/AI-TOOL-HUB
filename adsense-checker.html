@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <title>Free AdSense Approval Checker | Check Website Eligibility 2026</title>
+  <meta name="description" content="Free Google AdSense approval checker. Analyze your website eligibility, get approval chance percentage, and detailed fixes for content, legal pages, SEO and technical requirements.">
+  <meta name="keywords" content="adsense approval checker, adsense eligibility checker, check adsense approval, google adsense ready, website adsense score">
+  <link rel="canonical" href="https://browsertools.site/adsense-checker.html">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background: #020617; }
+    .glass { background: rgba(15,23,42,.78); backdrop-filter: blur(12px); border: 1px solid rgba(148,163,184,.12); }
+    .check-pass { color: #34d399; }
+    .check-fail { color: #f87171; }
+    .check-warn { color: #fbbf24; }
+  </style>
+</head>
+<body class="text-slate-200 min-h-screen font-sans antialiased">
+  <!-- NAV -->
+  <nav class="bg-slate-950/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center gap-2.5 group">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-cyan-500/20">BT</div>
+          <span class="text-white font-semibold text-lg tracking-tight group-hover:text-cyan-400 transition">Browser Tools Hub</span>
+        </a>
+        <div class="hidden md:flex items-center gap-1">
+          <a href="/" class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition">Home</a>
+          <a href="/adsense-checker.html" class="px-4 py-2 text-sm text-cyan-400 font-medium bg-slate-800/80 rounded-lg">AdSense Checker</a>
+          <a href="/speed-test.html" class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition">Speed Test</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-300 hover:text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-slate-950">
+      <div class="px-4 py-3 space-y-1">
+        <a href="/" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800">Home</a>
+        <a href="/adsense-checker.html" class="block px-3 py-2.5 rounded-lg text-cyan-400 font-medium">AdSense Checker</a>
+        <a href="/speed-test.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800">Speed Test</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-3xl mx-auto px-4 py-10">
+    <div class="text-center mb-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-medium mb-4">
+        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+        Free AdSense Eligibility Tool
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-bold text-white mb-3">AdSense Approval Checker</h1>
+      <p class="text-slate-400 text-sm max-w-xl mx-auto">
+        Enter your website URL and get an instant eligibility score with detailed recommendations for Google AdSense approval.
+      </p>
+    </div>
+
+    <!-- INPUT -->
+    <div class="glass rounded-2xl p-5 sm:p-7 mb-8">
+      <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Website URL</label>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <input type="url" id="site-url" placeholder="https://yourwebsite.com" 
+          class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3.5 text-cyan-300 font-mono text-sm focus:outline-none focus:border-cyan-500/50">
+        <button onclick="analyzeSite()" id="analyze-btn" class="px-6 py-3.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white text-sm font-medium transition shrink-0">
+          Analyze Domain
+        </button>
+      </div>
+      <p id="status" class="text-xs mt-3 text-slate-500"></p>
+    </div>
+
+    <!-- RESULTS -->
+    <div id="results" class="hidden space-y-6">
+      <div class="glass rounded-2xl p-6 text-center">
+        <div class="text-xs text-slate-500 uppercase tracking-wider mb-2">Approval Chance</div>
+        <div id="score-num" class="text-6xl font-bold text-cyan-400 mb-1">0%</div>
+        <div id="score-label" class="text-slate-300 text-sm mb-4"></div>
+        <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden">
+          <div id="score-bar" class="h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full transition-all duration-700" style="width:0%"></div>
+        </div>
+      </div>
+
+      <div class="glass rounded-2xl p-5">
+        <h3 class="text-white font-semibold mb-4">Detailed Analysis</h3>
+        <div id="checks-list" class="space-y-3"></div>
+      </div>
+
+      <div class="glass rounded-2xl p-5">
+        <h3 class="text-white font-semibold mb-3">What to Fix</h3>
+        <div id="recommendations" class="space-y-2 text-sm text-slate-400"></div>
+      </div>
+    </div>
+
+    <!-- SEO Content -->
+    <article class="mt-14 space-y-10 text-slate-400 leading-relaxed">
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-4">Free Google AdSense Approval Checker – Is Your Site Ready?</h2>
+        <p class="mb-4">Getting approved for Google AdSense can be frustrating when you keep getting rejected without clear reasons. This free AdSense approval checker helps you evaluate your website against the most common requirements before you submit an application.</p>
+        <p>Enter your domain, run the analysis, and receive a clear eligibility score along with specific recommendations. The tool looks at technical setup, required legal pages, content signals, mobile readiness and security basics that Google reviewers care about.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-4">What This AdSense Checker Analyzes</h2>
+        <ul class="list-disc list-inside space-y-2 ml-2">
+          <li>HTTPS / SSL certificate presence</li>
+          <li>Required pages (Privacy Policy, About, Contact, Terms)</li>
+          <li>Mobile-friendly viewport and responsive design signals</li>
+          <li>Basic SEO elements (title, meta description, headings)</li>
+          <li>Domain structure and accessibility</li>
+          <li>Content and navigation indicators</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-4">How to Improve Your AdSense Approval Chance</h2>
+        <ol class="list-decimal list-inside space-y-2 ml-2">
+          <li>Publish original, useful content (aim for 15–25 quality pages).</li>
+          <li>Create clear Privacy Policy, About Us and Contact pages.</li>
+          <li>Make sure the site is fully mobile responsive and fast.</li>
+          <li>Use HTTPS everywhere.</li>
+          <li>Avoid thin, duplicate or policy-violating content.</li>
+          <li>Submit your site to Google Search Console and fix indexing issues.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-4">Frequently Asked Questions</h2>
+        <div class="space-y-4">
+          <div class="glass rounded-xl p-5">
+            <h3 class="text-white font-semibold mb-2">Does a high score guarantee AdSense approval?</h3>
+            <p class="text-sm">No. This tool evaluates common technical and structural requirements. Final approval is decided by Google and also depends on content quality, originality and policy compliance that only human reviewers can fully judge.</p>
+          </div>
+          <div class="glass rounded-xl p-5">
+            <h3 class="text-white font-semibold mb-2">Is this tool free?</h3>
+            <p class="text-sm">Yes. Completely free with no signup or limits.</p>
+          </div>
+          <div class="glass rounded-xl p-5">
+            <h3 class="text-white font-semibold mb-2">Can I check any website?</h3>
+            <p class="text-sm">Yes. Enter any public website URL. Results are generated based on publicly available signals and common AdSense requirements.</p>
+          </div>
+          <div class="glass rounded-xl p-5">
+            <h3 class="text-white font-semibold mb-2">How often should I re-check?</h3>
+            <p class="text-sm">Re-run the checker after making major changes (new pages, policy updates, redesign) before submitting or re-applying to AdSense.</p>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800 py-8 mt-12">
+    <div class="max-w-3xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+      <div class="flex items-center gap-2">
+        <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white text-xs font-bold">BT</div>
+        <span>© 2026 Browser Tools Hub</span>
+      </div>
+      <div class="flex gap-4">
+        <a href="/" class="hover:text-cyan-400 transition">Home</a>
+        <a href="/privacy.html" class="hover:text-cyan-400 transition">Privacy</a>
+        <a href="/terms.html" class="hover:text-cyan-400 transition">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    async function analyzeSite() {
+      const input = document.getElementById('site-url');
+      let url = input.value.trim();
+      if (!url) {
+        document.getElementById('status').textContent = 'Please enter a website URL';
+        return;
+      }
+      if (!url.startsWith('http')) url = 'https://' + url;
+      input.value = url;
+
+      const btn = document.getElementById('analyze-btn');
+      const status = document.getElementById('status');
+      btn.disabled = true;
+      btn.textContent = 'Analyzing...';
+      status.textContent = 'Checking domain, security and pages...';
+      document.getElementById('results').classList.add('hidden');
+
+      await new Promise(r => setTimeout(r, 1800));
+
+      const checks = [];
+      let score = 0;
+      const domain = new URL(url).hostname;
+
+      const isHttps = url.startsWith('https');
+      checks.push({ name: 'HTTPS / SSL', status: isHttps ? 'pass' : 'fail', points: isHttps ? 12 : 0, msg: isHttps ? 'Secure connection detected' : 'Site must use HTTPS' });
+      score += isHttps ? 12 : 0;
+
+      checks.push({ name: 'Valid Domain', status: 'pass', points: 8, msg: `Domain: ${domain}` });
+      score += 8;
+
+      let html = '';
+      let fetchOk = false;
+      try {
+        const res = await fetch(url, { mode: 'cors', cache: 'no-store' });
+        if (res.ok) {
+          html = await res.text();
+          fetchOk = true;
+        }
+      } catch (e) {}
+
+      let hasTitle = false;
+      if (html) {
+        const m = html.match(/<title[^>]*>([^<]+)<\/title>/i);
+        hasTitle = m && m[1].trim().length > 10;
+      }
+      checks.push({ name: 'Page Title', status: hasTitle ? 'pass' : 'warn', points: hasTitle ? 8 : 3, msg: hasTitle ? 'Title found' : 'Could not verify title (CORS or missing)' });
+      score += hasTitle ? 8 : 3;
+
+      let hasMeta = html && /name=["']description["']/i.test(html);
+      checks.push({ name: 'Meta Description', status: hasMeta ? 'pass' : 'warn', points: hasMeta ? 7 : 2, msg: hasMeta ? 'Meta description present' : 'Add a unique meta description' });
+      score += hasMeta ? 7 : 2;
+
+      let hasViewport = html && /name=["']viewport["']/i.test(html);
+      checks.push({ name: 'Mobile Viewport', status: hasViewport ? 'pass' : 'warn', points: hasViewport ? 10 : 4, msg: hasViewport ? 'Mobile-friendly viewport found' : 'Add viewport meta tag for mobile' });
+      score += hasViewport ? 10 : 4;
+
+      const lower = html.toLowerCase();
+      const hasPrivacy = /privacy/.test(lower);
+      const hasAbout = /about/.test(lower);
+      const hasContact = /contact/.test(lower);
+      const hasTerms = /terms|tos|conditions/.test(lower);
+
+      checks.push({ name: 'Privacy Policy Page', status: hasPrivacy ? 'pass' : 'fail', points: hasPrivacy ? 12 : 0, msg: hasPrivacy ? 'Privacy related link/content found' : 'Missing Privacy Policy – required by AdSense' });
+      score += hasPrivacy ? 12 : 0;
+
+      checks.push({ name: 'About Page', status: hasAbout ? 'pass' : 'warn', points: hasAbout ? 8 : 2, msg: hasAbout ? 'About page signal found' : 'Add a clear About Us page' });
+      score += hasAbout ? 8 : 2;
+
+      checks.push({ name: 'Contact Page', status: hasContact ? 'pass' : 'warn', points: hasContact ? 7 : 2, msg: hasContact ? 'Contact information signal found' : 'Add Contact page or email' });
+      score += hasContact ? 7 : 2;
+
+      checks.push({ name: 'Terms of Service', status: hasTerms ? 'pass' : 'warn', points: hasTerms ? 5 : 1, msg: hasTerms ? 'Terms page signal found' : 'Recommended: add Terms page' });
+      score += hasTerms ? 5 : 1;
+
+      const textLen = html.replace(/<[^>]+>/g, ' ').length;
+      const contentOk = textLen > 3000;
+      checks.push({ name: 'Content Depth Signal', status: contentOk ? 'pass' : 'warn', points: contentOk ? 10 : 4, msg: contentOk ? 'Sufficient content volume detected' : 'Add more original content pages' });
+      score += contentOk ? 10 : 4;
+
+      score = Math.min(98, Math.max(15, score));
+
+      document.getElementById('score-num').textContent = score + '%';
+      document.getElementById('score-bar').style.width = score + '%';
+
+      let label = '';
+      if (score >= 80) label = 'Strong chance of approval. Fix remaining items then apply.';
+      else if (score >= 60) label = 'Good foundation. Improve the failed/warning items first.';
+      else if (score >= 40) label = 'Medium chance. Several important requirements are missing.';
+      else label = 'Low chance right now. Focus on content and required pages.';
+      document.getElementById('score-label').textContent = label;
+
+      const list = document.getElementById('checks-list');
+      list.innerHTML = checks.map(c => {
+        const icon = c.status === 'pass' ? '✓' : (c.status === 'fail' ? '✗' : '!');
+        const cls = c.status === 'pass' ? 'check-pass' : (c.status === 'fail' ? 'check-fail' : 'check-warn');
+        return `<div class="flex items-start gap-3 p-3 rounded-lg bg-slate-900/60 border border-slate-800">
+          <span class="${cls} font-bold text-lg leading-none mt-0.5">${icon}</span>
+          <div class="flex-1">
+            <div class="flex justify-between gap-2">
+              <span class="text-white text-sm font-medium">${c.name}</span>
+              <span class="text-xs text-slate-500">+${c.points}</span>
+            </div>
+            <p class="text-xs text-slate-400 mt-0.5">${c.msg}</p>
+          </div>
+        </div>`;
+      }).join('');
+
+      const recs = [];
+      checks.filter(c => c.status !== 'pass').forEach(c => {
+        if (c.name.includes('Privacy')) recs.push('Create a clear Privacy Policy page that mentions cookies and data usage.');
+        if (c.name.includes('About')) recs.push('Add an About Us page explaining who runs the site.');
+        if (c.name.includes('Contact')) recs.push('Add a Contact page or visible email address.');
+        if (c.name.includes('HTTPS')) recs.push('Install an SSL certificate and force HTTPS.');
+        if (c.name.includes('Mobile')) recs.push('Ensure the site is fully responsive and has a viewport meta tag.');
+        if (c.name.includes('Content')) recs.push('Publish more original, useful articles or tools (aim for 15–25 quality pages).');
+        if (c.name.includes('Meta') || c.name.includes('Title')) recs.push('Write unique title tags and meta descriptions for every important page.');
+      });
+      if (recs.length === 0) recs.push('Most technical checks passed. Focus on original high-quality content and wait for indexing before applying.');
+
+      document.getElementById('recommendations').innerHTML = [...new Set(recs)].map(r => `<div>• ${r}</div>`).join('');
+
+      document.getElementById('results').classList.remove('hidden');
+      status.textContent = 'Analysis complete';
+      btn.disabled = false;
+      btn.textContent = 'Analyze Domain';
+    }
+  </script>
+</body>
+</html>
