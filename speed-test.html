@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="googlebot" content="index, follow">
+  
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%2306b6d4'/><stop offset='100%' stop-color='%232563eb'/></linearGradient></defs><rect width='100' height='100' rx='25' fill='url(%23grad)'/><text x='50' y='55' font-family='Arial, sans-serif' font-size='45' font-weight='bold' fill='white' dominant-baseline='middle' text-anchor='middle'>BT</text></svg>">
+  
+  <title>Free Internet Speed Test Online | WiFi Download Upload Ping Test 2026</title>
+  <meta name="description" content="Test your internet speed instantly with our free online speed test. Check WiFi download speed, upload speed and ping latency. Accurate Mbps results with live speedometer dial. No signup required.">
+  <meta name="keywords" content="internet speed test, wifi speed test, download speed test, upload speed test, ping test, mbps test, free speed test online, broadband speed test, network speed checker">
+  <link rel="canonical" href="https://browsertools.site/speed-test.html">
+  
+  <meta property="og:title" content="Free Internet Speed Test | Download Upload Ping">
+  <meta property="og:description" content="Check your real internet speed with live speedometer. Free download, upload and ping test.">
+  <meta property="og:url" content="https://browsertools.site/speed-test.html">
+  <meta property="og:type" content="website">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background: #020617; }
+    .glass { background: rgba(15,23,42,.78); backdrop-filter: blur(12px); border: 1px solid rgba(148,163,184,.12); }
+    
+    .gauge-container {
+      position: relative;
+      width: 280px;
+      height: 160px;
+      margin: 0 auto;
+    }
+    .gauge-bg {
+      fill: none;
+      stroke: #1e293b;
+      stroke-width: 18;
+    }
+    .gauge-fill {
+      fill: none;
+      stroke: url(#gaugeGradient);
+      stroke-width: 18;
+      stroke-linecap: round;
+      transition: stroke-dashoffset 0.4s ease-out;
+    }
+    .gauge-needle {
+      transform-origin: 140px 140px;
+      transition: transform 0.4s ease-out;
+    }
+    .gauge-center {
+      fill: #0f172a;
+      stroke: #334155;
+      stroke-width: 2;
+    }
+  </style>
+</head>
+<body class="text-slate-200 min-h-screen font-sans antialiased">
+  <!-- NAVIGATION -->
+  <nav class="bg-slate-950/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center gap-2.5 group">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-cyan-500/20">BT</div>
+          <span class="text-white font-semibold text-lg tracking-tight group-hover:text-cyan-400 transition">Browser Tools Hub</span>
+        </a>
+        <div class="hidden md:flex items-center gap-1">
+          <a href="/" class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition">Home</a>
+          <a href="/speed-test.html" class="px-4 py-2 text-sm text-cyan-400 font-medium bg-slate-800/80 rounded-lg">Speed Test</a>
+          <a href="/email-generator.html" class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition">Email Generator</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-300 hover:text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-slate-950">
+      <div class="px-4 py-3 space-y-1">
+        <a href="/" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800">Home</a>
+        <a href="/speed-test.html" class="block px-3 py-2.5 rounded-lg text-cyan-400 font-medium">Speed Test</a>
+        <a href="/email-generator.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800">Email Generator</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-3xl mx-auto px-4 py-10">
+    <!-- Header -->
+    <div class="text-center mb-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-medium mb-4">
+        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+        Free Online Speed Test
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-bold text-white mb-3">Internet Speed Test</h1>
+      <p class="text-slate-400 text-sm max-w-xl mx-auto">
+        Check your real WiFi and broadband speed. Measure download, upload and ping with a live speedometer dial.
+      </p>
+    </div>
+
+    <!-- TOOL -->
+    <div class="glass rounded-2xl p-5 sm:p-8 mb-10">
+      <!-- Mode Tabs -->
+      <div class="flex justify-center gap-6 mb-6 text-sm">
+        <button id="tab-download" class="flex items-center gap-1.5 text-cyan-400 font-medium border-b-2 border-cyan-400 pb-1">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+          DOWNLOAD Mbps
+        </button>
+        <button id="tab-upload" class="flex items-center gap-1.5 text-slate-500 hover:text-slate-300 pb-1">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+          UPLOAD Mbps
+        </button>
+      </div>
+
+      <!-- Stats Row -->
+      <div class="flex justify-center gap-8 mb-6 text-center">
+        <div>
+          <div class="text-[10px] text-slate-500 uppercase tracking-wider mb-1">Ping ms</div>
+          <div class="flex items-center gap-1.5 justify-center">
+            <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+            <span id="ping-val" class="text-lg font-semibold text-white">—</span>
+          </div>
+        </div>
+        <div>
+          <div class="text-[10px] text-slate-500 uppercase tracking-wider mb-1">Download</div>
+          <div class="flex items-center gap-1.5 justify-center">
+            <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+            <span id="dl-val" class="text-lg font-semibold text-white">—</span>
+          </div>
+        </div>
+        <div>
+          <div class="text-[10px] text-slate-500 uppercase tracking-wider mb-1">Upload</div>
+          <div class="flex items-center gap-1.5 justify-center">
+            <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+            <span id="ul-val" class="text-lg font-semibold text-white">—</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gauge -->
+      <div class="gauge-container mb-2">
+        <svg viewBox="0 0 280 160" class="w-full">
+          <defs>
+            <linearGradient id="gaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#06b6d4"/>
+              <stop offset="50%" stop-color="#3b82f6"/>
+              <stop offset="100%" stop-color="#8b5cf6"/>
+            </linearGradient>
+          </defs>
+          <path class="gauge-bg" d="M 30 140 A 110 110 0 0 1 250 140"/>
+          <path id="gauge-arc" class="gauge-fill" d="M 30 140 A 110 110 0 0 1 250 140" stroke-dasharray="345" stroke-dashoffset="345"/>
+          <g id="needle" class="gauge-needle" style="transform: rotate(-90deg);">
+            <line x1="140" y1="140" x2="140" y2="40" stroke="#e2e8f0" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="140" cy="140" r="8" class="gauge-center"/>
+          </g>
+          <text x="35" y="155" fill="#64748b" font-size="11">0</text>
+          <text x="55" y="85" fill="#64748b" font-size="10">5</text>
+          <text x="90" y="55" fill="#64748b" font-size="10">10</text>
+          <text x="130" y="42" fill="#64748b" font-size="10">50</text>
+          <text x="175" y="55" fill="#64748b" font-size="10">100</text>
+          <text x="210" y="85" fill="#64748b" font-size="10">250</text>
+          <text x="230" y="125" fill="#64748b" font-size="10">500</text>
+          <text x="235" y="155" fill="#64748b" font-size="10">1000</text>
+        </svg>
+      </div>
+
+      <!-- Big Speed Number -->
+      <div class="text-center mb-6">
+        <div id="main-speed" class="text-5xl font-bold text-white tracking-tight">0.00</div>
+        <div class="text-cyan-400 text-sm font-medium mt-1 flex items-center justify-center gap-1">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+          <span id="main-unit">Mbps</span>
+        </div>
+      </div>
+
+      <!-- Start Button -->
+      <div class="text-center">
+        <button id="start-btn" onclick="runFullTest()" class="px-10 py-3.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-semibold text-sm transition shadow-lg shadow-cyan-500/20">
+          Start Speed Test
+        </button>
+        <p id="status-text" class="text-xs text-slate-500 mt-3">Ready to test your connection</p>
+      </div>
+    </div>
+
+    <!-- SEO ARTICLE -->
+    <article class="space-y-10 text-slate-400 leading-relaxed">
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-4">Free Internet Speed Test – Check Your Real WiFi and Broadband Speed</h2>
+        <p class="mb-4">A reliable internet speed test is one of the most useful online tools for anyone who works, streams, games or studies from home. Our free speed test measures your actual download speed, upload speed and ping latency in real time using a live speedometer dial. You get clear Mbps numbers without any registration or software installation.</p>
+        <p class="mb-4">Many people assume their internet is slow when the real problem is WiFi interference, outdated router settings, or background applications consuming bandwidth. Running a proper speed test helps you identify whether the issue is with your ISP plan, your home network, or a specific device.</p>
+        <p>This tool is completely free, works on mobile and desktop, and requires no signup. Simply click the Start button and wait a few seconds for accurate results.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-4">What Does an Internet Speed Test Measure?</h2>
+        <p class="mb-4">A complete internet speed test usually checks three important metrics:</p>
+        <ul class="list-disc list-inside space-y-2 mb-4 ml-2">
+          <li><strong class="text-white">Download Speed (Mbps)</strong> – How fast data comes from the internet to your device. This affects video streaming, file downloads, web browsing and online gaming updates.</li>
+          <li><strong class="text-white">Upload Speed (Mbps)</strong> – How fast data goes from your device to the internet. Important for video calls, cloud backups, live streaming and sending large files.</li>
+          <li><strong class="text-white">Ping / Latency (ms)</strong> – The time it takes for a small data packet to travel to a server and back. Lower ping means more responsive gaming, smoother video calls and faster page loads.</li>
+        </ul>
+        <p>Most home users care mainly about download speed, but upload speed and ping are equally important for modern remote work and online entertainment.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-4">How to Use This Free Speed Test Tool</h2>
+        <ol class="list-decimal list-inside space-y-2 mb-4 ml-2">
+          <li>Make sure you are connected to the WiFi or network you want to test.</li>
+          <li>Close heavy downloads, video streaming and large background apps for more accurate results.</li>
+          <li>Click the <strong>Start Speed Test</strong> button.</li>
+          <li>Watch the live speedometer dial as the test measures ping, download and upload.</li>
+          <li>Read your final results in Mbps and milliseconds.</li>
+        </ol>
+        <p>For the most accurate reading, run the test two or three times and take the average. Results can vary slightly depending on network congestion and server load.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-4">What Is a Good Internet Speed in 2026?</h2>
+        <p class="mb-4">Speed requirements have increased with higher resolution video and more devices per household. Here is a practical guide:</p>
+        <div class="overflow-x-auto my-5">
+          <table class="w-full text-sm text-left border border-slate-800 rounded-xl overflow-hidden">
+            <thead class="bg-slate-900 text-cyan-400 text-xs uppercase">
+              <tr>
+                <th class="px-4 py-3">Use Case</th>
+                <th class="px-4 py-3">Recommended Download</th>
+                <th class="px-4 py-3">Recommended Upload</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800 text-slate-400">
+              <tr>
+                <td class="px-4 py-3 text-white">Basic browsing & email</td>
+                <td class="px-4 py-3">5–10 Mbps</td>
+                <td class="px-4 py-3">1–3 Mbps</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 text-white">HD video streaming</td>
+                <td class="px-4 py-3">15–25 Mbps</td>
+                <td class="px-4 py-3">3–5 Mbps</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 text-white">4K streaming + multiple devices</td>
+                <td class="px-4 py-3">50–100 Mbps</td>
+                <td class="px-4 py-3">10–20 Mbps</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 text-white">Online gaming</td>
+                <td class="px-4 py-3">25+ Mbps</td>
+                <td class="px-4 py-3">5+ Mbps (low ping)</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 text-white">Remote work & video calls</td>
+                <td class="px-4 py-3">30–50 Mbps</td>
+                <td class="px-4 py-3">10–20 Mbps</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 text-white">Heavy cloud uploads / content creation</td>
+                <td class="px-4 py-3">100+ Mbps</td>
+                <td class="px-4 py-3">50+ Mbps</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Ping under 30 ms is excellent for gaming. 30–60 ms is still good. Above 100 ms can feel laggy in competitive games.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-4">Why Is My Internet Speed Slower Than Advertised?</h2>
+        <p class="mb-4">Internet service providers often advertise “up to” speeds. Real-world results are usually lower because of several factors:</p>
+        <ul class="list-disc list-inside space-y-2 mb-4 ml-2">
+          <li>WiFi signal strength and interference from walls or other devices</li>
+          <li>Number of devices sharing the same connection</li>
+          <li>Router age and firmware quality</li>
+          <li>Peak-hour network congestion in your area</li>
+          <li>Background updates and cloud sync apps</li>
+          <li>Distance from the router (especially on 2.4 GHz band)</li>
+        </ul>
+        <p>Testing on a wired Ethernet connection usually gives higher and more stable numbers than WiFi. If your wired speed is close to the plan speed but WiFi is much lower, the problem is likely your wireless setup.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-4">Tips to Improve Your Internet Speed</h2>
+        <p class="mb-4">Before calling your ISP, try these practical steps:</p>
+        <ul class="list-disc list-inside space-y-2 mb-4 ml-2">
+          <li>Restart your modem and router completely (unplug for 30 seconds).</li>
+          <li>Move closer to the router or switch to the 5 GHz / 6 GHz band if available.</li>
+          <li>Update router firmware from the manufacturer website.</li>
+          <li>Reduce the number of active devices during important tasks.</li>
+          <li>Use a wired connection for gaming or large downloads.</li>
+          <li>Disable VPN temporarily while testing (VPNs often reduce speed).</li>
+          <li>Check for malware or bandwidth-heavy background programs.</li>
+        </ul>
+        <p>If speeds remain far below your plan after these steps, contact your internet provider and share the speed test results as evidence.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-4">Download vs Upload Speed – Which Matters More?</h2>
+        <p class="mb-4">Most internet plans are asymmetric — download is much higher than upload. This design worked well when people mostly consumed content. Today many users also create and upload content.</p>
+        <p class="mb-4">If you mainly watch Netflix, browse social media and download files, download speed is the priority. If you do frequent video calls, upload large photos or videos, stream live on Twitch/YouTube, or work with cloud storage, then upload speed becomes critical.</p>
+        <p>A good balance for modern households is at least 50 Mbps download and 10–20 Mbps upload. Fiber plans often offer symmetric speeds (same download and upload), which is ideal for content creators and remote workers.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-4">How Accurate Are Online Speed Tests?</h2>
+        <p class="mb-4">No single speed test is 100% perfect. Results depend on the test servers, current network conditions, browser performance and whether other devices are using bandwidth. Our tool uses multiple measurement rounds and public infrastructure to give a realistic picture of your connection.</p>
+        <p class="mb-4">For best accuracy:</p>
+        <ul class="list-disc list-inside space-y-2 mb-4 ml-2">
+          <li>Run the test on a single device with minimal background activity.</li>
+          <li>Test at different times of day (morning vs evening).</li>
+          <li>Compare results with a second reputable speed test if needed.</li>
+          <li>Prefer wired testing when diagnosing ISP issues.</li>
+        </ul>
+        <p>Browser-based tests are excellent for everyday checks. Professional network diagnostics may use specialized hardware for deeper analysis.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-4">Frequently Asked Questions</h2>
+        <div class="space-y-4">
+          <div class="glass rounded-xl p-5">
+            <h3 class="text-white font-semibold mb-2">1. How do I test my WiFi speed for free?</h3>
+            <p class="text-sm">Open this page on any device connected to your WiFi, click Start Speed Test, and wait for the results. No app or signup is required.</p>
+          </div>
+          <div class="glass rounded-xl p-5">
+            <h3 class="text-white font-semibold mb-2">2. What is a good download speed for home internet?</h3>
+            <p class="text-sm">For most households, 50–100 Mbps download is comfortable for streaming, browsing and light work. Heavy 4K streaming or many users may need 100+ Mbps.</p>
+          </div>
+          <div class="glass rounded-xl p-5">
+            <h3 class="text-white font-semibold mb-2">3. Why is my upload speed much lower than download?</h3>
+            <p class="text-sm">Most ISP plans are asymmetric by design. Upload capacity is usually lower because traditional usage focused on downloading content. Fiber plans often offer better upload speeds.</p>
+          </div>
+          <div class="glass rounded-xl p-5">
+            <h3 class="text-white font-semibold mb-2">4. What does ping mean in a speed test?</h3>
+            <p class="text-sm">Ping (latency) measures the round-trip time of a data packet in milliseconds. Lower numbers mean faster response, which is important for gaming and real-time communication.</p>
+          </div>
+          <div class="glass rounded-xl p-5">
+            <h3 class="text-white font-semibold mb-2">5. Can I run the speed test on my phone?</h3>
+            <p class="text-sm">Yes. The tool is fully mobile-friendly. Open the page in your phone browser while connected to WiFi or mobile data and start the test.</p>
+          </div>
+          <div class="glass rounded-xl p-5">
+            <h3 class="text-white font-semibold mb-2">6. Why do I get different results each time?</h3>
+            <p class="text-sm">Internet speed fluctuates due to network congestion, WiFi interference and server load. Running the test multiple times and averaging the results gives a more reliable picture.</p>
+          </div>
+          <div class="glass rounded-xl p-5">
+            <h3 class="text-white font-semibold mb-2">7. Does a VPN affect speed test results?</h3>
+            <p class="text-sm">Yes. Most VPNs reduce both download and upload speeds because traffic is routed through extra servers. Disable the VPN temporarily for a true measurement of your ISP speed.</p>
+          </div>
+          <div class="glass rounded-xl p-5">
+            <h3 class="text-white font-semibold mb-2">8. How can I improve my WiFi speed at home?</h3>
+            <p class="text-sm">Place the router in a central location, use the 5 GHz band when possible, update firmware, reduce interference from other electronics, and limit the number of simultaneous heavy users.</p>
+          </div>
+          <div class="glass rounded-xl p-5">
+            <h3 class="text-white font-semibold mb-2">9. Is this speed test safe and private?</h3>
+            <p class="text-sm">Yes. The test runs in your browser. We do not ask for personal information, and no account is required. Results stay on your device.</p>
+          </div>
+          <div class="glass rounded-xl p-5">
+            <h3 class="text-white font-semibold mb-2">10. How often should I check my internet speed?</h3>
+            <p class="text-sm">Check whenever you notice slow performance, after changing plans or routers, or once a month to monitor consistency. Sudden drops can indicate problems with your ISP or local network.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-white mb-4">Final Thoughts</h2>
+        <p>A quick internet speed test is the fastest way to understand what your connection can actually deliver. Whether you are troubleshooting lag, verifying a new broadband plan, or simply curious about your WiFi performance, this free tool gives you clear download, upload and ping numbers with a live speedometer experience. Use it any time — no registration, no limits, and no software to install.</p>
+      </section>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800 py-8 mt-12">
+    <div class="max-w-3xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+      <div class="flex items-center gap-2">
+        <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white text-xs font-bold">BT</div>
+        <span>© 2026 Browser Tools Hub</span>
+      </div>
+      <div class="flex gap-4">
+        <a href="/" class="hover:text-cyan-400 transition">Home</a>
+        <a href="/privacy.html" class="hover:text-cyan-400 transition">Privacy</a>
+        <a href="/terms.html" class="hover:text-cyan-400 transition">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    let isRunning = false;
+    const ARC_LENGTH = 345;
+
+    function setGauge(mbps) {
+      const max = 1000;
+      const clamped = Math.min(Math.max(mbps, 0), max);
+      let ratio;
+      if (clamped <= 10) ratio = clamped / 10 * 0.25;
+      else if (clamped <= 50) ratio = 0.25 + (clamped - 10) / 40 * 0.2;
+      else if (clamped <= 100) ratio = 0.45 + (clamped - 50) / 50 * 0.15;
+      else if (clamped <= 250) ratio = 0.6 + (clamped - 100) / 150 * 0.15;
+      else if (clamped <= 500) ratio = 0.75 + (clamped - 250) / 250 * 0.15;
+      else ratio = 0.9 + (clamped - 500) / 500 * 0.1;
+
+      const offset = ARC_LENGTH * (1 - ratio);
+      document.getElementById('gauge-arc').style.strokeDashoffset = offset;
+      const angle = -90 + ratio * 180;
+      document.getElementById('needle').style.transform = `rotate(${angle}deg)`;
+    }
+
+    function updateMain(val, unit = 'Mbps') {
+      document.getElementById('main-speed').textContent = typeof val === 'number' ? val.toFixed(2) : val;
+      document.getElementById('main-unit').textContent = unit;
+    }
+
+    async function measurePing() {
+      const samples = [];
+      for (let i = 0; i < 5; i++) {
+        const t0 = performance.now();
+        try {
+          await fetch('https://www.cloudflare.com/cdn-cgi/trace?' + Math.random(), { cache: 'no-store', mode: 'cors' });
+          samples.push(performance.now() - t0);
+        } catch (e) {}
+      }
+      if (!samples.length) return null;
+      samples.sort((a, b) => a - b);
+      return Math.round(samples[Math.floor(samples.length / 2)]);
+    }
+
+    async function measureDownload() {
+      const sizes = [5000000, 10000000, 25000000];
+      let best = 0;
+      for (const bytes of sizes) {
+        try {
+          const url = `https://speed.cloudflare.com/__down?bytes=${bytes}&r=${Math.random()}`;
+          const t0 = performance.now();
+          const res = await fetch(url, { cache: 'no-store' });
+          const blob = await res.blob();
+          const sec = (performance.now() - t0) / 1000;
+          const mbps = (blob.size * 8) / sec / 1e6;
+          if (mbps > best) best = mbps;
+          updateMain(mbps);
+          setGauge(mbps);
+        } catch (e) {}
+      }
+      return best;
+    }
+
+    async function measureUpload() {
+      const sizes = [1000000, 2000000, 4000000];
+      let best = 0;
+      for (const bytes of sizes) {
+        try {
+          const data = new Blob([new ArrayBuffer(bytes)]);
+          const t0 = performance.now();
+          await fetch('https://speed.cloudflare.com/__up', {
+            method: 'POST',
+            body: data,
+            cache: 'no-store'
+          });
+          const sec = (performance.now() - t0) / 1000;
+          const mbps = (bytes * 8) / sec / 1e6;
+          if (mbps > best) best = mbps;
+          updateMain(mbps);
+          setGauge(mbps);
+        } catch (e) {}
+      }
+      return best;
+    }
+
+    async function runFullTest() {
+      if (isRunning) return;
+      isRunning = true;
+      const btn = document.getElementById('start-btn');
+      const status = document.getElementById('status-text');
+      btn.disabled = true;
+      btn.textContent = 'Testing...';
+      btn.classList.add('opacity-70');
+
+      document.getElementById('ping-val').textContent = '—';
+      document.getElementById('dl-val').textContent = '—';
+      document.getElementById('ul-val').textContent = '—';
+      updateMain(0);
+      setGauge(0);
+
+      status.textContent = 'Measuring ping...';
+      const ping = await measurePing();
+      document.getElementById('ping-val').textContent = ping !== null ? ping : 'N/A';
+
+      status.textContent = 'Measuring download speed...';
+      document.getElementById('tab-download').classList.add('text-cyan-400', 'border-b-2', 'border-cyan-400');
+      document.getElementById('tab-upload').classList.remove('text-cyan-400', 'border-b-2', 'border-cyan-400');
+      document.getElementById('tab-upload').classList.add('text-slate-500');
+      const dl = await measureDownload();
+      document.getElementById('dl-val').textContent = dl > 0 ? dl.toFixed(1) : 'N/A';
+      updateMain(dl > 0 ? dl : 0);
+      setGauge(dl || 0);
+
+      status.textContent = 'Measuring upload speed...';
+      document.getElementById('tab-upload').classList.add('text-cyan-400', 'border-b-2', 'border-cyan-400');
+      document.getElementById('tab-upload').classList.remove('text-slate-500');
+      document.getElementById('tab-download').classList.remove('text-cyan-400', 'border-b-2', 'border-cyan-400');
+      document.getElementById('tab-download').classList.add('text-slate-500');
+      const ul = await measureUpload();
+      document.getElementById('ul-val').textContent = ul > 0 ? ul.toFixed(1) : 'N/A';
+      updateMain(ul > 0 ? ul : 0);
+      setGauge(ul || 0);
+
+      updateMain(dl > 0 ? dl : 0);
+      setGauge(dl || 0);
+      document.getElementById('tab-download').classList.add('text-cyan-400', 'border-b-2', 'border-cyan-400');
+      document.getElementById('tab-download').classList.remove('text-slate-500');
+      document.getElementById('tab-upload').classList.remove('text-cyan-400', 'border-b-2', 'border-cyan-400');
+      document.getElementById('tab-upload').classList.add('text-slate-500');
+
+      status.textContent = 'Test completed';
+      btn.disabled = false;
+      btn.textContent = 'Test Again';
+      btn.classList.remove('opacity-70');
+      isRunning = false;
+    }
+
+    document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
