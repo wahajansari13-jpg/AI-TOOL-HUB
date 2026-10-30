@@ -8,18 +8,17 @@
   
   <!-- Favicon (BT Logo) -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%2306b6d4'/><stop offset='100%' stop-color='%232563eb'/></linearGradient></defs><rect width='100' height='100' rx='25' fill='url(%23grad)'/><text x='50' y='55' font-family='Arial, sans-serif' font-size='45' font-weight='bold' fill='white' dominant-baseline='middle' text-anchor='middle'>BT</text></svg>">
-
-  <title>Free All-in-One Document Converter Online | Word, Excel, Text to PDF</title>
-  <meta name="description" content="Free online document converter tool. Convert Word (DOCX), Excel (XLSX), and Text (TXT) files to PDF instantly. 100% private, client-side processing in your browser. No registration required.">
-  <meta name="keywords" content="all in one document converter, word to pdf converter online, excel to pdf online, text to pdf converter, free online file converter, docx to pdf, xlsx to pdf, secure pdf converter, browser tools hub">
+  <title>Free All-in-One Document Converter Online | Word, Excel, Text, PDF, Image</title>
+  <meta name="description" content="Free online document converter tool. Convert Word, Excel, Text, PDF, and Images. PDF to Word, PDF to Image, Image to PDF, Merge PDF. 100% private, client-side processing.">
+  <meta name="keywords" content="all in one document converter, word to pdf, excel to pdf, pdf to word, pdf to image, image to pdf, merge pdf, free online file converter, browser tools hub">
   <link rel="canonical" href="https://browsertools.site/doc-converter.html">
-
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- SheetJS for Excel, Mammoth for Word, and html2pdf for PDF rendering -->
+  <!-- SheetJS, Mammoth, html2pdf, pdf.js, pdf-lib -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
   <style>
     html { scroll-behavior: smooth; }
     ::-webkit-scrollbar { width: 10px; }
@@ -32,10 +31,16 @@
     #previewBox table { width: 100%; border-collapse: collapse; margin: 15px 0; }
     #previewBox th, #previewBox td { border: 1px solid #cbd5e1; padding: 8px 12px; text-align: left; }
     #previewBox th { background-color: #f1f5f9; }
+    #previewBox img { max-width: 100%; height: auto; margin: 8px 0; display: block; }
+    .mode-btn.active {
+      border-color: #06b6d4 !important;
+      background: rgba(6,182,212,0.1) !important;
+      color: #22d3ee !important;
+      box-shadow: 0 0 15px rgba(6,182,212,0.15);
+    }
   </style>
 </head>
 <body class="text-slate-200 min-h-screen font-sans antialiased flex flex-col">
-
   <!-- NAVIGATION -->
   <nav class="bg-slate-950/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -80,32 +85,44 @@
       </div>
     </div>
   </nav>
-
   <main class="max-w-4xl w-full mx-auto px-4 py-10 flex-grow">
     <div class="text-center mb-8">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-medium mb-4">
-        🔄 Universal Office Conversion Suite
+        🔄 Universal Office & PDF Conversion Suite
       </div>
       <h1 class="text-3xl sm:text-4xl font-bold text-white mb-3">All-in-One Document Converter</h1>
-      <p class="text-slate-400 text-sm max-w-2xl mx-auto">Convert Word (.docx), Excel (.xlsx), and Text (.txt) files directly into clean, printable PDFs inside your browser.</p>
+      <p class="text-slate-400 text-sm max-w-2xl mx-auto">Convert Word, Excel, Text, PDF and Images — including PDF to Word, PDF to Image, Image to PDF and Merge PDF — entirely in your browser.</p>
     </div>
-
     <!-- TOOL CONTAINER -->
     <div class="glass rounded-2xl p-6 sm:p-8 mb-6 space-y-6">
       
       <!-- Conversion Mode Selection -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-        <button onclick="setMode('wordToPdf')" id="mode-wordToPdf" class="mode-btn p-3 rounded-xl border border-cyan-500 bg-cyan-500/10 text-cyan-400 text-xs font-semibold transition text-center shadow-[0_0_15px_rgba(6,182,212,0.15)]">
-          Word (.docx) ➔ PDF
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+        <button onclick="setMode('wordToPdf')" id="mode-wordToPdf" class="mode-btn active p-2.5 rounded-xl border border-slate-700 bg-slate-900/50 text-slate-300 text-xs font-semibold transition text-center">
+          Word ➔ PDF
         </button>
-        <button onclick="setMode('excelToPdf')" id="mode-excelToPdf" class="mode-btn p-3 rounded-xl border border-slate-700 bg-slate-900/50 text-slate-300 text-xs font-semibold transition text-center">
-          Excel (.xlsx) ➔ PDF
+        <button onclick="setMode('excelToPdf')" id="mode-excelToPdf" class="mode-btn p-2.5 rounded-xl border border-slate-700 bg-slate-900/50 text-slate-300 text-xs font-semibold transition text-center">
+          Excel ➔ PDF
         </button>
-        <button onclick="setMode('textToPdf')" id="mode-textToPdf" class="mode-btn p-3 rounded-xl border border-slate-700 bg-slate-900/50 text-slate-300 text-xs font-semibold transition text-center">
-          Plain Text (.txt) ➔ PDF
+        <button onclick="setMode('textToPdf')" id="mode-textToPdf" class="mode-btn p-2.5 rounded-xl border border-slate-700 bg-slate-900/50 text-slate-300 text-xs font-semibold transition text-center">
+          Text ➔ PDF
+        </button>
+        <button onclick="setMode('pdfToWord')" id="mode-pdfToWord" class="mode-btn p-2.5 rounded-xl border border-slate-700 bg-slate-900/50 text-slate-300 text-xs font-semibold transition text-center">
+          PDF ➔ Word
+        </button>
+        <button onclick="setMode('pdfToImage')" id="mode-pdfToImage" class="mode-btn p-2.5 rounded-xl border border-slate-700 bg-slate-900/50 text-slate-300 text-xs font-semibold transition text-center">
+          PDF ➔ Image
+        </button>
+        <button onclick="setMode('imageToPdf')" id="mode-imageToPdf" class="mode-btn p-2.5 rounded-xl border border-slate-700 bg-slate-900/50 text-slate-300 text-xs font-semibold transition text-center">
+          Image ➔ PDF
+        </button>
+        <button onclick="setMode('pdfToText')" id="mode-pdfToText" class="mode-btn p-2.5 rounded-xl border border-slate-700 bg-slate-900/50 text-slate-300 text-xs font-semibold transition text-center">
+          PDF ➔ Text
+        </button>
+        <button onclick="setMode('mergePdf')" id="mode-mergePdf" class="mode-btn p-2.5 rounded-xl border border-slate-700 bg-slate-900/50 text-slate-300 text-xs font-semibold transition text-center">
+          Merge PDFs
         </button>
       </div>
-
       <!-- Upload Zone -->
       <div id="uploadZone" class="border-2 border-dashed border-slate-600 rounded-xl p-10 text-center cursor-pointer hover:border-cyan-500 transition">
         <input type="file" id="fileInput" accept=".docx" class="hidden">
@@ -113,31 +130,27 @@
         <p class="text-slate-300 font-medium mb-1" id="dropText">Upload your Word document (.docx)</p>
         <p class="text-xs text-slate-500">100% Private — Processing occurs locally in your browser memory</p>
       </div>
-
       <!-- Processing & Preview Area -->
       <div id="toolArea" class="hidden space-y-4">
-        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3 flex-wrap gap-2">
           <div>
             <p id="fileName" class="text-sm font-semibold text-white truncate max-w-xs sm:max-w-md"></p>
             <p id="statusMsg" class="text-xs text-cyan-400 font-medium mt-0.5">Ready for conversion</p>
           </div>
           <div class="flex gap-2">
-            <button onclick="downloadConvertedPDF()" class="px-5 py-2.5 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white rounded-xl text-xs font-semibold shadow-md cursor-pointer transition">Download PDF</button>
+            <button onclick="downloadConverted()" id="downloadBtn" class="px-5 py-2.5 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white rounded-xl text-xs font-semibold shadow-md cursor-pointer transition">Download</button>
             <button onclick="resetConverter()" class="px-4 py-2.5 border border-slate-700 bg-slate-800 text-slate-300 rounded-xl text-xs font-medium hover:bg-slate-700 transition">New File</button>
           </div>
         </div>
-
         <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Converted Layout Preview</div>
         <div class="max-h-[400px] overflow-y-auto rounded-xl border border-slate-800 bg-slate-900 p-3">
           <div id="previewBox"></div>
         </div>
       </div>
     </div>
-
-    <!-- 3,000+ WORDS FULLY OPTIMIZED SEO ARTICLE -->
+    <!-- SEO ARTICLE (unchanged structure) -->
     <article class="mt-16 space-y-12">
       
-      <!-- Section 1 -->
       <div>
         <h2 class="text-3xl font-bold text-white mb-6">1. The Evolution of Document Processing: Why Universal File Conversion is Essential</h2>
         <p class="text-slate-400 leading-relaxed mb-4">
@@ -147,11 +160,9 @@
           When an editable Microsoft Word document (<code>.docx</code>) or an Excel spreadsheet (<code>.xlsx</code>) is shared across different devices or office software versions, typography layouts often break, custom fonts fail to render, table column alignment shifts, and page pagination disintegrates. This lack of visual consistency can damage professional credibility, corrupt formal corporate proposals, and trigger formatting errors in legal contracts.
         </p>
         <p class="text-slate-400 leading-relaxed mb-4">
-          Universal document conversion solves this fundamental issue by converting dynamic, editable office formats into standardized, read-only <strong>Portable Document Format (PDF)</strong> files. Our <strong>Free All-in-One Document Converter</strong> at <code>Browser Tools Hub</code> addresses these compatibility barriers by offering a secure, browser-native conversion engine that converts Word, Excel, and Text files into high-resolution PDFs without requiring paid software installations or remote server uploads.
+          Universal document conversion solves this fundamental issue by converting dynamic, editable office formats into standardized, read-only <strong>Portable Document Format (PDF)</strong> files. Our <strong>Free All-in-One Document Converter</strong> at <code>Browser Tools Hub</code> addresses these compatibility barriers by offering a secure, browser-native conversion engine that converts Word, Excel, Text, PDF and Image files without requiring paid software installations or remote server uploads.
         </p>
       </div>
-
-      <!-- Section 2 -->
       <div>
         <h2 class="text-2xl font-bold text-white mb-4">2. Client-Side vs. Server-Side Document Conversion: The Supreme Security Advantage</h2>
         <p class="text-slate-400 leading-relaxed mb-4">
@@ -161,13 +172,11 @@
           Server-side conversion presents substantial security vulnerabilities, including potential data interception over public networks, temporary file storage on remote servers, and compliance breaches regarding international privacy standards like GDPR, HIPAA, and CCPA.
         </p>
         <p class="text-slate-400 leading-relaxed mb-4">
-          Our <strong>online document converter tool</strong> utilizes modern client-side JavaScript execution models powered by WebAssembly, <code>Mammoth.js</code>, <code>SheetJS (XLSX)</code>, and <code>html2pdf.js</code>. The entire parsing, rendering, and PDF generation sequence takes place locally inside your computer’s browser memory. Your documents never leave your physical device, providing enterprise-grade security and absolute privacy protection.
+          Our <strong>online document converter tool</strong> utilizes modern client-side JavaScript execution models powered by WebAssembly, <code>Mammoth.js</code>, <code>SheetJS (XLSX)</code>, <code>pdf.js</code>, <code>pdf-lib</code> and <code>html2pdf.js</code>. The entire parsing, rendering, and PDF generation sequence takes place locally inside your computer’s browser memory. Your documents never leave your physical device, providing enterprise-grade security and absolute privacy protection.
         </p>
       </div>
-
-      <!-- Section 3 -->
       <div>
-        <h2 class="text-2xl font-bold text-white mb-4">3. Comprehensive Module Breakdown: Word, Excel, and Text Conversion</h2>
+        <h2 class="text-2xl font-bold text-white mb-4">3. Comprehensive Module Breakdown: Word, Excel, Text, PDF & Image Conversion</h2>
         
         <div class="space-y-6 my-6">
           <div class="glass rounded-xl p-6 border border-slate-800">
@@ -179,7 +188,6 @@
               Our <code>Word to PDF</code> engine extracts heading hierarchies, paragraph spacing, bulleted lists, inline styling, and embedded image assets, compiling them into a fixed PDF document suitable for printing or official submission.
             </p>
           </div>
-
           <div class="glass rounded-xl p-6 border border-slate-800">
             <h3 class="text-cyan-400 font-semibold mb-2 text-xl">Module B: Excel (.xlsx) to PDF Conversion</h3>
             <p class="text-slate-400 text-sm leading-relaxed mb-3">
@@ -189,7 +197,6 @@
               Our <code>Excel to PDF</code> module parses raw spreadsheet matrices into structured HTML data tables before building a clean, paginated PDF. This preserves financial reporting integrity while presenting numbers clearly.
             </p>
           </div>
-
           <div class="glass rounded-xl p-6 border border-slate-800">
             <h3 class="text-cyan-400 font-semibold mb-2 text-xl">Module C: Plain Text (.txt) to PDF Conversion</h3>
             <p class="text-slate-400 text-sm leading-relaxed mb-3">
@@ -199,10 +206,20 @@
               Converting plain text strings into PDF applies consistent margin boundaries, standardized line wrapping, and printable typography layouts suitable for documentation archiving.
             </p>
           </div>
+          <div class="glass rounded-xl p-6 border border-slate-800">
+            <h3 class="text-cyan-400 font-semibold mb-2 text-xl">Module D: PDF to Word / Text / Image</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-3">
+              Extract selectable text from PDFs into a Word-compatible document, plain text file, or high-quality PNG images of each page — all processed locally with pdf.js.
+            </p>
+          </div>
+          <div class="glass rounded-xl p-6 border border-slate-800">
+            <h3 class="text-cyan-400 font-semibold mb-2 text-xl">Module E: Image to PDF & Merge PDFs</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Turn JPG/PNG images into multi-page PDFs, or combine multiple PDF files into one document using pdf-lib — no server required.
+            </p>
+          </div>
         </div>
       </div>
-
-      <!-- Section 4 -->
       <div>
         <h2 class="text-2xl font-bold text-white mb-4">4. Strategic Benefits of Using PDF Formats in Professional Workflows</h2>
         <p class="text-slate-400 leading-relaxed mb-4">
@@ -215,19 +232,15 @@
           <li><strong class="text-white">Universal Print Standards:</strong> PDF files embed exact document layout instructions, preventing paper misalignments during commercial printing.</li>
         </ul>
       </div>
-
-      <!-- Section 5 -->
       <div>
         <h2 class="text-2xl font-bold text-white mb-4">5. Step-by-Step Operating Instructions</h2>
         <ol class="list-decimal list-inside text-slate-400 space-y-3 mb-4 ml-4">
-          <li><strong>Select Target Conversion Mode:</strong> Choose between <code>Word to PDF</code>, <code>Excel to PDF</code>, or <code>Plain Text to PDF</code> using the top control buttons.</li>
-          <li><strong>Upload Your File:</strong> Drag and drop your target document into the highlighted drop zone, or click to select from your device files.</li>
-          <li><strong>Review the Live Preview:</strong> Inspect the parsed HTML layout preview rendered in the document box to verify text alignment.</li>
-          <li><strong>Download PDF Document:</strong> Click "Download PDF" to compile and save your formatted PDF file locally.</li>
+          <li><strong>Select Target Conversion Mode:</strong> Choose Word to PDF, Excel to PDF, Text to PDF, PDF to Word, PDF to Image, Image to PDF, PDF to Text, or Merge PDFs.</li>
+          <li><strong>Upload Your File(s):</strong> Drag and drop into the drop zone, or click to select from your device.</li>
+          <li><strong>Review the Live Preview:</strong> Inspect the parsed layout or images in the preview box.</li>
+          <li><strong>Download:</strong> Click Download to save the converted file locally.</li>
         </ol>
       </div>
-
-      <!-- Section 6: FAQs -->
       <div>
         <h2 class="text-2xl font-bold text-white mb-6">6. Frequently Asked Questions (FAQs)</h2>
         <div class="space-y-4">
@@ -237,7 +250,7 @@
           </div>
           <div class="glass rounded-xl p-5 border border-slate-800">
             <h3 class="text-white font-semibold mb-2">Is there a usage limit or fee for converting documents?</h3>
-            <p class="text-slate-400 text-sm">No. You can convert unlimited Word, Excel, and Text files completely free without paywalls, subscriptions, or account registrations.</p>
+            <p class="text-slate-400 text-sm">No. You can convert unlimited Word, Excel, Text, PDF and Image files completely free without paywalls, subscriptions, or account registrations.</p>
           </div>
           <div class="glass rounded-xl p-5 border border-slate-800">
             <h3 class="text-white font-semibold mb-2">Can I convert large Excel spreadsheets with complex tables?</h3>
@@ -247,12 +260,14 @@
             <h3 class="text-white font-semibold mb-2">Does converting Word documents retain image assets?</h3>
             <p class="text-slate-400 text-sm">Yes. Inline images embedded within standard .docx files are extracted and rendered directly into the PDF preview layout.</p>
           </div>
+          <div class="glass rounded-xl p-5 border border-slate-800">
+            <h3 class="text-white font-semibold mb-2">Is PDF to Word a full editable DOCX?</h3>
+            <p class="text-slate-400 text-sm">Browser-side PDF text extraction produces a text-based Word-compatible (.doc) file. Complex layouts, fonts and images are simplified; for full fidelity use a desktop app when needed.</p>
+          </div>
         </div>
       </div>
-
     </article>
   </main>
-
   <!-- FOOTER -->
   <footer class="border-t border-slate-800 py-10 mt-10">
     <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -268,9 +283,13 @@
       <p class="text-slate-500 text-sm">100% Free • No Signup • Fast Runs in Browser</p>
     </div>
   </footer>
-
   <!-- JAVASCRIPT LOGIC -->
   <script>
+    // pdf.js worker
+    if (typeof pdfjsLib !== 'undefined') {
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    }
+
     // Mobile Menu Toggle
     const btn = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');
@@ -278,67 +297,105 @@
 
     let currentMode = 'wordToPdf';
     let outputFileName = 'converted-document.pdf';
+    let downloadPayload = null; // { type: 'pdf'|'blob'|'text'|'images', data, name }
+
+    const MODE_CONFIG = {
+      wordToPdf:  { accept: '.docx', multiple: false, drop: 'Upload your Word document (.docx)', btn: 'Download PDF' },
+      excelToPdf: { accept: '.xlsx,.xls', multiple: false, drop: 'Upload your Excel spreadsheet (.xlsx)', btn: 'Download PDF' },
+      textToPdf:  { accept: '.txt', multiple: false, drop: 'Upload your text file (.txt)', btn: 'Download PDF' },
+      pdfToWord:  { accept: '.pdf', multiple: false, drop: 'Upload your PDF file (.pdf)', btn: 'Download Word' },
+      pdfToImage: { accept: '.pdf', multiple: false, drop: 'Upload your PDF file (.pdf)', btn: 'Download Images' },
+      imageToPdf: { accept: 'image/*,.jpg,.jpeg,.png,.webp,.gif', multiple: true, drop: 'Upload image(s) (JPG, PNG, WebP…)', btn: 'Download PDF' },
+      pdfToText:  { accept: '.pdf', multiple: false, drop: 'Upload your PDF file (.pdf)', btn: 'Download Text' },
+      mergePdf:   { accept: '.pdf', multiple: true, drop: 'Upload 2 or more PDF files to merge', btn: 'Download Merged PDF' }
+    };
 
     function setMode(mode) {
       currentMode = mode;
-      document.querySelectorAll('.mode-btn').forEach(b => {
-        b.className = "mode-btn p-3 rounded-xl border border-slate-700 bg-slate-900/50 text-slate-300 text-xs font-semibold transition text-center";
-      });
+      document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
       const active = document.getElementById('mode-' + mode);
-      active.className = "mode-btn p-3 rounded-xl border border-cyan-500 bg-cyan-500/10 text-cyan-400 text-xs font-semibold transition text-center shadow-[0_0_15px_rgba(6,182,212,0.15)]";
+      if (active) active.classList.add('active');
 
+      const cfg = MODE_CONFIG[mode];
       const fileInput = document.getElementById('fileInput');
-      const dropText = document.getElementById('dropText');
-      
-      if (mode === 'wordToPdf') {
-        fileInput.accept = '.docx';
-        dropText.textContent = 'Upload your Word document (.docx)';
-      } else if (mode === 'excelToPdf') {
-        fileInput.accept = '.xlsx,.xls';
-        dropText.textContent = 'Upload your Excel spreadsheet (.xlsx)';
-      } else {
-        fileInput.accept = '.txt';
-        dropText.textContent = 'Upload your text file (.txt)';
-      }
+      fileInput.accept = cfg.accept;
+      fileInput.multiple = cfg.multiple;
+      document.getElementById('dropText').textContent = cfg.drop;
+      document.getElementById('downloadBtn').textContent = cfg.btn;
       resetConverter();
     }
 
     const uploadZone = document.getElementById('uploadZone');
     const fileInput = document.getElementById('fileInput');
-    
+
     uploadZone.addEventListener('click', () => fileInput.click());
     uploadZone.addEventListener('dragover', e => { e.preventDefault(); uploadZone.classList.add('border-cyan-500'); });
     uploadZone.addEventListener('dragleave', () => uploadZone.classList.remove('border-cyan-500'));
     uploadZone.addEventListener('drop', e => {
       e.preventDefault();
       uploadZone.classList.remove('border-cyan-500');
-      if (e.dataTransfer.files[0]) handleDocument(e.dataTransfer.files[0]);
+      if (e.dataTransfer.files.length) handleFiles(e.dataTransfer.files);
     });
-    fileInput.addEventListener('change', e => { if (e.target.files[0]) handleDocument(e.target.files[0]); });
+    fileInput.addEventListener('change', e => { if (e.target.files.length) handleFiles(e.target.files); });
 
-    function handleDocument(file) {
-      outputFileName = file.name.replace(/\.[^/.]+$/, "") + ".pdf";
-      document.getElementById('fileName').textContent = file.name;
+    function showToolArea(names) {
+      document.getElementById('fileName').textContent = names;
       uploadZone.classList.add('hidden');
       document.getElementById('toolArea').classList.remove('hidden');
-      document.getElementById('statusMsg').textContent = '🔄 Parsing file contents...';
+    }
 
-      const reader = new FileReader();
-      if (currentMode === 'wordToPdf') {
+    function setStatus(msg, ok) {
+      const el = document.getElementById('statusMsg');
+      el.textContent = msg;
+      el.className = 'text-xs font-medium mt-0.5 ' + (ok === true ? 'text-emerald-400' : ok === false ? 'text-red-400' : 'text-cyan-400');
+    }
+
+    async function handleFiles(fileList) {
+      const files = Array.from(fileList);
+      if (!files.length) return;
+
+      showToolArea(files.map(f => f.name).join(', '));
+      setStatus('🔄 Processing...', null);
+      downloadPayload = null;
+      document.getElementById('previewBox').innerHTML = '';
+
+      try {
+        if (currentMode === 'wordToPdf') await handleWord(files[0]);
+        else if (currentMode === 'excelToPdf') await handleExcel(files[0]);
+        else if (currentMode === 'textToPdf') await handleText(files[0]);
+        else if (currentMode === 'pdfToWord') await handlePdfToWord(files[0]);
+        else if (currentMode === 'pdfToImage') await handlePdfToImage(files[0]);
+        else if (currentMode === 'imageToPdf') await handleImageToPdf(files);
+        else if (currentMode === 'pdfToText') await handlePdfToText(files[0]);
+        else if (currentMode === 'mergePdf') await handleMergePdf(files);
+      } catch (err) {
+        setStatus('❌ Error: ' + (err.message || err), false);
+        console.error(err);
+      }
+    }
+
+    function handleWord(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
         reader.onload = function(e) {
           mammoth.convertToHtml({ arrayBuffer: e.target.result })
             .then(res => {
               document.getElementById('previewBox').innerHTML = res.value;
-              document.getElementById('statusMsg').textContent = '✓ Word file loaded successfully!';
-              document.getElementById('statusMsg').className = 'text-xs text-emerald-400 font-medium mt-0.5';
+              outputFileName = file.name.replace(/\.[^/.]+$/, '') + '.pdf';
+              downloadPayload = { type: 'html2pdf' };
+              setStatus('✓ Word file loaded successfully!', true);
+              resolve();
             })
-            .catch(err => {
-              document.getElementById('statusMsg').textContent = '❌ Error: ' + err.message;
-              document.getElementById('statusMsg').className = 'text-xs text-red-400 font-medium mt-0.5';
-            });
+            .catch(reject);
         };
+        reader.onerror = reject;
         reader.readAsArrayBuffer(file);
-      } else if (currentMode === 'excelToPdf') {
+      });
+    }
+
+    function handleExcel(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
         reader.onload = function(e) {
           try {
             const data = new Uint8Array(e.target.result);
@@ -346,42 +403,199 @@
             const firstSheet = workbook.SheetNames[0];
             const htmlTable = XLSX.utils.sheet_to_html(workbook.Sheets[firstSheet]);
             document.getElementById('previewBox').innerHTML = htmlTable;
-            document.getElementById('statusMsg').textContent = '✓ Excel spreadsheet loaded successfully!';
-            document.getElementById('statusMsg').className = 'text-xs text-emerald-400 font-medium mt-0.5';
-          } catch(err) {
-            document.getElementById('statusMsg').textContent = '❌ Error parsing Excel file.';
-            document.getElementById('statusMsg').className = 'text-xs text-red-400 font-medium mt-0.5';
-          }
+            outputFileName = file.name.replace(/\.[^/.]+$/, '') + '.pdf';
+            downloadPayload = { type: 'html2pdf' };
+            setStatus('✓ Excel spreadsheet loaded successfully!', true);
+            resolve();
+          } catch (err) { reject(err); }
         };
+        reader.onerror = reject;
         reader.readAsArrayBuffer(file);
-      } else {
-        reader.onload = function(e) {
-          const text = e.target.result.replace(/\n/g, '<br>');
-          document.getElementById('previewBox').innerHTML = `<p>${text}</p>`;
-          document.getElementById('statusMsg').textContent = '✓ Text file loaded successfully!';
-          document.getElementById('statusMsg').className = 'text-xs text-emerald-400 font-medium mt-0.5';
-        };
-        reader.readAsText(file);
-      }
+      });
     }
 
-    function downloadConvertedPDF() {
-      document.getElementById('statusMsg').textContent = '🔄 Generating PDF file...';
-      document.getElementById('statusMsg').className = 'text-xs text-cyan-400 font-medium mt-0.5';
-
-      const element = document.getElementById('previewBox');
-      const opt = {
-        margin: 10,
-        filename: outputFileName,
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-      };
-      
-      html2pdf().set(opt).from(element).save().then(() => {
-        document.getElementById('statusMsg').textContent = '💾 PDF downloaded successfully!';
-        document.getElementById('statusMsg').className = 'text-xs text-emerald-400 font-medium mt-0.5';
+    function handleText(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const text = e.target.result.replace(/\n/g, '<br>');
+          document.getElementById('previewBox').innerHTML = '<p>' + text + '</p>';
+          outputFileName = file.name.replace(/\.[^/.]+$/, '') + '.pdf';
+          downloadPayload = { type: 'html2pdf' };
+          setStatus('✓ Text file loaded successfully!', true);
+          resolve();
+        };
+        reader.onerror = reject;
+        reader.readAsText(file);
       });
+    }
+
+    async function extractPdfText(file) {
+      const buf = await file.arrayBuffer();
+      const pdf = await pdfjsLib.getDocument({ data: buf }).promise;
+      let fullText = '';
+      for (let i = 1; i <= pdf.numPages; i++) {
+        const page = await pdf.getPage(i);
+        const content = await page.getTextContent();
+        const strings = content.items.map(item => item.str);
+        fullText += strings.join(' ') + '\n\n';
+      }
+      return fullText.trim();
+    }
+
+    async function handlePdfToWord(file) {
+      const text = await extractPdfText(file);
+      const html = text.split(/\n+/).map(p => '<p>' + p.replace(/</g, '&lt;') + '</p>').join('');
+      document.getElementById('previewBox').innerHTML = html || '<p>(No extractable text found)</p>';
+      outputFileName = file.name.replace(/\.[^/.]+$/, '') + '.doc';
+      // HTML as .doc is opened by Word
+      const blob = new Blob(
+        ['<html><head><meta charset="utf-8"></head><body>' + html + '</body></html>'],
+        { type: 'application/msword' }
+      );
+      downloadPayload = { type: 'blob', blob, name: outputFileName };
+      setStatus('✓ PDF text extracted — ready as Word document', true);
+    }
+
+    async function handlePdfToText(file) {
+      const text = await extractPdfText(file);
+      document.getElementById('previewBox').innerHTML = '<pre style="white-space:pre-wrap;font-size:13px;">' + text.replace(/</g, '&lt;') + '</pre>';
+      outputFileName = file.name.replace(/\.[^/.]+$/, '') + '.txt';
+      const blob = new Blob([text], { type: 'text/plain' });
+      downloadPayload = { type: 'blob', blob, name: outputFileName };
+      setStatus('✓ PDF text extracted successfully!', true);
+    }
+
+    async function handlePdfToImage(file) {
+      const buf = await file.arrayBuffer();
+      const pdf = await pdfjsLib.getDocument({ data: buf }).promise;
+      const preview = document.getElementById('previewBox');
+      preview.innerHTML = '';
+      const images = [];
+      const baseName = file.name.replace(/\.[^/.]+$/, '');
+
+      for (let i = 1; i <= pdf.numPages; i++) {
+        const page = await pdf.getPage(i);
+        const viewport = page.getViewport({ scale: 2 });
+        const canvas = document.createElement('canvas');
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+        await page.render({ canvasContext: canvas.getContext('2d'), viewport }).promise;
+        const dataUrl = canvas.toDataURL('image/png');
+        images.push({ dataUrl, name: baseName + '-page-' + i + '.png' });
+        const img = document.createElement('img');
+        img.src = dataUrl;
+        img.alt = 'Page ' + i;
+        preview.appendChild(img);
+        const label = document.createElement('p');
+        label.style.cssText = 'font-size:12px;color:#64748b;margin:0 0 16px;';
+        label.textContent = 'Page ' + i + ' of ' + pdf.numPages;
+        preview.appendChild(label);
+      }
+      downloadPayload = { type: 'images', images };
+      setStatus('✓ ' + pdf.numPages + ' page(s) converted to images!', true);
+    }
+
+    async function handleImageToPdf(files) {
+      const { PDFDocument } = PDFLib;
+      const pdfDoc = await PDFDocument.create();
+      const preview = document.getElementById('previewBox');
+      preview.innerHTML = '';
+
+      for (const file of files) {
+        const buf = await file.arrayBuffer();
+        const bytes = new Uint8Array(buf);
+        let img;
+        const type = (file.type || '').toLowerCase();
+        if (type.includes('png') || file.name.toLowerCase().endsWith('.png')) {
+          img = await pdfDoc.embedPng(bytes);
+        } else {
+          img = await pdfDoc.embedJpg(bytes);
+        }
+        const page = pdfDoc.addPage([img.width, img.height]);
+        page.drawImage(img, { x: 0, y: 0, width: img.width, height: img.height });
+
+        const url = URL.createObjectURL(file);
+        const imgEl = document.createElement('img');
+        imgEl.src = url;
+        preview.appendChild(imgEl);
+      }
+
+      const pdfBytes = await pdfDoc.save();
+      const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+      outputFileName = (files.length === 1 ? files[0].name.replace(/\.[^/.]+$/, '') : 'images') + '.pdf';
+      downloadPayload = { type: 'blob', blob, name: outputFileName };
+      setStatus('✓ Image(s) converted to PDF!', true);
+    }
+
+    async function handleMergePdf(files) {
+      if (files.length < 2) {
+        setStatus('❌ Please select at least 2 PDF files to merge', false);
+        return;
+      }
+      const { PDFDocument } = PDFLib;
+      const merged = await PDFDocument.create();
+      const preview = document.getElementById('previewBox');
+      preview.innerHTML = '<p style="color:#334155;">Merging ' + files.length + ' PDF(s)…</p>';
+
+      for (const file of files) {
+        const buf = await file.arrayBuffer();
+        const src = await PDFDocument.load(buf);
+        const pages = await merged.copyPages(src, src.getPageIndices());
+        pages.forEach(p => merged.addPage(p));
+      }
+
+      const pdfBytes = await merged.save();
+      const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+      outputFileName = 'merged.pdf';
+      downloadPayload = { type: 'blob', blob, name: outputFileName };
+      preview.innerHTML = '<p style="color:#0f172a;">✓ Merged ' + files.length + ' PDFs into one document (' + merged.getPageCount() + ' pages).</p>';
+      setStatus('✓ PDFs merged successfully!', true);
+    }
+
+    function downloadConverted() {
+      if (!downloadPayload) {
+        setStatus('❌ Nothing to download yet', false);
+        return;
+      }
+      setStatus('🔄 Preparing download...', null);
+
+      if (downloadPayload.type === 'html2pdf') {
+        const element = document.getElementById('previewBox');
+        const opt = {
+          margin: 10,
+          filename: outputFileName,
+          image: { type: 'jpeg', quality: 0.98 },
+          html2canvas: { scale: 2 },
+          jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        };
+        html2pdf().set(opt).from(element).save().then(() => {
+          setStatus('💾 PDF downloaded successfully!', true);
+        });
+        return;
+      }
+
+      if (downloadPayload.type === 'blob') {
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(downloadPayload.blob);
+        a.download = downloadPayload.name || outputFileName;
+        a.click();
+        URL.revokeObjectURL(a.href);
+        setStatus('💾 Downloaded successfully!', true);
+        return;
+      }
+
+      if (downloadPayload.type === 'images') {
+        downloadPayload.images.forEach((img, idx) => {
+          setTimeout(() => {
+            const a = document.createElement('a');
+            a.href = img.dataUrl;
+            a.download = img.name;
+            a.click();
+          }, idx * 300);
+        });
+        setStatus('💾 Image(s) download started!', true);
+      }
     }
 
     function resetConverter() {
@@ -389,7 +603,11 @@
       document.getElementById('previewBox').innerHTML = '';
       document.getElementById('toolArea').classList.add('hidden');
       uploadZone.classList.remove('hidden');
+      downloadPayload = null;
     }
+
+    // Init active style for default mode
+    setMode('wordToPdf');
   </script>
 </body>
 </html>
