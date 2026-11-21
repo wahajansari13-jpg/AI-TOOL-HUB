@@ -1,39 +1,33 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+
+<html class="scroll-smooth" lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <!-- Favicon (BT Logo) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%2306b6d4'/><stop offset='100%' stop-color='%232563eb'/></linearGradient></defs><rect width='100' height='100' rx='25' fill='url(%23grad)'/><text x='50' y='55' font-family='Arial, sans-serif' font-size='45' font-weight='bold' fill='white' dominant-baseline='middle' text-anchor='middle'>BT</text></svg>">
-
-  <!-- Primary SEO -->
-  <title>About Us | Browser Tools Hub - Free Privacy-Focused Web Utilities</title>
-  <meta name="description" content="Learn who runs Browser Tools Hub, why it exists, and how its free online tools handle your data." />
-  <meta name="robots" content="index, follow, max-image-preview:large" />
-  <meta name="author" content="Browser Tools Hub" />
-  <link rel="canonical" href="https://browsertools.site/about.html" />
-
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Structured Data Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "name": "About Browser Tools Hub",
-    "url": "https://browsertools.site/about.html",
-    "description": "Learn about Browser Tools Hub's mission to deliver secure, private, client-side browser micro utilities.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Browser Tools Hub",
-      "url": "https://browsertools.site/"
-    }
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Favicon (BT Logo) -->
+<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;defs&gt;&lt;linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'&gt;&lt;stop offset='0%' stop-color='%2306b6d4'/&gt;&lt;stop offset='100%' stop-color='%232563eb'/&gt;&lt;/linearGradient&gt;&lt;/defs&gt;&lt;rect width='100' height='100' rx='25' fill='url(%23grad)'/&gt;&lt;text x='50' y='55' font-family='Arial, sans-serif' font-size='45' font-weight='bold' fill='white' dominant-baseline='middle' text-anchor='middle'&gt;BT&lt;/text&gt;&lt;/svg&gt;" rel="icon"/>
+<!-- Primary SEO -->
+<title>About Browser Tools – Our Purpose &amp; Standards</title>
+<meta content="Learn about Browser Tools, the purpose of our free web utilities, how tools are maintained and how to contact us with corrections or suggestions." name="description"/>
+<meta content="index, follow, max-image-preview:large" name="robots"/>
+<meta content="Browser Tools Hub" name="author"/>
+<link href="https://browsertools.site/about.html" rel="canonical"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Structured Data Schema -->
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About Browser Tools Hub",
+  "url": "https://browsertools.site/about.html",
+  "description": "Learn about Browser Tools Hub's mission to deliver secure, private, client-side browser micro utilities.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Browser Tools Hub",
+    "url": "https://browsertools.site/"
   }
-  </script>
-
-  <style>
+}</script>
+<style>
     html { scroll-behavior: smooth; }
     ::-webkit-scrollbar { width: 10px; }
     ::-webkit-scrollbar-track { background: #020617; }
@@ -41,123 +35,111 @@
     ::-webkit-scrollbar-thumb:hover { background: #0891b2; }
     .glass { background: rgba(15,23,42,.75); backdrop-filter: blur(12px); border: 1px solid rgba(148,163,184,.12); }
   </style>
-</head>
-
+<meta content="About Browser Tools – Our Purpose &amp; Standards" property="og:title"/><meta content="Learn about Browser Tools, the purpose of our free web utilities, how tools are maintained and how to contact us with corrections or suggestions." property="og:description"/><meta content="About Browser Tools – Our Purpose &amp; Standards" name="twitter:title"/><meta content="Learn about Browser Tools, the purpose of our free web utilities, how tools are maintained and how to contact us with corrections or suggestions." name="twitter:description"/><meta content="summary" name="twitter:card"/><meta content="#020617" name="theme-color"/></head>
 <body class="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased flex flex-col">
-
-  <!-- NAVIGATION -->
-  <nav aria-label="Main navigation" class="bg-slate-950/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        <a href="/" class="flex items-center gap-2.5 group">
-          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-cyan-500/25">BT</div>
-          <span class="text-white font-semibold text-lg tracking-tight group-hover:text-cyan-400 transition">Browser Tools Hub</span>
-        </a>
-        <div class="hidden md:flex items-center gap-1">
-          <a href="/" class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition">Home</a>
-          <a href="/about.html" class="px-4 py-2 text-sm text-cyan-400 font-medium bg-slate-800/80 rounded-lg">About</a>
-          <a href="/privacy.html" class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition">Privacy Policy</a>
-          <a href="/terms.html" class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition">Terms</a>
-        </div>
-        <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-300 hover:text-white"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
-      </div>
-    </div>
-    <!-- Mobile Drawer -->
-    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-slate-950">
-      <div class="px-4 py-3 space-y-1">
-        <a href="/" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Home</a>
-        <a href="/about.html" class="block px-3 py-2.5 rounded-lg text-cyan-400 font-medium bg-slate-800">About Us</a>
-        <a href="/privacy.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Privacy Policy</a>
-        <a href="/terms.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Terms & Conditions</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- MAIN CONTENT -->
-  <main class="max-w-4xl mx-auto px-4 py-16 flex-grow space-y-12">
-
-    <header class="text-center">
-      <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4">About Browser Tools Hub</h1>
-      <p class="text-slate-400 text-base max-w-2xl mx-auto">A small collection of free tools for everyday tasks like converting documents, compressing images and formatting JSON, built to work without an account.</p>
-    </header>
-
-    <div class="glass rounded-2xl p-6 sm:p-8 space-y-4">
-      <h2 class="text-2xl font-bold text-white">Why this site exists</h2>
-      <p class="text-slate-300 leading-relaxed">
+<!-- NAVIGATION -->
+<nav aria-label="Main navigation" class="bg-slate-950/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<a class="flex items-center gap-2.5 group" href="/">
+<div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-cyan-500/25">BT</div>
+<span class="text-white font-semibold text-lg tracking-tight group-hover:text-cyan-400 transition">Browser Tools Hub</span>
+</a>
+<div class="hidden md:flex items-center gap-1">
+<a class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition" href="/">Home</a>
+<a class="px-4 py-2 text-sm text-cyan-400 font-medium bg-slate-800/80 rounded-lg" href="/about.html">About</a>
+<a class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition" href="/privacy.html">Privacy Policy</a>
+<a class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition" href="/terms.html">Terms</a>
+</div>
+<button class="md:hidden p-2 text-slate-300 hover:text-white" id="mobile-menu-btn"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button>
+</div>
+</div>
+<!-- Mobile Drawer -->
+<div class="hidden md:hidden border-t border-slate-800 bg-slate-950" id="mobile-menu">
+<div class="px-4 py-3 space-y-1">
+<a class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white" href="/">Home</a>
+<a class="block px-3 py-2.5 rounded-lg text-cyan-400 font-medium bg-slate-800" href="/about.html">About Us</a>
+<a class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white" href="/privacy.html">Privacy Policy</a>
+<a class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white" href="/terms.html">Terms &amp; Conditions</a>
+</div>
+</div>
+</nav>
+<!-- MAIN CONTENT -->
+<main class="max-w-4xl mx-auto px-4 py-16 flex-grow space-y-12">
+<header class="text-center">
+<h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4">About Browser Tools Hub</h1>
+<p class="text-slate-400 text-base max-w-2xl mx-auto">A small collection of free tools for everyday tasks like converting documents, compressing images and formatting JSON, built to work without an account.</p>
+</header>
+<div class="glass rounded-2xl p-6 sm:p-8 space-y-4">
+<h2 class="text-2xl font-bold text-white">Why this site exists</h2>
+<p class="text-slate-300 leading-relaxed">
         Simple jobs such as turning a Word file into a PDF or shrinking a photo often send you to sites that ask you to sign up, upload your file to a server, or pay after the first use. Browser Tools Hub was started to offer these everyday tools in one place, with no signup and, wherever possible, with the work done inside your own browser.
       </p>
-      <p class="text-slate-300 leading-relaxed">
+<p class="text-slate-300 leading-relaxed">
         The site is new and still growing. We add and improve tools based on what people actually need, so feedback is welcome.
       </p>
-    </div>
-
-    <div class="glass rounded-2xl p-6 sm:p-8 space-y-4">
-      <h2 class="text-2xl font-bold text-white">Who runs it</h2>
-      <p class="text-slate-300 leading-relaxed">
-        Browser Tools Hub is an independent project. You can reach the person behind it at <a href="mailto:support@browsertools.site" class="text-cyan-400 hover:underline">support@browsertools.site</a> or through the <a href="/contact.html" class="text-cyan-400 hover:underline">Contact page</a>.
+</div>
+<div class="glass rounded-2xl p-6 sm:p-8 space-y-4">
+<h2 class="text-2xl font-bold text-white">Who runs it</h2>
+<p class="text-slate-300 leading-relaxed">
+        Browser Tools Hub is an independent project. You can reach the person behind it at <a class="text-cyan-400 hover:underline" href="mailto:support@browsertools.site">support@browsertools.site</a> or through the <a class="text-cyan-400 hover:underline" href="/contact.html">Contact page</a>.
       </p>
-      <!-- OWNER: add your real name, country and a short line about your background here. A real, named author builds trust with visitors and with Google. Example:
+<!-- OWNER: add your real name, country and a short line about your background here. A real, named author builds trust with visitors and with Google. Example:
       <p class="text-slate-300 leading-relaxed">Built and maintained by YOUR NAME, a web developer based in YOUR COUNTRY.</p> -->
-    </div>
-
-    <div class="glass rounded-2xl p-6 sm:p-8 space-y-4">
-      <h2 class="text-2xl font-bold text-white">How your data is handled</h2>
-      <p class="text-slate-300 leading-relaxed">
+</div>
+<div class="glass rounded-2xl p-6 sm:p-8 space-y-4">
+<h2 class="text-2xl font-bold text-white">How your data is handled</h2>
+<p class="text-slate-300 leading-relaxed">
         Most tools, including the Document Converter, Image Compressor, PDF Page Remover, Password Generator and JSON Formatter, run in your browser, so the files and text you use are not uploaded to our servers.
       </p>
-      <p class="text-slate-300 leading-relaxed">
-        Two tools are different by nature. The Email Generator uses a third-party temporary mail service to receive messages, and the Speed Test connects to external test servers. Anything sent to a temporary inbox can be read by anyone who knows the address, so do not use it for important accounts. Read the full <a href="/privacy.html" class="text-cyan-400 hover:underline">Privacy Policy</a> for details on cookies and third-party services.
+<p class="text-slate-300 leading-relaxed">
+        Two tools are different by nature. The Email Generator uses a third-party temporary mail service to receive messages, and the Speed Test connects to external test servers. Anything sent to a temporary inbox can be read by anyone who knows the address, so do not use it for important accounts. Read the full <a class="text-cyan-400 hover:underline" href="/privacy.html">Privacy Policy</a> for details on cookies and third-party services.
       </p>
-    </div>
-
-    <div class="glass rounded-2xl p-6 sm:p-8 space-y-4">
-      <h2 class="text-2xl font-bold text-white">Our tools</h2>
-      <ul class="list-disc list-inside text-slate-300 space-y-2 ml-2">
-        <li><a href="/doc-converter.html" class="text-cyan-400 hover:underline font-medium">Document Converter</a> &ndash; Word, Excel and text files to PDF</li>
-        <li><a href="/image-compressor.html" class="text-cyan-400 hover:underline font-medium">Image Compressor</a> &ndash; reduce JPG, PNG and WebP file size</li>
-        <li><a href="/pdf-page-remover.html" class="text-cyan-400 hover:underline font-medium">PDF Page Remover</a> &ndash; delete pages from a PDF with previews</li>
-        <li><a href="/qr-generator.html" class="text-cyan-400 hover:underline font-medium">QR Code Generator</a> &ndash; QR codes for links, WiFi and contacts</li>
-        <li><a href="/json-formatter.html" class="text-cyan-400 hover:underline font-medium">JSON Formatter</a> &ndash; format, validate and minify JSON</li>
-        <li><a href="/password-generator.html" class="text-cyan-400 hover:underline font-medium">Password Generator</a> &ndash; random passwords using the browser's crypto API</li>
-        <li><a href="/case-converter.html" class="text-cyan-400 hover:underline font-medium">Case Converter</a> &ndash; UPPERCASE, Title Case, camelCase and slugs</li>
-        <li><a href="/counter.html" class="text-cyan-400 hover:underline font-medium">Word Counter</a> &ndash; words, characters and reading time</li>
-        <li><a href="/lorem-ipsum.html" class="text-cyan-400 hover:underline font-medium">Lorem Ipsum Generator</a> &ndash; placeholder text for layouts</li>
-        <li><a href="/summarizer.html" class="text-cyan-400 hover:underline font-medium">Text Summarizer</a> &ndash; extractive summary of long text</li>
-        <li><a href="/seo-audit.html" class="text-cyan-400 hover:underline font-medium">SEO Site Audit</a> &ndash; basic on-page and technical SEO checks</li>
-        <li><a href="/adsense-checker.html" class="text-cyan-400 hover:underline font-medium">AdSense Checker</a> &ndash; a checklist-style readiness review</li>
-        <li><a href="/speed-test.html" class="text-cyan-400 hover:underline font-medium">Speed Test</a> &ndash; download, upload and ping</li>
-        <li><a href="/email-generator.html" class="text-cyan-400 hover:underline font-medium">Email Generator</a> &ndash; temporary inbox for verification emails</li>
-      </ul>
-      <p class="text-slate-400 text-sm">The Text Summarizer is an algorithm that picks the most important sentences from your text. It is not a generative AI model.</p>
-    </div>
-
-    <div class="glass rounded-2xl p-6 sm:p-8 space-y-4">
-      <h2 class="text-2xl font-bold text-white">Quality and corrections</h2>
-      <p class="text-slate-300 leading-relaxed">
-        We try to describe each tool honestly, including its limits. Browser-based conversion can differ from desktop software, for example complex Word layouts may not convert perfectly. If you find a bug, a wrong explanation or a broken link, please <a href="/contact.html" class="text-cyan-400 hover:underline">tell us</a> and we will fix it.
+</div>
+<div class="glass rounded-2xl p-6 sm:p-8 space-y-4">
+<h2 class="text-2xl font-bold text-white">Our tools</h2>
+<ul class="list-disc list-inside text-slate-300 space-y-2 ml-2">
+<li><a class="text-cyan-400 hover:underline font-medium" href="/doc-converter.html">Document Converter</a> – Word, Excel and text files to PDF</li>
+<li><a class="text-cyan-400 hover:underline font-medium" href="/image-compressor.html">Image Compressor</a> – reduce JPG, PNG and WebP file size</li>
+<li><a class="text-cyan-400 hover:underline font-medium" href="/pdf-page-remover.html">PDF Page Remover</a> – delete pages from a PDF with previews</li>
+<li><a class="text-cyan-400 hover:underline font-medium" href="/qr-generator.html">QR Code Generator</a> – QR codes for links, WiFi and contacts</li>
+<li><a class="text-cyan-400 hover:underline font-medium" href="/json-formatter.html">JSON Formatter</a> – format, validate and minify JSON</li>
+<li><a class="text-cyan-400 hover:underline font-medium" href="/password-generator.html">Password Generator</a> – random passwords using the browser's crypto API</li>
+<li><a class="text-cyan-400 hover:underline font-medium" href="/case-converter.html">Case Converter</a> – UPPERCASE, Title Case, camelCase and slugs</li>
+<li><a class="text-cyan-400 hover:underline font-medium" href="/counter.html">Word Counter</a> – words, characters and reading time</li>
+<li><a class="text-cyan-400 hover:underline font-medium" href="/lorem-ipsum.html">Lorem Ipsum Generator</a> – placeholder text for layouts</li>
+<li><a class="text-cyan-400 hover:underline font-medium" href="/summarizer.html">Text Summarizer</a> – extractive summary of long text</li>
+<li><a class="text-cyan-400 hover:underline font-medium" href="/seo-audit.html">SEO Site Audit</a> – basic on-page and technical SEO checks</li>
+<li><a class="text-cyan-400 hover:underline font-medium" href="/adsense-checker.html">AdSense Checker</a> – a checklist-style readiness review</li>
+<li><a class="text-cyan-400 hover:underline font-medium" href="/speed-test.html">Speed Test</a> – download, upload and ping</li>
+<li><a class="text-cyan-400 hover:underline font-medium" href="/email-generator.html">Email Generator</a> – temporary inbox for verification emails</li>
+</ul>
+<p class="text-slate-400 text-sm">The Text Summarizer is an algorithm that picks the most important sentences from your text. It is not a generative AI model.</p>
+</div>
+<div class="glass rounded-2xl p-6 sm:p-8 space-y-4">
+<h2 class="text-2xl font-bold text-white">Quality and corrections</h2>
+<p class="text-slate-300 leading-relaxed">
+        We try to describe each tool honestly, including its limits. Browser-based conversion can differ from desktop software, for example complex Word layouts may not convert perfectly. If you find a bug, a wrong explanation or a broken link, please <a class="text-cyan-400 hover:underline" href="/contact.html">tell us</a> and we will fix it.
       </p>
-    </div>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="border-t border-slate-800 py-10 mt-12">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-2">
-        <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white text-xs font-bold">BT</div>
-        <span class="text-slate-400 text-sm">© 2026 Browser Tools Hub. All rights reserved.</span>
-      </div>
-      <div class="flex gap-4 text-sm font-medium text-slate-300">
-        <a href="/about.html" class="text-cyan-400 transition-colors">About</a>
-        <a href="/privacy.html" class="hover:text-cyan-400 transition-colors">Privacy Policy</a>
-        <a href="/terms.html" class="hover:text-cyan-400 transition-colors">Terms & Conditions</a>
-      </div>
-      <p class="text-slate-500 text-sm">100% Free • No Signup • Fast Runs in Browser</p>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script>
+</div>
+</main>
+<!-- FOOTER -->
+<footer class="border-t border-slate-800 py-10 mt-12">
+<div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white text-xs font-bold">BT</div>
+<span class="text-slate-400 text-sm">© 2026 Browser Tools Hub. All rights reserved.</span>
+</div>
+<div class="flex gap-4 text-sm font-medium text-slate-300">
+<a class="text-cyan-400 transition-colors" href="/about.html">About</a>
+<a class="hover:text-cyan-400 transition-colors" href="/privacy.html">Privacy Policy</a>
+<a class="hover:text-cyan-400 transition-colors" href="/terms.html">Terms &amp; Conditions</a>
+</div>
+<p class="text-slate-500 text-sm">100% Free • No Signup • Fast Runs in Browser</p>
+</div>
+</footer>
+<!-- Scripts -->
+<script>
     const btn = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');
     if (btn && menu) {

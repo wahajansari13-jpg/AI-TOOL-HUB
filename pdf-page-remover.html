@@ -1,22 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+
+<html class="scroll-smooth" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="googlebot" content="index, follow">
-  
-  <!-- Favicon (BT Logo) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%2306b6d4'/><stop offset='100%' stop-color='%232563eb'/></linearGradient></defs><rect width='100' height='100' rx='25' fill='url(%23grad)'/><text x='50' y='55' font-family='Arial, sans-serif' font-size='45' font-weight='bold' fill='white' dominant-baseline='middle' text-anchor='middle'>BT</text></svg>">
-
-  <title>Free Online PDF Page Remover | Delete PDF Pages with Preview</title>
-  <meta name="description" content="Delete unwanted pages from PDF documents with a visual page preview. Select pages, delete multiple times, and download instantly. 100% private client-side security.">
-  <link rel="canonical" href="https://browsertools.site/pdf-page-remover.html">
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow, max-image-preview:large" name="robots"/>
+<meta content="index, follow" name="googlebot"/>
+<!-- Favicon (BT Logo) -->
+<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;defs&gt;&lt;linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'&gt;&lt;stop offset='0%' stop-color='%2306b6d4'/&gt;&lt;stop offset='100%' stop-color='%232563eb'/&gt;&lt;/linearGradient&gt;&lt;/defs&gt;&lt;rect width='100' height='100' rx='25' fill='url(%23grad)'/&gt;&lt;text x='50' y='55' font-family='Arial, sans-serif' font-size='45' font-weight='bold' fill='white' dominant-baseline='middle' text-anchor='middle'&gt;BT&lt;/text&gt;&lt;/svg&gt;" rel="icon"/>
+<title>PDF Page Remover – Delete Pages from a PDF</title>
+<meta content="Remove selected pages from a PDF with page previews, then download the revised file. PDF processing runs locally in your browser." name="description"/>
+<link href="https://browsertools.site/pdf-page-remover.html" rel="canonical"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<style>
     html { scroll-behavior: smooth; }
     ::-webkit-scrollbar { width: 10px; }
     ::-webkit-scrollbar-track { background: #020617; }
@@ -32,233 +30,211 @@
     .page-num { position: absolute; bottom: 6px; left: 6px; background: rgba(0,0,0,.75); color: white; font-size: 11px; font-weight: 600; padding: 2px 7px; border-radius: 4px; z-index: 5; }
     canvas { display: block; width: 100%; height: auto; border-radius: 6px; }
   </style>
-  <meta property="og:title" content="Free Online PDF Page Remover">
-  <meta property="og:description" content="Delete unwanted pages from PDF documents with a visual page preview. Select pages, delete multiple times, and download instantly. 100% private client-side security.">
-  <meta property="og:url" content="https://browsertools.site/pdf-page-remover.html">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Browser Tools Hub">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Free Online PDF Page Remover">
-  <meta name="twitter:description" content="Delete unwanted pages from PDF documents with a visual page preview. Select pages, delete multiple times, and download instantly. 100% private client-side security.">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "PDF Page Remover",
-    "url": "https://browsertools.site/pdf-page-remover.html",
-    "description": "Delete unwanted pages from PDF documents with a visual page preview. Select pages, delete multiple times, and download instantly. 100% private client-side security.",
-    "applicationCategory": "UtilitiesApplication",
-    "operatingSystem": "Any (web browser)",
-    "browserRequirements": "Requires JavaScript",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
+<meta content="PDF Page Remover – Delete Pages from a PDF" property="og:title"/>
+<meta content="Remove selected pages from a PDF with page previews, then download the revised file. PDF processing runs locally in your browser." property="og:description"/>
+<meta content="https://browsertools.site/pdf-page-remover.html" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="Browser Tools Hub" property="og:site_name"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="PDF Page Remover – Delete Pages from a PDF" name="twitter:title"/>
+<meta content="Remove selected pages from a PDF with page previews, then download the revised file. PDF processing runs locally in your browser." name="twitter:description"/>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "PDF Page Remover",
+  "url": "https://browsertools.site/pdf-page-remover.html",
+  "description": "Remove selected pages from a PDF with page previews, then download the revised file. PDF processing runs locally in your browser.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (web browser)",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Browser Tools Hub",
+    "url": "https://browsertools.site/"
+  }
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://browsertools.site/"
     },
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "Browser Tools Hub",
-      "url": "https://browsertools.site/"
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "PDF Page Remover",
+      "item": "https://browsertools.site/pdf-page-remover.html"
     }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://browsertools.site/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "PDF Page Remover",
-        "item": "https://browsertools.site/pdf-page-remover.html"
-      }
-    ]
-  }
-  </script>
-</head>
+  ]
+}</script>
+<meta content="#020617" name="theme-color"/></head>
 <body class="text-slate-200 min-h-screen font-sans antialiased flex flex-col">
-
-  <!-- NAVIGATION -->
-  <nav aria-label="Main navigation" class="bg-slate-950/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        <a href="/" class="flex items-center gap-2.5 group">
-          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-cyan-500/20">BT</div>
-          <span class="text-white font-semibold text-lg tracking-tight group-hover:text-cyan-400 transition">Browser Tools Hub</span>
-        </a>
-        <div class="hidden md:flex items-center gap-1">
-          <a href="/" class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition">Home</a>
-          <div class="relative group">
-            <button class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition flex items-center gap-1.5">
-              All Tools <svg class="w-4 h-4 transition duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <div class="absolute left-0 mt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-              <div class="bg-slate-900 border border-slate-700/80 rounded-xl shadow-2xl py-2 overflow-hidden">
-                <a href="/image-compressor.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">🖼️ Image Compressor</a>
-                <a href="/case-converter.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">Aa Case Converter</a>
-                <a href="/password-generator.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">🔒 Password Generator</a>
-                <a href="/counter.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">🔢 Word Counter</a>
-                <a href="/qr-generator.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">📱 QR Code Generator</a>
-                <a href="/pdf-page-remover.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-cyan-400 hover:bg-slate-800 transition font-medium">📄 PDF Page Remover</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-300 hover:text-white"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
-      </div>
-    </div>
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-slate-950">
-      <div class="px-4 py-3 space-y-1">
-        <a href="/" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Home</a>
-        <a href="/image-compressor.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Image Compressor</a>
-        <a href="/case-converter.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Case Converter</a>
-        <a href="/password-generator.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Password Generator</a>
-        <a href="/counter.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Word Counter</a>
-        <a href="/qr-generator.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">QR Code Generator</a>
-        <a href="/pdf-page-remover.html" class="block px-3 py-2.5 rounded-lg text-cyan-400 hover:bg-slate-800 hover:text-white font-medium">PDF Page Remover</a>
-      </div>
-    </div>
-  </nav>
-
-  <main class="max-w-5xl w-full mx-auto px-4 py-10 flex-grow">
-    <div class="text-center mb-8">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-medium mb-4">
+<!-- NAVIGATION -->
+<nav aria-label="Main navigation" class="bg-slate-950/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<a class="flex items-center gap-2.5 group" href="/">
+<div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-cyan-500/20">BT</div>
+<span class="text-white font-semibold text-lg tracking-tight group-hover:text-cyan-400 transition">Browser Tools Hub</span>
+</a>
+<div class="hidden md:flex items-center gap-1">
+<a class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition" href="/">Home</a>
+<div class="relative group">
+<button class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition flex items-center gap-1.5">
+              All Tools <svg class="w-4 h-4 transition duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+<div class="absolute left-0 mt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+<div class="bg-slate-900 border border-slate-700/80 rounded-xl shadow-2xl py-2 overflow-hidden">
+<a class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition" href="/image-compressor.html">🖼️ Image Compressor</a>
+<a class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition" href="/case-converter.html">Aa Case Converter</a>
+<a class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition" href="/password-generator.html">🔒 Password Generator</a>
+<a class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition" href="/counter.html">🔢 Word Counter</a>
+<a class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition" href="/qr-generator.html">📱 QR Code Generator</a>
+<a class="flex items-center gap-3 px-4 py-2.5 text-sm text-cyan-400 hover:bg-slate-800 transition font-medium" href="/pdf-page-remover.html">📄 PDF Page Remover</a>
+</div>
+</div>
+</div>
+</div>
+<button class="md:hidden p-2 text-slate-300 hover:text-white" id="mobile-menu-btn"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button>
+</div>
+</div>
+<!-- Mobile Menu -->
+<div class="hidden md:hidden border-t border-slate-800 bg-slate-950" id="mobile-menu">
+<div class="px-4 py-3 space-y-1">
+<a class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white" href="/">Home</a>
+<a class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white" href="/image-compressor.html">Image Compressor</a>
+<a class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white" href="/case-converter.html">Case Converter</a>
+<a class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white" href="/password-generator.html">Password Generator</a>
+<a class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white" href="/counter.html">Word Counter</a>
+<a class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white" href="/qr-generator.html">QR Code Generator</a>
+<a class="block px-3 py-2.5 rounded-lg text-cyan-400 hover:bg-slate-800 hover:text-white font-medium" href="/pdf-page-remover.html">PDF Page Remover</a>
+</div>
+</div>
+</nav>
+<main class="max-w-5xl w-full mx-auto px-4 py-10 flex-grow">
+<div class="text-center mb-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-medium mb-4">
         📄 PDF Document Tool
       </div>
-      <h1 class="text-3xl sm:text-4xl font-bold text-white mb-3">Free Online PDF Page Remover</h1>
-      <p class="text-slate-400 text-sm max-w-2xl mx-auto">Upload your PDF, visually preview pages, select unwanted pages to delete, and download your modified document securely.</p>
-    </div>
-
-    <!-- TOOL CONTROLS -->
-    <div class="glass rounded-2xl p-6 sm:p-8 mb-6">
-      
-      <!-- Upload Zone -->
-      <div id="uploadZone" class="border-2 border-dashed border-slate-600 rounded-xl p-10 text-center cursor-pointer hover:border-cyan-500 transition">
-        <input type="file" id="fileInput" accept="application/pdf" class="hidden">
-        <div class="text-4xl mb-3">📂</div>
-        <p class="text-slate-300 font-medium mb-1">Click or Drag & Drop PDF here</p>
-        <p class="text-xs text-slate-500">100% Private — Files stay locally in your browser</p>
-      </div>
-
-      <!-- Tool Area -->
-      <div id="toolArea" class="hidden">
-        
-        <!-- Top Action Bar -->
-        <div class="flex flex-wrap items-center justify-between gap-3 mb-5 pb-4 border-b border-slate-800">
-          <div>
-            <p class="text-sm text-white font-medium truncate max-w-xs sm:max-w-md" id="fileName"></p>
-            <p class="text-xs text-cyan-400 font-medium" id="pageInfo"></p>
-          </div>
-          <div class="flex flex-wrap gap-2">
-            <button onclick="downloadPDF()" id="downloadBtn" class="hidden px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white text-sm font-semibold transition shadow-lg shadow-cyan-500/20">Download PDF</button>
-            <button onclick="resetAll()" class="px-4 py-2.5 rounded-xl border border-slate-700 bg-slate-800/50 text-slate-300 hover:bg-slate-800 transition text-sm">New PDF</button>
-          </div>
-        </div>
-
-        <!-- Success message -->
-        <div id="successMsg" class="hidden bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-3 mb-4 text-center">
-          <p class="text-emerald-400 text-sm font-medium">✓ Pages deleted successfully! You can select and delete more pages or download your PDF now.</p>
-        </div>
-
-        <!-- Selection controls -->
-        <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
-          <div class="flex gap-2">
-            <button onclick="selectAll()" class="px-3.5 py-2 rounded-lg bg-slate-800/80 border border-slate-700 text-xs text-slate-300 hover:bg-slate-700 hover:text-white transition">Select All</button>
-            <button onclick="selectNone()" class="px-3.5 py-2 rounded-lg bg-slate-800/80 border border-slate-700 text-xs text-slate-300 hover:bg-slate-700 hover:text-white transition">Clear Selection</button>
-          </div>
-          <button onclick="deletePages()" id="deleteBtn" class="px-5 py-2 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white text-xs font-semibold transition shadow-md">Delete Selected Pages</button>
-        </div>
-
-        <p class="text-xs text-slate-400 mb-4">Click pages you want to <span class="text-red-400 font-semibold">delete</span>. You can perform multiple deletion passes.</p>
-
-        <!-- Pages Grid -->
-        <div id="pagesGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"></div>
-
-        <p id="status" class="text-xs text-slate-400 mt-4 font-medium"></p>
-      </div>
-    </div>
-
-    <!-- SEO ARTICLE -->
-    <article class="mt-16 space-y-10">
-      <div>
-        <h2 class="text-3xl font-bold text-white mb-6">The Ultimate Guide to Managing PDF Documents: How to Remove Unwanted Pages Securely</h2>
-        <p class="text-slate-400 leading-relaxed mb-4">
+<h1 class="text-3xl sm:text-4xl font-bold text-white mb-3">Free Online PDF Page Remover</h1>
+<p class="text-slate-400 text-sm max-w-2xl mx-auto">Upload your PDF, visually preview pages, select unwanted pages to delete, and download your modified document securely.</p>
+</div>
+<!-- TOOL CONTROLS -->
+<div class="glass rounded-2xl p-6 sm:p-8 mb-6">
+<!-- Upload Zone -->
+<div class="border-2 border-dashed border-slate-600 rounded-xl p-10 text-center cursor-pointer hover:border-cyan-500 transition" id="uploadZone">
+<input accept="application/pdf" class="hidden" id="fileInput" type="file"/>
+<div class="text-4xl mb-3">📂</div>
+<p class="text-slate-300 font-medium mb-1">Click or Drag &amp; Drop PDF here</p>
+<p class="text-xs text-slate-500">100% Private — Files stay locally in your browser</p>
+</div>
+<!-- Tool Area -->
+<div class="hidden" id="toolArea">
+<!-- Top Action Bar -->
+<div class="flex flex-wrap items-center justify-between gap-3 mb-5 pb-4 border-b border-slate-800">
+<div>
+<p class="text-sm text-white font-medium truncate max-w-xs sm:max-w-md" id="fileName"></p>
+<p class="text-xs text-cyan-400 font-medium" id="pageInfo"></p>
+</div>
+<div class="flex flex-wrap gap-2">
+<button class="hidden px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white text-sm font-semibold transition shadow-lg shadow-cyan-500/20" id="downloadBtn" onclick="downloadPDF()">Download PDF</button>
+<button class="px-4 py-2.5 rounded-xl border border-slate-700 bg-slate-800/50 text-slate-300 hover:bg-slate-800 transition text-sm" onclick="resetAll()">New PDF</button>
+</div>
+</div>
+<!-- Success message -->
+<div class="hidden bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-3 mb-4 text-center" id="successMsg">
+<p class="text-emerald-400 text-sm font-medium">✓ Pages deleted successfully! You can select and delete more pages or download your PDF now.</p>
+</div>
+<!-- Selection controls -->
+<div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+<div class="flex gap-2">
+<button class="px-3.5 py-2 rounded-lg bg-slate-800/80 border border-slate-700 text-xs text-slate-300 hover:bg-slate-700 hover:text-white transition" onclick="selectAll()">Select All</button>
+<button class="px-3.5 py-2 rounded-lg bg-slate-800/80 border border-slate-700 text-xs text-slate-300 hover:bg-slate-700 hover:text-white transition" onclick="selectNone()">Clear Selection</button>
+</div>
+<button class="px-5 py-2 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white text-xs font-semibold transition shadow-md" id="deleteBtn" onclick="deletePages()">Delete Selected Pages</button>
+</div>
+<p class="text-xs text-slate-400 mb-4">Click pages you want to <span class="text-red-400 font-semibold">delete</span>. You can perform multiple deletion passes.</p>
+<!-- Pages Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4" id="pagesGrid"></div>
+<p class="text-xs text-slate-400 mt-4 font-medium" id="status"></p>
+</div>
+</div>
+<!-- SEO ARTICLE -->
+<article class="mt-16 space-y-10">
+<div>
+<h2 class="text-3xl font-bold text-white mb-6">The Ultimate Guide to Managing PDF Documents: How to Remove Unwanted Pages Securely</h2>
+<p class="text-slate-400 leading-relaxed mb-4">
           Portable Document Format (PDF) files are the universal standard for sharing professional reports, contracts, invoices, ebooks, and academic research papers. However, PDFs are notoriously rigid. Often, you receive or generate a multi-page document containing redundant cover pages, blank sheets, confidential annexes, or unneeded chapters that you need to eliminate before sending.
         </p>
-        <p class="text-slate-400 leading-relaxed mb-4">
+<p class="text-slate-400 leading-relaxed mb-4">
           Traditional desktop PDF editors require heavy software installations or expensive paid subscriptions. Meanwhile, standard online PDF converters present severe privacy risks by uploading your sensitive corporate contracts or personal documents onto third-party cloud servers. At Browser Tools Hub, our free online <strong>PDF Page Remover</strong> solves both problems by letting you view, select, and delete PDF pages directly inside your web browser with 100% client-side privacy.
         </p>
-      </div>
-
-      <div>
-        <h2 class="text-2xl font-bold text-white mb-4">Why Client-Side PDF Processing is Critical for Privacy</h2>
-        <p class="text-slate-400 leading-relaxed mb-4">
+</div>
+<div>
+<h2 class="text-2xl font-bold text-white mb-4">Why Client-Side PDF Processing is Critical for Privacy</h2>
+<p class="text-slate-400 leading-relaxed mb-4">
           When dealing with confidential tax records, legal briefs, or proprietary business documents, data security is non-negotiable. Our tool utilizes advanced web libraries (`pdf-lib` and `pdf.js`) to parse, render thumbnails, and modify your PDF streams locally in your browser's memory. Your files are never uploaded, stored, or reviewed by any external server.
         </p>
-      </div>
-
-      <div>
-        <h2 class="text-2xl font-bold text-white mb-4">How to Use the Free PDF Page Remover</h2>
-        <ol class="list-decimal list-inside text-slate-400 space-y-2 mb-4 ml-4">
-          <li><strong>Upload Your PDF:</strong> Drag and drop your PDF document into the designated upload zone or click to browse files from your computer.</li>
-          <li><strong>Preview Pages Visually:</strong> Browse the rendered thumbnail grid displaying every page of your document clearly.</li>
-          <li><strong>Select Pages for Deletion:</strong> Click on any page card you wish to remove. Selected pages will display a red deletion badge.</li>
-          <li><strong>Execute & Download:</strong> Click "Delete Selected Pages" to trim the document. You can download the final PDF immediately or perform additional deletion passes.</li>
-        </ol>
-      </div>
-
-      <div>
-        <h2 class="text-2xl font-bold text-white mb-6">Frequently Asked Questions (FAQs)</h2>
-        <div class="space-y-4">
-          <div class="glass rounded-xl p-5 border border-slate-800">
-            <h3 class="text-white font-semibold mb-2">Are my PDF files uploaded to a remote server?</h3>
-            <p class="text-slate-400 text-sm">No, absolutely not. All processing occurs locally in your browser memory using JavaScript, ensuring complete confidentiality.</p>
-          </div>
-          <div class="glass rounded-xl p-5 border border-slate-800">
-            <h3 class="text-white font-semibold mb-2">Can I delete multiple non-consecutive pages?</h3>
-            <p class="text-slate-400 text-sm">Yes! You can select any combination of pages across the entire document and delete them all at once, or do it in multiple passes.</p>
-          </div>
-          <div class="glass rounded-xl p-5 border border-slate-800">
-            <h3 class="text-white font-semibold mb-2">Is there a file size limit or page limit?</h3>
-            <p class="text-slate-400 text-sm">Since processing relies on your computer's browser performance, it handles most standard PDFs smoothly without artificial restrictions.</p>
-          </div>
-        </div>
-      </div>
-    </article>
-  </main>
-  <section class="related-tools" style="max-width:56rem;margin:40px auto 0;padding:0 16px;">
-    <h2 style="font-size:18px;font-weight:700;margin:0 0 10px;color:inherit;">Related free tools</h2>
-    <div><a href="/doc-converter.html" class="related-link" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 14px;border:1px solid #334155;border-radius:10px;color:#22d3ee;text-decoration:none;font-size:14px;">Document Converter</a><a href="/image-compressor.html" class="related-link" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 14px;border:1px solid #334155;border-radius:10px;color:#22d3ee;text-decoration:none;font-size:14px;">Image Compressor</a><a href="/counter.html" class="related-link" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 14px;border:1px solid #334155;border-radius:10px;color:#22d3ee;text-decoration:none;font-size:14px;">Word Counter</a><a href="/" class="related-link" style="display:inline-block;margin:4px 0;padding:8px 14px;color:#94a3b8;text-decoration:none;font-size:14px;">All tools →</a></div>
-  </section>
-
-
-  <!-- FOOTER -->
-  <footer class="border-t border-slate-800 py-10 mt-10">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-2">
-        <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white text-xs font-bold">BT</div>
-        <span class="text-slate-400 text-sm">© 2026 Browser Tools Hub. All rights reserved.</span>
-      </div>
-      <div class="flex gap-4 text-sm font-medium text-slate-300">
-        <a href="/about.html" class="hover:text-cyan-400 transition-colors">About</a>
-        <a href="/privacy.html" class="hover:text-cyan-400 transition-colors">Privacy Policy</a>
-        <a href="/terms.html" class="hover:text-cyan-400 transition-colors">Terms & Conditions</a>
-        <a href="/contact.html" class="hover:text-cyan-400 transition-colors">Contact</a>
-      </div>
-      <p class="text-slate-500 text-sm">100% Free • No Signup • Fast Runs in Browser</p>
-    </div>
-  </footer>
-
-  <!-- JAVASCRIPT -->
-  <script>
+</div>
+<div>
+<h2 class="text-2xl font-bold text-white mb-4">How to Use the Free PDF Page Remover</h2>
+<ol class="list-decimal list-inside text-slate-400 space-y-2 mb-4 ml-4">
+<li><strong>Upload Your PDF:</strong> Drag and drop your PDF document into the designated upload zone or click to browse files from your computer.</li>
+<li><strong>Preview Pages Visually:</strong> Browse the rendered thumbnail grid displaying every page of your document clearly.</li>
+<li><strong>Select Pages for Deletion:</strong> Click on any page card you wish to remove. Selected pages will display a red deletion badge.</li>
+<li><strong>Execute &amp; Download:</strong> Click "Delete Selected Pages" to trim the document. You can download the final PDF immediately or perform additional deletion passes.</li>
+</ol>
+</div>
+<div>
+<h2 class="text-2xl font-bold text-white mb-6">Frequently Asked Questions (FAQs)</h2>
+<div class="space-y-4">
+<div class="glass rounded-xl p-5 border border-slate-800">
+<h3 class="text-white font-semibold mb-2">Are my PDF files uploaded to a remote server?</h3>
+<p class="text-slate-400 text-sm">No, absolutely not. All processing occurs locally in your browser memory using JavaScript, ensuring complete confidentiality.</p>
+</div>
+<div class="glass rounded-xl p-5 border border-slate-800">
+<h3 class="text-white font-semibold mb-2">Can I delete multiple non-consecutive pages?</h3>
+<p class="text-slate-400 text-sm">Yes! You can select any combination of pages across the entire document and delete them all at once, or do it in multiple passes.</p>
+</div>
+<div class="glass rounded-xl p-5 border border-slate-800">
+<h3 class="text-white font-semibold mb-2">Is there a file size limit or page limit?</h3>
+<p class="text-slate-400 text-sm">Since processing relies on your computer's browser performance, it handles most standard PDFs smoothly without artificial restrictions.</p>
+</div>
+</div>
+</div>
+</article>
+</main>
+<section class="related-tools" style="max-width:56rem;margin:40px auto 0;padding:0 16px;">
+<h2 style="font-size:18px;font-weight:700;margin:0 0 10px;color:inherit;">Related free tools</h2>
+<div><a class="related-link" href="/doc-converter.html" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 14px;border:1px solid #334155;border-radius:10px;color:#22d3ee;text-decoration:none;font-size:14px;">Document Converter</a><a class="related-link" href="/image-compressor.html" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 14px;border:1px solid #334155;border-radius:10px;color:#22d3ee;text-decoration:none;font-size:14px;">Image Compressor</a><a class="related-link" href="/counter.html" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 14px;border:1px solid #334155;border-radius:10px;color:#22d3ee;text-decoration:none;font-size:14px;">Word Counter</a><a class="related-link" href="/" style="display:inline-block;margin:4px 0;padding:8px 14px;color:#94a3b8;text-decoration:none;font-size:14px;">All tools →</a></div>
+</section>
+<!-- FOOTER -->
+<footer class="border-t border-slate-800 py-10 mt-10">
+<div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white text-xs font-bold">BT</div>
+<span class="text-slate-400 text-sm">© 2026 Browser Tools Hub. All rights reserved.</span>
+</div>
+<div class="flex gap-4 text-sm font-medium text-slate-300">
+<a class="hover:text-cyan-400 transition-colors" href="/about.html">About</a>
+<a class="hover:text-cyan-400 transition-colors" href="/privacy.html">Privacy Policy</a>
+<a class="hover:text-cyan-400 transition-colors" href="/terms.html">Terms &amp; Conditions</a>
+<a class="hover:text-cyan-400 transition-colors" href="/contact.html">Contact</a>
+</div>
+<p class="text-slate-500 text-sm">100% Free • No Signup • Fast Runs in Browser</p>
+</div>
+</footer>
+<!-- JAVASCRIPT -->
+<script>
     // Mobile Menu Toggle
     const btn = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');

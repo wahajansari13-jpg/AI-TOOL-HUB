@@ -1,21 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+
+<html class="scroll-smooth" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="googlebot" content="index, follow">
-  
-  <!-- Favicon (BT Logo) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%2306b6d4'/><stop offset='100%' stop-color='%232563eb'/></linearGradient></defs><rect width='100' height='100' rx='25' fill='url(%23grad)'/><text x='50' y='55' font-family='Arial, sans-serif' font-size='45' font-weight='bold' fill='white' dominant-baseline='middle' text-anchor='middle'>BT</text></svg>">
-
-  <title>Free Online QR Code Generator | Create Custom QR Codes Instantly</title>
-  <meta name="description" content="Generate high-resolution scannable QR codes for websites, links, text, and data instantly with our free online QR code generator tool. 100% private client-side utility.">
-  <link rel="canonical" href="https://browsertools.site/qr-generator.html">
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow, max-image-preview:large" name="robots"/>
+<meta content="index, follow" name="googlebot"/>
+<!-- Favicon (BT Logo) -->
+<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;defs&gt;&lt;linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'&gt;&lt;stop offset='0%' stop-color='%2306b6d4'/&gt;&lt;stop offset='100%' stop-color='%232563eb'/&gt;&lt;/linearGradient&gt;&lt;/defs&gt;&lt;rect width='100' height='100' rx='25' fill='url(%23grad)'/&gt;&lt;text x='50' y='55' font-family='Arial, sans-serif' font-size='45' font-weight='bold' fill='white' dominant-baseline='middle' text-anchor='middle'&gt;BT&lt;/text&gt;&lt;/svg&gt;" rel="icon"/>
+<title>QR Code Generator – Create QR Codes for Links &amp; Text</title>
+<meta content="Create QR codes for website URLs and text. Generate a scannable code in your browser and download it for print or digital use." name="description"/>
+<link href="https://browsertools.site/qr-generator.html" rel="canonical"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
     html { scroll-behavior: smooth; }
     ::-webkit-scrollbar { width: 10px; }
     ::-webkit-scrollbar-track { background: #020617; }
@@ -24,195 +22,180 @@
     body { background: #020617; }
     .glass { background: rgba(15,23,42,.75); backdrop-filter: blur(12px); border: 1px solid rgba(148,163,184,.12); }
   </style>
-  <meta property="og:title" content="Free Online QR Code Generator">
-  <meta property="og:description" content="Generate high-resolution scannable QR codes for websites, links, text, and data instantly with our free online QR code generator tool. 100% private client-side utility.">
-  <meta property="og:url" content="https://browsertools.site/qr-generator.html">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Browser Tools Hub">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Free Online QR Code Generator">
-  <meta name="twitter:description" content="Generate high-resolution scannable QR codes for websites, links, text, and data instantly with our free online QR code generator tool. 100% private client-side utility.">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "QR Code Generator",
-    "url": "https://browsertools.site/qr-generator.html",
-    "description": "Generate high-resolution scannable QR codes for websites, links, text, and data instantly with our free online QR code generator tool. 100% private client-side utility.",
-    "applicationCategory": "UtilitiesApplication",
-    "operatingSystem": "Any (web browser)",
-    "browserRequirements": "Requires JavaScript",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
+<meta content="QR Code Generator – Create QR Codes for Links &amp; Text" property="og:title"/>
+<meta content="Create QR codes for website URLs and text. Generate a scannable code in your browser and download it for print or digital use." property="og:description"/>
+<meta content="https://browsertools.site/qr-generator.html" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="Browser Tools Hub" property="og:site_name"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="QR Code Generator – Create QR Codes for Links &amp; Text" name="twitter:title"/>
+<meta content="Create QR codes for website URLs and text. Generate a scannable code in your browser and download it for print or digital use." name="twitter:description"/>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "QR Code Generator",
+  "url": "https://browsertools.site/qr-generator.html",
+  "description": "Create QR codes for website URLs and text. Generate a scannable code in your browser and download it for print or digital use.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (web browser)",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Browser Tools Hub",
+    "url": "https://browsertools.site/"
+  }
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://browsertools.site/"
     },
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "Browser Tools Hub",
-      "url": "https://browsertools.site/"
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "QR Code Generator",
+      "item": "https://browsertools.site/qr-generator.html"
     }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://browsertools.site/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "QR Code Generator",
-        "item": "https://browsertools.site/qr-generator.html"
-      }
-    ]
-  }
-  </script>
-</head>
+  ]
+}</script>
+<meta content="#020617" name="theme-color"/></head>
 <body class="text-slate-200 min-h-screen font-sans antialiased flex flex-col">
-
-  <!-- NAVIGATION -->
-  <nav aria-label="Main navigation" class="bg-slate-950/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        <a href="/" class="flex items-center gap-2.5 group">
-          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-cyan-500/20">BT</div>
-          <span class="text-white font-semibold text-lg tracking-tight group-hover:text-cyan-400 transition">Browser Tools Hub</span>
-        </a>
-        <div class="hidden md:flex items-center gap-1">
-          <a href="/" class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition">Home</a>
-          <div class="relative group">
-            <button class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition flex items-center gap-1.5">
-              All Tools <svg class="w-4 h-4 transition duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <div class="absolute left-0 mt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-              <div class="bg-slate-900 border border-slate-700/80 rounded-xl shadow-2xl py-2 overflow-hidden">
-                <a href="/image-compressor.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">🖼️ Image Compressor</a>
-                <a href="/case-converter.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">Aa Case Converter</a>
-                <a href="/password-generator.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">🔒 Password Generator</a>
-                <a href="/counter.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">🔢 Word Counter</a>
-                <a href="/qr-generator.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 transition font-medium">📱 QR Code Generator</a>
-                <a href="/pdf-page-remover.html" class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition">📄 PDF Page Remover</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-300 hover:text-white"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+<!-- NAVIGATION -->
+<nav aria-label="Main navigation" class="bg-slate-950/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<a class="flex items-center gap-2.5 group" href="/">
+<div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-cyan-500/20">BT</div>
+<span class="text-white font-semibold text-lg tracking-tight group-hover:text-cyan-400 transition">Browser Tools Hub</span>
+</a>
+<div class="hidden md:flex items-center gap-1">
+<a class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition" href="/">Home</a>
+<div class="relative group">
+<button class="px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-lg transition flex items-center gap-1.5">
+              All Tools <svg class="w-4 h-4 transition duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+<div class="absolute left-0 mt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+<div class="bg-slate-900 border border-slate-700/80 rounded-xl shadow-2xl py-2 overflow-hidden">
+<a class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition" href="/image-compressor.html">🖼️ Image Compressor</a>
+<a class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition" href="/case-converter.html">Aa Case Converter</a>
+<a class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition" href="/password-generator.html">🔒 Password Generator</a>
+<a class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition" href="/counter.html">🔢 Word Counter</a>
+<a class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 transition font-medium" href="/qr-generator.html">📱 QR Code Generator</a>
+<a class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition" href="/pdf-page-remover.html">📄 PDF Page Remover</a>
+</div>
+</div>
+</div>
+</div>
+<button class="md:hidden p-2 text-slate-300 hover:text-white" id="mobile-menu-btn"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button>
+</div>
+</div>
+<!-- Mobile Menu -->
+<div class="hidden md:hidden border-t border-slate-800 bg-slate-950" id="mobile-menu">
+<div class="px-4 py-3 space-y-1">
+<a class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white" href="/">Home</a>
+<a class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white" href="/image-compressor.html">Image Compressor</a>
+<a class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white" href="/case-converter.html">Case Converter</a>
+<a class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white" href="/password-generator.html">Password Generator</a>
+<a class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white" href="/counter.html">Word Counter</a>
+<a class="block px-3 py-2.5 rounded-lg text-cyan-400 hover:bg-slate-800 hover:text-white font-medium" href="/qr-generator.html">QR Code Generator</a>
+<a class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white" href="/pdf-page-remover.html">PDF Page Remover</a>
+</div>
+</div>
+</nav>
+<main class="max-w-4xl w-full mx-auto px-4 py-10 flex-grow">
+<div class="text-center mb-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-medium mb-4">
+        📱 Digital Barcode &amp; Utility
       </div>
-    </div>
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-slate-950">
-      <div class="px-4 py-3 space-y-1">
-        <a href="/" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Home</a>
-        <a href="/image-compressor.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Image Compressor</a>
-        <a href="/case-converter.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Case Converter</a>
-        <a href="/password-generator.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Password Generator</a>
-        <a href="/counter.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">Word Counter</a>
-        <a href="/qr-generator.html" class="block px-3 py-2.5 rounded-lg text-cyan-400 hover:bg-slate-800 hover:text-white font-medium">QR Code Generator</a>
-        <a href="/pdf-page-remover.html" class="block px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white">PDF Page Remover</a>
-      </div>
-    </div>
-  </nav>
-
-  <main class="max-w-4xl w-full mx-auto px-4 py-10 flex-grow">
-    <div class="text-center mb-8">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-medium mb-4">
-        📱 Digital Barcode & Utility
-      </div>
-      <h1 class="text-3xl sm:text-4xl font-bold text-white mb-3">Free Online QR Code Generator</h1>
-      <p class="text-slate-400 text-sm max-w-2xl mx-auto">Convert URLs, landing pages, text snippets, contact details, and WiFi credentials into high-contrast scannable QR codes instantly.</p>
-    </div>
-
-    <!-- TOOL CONTROLS -->
-    <div class="glass rounded-2xl p-6 sm:p-8 mb-6">
-      <div class="mb-4">
-        <label for="qrInput" class="block text-xs font-semibold text-slate-400 mb-2 uppercase tracking-wider">Enter Destination URL or Text</label>
-        <input type="text" id="qrInput" class="w-full p-4 bg-slate-900/90 border border-slate-700 rounded-xl focus:outline-none focus:border-cyan-500 text-sm text-slate-200 placeholder-slate-500" placeholder="https://example.com" oninput="generateQR()">
-      </div>
-
-      <button onclick="generateQR()" class="w-full py-3.5 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 transition font-bold rounded-xl text-sm shadow-lg shadow-cyan-500/20 cursor-pointer text-white">Generate QR Code</button>
-
-      <div class="flex flex-col items-center justify-center pt-6 mt-6 border-t border-slate-800">
-        <div id="qrcode" class="p-4 bg-white rounded-xl shadow-xl inline-block"></div>
-        <p id="status" class="text-xs text-slate-400 mt-4 font-medium">Scan using any modern smartphone camera.</p>
-      </div>
-    </div>
-
-    <!-- SEO ARTICLE -->
-    <article class="mt-16 space-y-10">
-      <div>
-        <h2 class="text-3xl font-bold text-white mb-6">The Power of Quick Response (QR) Codes in Modern Marketing and Digital Workflow</h2>
-        <p class="text-slate-400 leading-relaxed mb-4">
+<h1 class="text-3xl sm:text-4xl font-bold text-white mb-3">Free Online QR Code Generator</h1>
+<p class="text-slate-400 text-sm max-w-2xl mx-auto">Convert URLs, landing pages, text snippets, contact details, and WiFi credentials into high-contrast scannable QR codes instantly.</p>
+</div>
+<!-- TOOL CONTROLS -->
+<div class="glass rounded-2xl p-6 sm:p-8 mb-6">
+<div class="mb-4">
+<label class="block text-xs font-semibold text-slate-400 mb-2 uppercase tracking-wider" for="qrInput">Enter Destination URL or Text</label>
+<input class="w-full p-4 bg-slate-900/90 border border-slate-700 rounded-xl focus:outline-none focus:border-cyan-500 text-sm text-slate-200 placeholder-slate-500" id="qrInput" oninput="generateQR()" placeholder="https://example.com" type="text"/>
+</div>
+<button class="w-full py-3.5 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 transition font-bold rounded-xl text-sm shadow-lg shadow-cyan-500/20 cursor-pointer text-white" onclick="generateQR()">Generate QR Code</button>
+<div class="flex flex-col items-center justify-center pt-6 mt-6 border-t border-slate-800">
+<div class="p-4 bg-white rounded-xl shadow-xl inline-block" id="qrcode"></div>
+<p class="text-xs text-slate-400 mt-4 font-medium" id="status">Scan using any modern smartphone camera.</p>
+</div>
+</div>
+<!-- SEO ARTICLE -->
+<article class="mt-16 space-y-10">
+<div>
+<h2 class="text-3xl font-bold text-white mb-6">The Power of Quick Response (QR) Codes in Modern Marketing and Digital Workflow</h2>
+<p class="text-slate-400 leading-relaxed mb-4">
           Quick Response (QR) codes have evolved from simple automotive logistics trackers into indispensable marketing and operational assets. They seamlessly bridge physical print media with digital web experiences. Whether deployed on product packaging, business cards, restaurant digital menus, event tickets, or architectural signage, QR codes empower users to transition instantly to online destinations without manual URL typing.
         </p>
-        <p class="text-slate-400 leading-relaxed mb-4">
+<p class="text-slate-400 leading-relaxed mb-4">
           At Browser Tools Hub, our free online <strong>QR Code Generator</strong> offers clean vector-level rendering with robust error correction support, ensuring high scan success rates across all mobile operating systems (iOS and Android). The entire generation process executes securely within your browser memory.
         </p>
-      </div>
-
-      <div>
-        <h2 class="text-2xl font-bold text-white mb-4">Common Use Cases for Custom QR Codes</h2>
-        <p class="text-slate-400 leading-relaxed mb-4">
+</div>
+<div>
+<h2 class="text-2xl font-bold text-white mb-4">Common Use Cases for Custom QR Codes</h2>
+<p class="text-slate-400 leading-relaxed mb-4">
           Versatility is the core strength of barcode technology. Here are the most popular ways individuals and businesses utilize QR codes daily:
         </p>
-        <ul class="list-disc list-inside text-slate-400 space-y-2 mb-4 ml-4">
-          <li><strong class="text-white">Website & Portfolio Links:</strong> Direct potential clients straight to your landing page or digital portfolio from print brochures.</li>
-          <li><strong class="text-white">Digital Business Cards (vCard):</strong> Share contact numbers, emails, and social profiles instantly by letting clients scan your card.</li>
-          <li><strong class="text-white">Wi-Fi Connection Sharing:</strong> Embed network credentials into a QR code so guests can join your home or office Wi-Fi network without typing passwords.</li>
-          <li><strong class="text-white">Event Check-Ins & Payments:</strong> Streamline ticketing, webinar registrations, and mobile payment gateways effortlessly.</li>
-        </ul>
-      </div>
-
-      <div>
-        <h2 class="text-2xl font-bold text-white mb-6">Frequently Asked Questions (FAQs)</h2>
-        <div class="space-y-4">
-          <div class="glass rounded-xl p-5 border border-slate-800">
-            <h3 class="text-white font-semibold mb-2">Do these generated QR codes expire?</h3>
-            <p class="text-slate-400 text-sm">No! Static QR codes generated here are permanent. As long as the destination URL or text remains active, your QR code will continue scanning indefinitely.</p>
-          </div>
-          <div class="glass rounded-xl p-5 border border-slate-800">
-            <h3 class="text-white font-semibold mb-2">Are my entered links or data stored on any server?</h3>
-            <p class="text-slate-400 text-sm">No. The QR code rendering happens completely client-side in JavaScript. Your data remains private and secure on your local device.</p>
-          </div>
-          <div class="glass rounded-xl p-5 border border-slate-800">
-            <h3 class="text-white font-semibold mb-2">Is this tool free for commercial use?</h3>
-            <p class="text-slate-400 text-sm">Yes, absolutely. You can generate unlimited QR codes for personal projects, business cards, restaurant menus, or commercial packaging for free.</p>
-          </div>
-        </div>
-      </div>
-    </article>
-  </main>
-  <section class="related-tools" style="max-width:56rem;margin:40px auto 0;padding:0 16px;">
-    <h2 style="font-size:18px;font-weight:700;margin:0 0 10px;color:inherit;">Related free tools</h2>
-    <div><a href="/image-compressor.html" class="related-link" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 14px;border:1px solid #334155;border-radius:10px;color:#22d3ee;text-decoration:none;font-size:14px;">Image Compressor</a><a href="/password-generator.html" class="related-link" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 14px;border:1px solid #334155;border-radius:10px;color:#22d3ee;text-decoration:none;font-size:14px;">Password Generator</a><a href="/doc-converter.html" class="related-link" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 14px;border:1px solid #334155;border-radius:10px;color:#22d3ee;text-decoration:none;font-size:14px;">Document Converter</a><a href="/" class="related-link" style="display:inline-block;margin:4px 0;padding:8px 14px;color:#94a3b8;text-decoration:none;font-size:14px;">All tools →</a></div>
-  </section>
-
-
-  <!-- FOOTER -->
-  <footer class="border-t border-slate-800 py-10 mt-10">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-2">
-        <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white text-xs font-bold">BT</div>
-        <span class="text-slate-400 text-sm">© 2026 Browser Tools Hub. All rights reserved.</span>
-      </div>
-      <div class="flex gap-4 text-sm font-medium text-slate-300">
-        <a href="/about.html" class="hover:text-cyan-400 transition-colors">About</a>
-        <a href="/privacy.html" class="hover:text-cyan-400 transition-colors">Privacy Policy</a>
-        <a href="/terms.html" class="hover:text-cyan-400 transition-colors">Terms & Conditions</a>
-        <a href="/contact.html" class="hover:text-cyan-400 transition-colors">Contact</a>
-      </div>
-      <p class="text-slate-500 text-sm">100% Free • No Signup • Fast Runs in Browser</p>
-    </div>
-  </footer>
-
-  <!-- JAVASCRIPT -->
-  <script>
+<ul class="list-disc list-inside text-slate-400 space-y-2 mb-4 ml-4">
+<li><strong class="text-white">Website &amp; Portfolio Links:</strong> Direct potential clients straight to your landing page or digital portfolio from print brochures.</li>
+<li><strong class="text-white">Digital Business Cards (vCard):</strong> Share contact numbers, emails, and social profiles instantly by letting clients scan your card.</li>
+<li><strong class="text-white">Wi-Fi Connection Sharing:</strong> Embed network credentials into a QR code so guests can join your home or office Wi-Fi network without typing passwords.</li>
+<li><strong class="text-white">Event Check-Ins &amp; Payments:</strong> Streamline ticketing, webinar registrations, and mobile payment gateways effortlessly.</li>
+</ul>
+</div>
+<div>
+<h2 class="text-2xl font-bold text-white mb-6">Frequently Asked Questions (FAQs)</h2>
+<div class="space-y-4">
+<div class="glass rounded-xl p-5 border border-slate-800">
+<h3 class="text-white font-semibold mb-2">Do these generated QR codes expire?</h3>
+<p class="text-slate-400 text-sm">No! Static QR codes generated here are permanent. As long as the destination URL or text remains active, your QR code will continue scanning indefinitely.</p>
+</div>
+<div class="glass rounded-xl p-5 border border-slate-800">
+<h3 class="text-white font-semibold mb-2">Are my entered links or data stored on any server?</h3>
+<p class="text-slate-400 text-sm">No. The QR code rendering happens completely client-side in JavaScript. Your data remains private and secure on your local device.</p>
+</div>
+<div class="glass rounded-xl p-5 border border-slate-800">
+<h3 class="text-white font-semibold mb-2">Is this tool free for commercial use?</h3>
+<p class="text-slate-400 text-sm">Yes, absolutely. You can generate unlimited QR codes for personal projects, business cards, restaurant menus, or commercial packaging for free.</p>
+</div>
+</div>
+</div>
+</article>
+</main>
+<section class="related-tools" style="max-width:56rem;margin:40px auto 0;padding:0 16px;">
+<h2 style="font-size:18px;font-weight:700;margin:0 0 10px;color:inherit;">Related free tools</h2>
+<div><a class="related-link" href="/image-compressor.html" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 14px;border:1px solid #334155;border-radius:10px;color:#22d3ee;text-decoration:none;font-size:14px;">Image Compressor</a><a class="related-link" href="/password-generator.html" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 14px;border:1px solid #334155;border-radius:10px;color:#22d3ee;text-decoration:none;font-size:14px;">Password Generator</a><a class="related-link" href="/doc-converter.html" style="display:inline-block;margin:4px 8px 4px 0;padding:8px 14px;border:1px solid #334155;border-radius:10px;color:#22d3ee;text-decoration:none;font-size:14px;">Document Converter</a><a class="related-link" href="/" style="display:inline-block;margin:4px 0;padding:8px 14px;color:#94a3b8;text-decoration:none;font-size:14px;">All tools →</a></div>
+</section>
+<!-- FOOTER -->
+<footer class="border-t border-slate-800 py-10 mt-10">
+<div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white text-xs font-bold">BT</div>
+<span class="text-slate-400 text-sm">© 2026 Browser Tools Hub. All rights reserved.</span>
+</div>
+<div class="flex gap-4 text-sm font-medium text-slate-300">
+<a class="hover:text-cyan-400 transition-colors" href="/about.html">About</a>
+<a class="hover:text-cyan-400 transition-colors" href="/privacy.html">Privacy Policy</a>
+<a class="hover:text-cyan-400 transition-colors" href="/terms.html">Terms &amp; Conditions</a>
+<a class="hover:text-cyan-400 transition-colors" href="/contact.html">Contact</a>
+</div>
+<p class="text-slate-500 text-sm">100% Free • No Signup • Fast Runs in Browser</p>
+</div>
+</footer>
+<!-- JAVASCRIPT -->
+<script>
     // Mobile Menu Toggle
     const btn = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');
